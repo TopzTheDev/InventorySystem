@@ -1453,7 +1453,7 @@ private: System::ComponentModel::IContainer^  components;
 		}
 
 #pragma endregion
-		//Add Product to the database
+		//Create Product to the database
 		
 		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			try
@@ -1479,6 +1479,8 @@ private: System::ComponentModel::IContainer^  components;
 				clearfields();
 				tab_control->SelectTab(1);
 				loadTable("Default");
+				
+				
 				con->Close();
 			}
 			catch (Exception^ ex)
@@ -1486,29 +1488,60 @@ private: System::ComponentModel::IContainer^  components;
 				MessageBox::Show("Something wrong in adding the product: "+ ex);
 			}
 		}
-
+		
+		//Update Product to the Databse
 		private: System::Void inp_editUpdate_Click(System::Object^  sender, System::EventArgs^  e) {
-			MessageBox::Show(""+validateFields("update_sameFields"));
+			
 			if (validateFields("update_sameFields")) {
 				MessageBox::Show("Nothing to change, update is not applied");
 			}
 			else {
-				if(validateFields("update_emptyFields"))
-				MessageBox::Show("Ready to update!");
+				if (validateFields("update_emptyFields")) {
+					MessageBox::Show("Some fields is empty, update is not applied");
+				}
+				else {
+					try
+					{
+						String^	barcode = inp_editCode->Text;
+						String^	proName = inp_editName->Text;
+						String^	proDesc = inp_editDesc->Text;
+						String^	proCategory = cb_editCategory->Text;
+						double	proPrice = double::Parse(inp_editPrice->Text);
+						int	proStock = Int32::Parse(inp_editStock->Text);
+						MessageBox::Show("" + barcode + " " + proName + " " + proDesc + " " + proCategory + " " + proPrice + " " + proStock);
+						MySqlConnection ^con = gcnew MySqlConnection(constr);
+						MySqlCommand ^cmd = gcnew MySqlCommand("update product_tb set pro_name='" + proName + "',pro_desc='" + proDesc + "',pro_category='" + proCategory + "',pro_price='" + proPrice + "',pro_stock='" + proStock + "' WHERE barcode=" + barcode + "", con);
+						MySqlDataReader^dr;
+						con->Open();
+
+						//update product_tb set pro_name='"+proName+"',pro_desc='"+proDesc+"',pro_category='"+proCategory+"',pro_price='" +proPrice+ "',pro_stock='"+proStock+"' WHERE barcode='"+barcode+"'"
+						dr = cmd->ExecuteReader();
+
+						MessageBox::Show("Product " + barcode + " information updated");
+						tab_control->SelectTab(1);
+						clearfields();
+						loadTable("Default");
+
+						con->Close();
+					}
+					catch (Exception^ ex)
+					{
+						MessageBox::Show("Something wrong in updating the product: " + ex);
+					}
+
+				}
 			}
+			
 
 		}
-
+		
+		//Read Product from the Databse
 		private: System::Void inp_search(System::Object^  sender, System::EventArgs^  e) {
 			String^ search = inp_proSearch->Text;
 			loadTable(search);
 		}
 
-		private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
-			
-		}
-		
-		
+		//Load Products on Data Grid
 		void loadTable(String^ query) {
 			String^ queryStr;
 			String^ column = SearchFilterChecker(cb_category->Text);
@@ -1636,9 +1669,9 @@ private: System::ComponentModel::IContainer^  components;
 					&& String::Compare(inp_editPrice->Text, checkPrice) == 0 && String::Compare(inp_editStock->Text, checkStock) == 0 ? true : false;
 			}
 			else if(String::Compare(toValidate, "update_emptyFields") == 0){
-				isValidated = String::Compare(inp_editCode->Text, "") == 0 && String::Compare(inp_editName->Text,"") == 0
-					&& String::Compare(inp_editDesc->Text, "") == 0 && String::Compare(cb_editCategory->Text, "") == 0
-					&& String::Compare(inp_editPrice->Text, "") == 0 && String::Compare(inp_editStock->Text, "") == 0 ? true : false;
+				isValidated = String::Compare(inp_editCode->Text, "") == 0 || String::Compare(inp_editName->Text,"") == 0
+					|| String::Compare(inp_editDesc->Text, "") == 0 || String::Compare(cb_editCategory->Text, "") == 0
+					|| String::Compare(inp_editPrice->Text, "") == 0 || String::Compare(inp_editStock->Text, "") == 0 ? true : false;
 			}
 			else if (String::Compare(toValidate, "add_emptyFields") == 0) {
 				isValidated = String::Compare(inp_proCode->Text, "") == 0 && String::Compare(inp_proName->Text, "") == 0
