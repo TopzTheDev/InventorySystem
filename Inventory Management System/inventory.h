@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include <string>
+
 namespace InventoryManagementSystem {
 
 	using namespace System;
@@ -7,7 +10,9 @@ namespace InventoryManagementSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace MySql::Data::MySqlClient;
+	using namespace std;
+	
 	/// <summary>
 	/// Summary for inventory
 	/// </summary>
@@ -15,10 +20,22 @@ namespace InventoryManagementSystem {
 	{
 	public:
 		Form ^obj;
+		
+	private: System::Windows::Forms::TextBox^  inp_prevCategory;
+	private: System::Windows::Forms::Label^  lbl_prevCode;
+	private: System::Windows::Forms::Label^  lbl_searchError;
+	private: System::Windows::Forms::Button^  button6;
+	private: System::Windows::Forms::BindingSource^  bindingSource1;
+			
+	public:
+
+	public:
+		//Connection to database
+		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
+
 		inventory(void)
 		{
 			InitializeComponent();
-			
 			//
 			//TODO: Add the constructor code here
 			//
@@ -27,6 +44,7 @@ namespace InventoryManagementSystem {
 		inventory(Form ^obj1)
 		{	
 			obj = obj1; 
+			
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -52,31 +70,18 @@ namespace InventoryManagementSystem {
 
 	protected:
 
-	private: System::Windows::Forms::Label^  label16;
+
 	private: System::Windows::Forms::Label^  label15;
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::TextBox^  inp_proSearch;
 	private: System::Windows::Forms::TextBox^  inp_prevStock;
-
-
-
 	private: System::Windows::Forms::TextBox^  inp_prevPrice;
-
 	private: System::Windows::Forms::TextBox^  inp_prevDesc;
-	private: System::Windows::Forms::TextBox^  inp_prevCode;
-
-
 
 	private: System::Windows::Forms::TextBox^  inp_prevName;
 	private: System::Windows::Forms::Button^  inp_prevDelete;
-
-
-
-
 	private: System::Windows::Forms::Button^  btn_prevEdit;
-
 	private: System::Windows::Forms::Label^  label11;
-	private: System::Windows::Forms::ComboBox^  cb_prevCategory;
 
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::Label^  label13;
@@ -84,7 +89,6 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  label10;
 	private: System::Windows::Forms::DataGridView^  table_prevProduct;
-
 	private: System::Windows::Forms::TabPage^  tab_addproduct;
 
 	private: System::Windows::Forms::Button^  button2;
@@ -163,6 +167,7 @@ private: System::Windows::Forms::Label^  label33;
 private: System::Windows::Forms::Label^  label36;
 private: System::Windows::Forms::Label^  label35;
 private: System::Windows::Forms::Label^  label37;
+private: System::ComponentModel::IContainer^  components;
 
 	protected:
 
@@ -170,7 +175,7 @@ private: System::Windows::Forms::Label^  label37;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -179,22 +184,24 @@ private: System::Windows::Forms::Label^  label37;
 		/// </summary>
 		void InitializeComponent(void)
 		{	
+			this->components = (gcnew System::ComponentModel::Container());
 			this->tab_dashboard = (gcnew System::Windows::Forms::TabPage());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->lbl_searchError = (gcnew System::Windows::Forms::Label());
+			this->lbl_prevCode = (gcnew System::Windows::Forms::Label());
+			this->inp_prevCategory = (gcnew System::Windows::Forms::TextBox());
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->cb_category = (gcnew System::Windows::Forms::ComboBox());
-			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->inp_proSearch = (gcnew System::Windows::Forms::TextBox());
 			this->inp_prevStock = (gcnew System::Windows::Forms::TextBox());
 			this->inp_prevPrice = (gcnew System::Windows::Forms::TextBox());
 			this->inp_prevDesc = (gcnew System::Windows::Forms::TextBox());
-			this->inp_prevCode = (gcnew System::Windows::Forms::TextBox());
 			this->inp_prevName = (gcnew System::Windows::Forms::TextBox());
 			this->inp_prevDelete = (gcnew System::Windows::Forms::Button());
 			this->btn_prevEdit = (gcnew System::Windows::Forms::Button());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->cb_prevCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
@@ -263,6 +270,7 @@ private: System::Windows::Forms::Label^  label37;
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->btn_addproduct = (gcnew System::Windows::Forms::Button());
 			this->btn_dashboard = (gcnew System::Windows::Forms::Button());
+			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->tab_dashboard->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->table_prevProduct))->BeginInit();
 			this->tab_addproduct->SuspendLayout();
@@ -271,26 +279,28 @@ private: System::Windows::Forms::Label^  label37;
 			this->tab_accounts->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tab_dashboard
 			// 
 			this->tab_dashboard->BackColor = System::Drawing::Color::White;
+			this->tab_dashboard->Controls->Add(this->button6);
+			this->tab_dashboard->Controls->Add(this->lbl_searchError);
+			this->tab_dashboard->Controls->Add(this->lbl_prevCode);
+			this->tab_dashboard->Controls->Add(this->inp_prevCategory);
 			this->tab_dashboard->Controls->Add(this->label32);
 			this->tab_dashboard->Controls->Add(this->cb_category);
-			this->tab_dashboard->Controls->Add(this->label16);
 			this->tab_dashboard->Controls->Add(this->label15);
 			this->tab_dashboard->Controls->Add(this->label14);
 			this->tab_dashboard->Controls->Add(this->inp_proSearch);
 			this->tab_dashboard->Controls->Add(this->inp_prevStock);
 			this->tab_dashboard->Controls->Add(this->inp_prevPrice);
 			this->tab_dashboard->Controls->Add(this->inp_prevDesc);
-			this->tab_dashboard->Controls->Add(this->inp_prevCode);
 			this->tab_dashboard->Controls->Add(this->inp_prevName);
 			this->tab_dashboard->Controls->Add(this->inp_prevDelete);
 			this->tab_dashboard->Controls->Add(this->btn_prevEdit);
 			this->tab_dashboard->Controls->Add(this->label11);
-			this->tab_dashboard->Controls->Add(this->cb_prevCategory);
 			this->tab_dashboard->Controls->Add(this->label12);
 			this->tab_dashboard->Controls->Add(this->label13);
 			this->tab_dashboard->Controls->Add(this->label8);
@@ -300,9 +310,57 @@ private: System::Windows::Forms::Label^  label37;
 			this->tab_dashboard->Location = System::Drawing::Point(4, 25);
 			this->tab_dashboard->Name = L"tab_dashboard";
 			this->tab_dashboard->Padding = System::Windows::Forms::Padding(3);
-			this->tab_dashboard->Size = System::Drawing::Size(1171, 519);
+			this->tab_dashboard->Size = System::Drawing::Size(1173, 530);
 			this->tab_dashboard->TabIndex = 1;
 			this->tab_dashboard->Text = L"Dashboard";
+			// 
+			// button6
+			// 
+			this->button6->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button6->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->button6->Location = System::Drawing::Point(934, 37);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(167, 28);
+			this->button6->TabIndex = 41;
+			this->button6->Text = L"Search";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &inventory::button6_Click);
+			// 
+			// lbl_searchError
+			// 
+			this->lbl_searchError->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10.25F));
+			this->lbl_searchError->ForeColor = System::Drawing::Color::Red;
+			this->lbl_searchError->Location = System::Drawing::Point(524, 68);
+			this->lbl_searchError->Name = L"lbl_searchError";
+			this->lbl_searchError->Size = System::Drawing::Size(407, 22);
+			this->lbl_searchError->TabIndex = 40;
+			// 
+			// lbl_prevCode
+			// 
+			this->lbl_prevCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->lbl_prevCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->lbl_prevCode->Location = System::Drawing::Point(25, 111);
+			this->lbl_prevCode->Name = L"lbl_prevCode";
+			this->lbl_prevCode->Size = System::Drawing::Size(308, 26);
+			this->lbl_prevCode->TabIndex = 39;
+			// 
+			// inp_prevCategory
+			// 
+			this->inp_prevCategory->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->inp_prevCategory->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_prevCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_prevCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_prevCategory->HideSelection = false;
+			this->inp_prevCategory->Location = System::Drawing::Point(31, 290);
+			this->inp_prevCategory->Name = L"inp_prevCategory";
+			this->inp_prevCategory->Size = System::Drawing::Size(364, 28);
+			this->inp_prevCategory->TabIndex = 38;
 			// 
 			// label32
 			// 
@@ -315,26 +373,16 @@ private: System::Windows::Forms::Label^  label37;
 			// 
 			// cb_category
 			// 
-			this->cb_category->Enabled = false;
+			this->cb_category->DisplayMember = L"Barcode";
 			this->cb_category->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
 			this->cb_category->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_category->FormattingEnabled = true;
-			this->cb_category->Location = System::Drawing::Point(949, 45);
+			this->cb_category->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Barcode", L"Product Name", L"Category" });
+			this->cb_category->Location = System::Drawing::Point(524, 36);
 			this->cb_category->Name = L"cb_category";
-			this->cb_category->Size = System::Drawing::Size(184, 28);
+			this->cb_category->Size = System::Drawing::Size(149, 28);
 			this->cb_category->TabIndex = 36;
-			// 
-			// label16
-			// 
-			this->label16->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
-			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label16->Location = System::Drawing::Point(849, 47);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(94, 26);
-			this->label16->TabIndex = 35;
-			this->label16->Text = L"Category";
 			// 
 			// label15
 			// 
@@ -353,11 +401,11 @@ private: System::Windows::Forms::Label^  label37;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label14->Location = System::Drawing::Point(437, 45);
+			this->label14->Location = System::Drawing::Point(434, 38);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(62, 26);
+			this->label14->Size = System::Drawing::Size(84, 26);
 			this->label14->TabIndex = 33;
-			this->label14->Text = L"Search";
+			this->label14->Text = L"Search by";
 			// 
 			// inp_proSearch
 			// 
@@ -368,17 +416,17 @@ private: System::Windows::Forms::Label^  label37;
 			this->inp_proSearch->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proSearch->HideSelection = false;
-			this->inp_proSearch->Location = System::Drawing::Point(504, 44);
+			this->inp_proSearch->Location = System::Drawing::Point(679, 37);
 			this->inp_proSearch->Name = L"inp_proSearch";
 			this->inp_proSearch->Size = System::Drawing::Size(249, 28);
 			this->inp_proSearch->TabIndex = 32;
+			this->inp_proSearch->TextChanged += gcnew System::EventHandler(this, &inventory::inp_search);
 			// 
 			// inp_prevStock
 			// 
 			this->inp_prevStock->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_prevStock->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_prevStock->Enabled = false;
 			this->inp_prevStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
 			this->inp_prevStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
@@ -393,7 +441,6 @@ private: System::Windows::Forms::Label^  label37;
 			this->inp_prevPrice->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_prevPrice->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_prevPrice->Enabled = false;
 			this->inp_prevPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
 			this->inp_prevPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
@@ -408,7 +455,6 @@ private: System::Windows::Forms::Label^  label37;
 			this->inp_prevDesc->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_prevDesc->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_prevDesc->Enabled = false;
 			this->inp_prevDesc->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
 			this->inp_prevDesc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
@@ -418,27 +464,11 @@ private: System::Windows::Forms::Label^  label37;
 			this->inp_prevDesc->Size = System::Drawing::Size(364, 28);
 			this->inp_prevDesc->TabIndex = 20;
 			// 
-			// inp_prevCode
-			// 
-			this->inp_prevCode->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->inp_prevCode->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_prevCode->Enabled = false;
-			this->inp_prevCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->inp_prevCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_prevCode->HideSelection = false;
-			this->inp_prevCode->Location = System::Drawing::Point(28, 114);
-			this->inp_prevCode->Name = L"inp_prevCode";
-			this->inp_prevCode->Size = System::Drawing::Size(364, 28);
-			this->inp_prevCode->TabIndex = 18;
-			// 
 			// inp_prevName
 			// 
 			this->inp_prevName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_prevName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_prevName->Enabled = false;
 			this->inp_prevName->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
 			this->inp_prevName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
@@ -461,6 +491,7 @@ private: System::Windows::Forms::Label^  label37;
 			this->inp_prevDelete->TabIndex = 31;
 			this->inp_prevDelete->Text = L"Delete Product";
 			this->inp_prevDelete->UseVisualStyleBackColor = true;
+			this->inp_prevDelete->Click += gcnew System::EventHandler(this, &inventory::inp_prevDelete_Click);
 			// 
 			// btn_prevEdit
 			// 
@@ -487,18 +518,6 @@ private: System::Windows::Forms::Label^  label37;
 			this->label11->Size = System::Drawing::Size(305, 26);
 			this->label11->TabIndex = 28;
 			this->label11->Text = L"Stock";
-			// 
-			// cb_prevCategory
-			// 
-			this->cb_prevCategory->Enabled = false;
-			this->cb_prevCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->cb_prevCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->cb_prevCategory->FormattingEnabled = true;
-			this->cb_prevCategory->Location = System::Drawing::Point(31, 291);
-			this->cb_prevCategory->Name = L"cb_prevCategory";
-			this->cb_prevCategory->Size = System::Drawing::Size(361, 28);
-			this->cb_prevCategory->TabIndex = 26;
 			// 
 			// label12
 			// 
@@ -559,9 +578,9 @@ private: System::Windows::Forms::Label^  label37;
 			// 
 			this->table_prevProduct->BackgroundColor = System::Drawing::Color::White;
 			this->table_prevProduct->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->table_prevProduct->Location = System::Drawing::Point(438, 87);
+			this->table_prevProduct->Location = System::Drawing::Point(438, 102);
 			this->table_prevProduct->Name = L"table_prevProduct";
-			this->table_prevProduct->Size = System::Drawing::Size(695, 401);
+			this->table_prevProduct->Size = System::Drawing::Size(695, 386);
 			this->table_prevProduct->TabIndex = 0;
 			// 
 			// tab_addproduct
@@ -732,6 +751,7 @@ private: System::Windows::Forms::Label^  label37;
 			this->cb_proCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_proCategory->FormattingEnabled = true;
+			this->cb_proCategory->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Can goods", L"Chichirya" });
 			this->cb_proCategory->Location = System::Drawing::Point(773, 158);
 			this->cb_proCategory->Name = L"cb_proCategory";
 			this->cb_proCategory->Size = System::Drawing::Size(351, 28);
@@ -842,7 +862,7 @@ private: System::Windows::Forms::Label^  label37;
 			this->tab_editproduct->Location = System::Drawing::Point(4, 25);
 			this->tab_editproduct->Name = L"tab_editproduct";
 			this->tab_editproduct->Padding = System::Windows::Forms::Padding(3);
-			this->tab_editproduct->Size = System::Drawing::Size(1171, 519);
+			this->tab_editproduct->Size = System::Drawing::Size(1173, 530);
 			this->tab_editproduct->TabIndex = 2;
 			this->tab_editproduct->Text = L"Edit Product";
 			// 
@@ -868,6 +888,7 @@ private: System::Windows::Forms::Label^  label37;
 			this->btn_editBack->TabIndex = 39;
 			this->btn_editBack->Text = L"Back";
 			this->btn_editBack->UseVisualStyleBackColor = true;
+			this->btn_editBack->Click += gcnew System::EventHandler(this, &inventory::btn_editBack_Click);
 			// 
 			// inp_editUpdate
 			// 
@@ -1067,7 +1088,7 @@ private: System::Windows::Forms::Label^  label37;
 			this->tab_accounts->Location = System::Drawing::Point(4, 25);
 			this->tab_accounts->Name = L"tab_accounts";
 			this->tab_accounts->Padding = System::Windows::Forms::Padding(3);
-			this->tab_accounts->Size = System::Drawing::Size(1171, 519);
+			this->tab_accounts->Size = System::Drawing::Size(1173, 530);
 			this->tab_accounts->TabIndex = 3;
 			this->tab_accounts->Text = L"Accounts";
 			// 
@@ -1341,6 +1362,7 @@ private: System::Windows::Forms::Label^  label37;
 			this->button7->TabIndex = 12;
 			this->button7->Text = L"Logout";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &inventory::button7_Click);
 			// 
 			// btn_addproduct
 			// 
@@ -1396,27 +1418,158 @@ private: System::Windows::Forms::Label^  label37;
 			this->tab_accounts->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
 			this->ResumeLayout(false);
-
+			loadTable();
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		//Add Product to the database
+		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			try
+			{
+				
+				MySqlConnection^ con = gcnew MySqlConnection(constr);
+
+				String^	barcode = inp_proCode->Text;
+				String^	proName = inp_proName->Text;
+				String^	proDesc = inp_proDesc->Text;
+				String^	proCategory = cb_proCategory->Text;
+				double	proPrice = double::Parse(inp_proPrice->Text);
+				int	proStock = Int32::Parse(inp_proStock->Text);
+
+
+				MySqlCommand^ cmd = gcnew MySqlCommand("insert into product_tb values("+barcode+",'"+proName+"','"+proDesc+"','"+proCategory+"','"+proPrice+"','"+proStock+"')", con);
+				//"INSERT INTO `product_tb`(`barcode`, `pro_name`, `pro_desc`, `pro_category`, `pro_price`, `pro_stock`) VALUES ("+barcode+","+proName+","+proDesc+","+proCategory+","+proPrice+","+proStock+")"
+				//"insert into product_tb values("+barcode+","+proName+","+proDesc+"," +proCategory+","+proPrice+"," + proStock + ")"
+				MySqlDataReader^ dr;
+				con->Open();
+				dr = cmd->ExecuteReader();
+				MessageBox::Show("The product " + proName + " with barcode of " + barcode + " added");
+				Clearfields();
+				tab_control->SelectTab(1);
+				con->Close();
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show("Something wrong in adding the product: "+ ex);
+			}
+		}
+
+		private: System::Void inp_search(System::Object^  sender, System::EventArgs^  e) {
+			
+		}
+
+		private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+			
+			String^ column = SearchFilterChecker(cb_category->Text);
+			try
+			{
+				String^ search = inp_proSearch->Text;
+				MySqlConnection^ con = gcnew MySqlConnection(constr);
+				MySqlCommand^ cmd = gcnew MySqlCommand("select * from product_tb WHERE "+column+"='"+search+"'", con);
+				MySqlDataReader^ dr;
+				con->Open();
+				dr = cmd->ExecuteReader();
+				Clearfields();
+
+				if (dr->Read()) {
+					lbl_prevCode->Text = dr->GetString(0);
+					inp_prevName->Text = dr->GetString(1);
+					inp_prevDesc->Text = dr->GetString(2);
+					inp_prevCategory->Text = dr->GetString(3);
+					inp_prevPrice->Text = dr->GetString(4);
+					inp_prevStock->Text = dr->GetString(5);
+				}
+				else {
+					lbl_searchError->Text = "You search "+ cb_category->Text +": "+search+" is not existing try to change the filter.";
+				}
+				con->Close();
+
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show("Something wrong in searching the product: " + ex);
+			}
+
+		}
+		
+		void loadTable() {
+
+			try{
+				MySqlConnection^ con = gcnew MySqlConnection(constr);
+				MySqlDataAdapter^ sda = gcnew MySqlDataAdapter("select * from product_tb",con);
+				DataTable^ dt = gcnew DataTable();
+				sda->Fill(dt);
+				bindingSource1->DataSource = dt;
+				table_prevProduct->DataSource = bindingSource1;
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show("Something wrong in fetching the product to data grid: " + ex);
+			}
+
+		}
+		
+
+		String^ SearchFilterChecker(String^ cb_category) {
+			
+			String^ code;
+			if (String::Compare(cb_category,"Barcode")==0){
+				code = "barcode";
+			}else if (String::Compare(cb_category, "Product Name") == 0) {
+				code = "pro_name";
+			}else if (String::Compare(cb_category, "Category") == 0) {
+				code = "pro_category";
+			}
+			return code;
+		}
+
+
+		// Utilities
+		void Clearfields() {
+			inp_proName->Text = "";
+			inp_proCode->Text = "";
+			inp_proDesc->Text = "";
+			inp_proPrice->Text = "";
+			inp_proStock->Text = "";
+			inp_prevStock->Text = "";
+			inp_prevPrice->Text = "";
+			inp_prevDesc->Text = "";
+			lbl_prevCode->Text = "";
+			inp_prevName->Text = "";
+			cb_proCategory->Text = "";
+			inp_prevCategory->Text = "";
+			lbl_searchError->Text = "";
+		}
+
+
+
+		// Button Tab
+		private: System::Void btn_dashboard_Click(System::Object^  sender, System::EventArgs^  e) {
+			tab_control->SelectTab(1);
+		}
+		private: System::Void btn_addproduct_Click(System::Object^  sender, System::EventArgs^  e) {
+		tab_control->SelectTab(0);
+		}
+		private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+		tab_control->SelectTab(3);
+		}
+		private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
+		tab_control->SelectTab(2);
+		}
+		private: System::Void btn_editBack_Click(System::Object^  sender, System::EventArgs^  e) {
+		tab_control->SelectTab(1);
+		}
+		private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Hide();
 		obj->Show();
-	}
+		}
 
-	private: System::Void btn_dashboard_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(1);
-	}
-	private: System::Void btn_addproduct_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(0);
-	}
-	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(3);
-	}
+		private: System::Void inp_prevDelete_Click(System::Object^  sender, System::EventArgs^  e) {
+	
+		}
 
-	private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(2);
-	}
+		//Load Table
+		
 };
 }
