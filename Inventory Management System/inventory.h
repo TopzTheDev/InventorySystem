@@ -27,6 +27,8 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Button^  button6;
 	private: System::Windows::Forms::BindingSource^  bindingSource1;
 	private: System::Windows::Forms::DataGridView^  table_prevProduct;
+	private: System::Windows::Forms::ComboBox^  cb_proCategory;
+
 
 	public:
 
@@ -105,7 +107,7 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::TextBox^  inp_proCode;
 	private: System::Windows::Forms::TextBox^  inp_proName;
 	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::ComboBox^  cb_proCategory;
+
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label2;
@@ -132,7 +134,8 @@ namespace InventoryManagementSystem {
 
 
 	private: System::Windows::Forms::Label^  label18;
-private: System::Windows::Forms::ComboBox^  cb_editCode;
+private: System::Windows::Forms::ComboBox^  cb_editCategory;
+
 
 	private: System::Windows::Forms::Label^  label19;
 	private: System::Windows::Forms::Label^  label20;
@@ -192,7 +195,7 @@ private: System::ComponentModel::IContainer^  components;
 			loadTable("Default");
 			table_prevProduct->MultiSelect = true;
 			cb_category->SelectedItem = "Barcode";
-			
+			cb_proCategory->SelectedItem = "Others";
 		}
 		void InitializeComponent(void)
 		{	
@@ -221,6 +224,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->tab_addproduct = (gcnew System::Windows::Forms::TabPage());
+			this->cb_proCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
@@ -232,7 +236,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proCode = (gcnew System::Windows::Forms::TextBox());
 			this->inp_proName = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->cb_proCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -251,7 +254,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editCode = (gcnew System::Windows::Forms::TextBox());
 			this->inp_editName = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->cb_editCode = (gcnew System::Windows::Forms::ComboBox());
+			this->cb_editCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
@@ -335,7 +338,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->table_prevProduct->Size = System::Drawing::Size(703, 401);
 			this->table_prevProduct->TabIndex = 42;
 			this->table_prevProduct->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::table_prevProduct_CellClick);
-			
 			// 
 			// button6
 			// 
@@ -600,6 +602,7 @@ private: System::ComponentModel::IContainer^  components;
 			// tab_addproduct
 			// 
 			this->tab_addproduct->BackColor = System::Drawing::Color::White;
+			this->tab_addproduct->Controls->Add(this->cb_proCategory);
 			this->tab_addproduct->Controls->Add(this->label34);
 			this->tab_addproduct->Controls->Add(this->label33);
 			this->tab_addproduct->Controls->Add(this->label31);
@@ -611,7 +614,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_addproduct->Controls->Add(this->inp_proCode);
 			this->tab_addproduct->Controls->Add(this->inp_proName);
 			this->tab_addproduct->Controls->Add(this->label6);
-			this->tab_addproduct->Controls->Add(this->cb_proCategory);
 			this->tab_addproduct->Controls->Add(this->label5);
 			this->tab_addproduct->Controls->Add(this->label3);
 			this->tab_addproduct->Controls->Add(this->label2);
@@ -624,6 +626,23 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_addproduct->Size = System::Drawing::Size(1173, 530);
 			this->tab_addproduct->TabIndex = 0;
 			this->tab_addproduct->Text = L"Add Product";
+			// 
+			// cb_proCategory
+			// 
+			this->cb_proCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->cb_proCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->cb_proCategory->FormattingEnabled = true;
+			this->cb_proCategory->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
+				L"Alcohol", L"Fruit/veg/salads", L"Dairy",
+					L"Chilled convenience", L"Bathroom toiletries", L"Household/cleaning", L"Fresh meat", L"Frozen prepared foods", L"Ambient bakery",
+					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
+					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
+			});
+			this->cb_proCategory->Location = System::Drawing::Point(772, 157);
+			this->cb_proCategory->Name = L"cb_proCategory";
+			this->cb_proCategory->Size = System::Drawing::Size(351, 28);
+			this->cb_proCategory->TabIndex = 40;
 			// 
 			// label34
 			// 
@@ -759,18 +778,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->label6->TabIndex = 22;
 			this->label6->Text = L"Stock";
 			// 
-			// cb_proCategory
-			// 
-			this->cb_proCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->cb_proCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->cb_proCategory->FormattingEnabled = true;
-			this->cb_proCategory->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Can goods", L"Chichirya" });
-			this->cb_proCategory->Location = System::Drawing::Point(773, 158);
-			this->cb_proCategory->Name = L"cb_proCategory";
-			this->cb_proCategory->Size = System::Drawing::Size(351, 28);
-			this->cb_proCategory->TabIndex = 20;
-			// 
 			// label5
 			// 
 			this->label5->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
@@ -867,7 +874,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_editproduct->Controls->Add(this->inp_editCode);
 			this->tab_editproduct->Controls->Add(this->inp_editName);
 			this->tab_editproduct->Controls->Add(this->label18);
-			this->tab_editproduct->Controls->Add(this->cb_editCode);
+			this->tab_editproduct->Controls->Add(this->cb_editCategory);
 			this->tab_editproduct->Controls->Add(this->label19);
 			this->tab_editproduct->Controls->Add(this->label20);
 			this->tab_editproduct->Controls->Add(this->label21);
@@ -917,6 +924,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editUpdate->TabIndex = 38;
 			this->inp_editUpdate->Text = L"Update Product";
 			this->inp_editUpdate->UseVisualStyleBackColor = true;
+			this->inp_editUpdate->Click += gcnew System::EventHandler(this, &inventory::inp_editUpdate_Click);
 			// 
 			// label17
 			// 
@@ -977,6 +985,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editCode->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_editCode->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_editCode->Enabled = false;
 			this->inp_editCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
 			this->inp_editCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
@@ -1011,16 +1020,22 @@ private: System::ComponentModel::IContainer^  components;
 			this->label18->TabIndex = 35;
 			this->label18->Text = L"Stock";
 			// 
-			// cb_editCode
+			// cb_editCategory
 			// 
-			this->cb_editCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->cb_editCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->cb_editCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->cb_editCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->cb_editCode->FormattingEnabled = true;
-			this->cb_editCode->Location = System::Drawing::Point(659, 172);
-			this->cb_editCode->Name = L"cb_editCode";
-			this->cb_editCode->Size = System::Drawing::Size(351, 28);
-			this->cb_editCode->TabIndex = 33;
+			this->cb_editCategory->FormattingEnabled = true;
+			this->cb_editCategory->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
+				L"Alcohol", L"Fruit/veg/salads", L"Dairy",
+					L"Chilled convenience", L"Bathroom toiletries", L"Household/cleaning", L"Fresh meat", L"Frozen prepared foods", L"Ambient bakery",
+					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
+					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
+			});
+			this->cb_editCategory->Location = System::Drawing::Point(659, 172);
+			this->cb_editCategory->Name = L"cb_editCategory";
+			this->cb_editCategory->Size = System::Drawing::Size(351, 28);
+			this->cb_editCategory->TabIndex = 33;
 			// 
 			// label19
 			// 
@@ -1440,7 +1455,7 @@ private: System::ComponentModel::IContainer^  components;
 #pragma endregion
 		//Add Product to the database
 		
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			try
 			{
 				
@@ -1461,7 +1476,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 				con->Open();
 				dr = cmd->ExecuteReader();
 				MessageBox::Show("The product " + proName + " with barcode of " + barcode + " added");
-				Clearfields();
+				clearfields();
 				tab_control->SelectTab(1);
 				loadTable("Default");
 				con->Close();
@@ -1470,6 +1485,18 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			{
 				MessageBox::Show("Something wrong in adding the product: "+ ex);
 			}
+		}
+
+		private: System::Void inp_editUpdate_Click(System::Object^  sender, System::EventArgs^  e) {
+			MessageBox::Show(""+validateFields("update_sameFields"));
+			if (validateFields("update_sameFields")) {
+				MessageBox::Show("Nothing to change, update is not applied");
+			}
+			else {
+				if(validateFields("update_emptyFields"))
+				MessageBox::Show("Ready to update!");
+			}
+
 		}
 
 		private: System::Void inp_search(System::Object^  sender, System::EventArgs^  e) {
@@ -1494,7 +1521,6 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			}
 
 			try{
-				
 				MySqlConnection^ con = gcnew MySqlConnection(constr);
 				MySqlDataAdapter^ sda = gcnew MySqlDataAdapter(queryStr,con);
 				DataTable^ dt = gcnew DataTable();
@@ -1510,7 +1536,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 
 		}
 		
-
+		String ^checkCode, ^checkName, ^checkDesc, ^checkPrice, ^checkStock, ^checkCategory;
 		String^ SearchFilterChecker(String^ cb_category) {
 			
 			String^ code;
@@ -1534,18 +1560,34 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 				MySqlDataReader^ dr;
 				con->Open();
 				dr = cmd->ExecuteReader();
-				Clearfields();
+				clearfields();
 
 				if (dr->Read()) {
-					lbl_prevCode->Text = dr->GetString(0);
-					inp_prevName->Text = dr->GetString(1);
-					inp_prevDesc->Text = dr->GetString(2);
-					inp_prevCategory->Text = dr->GetString(3);
-					inp_prevPrice->Text = dr->GetString(4);
-					inp_prevStock->Text = dr->GetString(5);
+
+					checkCode = dr->GetString(0);
+					checkName = dr->GetString(1);
+					checkDesc = dr->GetString(2);
+					checkPrice = dr->GetString(4);
+					checkStock = dr->GetString(5);
+					checkCategory = dr->GetString(3);
+					lbl_prevCode->Text = checkCode;
+					inp_prevName->Text = checkName;
+					inp_prevDesc->Text = checkDesc;
+					inp_prevCategory->Text = checkCategory;
+					inp_prevPrice->Text = checkPrice;
+					inp_prevStock->Text = checkStock;
+					//Edit Mode
+					inp_editCode->Text = checkCode;
+					inp_editName->Text = checkName;
+					inp_editDesc->Text = checkDesc;
+					cb_editCategory->SelectedItem = checkCategory;
+					inp_editPrice->Text = checkPrice;
+					inp_editStock->Text = checkStock;
+
 				}
 				else {
-					MessageBox::Show("You search " + search + " is not existing try to change the filter.");
+					MessageBox::Show("The cell clicked " + search + " is not existing try to change the filter.");
+					clearfields();
 				}
 				con->Close();
 
@@ -1556,10 +1598,10 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			}
 			
 		}
-
+	
 
 		// Utilities
-		void Clearfields() {
+		void clearfields() {
 			inp_proName->Text = "";
 			inp_proCode->Text = "";
 			inp_proDesc->Text = "";
@@ -1573,6 +1615,39 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			cb_proCategory->Text = "";
 			inp_prevCategory->Text = "";
 			lbl_searchError->Text = "";
+			inp_editCode->Text = "";
+			inp_editName->Text = "";
+			inp_editDesc->Text = "";
+			cb_editCategory->SelectedItem == "";
+			inp_editPrice->Text = "";
+			inp_editStock->Text ="";
+			checkName=""; 
+			checkDesc=""; 
+			checkPrice=""; 
+			checkStock=""; 
+			checkCategory="";
+		}
+		
+		bool validateFields(String^ toValidate) {
+			bool isValidated;
+			if (String::Compare(toValidate, "update_sameFields") == 0) {
+				isValidated = String::Compare(inp_editName->Text, checkName) == 0
+					&& String::Compare(inp_editDesc->Text, checkDesc) == 0 && String::Compare(cb_editCategory->Text, checkCategory) == 0
+					&& String::Compare(inp_editPrice->Text, checkPrice) == 0 && String::Compare(inp_editStock->Text, checkStock) == 0 ? true : false;
+			}
+			else if(String::Compare(toValidate, "update_emptyFields") == 0){
+				isValidated = String::Compare(inp_editCode->Text, "") == 0 && String::Compare(inp_editName->Text,"") == 0
+					&& String::Compare(inp_editDesc->Text, "") == 0 && String::Compare(cb_editCategory->Text, "") == 0
+					&& String::Compare(inp_editPrice->Text, "") == 0 && String::Compare(inp_editStock->Text, "") == 0 ? true : false;
+			}
+			else if (String::Compare(toValidate, "add_emptyFields") == 0) {
+				isValidated = String::Compare(inp_proCode->Text, "") == 0 && String::Compare(inp_proName->Text, "") == 0
+					&& String::Compare(inp_proCode->Text, "") == 0 && String::Compare(inp_proDesc->Text, "") == 0
+					&& String::Compare(inp_proPrice->Text, "") == 0 && String::Compare(inp_proStock->Text, "") == 0 ? true : false;
+			}
+			
+			return isValidated;
+			
 		}
 
 		// Button Tab
@@ -1586,7 +1661,11 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			tab_control->SelectTab(3);
 		}
 		private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
-			tab_control->SelectTab(2);
+			if (String::Compare(lbl_prevCode->Text,"")==0) {
+				MessageBox::Show("No product selected.");
+			}else {
+				tab_control->SelectTab(2);
+			}
 		}
 		private: System::Void btn_editBack_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab_control->SelectTab(1);
@@ -1599,6 +1678,5 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		private: System::Void inp_prevDelete_Click(System::Object^  sender, System::EventArgs^  e) {
 	
 		}
-
 };
 }
