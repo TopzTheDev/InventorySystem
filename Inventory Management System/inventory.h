@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include <vector> 
 namespace InventoryManagementSystem {
 
 	using namespace System;
@@ -26,19 +26,22 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  lbl_searchError;
 	private: System::Windows::Forms::Button^  button6;
 	private: System::Windows::Forms::BindingSource^  bindingSource1;
-			
+	private: System::Windows::Forms::DataGridView^  table_prevProduct;
+
 	public:
 
 	public:
 		//Connection to database
 		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
-
+		
 		inventory(void)
 		{
+			
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			
 		}
 
 		inventory(Form ^obj1)
@@ -46,9 +49,11 @@ namespace InventoryManagementSystem {
 			obj = obj1; 
 			
 			InitializeComponent();
+			InitalizeOtherComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+
 		}
 
 
@@ -88,7 +93,7 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  label8;
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  label10;
-	private: System::Windows::Forms::DataGridView^  table_prevProduct;
+
 	private: System::Windows::Forms::TabPage^  tab_addproduct;
 
 	private: System::Windows::Forms::Button^  button2;
@@ -182,10 +187,18 @@ private: System::ComponentModel::IContainer^  components;
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
+
+		void InitalizeOtherComponent(void){
+			loadTable("Default");
+			table_prevProduct->MultiSelect = true;
+			cb_category->SelectedItem = "Barcode";
+			
+		}
 		void InitializeComponent(void)
 		{	
 			this->components = (gcnew System::ComponentModel::Container());
 			this->tab_dashboard = (gcnew System::Windows::Forms::TabPage());
+			this->table_prevProduct = (gcnew System::Windows::Forms::DataGridView());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->lbl_searchError = (gcnew System::Windows::Forms::Label());
 			this->lbl_prevCode = (gcnew System::Windows::Forms::Label());
@@ -207,7 +220,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->table_prevProduct = (gcnew System::Windows::Forms::DataGridView());
 			this->tab_addproduct = (gcnew System::Windows::Forms::TabPage());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->label33 = (gcnew System::Windows::Forms::Label());
@@ -285,6 +297,7 @@ private: System::ComponentModel::IContainer^  components;
 			// tab_dashboard
 			// 
 			this->tab_dashboard->BackColor = System::Drawing::Color::White;
+			this->tab_dashboard->Controls->Add(this->table_prevProduct);
 			this->tab_dashboard->Controls->Add(this->button6);
 			this->tab_dashboard->Controls->Add(this->lbl_searchError);
 			this->tab_dashboard->Controls->Add(this->lbl_prevCode);
@@ -306,13 +319,23 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_dashboard->Controls->Add(this->label8);
 			this->tab_dashboard->Controls->Add(this->label9);
 			this->tab_dashboard->Controls->Add(this->label10);
-			this->tab_dashboard->Controls->Add(this->table_prevProduct);
 			this->tab_dashboard->Location = System::Drawing::Point(4, 25);
 			this->tab_dashboard->Name = L"tab_dashboard";
 			this->tab_dashboard->Padding = System::Windows::Forms::Padding(3);
 			this->tab_dashboard->Size = System::Drawing::Size(1173, 530);
 			this->tab_dashboard->TabIndex = 1;
 			this->tab_dashboard->Text = L"Dashboard";
+			// 
+			// table_prevProduct
+			// 
+			this->table_prevProduct->BackgroundColor = System::Drawing::Color::White;
+			this->table_prevProduct->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->table_prevProduct->Location = System::Drawing::Point(438, 87);
+			this->table_prevProduct->Name = L"table_prevProduct";
+			this->table_prevProduct->Size = System::Drawing::Size(703, 401);
+			this->table_prevProduct->TabIndex = 42;
+			this->table_prevProduct->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::table_prevProduct_CellClick);
+			
 			// 
 			// button6
 			// 
@@ -321,7 +344,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->button6->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
 			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button6->Location = System::Drawing::Point(934, 37);
+			this->button6->Location = System::Drawing::Point(974, 37);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(167, 28);
 			this->button6->TabIndex = 41;
@@ -418,7 +441,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proSearch->HideSelection = false;
 			this->inp_proSearch->Location = System::Drawing::Point(679, 37);
 			this->inp_proSearch->Name = L"inp_proSearch";
-			this->inp_proSearch->Size = System::Drawing::Size(249, 28);
+			this->inp_proSearch->Size = System::Drawing::Size(289, 28);
 			this->inp_proSearch->TabIndex = 32;
 			this->inp_proSearch->TextChanged += gcnew System::EventHandler(this, &inventory::inp_search);
 			// 
@@ -573,15 +596,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->label10->Size = System::Drawing::Size(308, 26);
 			this->label10->TabIndex = 17;
 			this->label10->Text = L"Product Name";
-			// 
-			// table_prevProduct
-			// 
-			this->table_prevProduct->BackgroundColor = System::Drawing::Color::White;
-			this->table_prevProduct->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->table_prevProduct->Location = System::Drawing::Point(438, 102);
-			this->table_prevProduct->Name = L"table_prevProduct";
-			this->table_prevProduct->Size = System::Drawing::Size(695, 386);
-			this->table_prevProduct->TabIndex = 0;
 			// 
 			// tab_addproduct
 			// 
@@ -1420,11 +1434,13 @@ private: System::ComponentModel::IContainer^  components;
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
 			this->ResumeLayout(false);
-			loadTable();
+
 		}
+
 #pragma endregion
 		//Add Product to the database
-		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			try
 			{
 				
@@ -1447,6 +1463,7 @@ private: System::ComponentModel::IContainer^  components;
 				MessageBox::Show("The product " + proName + " with barcode of " + barcode + " added");
 				Clearfields();
 				tab_control->SelectTab(1);
+				loadTable("Default");
 				con->Close();
 			}
 			catch (Exception^ ex)
@@ -1456,50 +1473,33 @@ private: System::ComponentModel::IContainer^  components;
 		}
 
 		private: System::Void inp_search(System::Object^  sender, System::EventArgs^  e) {
-			
+			String^ search = inp_proSearch->Text;
+			loadTable(search);
 		}
 
 		private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
 			
-			String^ column = SearchFilterChecker(cb_category->Text);
-			try
-			{
-				String^ search = inp_proSearch->Text;
-				MySqlConnection^ con = gcnew MySqlConnection(constr);
-				MySqlCommand^ cmd = gcnew MySqlCommand("select * from product_tb WHERE "+column+"='"+search+"'", con);
-				MySqlDataReader^ dr;
-				con->Open();
-				dr = cmd->ExecuteReader();
-				Clearfields();
-
-				if (dr->Read()) {
-					lbl_prevCode->Text = dr->GetString(0);
-					inp_prevName->Text = dr->GetString(1);
-					inp_prevDesc->Text = dr->GetString(2);
-					inp_prevCategory->Text = dr->GetString(3);
-					inp_prevPrice->Text = dr->GetString(4);
-					inp_prevStock->Text = dr->GetString(5);
-				}
-				else {
-					lbl_searchError->Text = "You search "+ cb_category->Text +": "+search+" is not existing try to change the filter.";
-				}
-				con->Close();
-
-			}
-			catch (Exception^ ex)
-			{
-				MessageBox::Show("Something wrong in searching the product: " + ex);
-			}
-
 		}
 		
-		void loadTable() {
+		
+		void loadTable(String^ query) {
+			String^ queryStr;
+			String^ column = SearchFilterChecker(cb_category->Text);
+			
+			if (String::Compare(query, "Default") == 0) {
+				queryStr = "select * from product_tb";
+			}
+			else {
+				queryStr = "select * from product_tb WHERE " + column + " LIKE '%" + query + "%'";
+			}
 
 			try{
+				
 				MySqlConnection^ con = gcnew MySqlConnection(constr);
-				MySqlDataAdapter^ sda = gcnew MySqlDataAdapter("select * from product_tb",con);
+				MySqlDataAdapter^ sda = gcnew MySqlDataAdapter(queryStr,con);
 				DataTable^ dt = gcnew DataTable();
 				sda->Fill(dt);
+				
 				bindingSource1->DataSource = dt;
 				table_prevProduct->DataSource = bindingSource1;
 			}
@@ -1524,6 +1524,39 @@ private: System::ComponentModel::IContainer^  components;
 			return code;
 		}
 
+		private: System::Void table_prevProduct_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+			
+			String^ search = table_prevProduct->Rows[e->RowIndex]->Cells["barcode"]->Value->ToString();
+			try
+			{
+				MySqlConnection^ con = gcnew MySqlConnection(constr);
+				MySqlCommand^ cmd = gcnew MySqlCommand("select * from product_tb WHERE barcode='"+search+"'", con);
+				MySqlDataReader^ dr;
+				con->Open();
+				dr = cmd->ExecuteReader();
+				Clearfields();
+
+				if (dr->Read()) {
+					lbl_prevCode->Text = dr->GetString(0);
+					inp_prevName->Text = dr->GetString(1);
+					inp_prevDesc->Text = dr->GetString(2);
+					inp_prevCategory->Text = dr->GetString(3);
+					inp_prevPrice->Text = dr->GetString(4);
+					inp_prevStock->Text = dr->GetString(5);
+				}
+				else {
+					MessageBox::Show("You search " + search + " is not existing try to change the filter.");
+				}
+				con->Close();
+
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show("Something wrong in searching the product: " + ex);
+			}
+			
+		}
+
 
 		// Utilities
 		void Clearfields() {
@@ -1542,23 +1575,21 @@ private: System::ComponentModel::IContainer^  components;
 			lbl_searchError->Text = "";
 		}
 
-
-
 		// Button Tab
 		private: System::Void btn_dashboard_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab_control->SelectTab(1);
 		}
 		private: System::Void btn_addproduct_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(0);
+			tab_control->SelectTab(0);
 		}
 		private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(3);
+			tab_control->SelectTab(3);
 		}
 		private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(2);
+			tab_control->SelectTab(2);
 		}
 		private: System::Void btn_editBack_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(1);
+			tab_control->SelectTab(1);
 		}
 		private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Hide();
@@ -1569,7 +1600,5 @@ private: System::ComponentModel::IContainer^  components;
 	
 		}
 
-		//Load Table
-		
 };
 }
