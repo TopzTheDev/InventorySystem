@@ -150,6 +150,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="cashier.resx">
+      <DependentUpon>cashier.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inventory.resx">
       <DependentUpon>inventory.h</DependentUpon>
     </EmbeddedResource>

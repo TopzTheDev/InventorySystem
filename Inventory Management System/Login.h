@@ -1,6 +1,6 @@
 #pragma once
 #include "inventory.h"
-
+#include "cashier.h"
 namespace InventoryManagementSystem {
 
 	using namespace System;
@@ -9,6 +9,7 @@ namespace InventoryManagementSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for Login
@@ -18,7 +19,10 @@ namespace InventoryManagementSystem {
 	public:
 		Login(void)
 		{
+			
 			InitializeComponent();
+			IntializeOtherComponent();
+			
 			//
 			//TODO: Add the constructor code here
 			//
@@ -44,9 +48,14 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::ComboBox^  comboBox1;
+	private: System::Windows::Forms::TextBox^  inp_loginPass;
+
+
+	private: System::Windows::Forms::Button^  btn_signIn;
+
+	private: System::Windows::Forms::ComboBox^  cb_loginAs;
+	private: System::Windows::Forms::Label^  label6;
+
 
 
 	private:
@@ -60,6 +69,10 @@ namespace InventoryManagementSystem {
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
+		void IntializeOtherComponent(void) {
+			cb_loginAs->SelectedItem = "Inventory";
+		}
+
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
@@ -71,9 +84,10 @@ namespace InventoryManagementSystem {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->inp_loginPass = (gcnew System::Windows::Forms::TextBox());
+			this->btn_signIn = (gcnew System::Windows::Forms::Button());
+			this->cb_loginAs = (gcnew System::Windows::Forms::ComboBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -108,7 +122,6 @@ namespace InventoryManagementSystem {
 			this->inp_userName->Name = L"inp_userName";
 			this->inp_userName->Size = System::Drawing::Size(351, 28);
 			this->inp_userName->TabIndex = 1;
-			this->inp_userName->Text = L"Hello World";
 			// 
 			// label1
 			// 
@@ -163,49 +176,61 @@ namespace InventoryManagementSystem {
 			this->label5->TabIndex = 7;
 			this->label5->Text = L"Password";
 			// 
-			// textBox1
+			// inp_loginPass
 			// 
-			this->textBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->inp_loginPass->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->inp_loginPass->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_loginPass->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_loginPass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->textBox1->HideSelection = false;
-			this->textBox1->Location = System::Drawing::Point(462, 253);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->PasswordChar = '*';
-			this->textBox1->Size = System::Drawing::Size(351, 28);
-			this->textBox1->TabIndex = 6;
-			this->textBox1->Text = L"Hello World";
+			this->inp_loginPass->HideSelection = false;
+			this->inp_loginPass->Location = System::Drawing::Point(462, 253);
+			this->inp_loginPass->Name = L"inp_loginPass";
+			this->inp_loginPass->PasswordChar = '*';
+			this->inp_loginPass->Size = System::Drawing::Size(351, 28);
+			this->inp_loginPass->TabIndex = 6;
 			// 
-			// button1
+			// btn_signIn
 			// 
-			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btn_signIn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_signIn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_signIn->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->btn_signIn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button1->Location = System::Drawing::Point(462, 349);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(160, 35);
-			this->button1->TabIndex = 8;
-			this->button1->Text = L"Sign In";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click);
+			this->btn_signIn->Location = System::Drawing::Point(462, 367);
+			this->btn_signIn->Name = L"btn_signIn";
+			this->btn_signIn->Size = System::Drawing::Size(160, 35);
+			this->btn_signIn->TabIndex = 8;
+			this->btn_signIn->Text = L"Sign In";
+			this->btn_signIn->UseVisualStyleBackColor = true;
+			this->btn_signIn->Click += gcnew System::EventHandler(this, &Login::button1_Click);
 			// 
-			// comboBox1
+			// cb_loginAs
 			// 
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->comboBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->cb_loginAs->BackColor = System::Drawing::Color::White;
+			this->cb_loginAs->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cb_loginAs->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->cb_loginAs->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->cb_loginAs->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Administrator", L"Inventory", L"Cashier" });
-			this->comboBox1->Location = System::Drawing::Point(462, 303);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(351, 28);
-			this->comboBox1->TabIndex = 3;
-			this->comboBox1->Text = L"Login as";
+			this->cb_loginAs->FormattingEnabled = true;
+			this->cb_loginAs->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Inventory", L"Cashier" });
+			this->cb_loginAs->Location = System::Drawing::Point(462, 325);
+			this->cb_loginAs->Name = L"cb_loginAs";
+			this->cb_loginAs->Size = System::Drawing::Size(351, 28);
+			this->cb_loginAs->TabIndex = 3;
+			// 
+			// label6
+			// 
+			this->label6->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label6->Location = System::Drawing::Point(459, 298);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(370, 26);
+			this->label6->TabIndex = 9;
+			this->label6->Text = L"Login As";
 			// 
 			// Login
 			// 
@@ -213,10 +238,11 @@ namespace InventoryManagementSystem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(855, 445);
-			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->cb_loginAs);
+			this->Controls->Add(this->btn_signIn);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->inp_loginPass);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -235,9 +261,48 @@ namespace InventoryManagementSystem {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		this->Hide();
-		inventory ^ frm2 = gcnew inventory(this);
-		frm2->ShowDialog();
+		try
+		{
+			String^ username = inp_userName->Text;
+			String^ password = inp_loginPass->Text;
+			String^ loginAs = cb_loginAs->Text;
+			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
+			MySqlConnection^ con = gcnew MySqlConnection(constr);
+			MySqlCommand^ cmd = gcnew MySqlCommand("select * from account_tb WHERE username='" + username + "' && password='"+password+"' && login_as='"+loginAs+"'", con);
+			MySqlDataReader^ dr;
+			con->Open();
+			dr = cmd->ExecuteReader();
+			
+			if (dr->Read()) {
+				if (String::Compare(loginAs, "Inventory") == 0) {
+					MessageBox::Show("Welcome to the Inventory");
+					this->Hide();
+					inventory ^ frm2 = gcnew inventory(this);
+					frm2->ShowDialog();
+				}
+				else {
+					MessageBox::Show("Welcome to the Cashier");
+					this->Hide();
+					cashier ^ frm3 = gcnew cashier(this);
+					frm3->ShowDialog();
+				}
+			}
+			else {
+				MessageBox::Show("Your Account is not exisiting try to change your position");
+				
+			}
+			con->Close();
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("Error on signing in " + ex);
+		}
+	}
+
+	void clearFields() {
+		inp_userName->Text = "";
+		inp_loginPass->Text = "";
+		cb_loginAs->SelectedItem = "Inventory";
 	}
 };
 }

@@ -44,6 +44,7 @@ namespace InventoryManagementSystem {
 
 	public:
 		//Connection to database
+
 		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
 		
 		inventory(void)
@@ -1073,6 +1074,7 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			// cb_editCategory
 			// 
+			this->cb_editCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cb_editCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
 			this->cb_editCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
@@ -1735,10 +1737,7 @@ private: System::ComponentModel::IContainer^  components;
 					}
 					
 				}
-				catch (Exception^ ex)
-				{
-
-				}
+				catch (Exception^ ex){MessageBox::Show("Error found on adding account " + ex);}
 			}
 		}
 			
@@ -1839,7 +1838,7 @@ private: System::ComponentModel::IContainer^  components;
 			}
 			catch (Exception^ ex)
 			{
-
+				MessageBox::Show("Error on loading fields account " + ex);
 			}
 		}
 
