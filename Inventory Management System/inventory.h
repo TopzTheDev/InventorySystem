@@ -32,6 +32,13 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  label38;
 	private: System::Windows::Forms::ComboBox^  cb_searchCategory;
 
+	private: System::Windows::Forms::BindingSource^  bindingSource2;
+	private: System::Windows::Forms::Button^  btn_accMode;
+
+
+
+
+
 
 	public:
 
@@ -154,23 +161,32 @@ private: System::Windows::Forms::ComboBox^  cb_editCategory;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::TabPage^  tab_accounts;
 private: System::Windows::Forms::Label^  label24;
+private: System::Windows::Forms::TextBox^  inp_accUser;
 
-private: System::Windows::Forms::TextBox^  textBox2;
-private: System::Windows::Forms::TextBox^  textBox3;
+
+
+
 private: System::Windows::Forms::Label^  label25;
-private: System::Windows::Forms::Label^  label26;
+
 private: System::Windows::Forms::Label^  label27;
-private: System::Windows::Forms::ComboBox^  comboBox1;
-private: System::Windows::Forms::TextBox^  textBox4;
+private: System::Windows::Forms::ComboBox^  cb_accLoginas;
+
+private: System::Windows::Forms::TextBox^  inp_accPass;
+
+
 private: System::Windows::Forms::Label^  label28;
-private: System::Windows::Forms::Button^  button3;
-private: System::Windows::Forms::Button^  button4;
-private: System::Windows::Forms::Button^  button5;
-private: System::Windows::Forms::ComboBox^  comboBox2;
-private: System::Windows::Forms::Label^  label29;
-private: System::Windows::Forms::Label^  label30;
-private: System::Windows::Forms::TextBox^  textBox1;
-private: System::Windows::Forms::DataGridView^  dataGridView1;
+private: System::Windows::Forms::Button^  btn_delAcc;
+private: System::Windows::Forms::Button^  btn_uppAcc;
+
+
+private: System::Windows::Forms::Button^  btn_addAcc;
+
+
+
+
+
+private: System::Windows::Forms::DataGridView^  tb_account;
+
 private: System::Windows::Forms::Label^  label31;
 private: System::Windows::Forms::Label^  label32;
 private: System::Windows::Forms::Label^  label34;
@@ -197,6 +213,7 @@ private: System::ComponentModel::IContainer^  components;
 
 		void InitalizeOtherComponent(void){
 			loadTable("Default");
+			loadAccountTable();
 			table_prevProduct->MultiSelect = true;
 			cb_category->SelectedItem = "Barcode";
 			cb_proCategory->SelectedItem = "Others";
@@ -274,24 +291,19 @@ private: System::ComponentModel::IContainer^  components;
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->tab_accounts = (gcnew System::Windows::Forms::TabPage());
+			this->btn_accMode = (gcnew System::Windows::Forms::Button());
 			this->label35 = (gcnew System::Windows::Forms::Label());
 			this->label37 = (gcnew System::Windows::Forms::Label());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->label29 = (gcnew System::Windows::Forms::Label());
-			this->label30 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->tb_account = (gcnew System::Windows::Forms::DataGridView());
+			this->btn_addAcc = (gcnew System::Windows::Forms::Button());
+			this->btn_delAcc = (gcnew System::Windows::Forms::Button());
+			this->btn_uppAcc = (gcnew System::Windows::Forms::Button());
 			this->label28 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->cb_accLoginas = (gcnew System::Windows::Forms::ComboBox());
+			this->inp_accPass = (gcnew System::Windows::Forms::TextBox());
 			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->inp_accUser = (gcnew System::Windows::Forms::TextBox());
 			this->label25 = (gcnew System::Windows::Forms::Label());
-			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->button8 = (gcnew System::Windows::Forms::Button());
@@ -299,15 +311,17 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_addproduct = (gcnew System::Windows::Forms::Button());
 			this->btn_dashboard = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->tab_dashboard->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->table_prevProduct))->BeginInit();
 			this->tab_addproduct->SuspendLayout();
 			this->tab_control->SuspendLayout();
 			this->tab_editproduct->SuspendLayout();
 			this->tab_accounts->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_account))->BeginInit();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tab_dashboard
@@ -1132,24 +1146,19 @@ private: System::ComponentModel::IContainer^  components;
 			// tab_accounts
 			// 
 			this->tab_accounts->BackColor = System::Drawing::Color::White;
+			this->tab_accounts->Controls->Add(this->btn_accMode);
 			this->tab_accounts->Controls->Add(this->label35);
 			this->tab_accounts->Controls->Add(this->label37);
-			this->tab_accounts->Controls->Add(this->comboBox2);
-			this->tab_accounts->Controls->Add(this->label29);
-			this->tab_accounts->Controls->Add(this->label30);
-			this->tab_accounts->Controls->Add(this->textBox1);
-			this->tab_accounts->Controls->Add(this->dataGridView1);
-			this->tab_accounts->Controls->Add(this->button5);
-			this->tab_accounts->Controls->Add(this->button3);
-			this->tab_accounts->Controls->Add(this->button4);
+			this->tab_accounts->Controls->Add(this->tb_account);
+			this->tab_accounts->Controls->Add(this->btn_addAcc);
+			this->tab_accounts->Controls->Add(this->btn_delAcc);
+			this->tab_accounts->Controls->Add(this->btn_uppAcc);
 			this->tab_accounts->Controls->Add(this->label28);
-			this->tab_accounts->Controls->Add(this->comboBox1);
-			this->tab_accounts->Controls->Add(this->textBox4);
+			this->tab_accounts->Controls->Add(this->cb_accLoginas);
+			this->tab_accounts->Controls->Add(this->inp_accPass);
 			this->tab_accounts->Controls->Add(this->label24);
-			this->tab_accounts->Controls->Add(this->textBox2);
-			this->tab_accounts->Controls->Add(this->textBox3);
+			this->tab_accounts->Controls->Add(this->inp_accUser);
 			this->tab_accounts->Controls->Add(this->label25);
-			this->tab_accounts->Controls->Add(this->label26);
 			this->tab_accounts->Controls->Add(this->label27);
 			this->tab_accounts->Location = System::Drawing::Point(4, 25);
 			this->tab_accounts->Name = L"tab_accounts";
@@ -1157,6 +1166,22 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_accounts->Size = System::Drawing::Size(1173, 530);
 			this->tab_accounts->TabIndex = 3;
 			this->tab_accounts->Text = L"Accounts";
+			// 
+			// btn_accMode
+			// 
+			this->btn_accMode->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(113)));
+			this->btn_accMode->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_accMode->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_accMode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->btn_accMode->ForeColor = System::Drawing::Color::White;
+			this->btn_accMode->Location = System::Drawing::Point(258, 78);
+			this->btn_accMode->Name = L"btn_accMode";
+			this->btn_accMode->Size = System::Drawing::Size(129, 35);
+			this->btn_accMode->TabIndex = 58;
+			this->btn_accMode->Text = L"Add Mode";
+			this->btn_accMode->UseVisualStyleBackColor = false;
+			this->btn_accMode->Click += gcnew System::EventHandler(this, &inventory::btn_accMode_Click);
 			// 
 			// label35
 			// 
@@ -1176,144 +1201,101 @@ private: System::ComponentModel::IContainer^  components;
 			this->label37->Size = System::Drawing::Size(551, 5);
 			this->label37->TabIndex = 56;
 			// 
-			// comboBox2
+			// tb_account
 			// 
-			this->comboBox2->Enabled = false;
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->comboBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->tb_account->BackgroundColor = System::Drawing::Color::White;
+			this->tb_account->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->tb_account->Enabled = false;
+			this->tb_account->Location = System::Drawing::Point(422, 37);
+			this->tb_account->Name = L"tb_account";
+			this->tb_account->Size = System::Drawing::Size(695, 442);
+			this->tb_account->TabIndex = 51;
+			this->tb_account->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_account_CellClick);
+			// 
+			// btn_addAcc
+			// 
+			this->btn_addAcc->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_addAcc->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_addAcc->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->btn_addAcc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(933, 36);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(184, 28);
-			this->comboBox2->TabIndex = 55;
+			this->btn_addAcc->Location = System::Drawing::Point(219, 359);
+			this->btn_addAcc->Name = L"btn_addAcc";
+			this->btn_addAcc->Size = System::Drawing::Size(160, 35);
+			this->btn_addAcc->TabIndex = 50;
+			this->btn_addAcc->Text = L"Add Account";
+			this->btn_addAcc->UseVisualStyleBackColor = true;
+			this->btn_addAcc->Click += gcnew System::EventHandler(this, &inventory::btn_addAcc_Click);
 			// 
-			// label29
+			// btn_delAcc
 			// 
-			this->label29->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
-			this->label29->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label29->Location = System::Drawing::Point(833, 38);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(94, 26);
-			this->label29->TabIndex = 54;
-			this->label29->Text = L"Category";
-			// 
-			// label30
-			// 
-			this->label30->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
-			this->label30->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label30->Location = System::Drawing::Point(421, 36);
-			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(62, 26);
-			this->label30->TabIndex = 53;
-			this->label30->Text = L"Search";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->textBox1->HideSelection = false;
-			this->textBox1->Location = System::Drawing::Point(488, 35);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(249, 28);
-			this->textBox1->TabIndex = 52;
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(422, 78);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(695, 401);
-			this->dataGridView1->TabIndex = 51;
-			// 
-			// button5
-			// 
-			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			this->button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button5->Location = System::Drawing::Point(228, 395);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(157, 35);
-			this->button5->TabIndex = 50;
-			this->button5->Text = L"Add Account";
-			this->button5->UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			this->button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+			this->btn_delAcc->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_delAcc->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_delAcc->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->btn_delAcc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)));
-			this->button3->Location = System::Drawing::Point(139, 444);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(166, 35);
-			this->button3->TabIndex = 49;
-			this->button3->Text = L"Delete Account";
-			this->button3->UseVisualStyleBackColor = true;
+			this->btn_delAcc->Location = System::Drawing::Point(219, 359);
+			this->btn_delAcc->Name = L"btn_delAcc";
+			this->btn_delAcc->Size = System::Drawing::Size(160, 35);
+			this->btn_delAcc->TabIndex = 49;
+			this->btn_delAcc->Text = L"Delete Account";
+			this->btn_delAcc->UseVisualStyleBackColor = true;
+			this->btn_delAcc->Visible = false;
+			this->btn_delAcc->Click += gcnew System::EventHandler(this, &inventory::btn_delAcc_Click);
 			// 
-			// button4
+			// btn_uppAcc
 			// 
-			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			this->button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btn_uppAcc->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_uppAcc->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_uppAcc->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->btn_uppAcc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button4->Location = System::Drawing::Point(34, 395);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(157, 35);
-			this->button4->TabIndex = 48;
-			this->button4->Text = L"Update Account";
-			this->button4->UseVisualStyleBackColor = true;
+			this->btn_uppAcc->Location = System::Drawing::Point(34, 359);
+			this->btn_uppAcc->Name = L"btn_uppAcc";
+			this->btn_uppAcc->Size = System::Drawing::Size(160, 35);
+			this->btn_uppAcc->TabIndex = 48;
+			this->btn_uppAcc->Text = L"Update Account";
+			this->btn_uppAcc->UseVisualStyleBackColor = true;
+			this->btn_uppAcc->Visible = false;
+			this->btn_uppAcc->Click += gcnew System::EventHandler(this, &inventory::btn_uppAcc_Click);
 			// 
 			// label28
 			// 
 			this->label28->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label28->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label28->Location = System::Drawing::Point(31, 319);
+			this->label28->Location = System::Drawing::Point(31, 275);
 			this->label28->Name = L"label28";
 			this->label28->Size = System::Drawing::Size(354, 26);
 			this->label28->TabIndex = 47;
 			this->label28->Text = L"Login as.";
 			// 
-			// comboBox1
+			// cb_accLoginas
 			// 
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->comboBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->cb_accLoginas->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->cb_accLoginas->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Administrator", L"Inventory", L"Cashier" });
-			this->comboBox1->Location = System::Drawing::Point(34, 349);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(351, 28);
-			this->comboBox1->TabIndex = 45;
-			this->comboBox1->Text = L"Login as";
+			this->cb_accLoginas->FormattingEnabled = true;
+			this->cb_accLoginas->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Inventory", L"Cashier" });
+			this->cb_accLoginas->Location = System::Drawing::Point(34, 305);
+			this->cb_accLoginas->Name = L"cb_accLoginas";
+			this->cb_accLoginas->Size = System::Drawing::Size(351, 28);
+			this->cb_accLoginas->TabIndex = 45;
 			// 
-			// textBox4
+			// inp_accPass
 			// 
-			this->textBox4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->inp_accPass->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->textBox4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->textBox4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->inp_accPass->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_accPass->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_accPass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->textBox4->HideSelection = false;
-			this->textBox4->Location = System::Drawing::Point(34, 273);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->PasswordChar = '*';
-			this->textBox4->Size = System::Drawing::Size(351, 28);
-			this->textBox4->TabIndex = 46;
-			this->textBox4->Text = L"Hello World";
+			this->inp_accPass->HideSelection = false;
+			this->inp_accPass->Location = System::Drawing::Point(34, 219);
+			this->inp_accPass->Name = L"inp_accPass";
+			this->inp_accPass->PasswordChar = '*';
+			this->inp_accPass->Size = System::Drawing::Size(351, 28);
+			this->inp_accPass->TabIndex = 46;
 			// 
 			// label24
 			// 
@@ -1327,62 +1309,37 @@ private: System::ComponentModel::IContainer^  components;
 			this->label24->TabIndex = 44;
 			this->label24->Text = L"Accounts";
 			// 
-			// textBox2
+			// inp_accUser
 			// 
-			this->textBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->inp_accUser->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->inp_accUser->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_accUser->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_accUser->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->textBox2->HideSelection = false;
-			this->textBox2->Location = System::Drawing::Point(34, 127);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(351, 28);
-			this->textBox2->TabIndex = 40;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->textBox3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->textBox3->HideSelection = false;
-			this->textBox3->Location = System::Drawing::Point(35, 197);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(351, 28);
-			this->textBox3->TabIndex = 38;
+			this->inp_accUser->HideSelection = false;
+			this->inp_accUser->Location = System::Drawing::Point(35, 143);
+			this->inp_accUser->Name = L"inp_accUser";
+			this->inp_accUser->Size = System::Drawing::Size(351, 28);
+			this->inp_accUser->TabIndex = 38;
 			// 
 			// label25
 			// 
 			this->label25->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label25->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label25->Location = System::Drawing::Point(33, 244);
+			this->label25->Location = System::Drawing::Point(33, 190);
 			this->label25->Name = L"label25";
 			this->label25->Size = System::Drawing::Size(354, 26);
 			this->label25->TabIndex = 43;
 			this->label25->Text = L"Password";
-			// 
-			// label26
-			// 
-			this->label26->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
-			this->label26->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label26->Location = System::Drawing::Point(31, 100);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(354, 26);
-			this->label26->TabIndex = 41;
-			this->label26->Text = L"ID#";
 			// 
 			// label27
 			// 
 			this->label27->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label27->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label27->Location = System::Drawing::Point(32, 170);
+			this->label27->Location = System::Drawing::Point(32, 116);
 			this->label27->Name = L"label27";
 			this->label27->Size = System::Drawing::Size(354, 26);
 			this->label27->TabIndex = 39;
@@ -1482,47 +1439,51 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_editproduct->PerformLayout();
 			this->tab_accounts->ResumeLayout(false);
 			this->tab_accounts->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_account))->EndInit();
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 
 #pragma endregion
 		//Create Product to the database
-		
 		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			try
-			{
-				
-				MySqlConnection^ con = gcnew MySqlConnection(constr);
-
-				String^	barcode = inp_proCode->Text;
-				String^	proName = inp_proName->Text;
-				String^	proDesc = inp_proDesc->Text;
-				String^	proCategory = cb_proCategory->Text;
-				double	proPrice = double::Parse(inp_proPrice->Text);
-				int	proStock = Int32::Parse(inp_proStock->Text);
-
-
-				MySqlCommand^ cmd = gcnew MySqlCommand("insert into product_tb values("+barcode+",'"+proName+"','"+proDesc+"','"+proCategory+"','"+proPrice+"','"+proStock+"')", con);
-				//"INSERT INTO `product_tb`(`barcode`, `pro_name`, `pro_desc`, `pro_category`, `pro_price`, `pro_stock`) VALUES ("+barcode+","+proName+","+proDesc+","+proCategory+","+proPrice+","+proStock+")"
-				//"insert into product_tb values("+barcode+","+proName+","+proDesc+"," +proCategory+","+proPrice+"," + proStock + ")"
-				MySqlDataReader^ dr;
-				con->Open();
-				dr = cmd->ExecuteReader();
-				MessageBox::Show("The product " + proName + " with barcode of " + barcode + " added");
-				clearfields();
-				tab_control->SelectTab(1);
-				loadTable("Default");
-				
-				
-				con->Close();
+			if (validateFields("add_emptyFields")) {
+				MessageBox::Show("Empty fields, Adding Product is not applied");
 			}
-			catch (Exception^ ex)
-			{
-				MessageBox::Show("Something wrong in adding the product: "+ ex);
+			else {
+				try
+				{
+					MySqlConnection^ con = gcnew MySqlConnection(constr);
+
+					String^	barcode = inp_proCode->Text;
+					String^	proName = inp_proName->Text;
+					String^	proDesc = inp_proDesc->Text;
+					String^	proCategory = cb_proCategory->Text;
+					double	proPrice = double::Parse(inp_proPrice->Text);
+					int	proStock = Int32::Parse(inp_proStock->Text);
+
+
+					MySqlCommand^ cmd = gcnew MySqlCommand("insert into product_tb values(" + barcode + ",'" + proName + "','" + proDesc + "','" + proCategory + "','" + proPrice + "','" + proStock + "')", con);
+					//"INSERT INTO `product_tb`(`barcode`, `pro_name`, `pro_desc`, `pro_category`, `pro_price`, `pro_stock`) VALUES ("+barcode+","+proName+","+proDesc+","+proCategory+","+proPrice+","+proStock+")"
+					//"insert into product_tb values("+barcode+","+proName+","+proDesc+"," +proCategory+","+proPrice+"," + proStock + ")"
+					MySqlDataReader^ dr;
+					con->Open();
+					dr = cmd->ExecuteReader();
+					MessageBox::Show("The product " + proName + " with barcode of " + barcode + " added");
+					clearfields();
+					tab_control->SelectTab(1);
+					loadTable("Default");
+
+
+					con->Close();
+				}
+				catch (Exception^ ex)
+				{
+					MessageBox::Show("Something wrong in adding the product: " + ex);
+				}
 			}
 		}
 		
@@ -1693,56 +1654,6 @@ private: System::ComponentModel::IContainer^  components;
 			}
 			
 		}
-	
-		// Utilities
-		void clearfields() {
-			inp_proName->Text = "";
-			inp_proCode->Text = "";
-			inp_proDesc->Text = "";
-			inp_proPrice->Text = "";
-			inp_proStock->Text = "";
-			inp_prevStock->Text = "";
-			inp_prevPrice->Text = "";
-			inp_prevDesc->Text = "";
-			lbl_prevCode->Text = "";
-			inp_prevName->Text = "";
-			cb_proCategory->Text = "";
-			inp_prevCategory->Text = "";
-			lbl_searchError->Text = "";
-			inp_editCode->Text = "";
-			inp_editName->Text = "";
-			inp_editDesc->Text = "";
-			cb_editCategory->SelectedItem = "";
-			inp_editPrice->Text = "";
-			inp_editStock->Text ="";
-			checkName=""; 
-			checkDesc=""; 
-			checkPrice=""; 
-			checkStock=""; 
-			checkCategory="";
-		}
-		
-		bool validateFields(String^ toValidate) {
-			bool isValidated;
-			if (String::Compare(toValidate, "update_sameFields") == 0) {
-				isValidated = String::Compare(inp_editName->Text, checkName) == 0
-					&& String::Compare(inp_editDesc->Text, checkDesc) == 0 && String::Compare(cb_editCategory->Text, checkCategory) == 0
-					&& String::Compare(inp_editPrice->Text, checkPrice) == 0 && String::Compare(inp_editStock->Text, checkStock) == 0 ? true : false;
-			}
-			else if(String::Compare(toValidate, "update_emptyFields") == 0){
-				isValidated = String::Compare(inp_editCode->Text, "") == 0 || String::Compare(inp_editName->Text,"") == 0
-					|| String::Compare(inp_editDesc->Text, "") == 0 || String::Compare(cb_editCategory->Text, "") == 0
-					|| String::Compare(inp_editPrice->Text, "") == 0 || String::Compare(inp_editStock->Text, "") == 0 ? true : false;
-			}
-			else if (String::Compare(toValidate, "add_emptyFields") == 0) {
-				isValidated = String::Compare(inp_proCode->Text, "") == 0 && String::Compare(inp_proName->Text, "") == 0
-					&& String::Compare(inp_proCode->Text, "") == 0 && String::Compare(inp_proDesc->Text, "") == 0
-					&& String::Compare(inp_proPrice->Text, "") == 0 && String::Compare(inp_proStock->Text, "") == 0 ? true : false;
-			}
-			
-			return isValidated;
-			
-		}
 
 		// Button Tab
 		private: System::Void btn_dashboard_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -1768,7 +1679,6 @@ private: System::ComponentModel::IContainer^  components;
 		this->Hide();
 		obj->Show();
 		}
-
 		private: System::Void cb_category_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 			if (String::Compare(cb_category->Text, "Category")==0) {
 				cb_searchCategory->Visible = true;
@@ -1786,5 +1696,238 @@ private: System::ComponentModel::IContainer^  components;
 		private: System::Void cb_searchCategory_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 			loadTable(cb_searchCategory->Text);
 		}
+		
+		// ACCOUNT SECTION ===================================================================
+		//Add Account
+		private: System::Void btn_addAcc_Click(System::Object^  sender, System::EventArgs^  e) {
+			if (validateFields("add_accEmptyFields")) {
+				MessageBox::Show("Some fields is empty, Adding Account is not applied");
+			}
+			else {
+				String^ username = inp_accUser->Text;
+				String^ password = inp_accPass->Text;
+				String^ loginAs = cb_accLoginas->Text;
+
+				try
+				{
+					MySqlConnection^ con = gcnew MySqlConnection(constr);
+					MySqlCommand^ cmd = gcnew MySqlCommand("SELECT * FROM account_tb WHERE username='"+ username +"'", con);
+					MySqlDataReader^ dr;
+					con->Open();
+					dr = cmd->ExecuteReader();
+					if (dr->Read()) {
+						MessageBox::Show("The username "+username+" is existing try another username");
+					}
+					else {
+						try
+						{
+							MySqlConnection^ con = gcnew MySqlConnection(constr);
+							MySqlCommand^ cmd = gcnew MySqlCommand("insert into account_tb values('"+username+"','"+password+"','"+loginAs+"')", con);
+							MySqlDataReader^ dr;
+							con->Open();
+							dr = cmd->ExecuteReader();
+							MessageBox::Show("The username " + username + " is added on account");
+							loadAccountTable();
+							clearfields();
+							con->Close();
+						}
+						catch (Exception^ ex) { MessageBox::Show("Error found on adding account " + ex); }
+					}
+					
+				}
+				catch (Exception^ ex)
+				{
+
+				}
+			}
+		}
+			
+		// Read Account to the Database
+		void loadAccountTable() {
+			MySqlConnection^ con = gcnew MySqlConnection(constr);
+			MySqlDataAdapter^ sda = gcnew MySqlDataAdapter("select * from account_tb", con);
+			DataTable^ dt = gcnew DataTable();
+			sda->Fill(dt);
+			bindingSource2->DataSource = dt;
+			tb_account->DataSource = bindingSource2;
+
+			if (tb_account->RowCount == 1) {
+				MessageBox::Show("No Accounts found");
+			}
+		}
+		
+		//Update Account 
+		private: System::Void btn_uppAcc_Click(System::Object^  sender, System::EventArgs^  e) {
+			if (validateFields("add_accEmptyFields")) {
+				MessageBox::Show("Some fields is empty, Updating Account is not applied");
+			}
+			else {
+				String^ username = inp_accUser->Text;
+				String^ password = inp_accPass->Text;
+				String^ loginAs = cb_accLoginas->Text;
+				try
+				{
+					MySqlConnection^ con = gcnew MySqlConnection(constr);
+					MySqlCommand^ cmd = gcnew MySqlCommand("UPDATE account_tb SET password='"+ password +"',login_as='"+loginAs+"' WHERE username='"+username+"'", con);
+					MySqlDataReader^ dr;
+					con->Open();
+					dr = cmd->ExecuteReader();
+					MessageBox::Show("The username " + "" + " is update on account");
+					loadAccountTable();
+					clearfields();
+					con->Close();
+				}
+				catch (Exception^ ex) { MessageBox::Show("Error found on updating account " + ex); }
+			}
+		
+		}
+
+		//Delete Account
+		private: System::Void btn_delAcc_Click(System::Object^  sender, System::EventArgs^  e) {
+			if (validateFields("add_accEmptyFields")) {
+				MessageBox::Show("Some fields is empty, Deleting Account is not applied");
+			}
+			else {
+				String^ username = inp_accUser->Text;
+				if (MessageBox::Show("Are you sure to delete " + username + " ?", "Inventory Management System",
+					MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+					try
+					{
+						MySqlConnection^ con = gcnew MySqlConnection(constr);
+						MySqlCommand^ cmd = gcnew MySqlCommand("DELETE FROM account_tb WHERE username='" + username + "'", con);
+						MySqlDataReader^ dr;
+						con->Open();
+						dr = cmd->ExecuteReader();
+						MessageBox::Show("The username " + username + " is deleted on account");
+						loadAccountTable();
+						clearfields();
+						con->Close();
+					}
+					catch (Exception^ ex) { MessageBox::Show("Error found on updating account " + ex); }
+
+				}
+				else {
+					MessageBox::Show("Deleting Account Aborted");
+				}
+				
+			}
+		}
+		
+		//Load field by click
+		private: System::Void tb_account_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+			String^ search = tb_account->Rows[e->RowIndex]->Cells["username"]->Value->ToString();
+			try
+			{
+				MySqlConnection^ con = gcnew MySqlConnection(constr);
+				MySqlCommand^ cmd = gcnew MySqlCommand("select * from account_tb WHERE username='" + search + "'", con);
+				MySqlDataReader^ dr;
+				con->Open();
+				dr = cmd->ExecuteReader();
+				clearfields();
+
+				if (dr->Read()) {
+					inp_accUser->Text = dr->GetString(0);
+					inp_accPass->Text = dr->GetString(1);
+					cb_accLoginas->SelectedItem = dr->GetString(2);
+
+				}
+				else {
+					MessageBox::Show("The cell clicked " + search + " is not existing.");
+					clearfields();
+				}
+				con->Close();
+			}
+			catch (Exception^ ex)
+			{
+
+			}
+		}
+
+		// Utilities
+		void clearfields() {
+			inp_proName->Text = "";
+			inp_proCode->Text = "";
+			inp_proDesc->Text = "";
+			inp_proPrice->Text = "";
+			inp_proStock->Text = "";
+			inp_prevStock->Text = "";
+			inp_prevPrice->Text = "";
+			inp_prevDesc->Text = "";
+			lbl_prevCode->Text = "";
+			inp_prevName->Text = "";
+			cb_proCategory->Text = "";
+			inp_prevCategory->Text = "";
+			lbl_searchError->Text = "";
+			inp_editCode->Text = "";
+			inp_editName->Text = "";
+			inp_editDesc->Text = "";
+			cb_editCategory->SelectedItem = "";
+			inp_editPrice->Text = "";
+			inp_editStock->Text = "";
+			checkName = "";
+			checkDesc = "";
+			checkPrice = "";
+			checkStock = "";
+			checkCategory = "";
+			inp_accUser->Text="";
+			inp_accPass->Text="";
+			cb_accLoginas->SelectedItem ="";
+		}
+
+		bool validateFields(String^ toValidate) {
+			bool isValidated;
+			if (String::Compare(toValidate, "update_sameFields") == 0) {
+				isValidated = String::Compare(inp_editName->Text, checkName) == 0
+					&& String::Compare(inp_editDesc->Text, checkDesc) == 0 && String::Compare(cb_editCategory->Text, checkCategory) == 0
+					&& String::Compare(inp_editPrice->Text, checkPrice) == 0 && String::Compare(inp_editStock->Text, checkStock) == 0 ? true : false;
+			}
+			if (String::Compare(toValidate, "update_emptyFields") == 0) {
+				isValidated = String::Compare(inp_editCode->Text, "") == 0 || String::Compare(inp_editName->Text, "") == 0
+					|| String::Compare(inp_editDesc->Text, "") == 0 || String::Compare(cb_editCategory->Text, "") == 0
+					|| String::Compare(inp_editPrice->Text, "") == 0 || String::Compare(inp_editStock->Text, "") == 0 ? true : false;
+			}
+			if (String::Compare(toValidate, "add_emptyFields") == 0) {
+				isValidated = String::Compare(inp_proCode->Text, "") == 0 || String::Compare(inp_proName->Text, "") == 0
+					|| String::Compare(inp_proCode->Text, "") == 0 || String::Compare(inp_proDesc->Text, "") == 0
+					|| String::Compare(inp_proPrice->Text, "") == 0 || String::Compare(inp_proStock->Text, "") == 0 ? true : false;
+			}
+			if (String::Compare(toValidate, "add_accEmptyFields") == 0) {
+				isValidated = String::Compare(inp_accUser->Text, "") == 0 || String::Compare(inp_accPass->Text, "") == 0
+					|| String::Compare(cb_accLoginas->Text, "") == 0 ? true : false;
+			}
+			return isValidated;
+
+		}
+
+		int toggle = 0;
+		private: System::Void btn_accMode_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			if (toggle == 0) {
+				btn_accMode->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+					static_cast<System::Int32>(static_cast<System::Byte>(60)));
+				btn_accMode->Text = "Edit Mode";
+				toggleAccMode(false);
+				toggle++;
+			}
+			else {
+				btn_accMode->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(204)),
+					static_cast<System::Int32>(static_cast<System::Byte>(113)));
+				btn_accMode->Text = "Add Mode";
+				toggleAccMode(true);
+				clearfields();
+				toggle--;
+			}
+
+		}
+
+
+		void toggleAccMode(bool isAddMode) {
+			inp_accUser->Enabled = isAddMode;
+			btn_delAcc->Visible = !isAddMode;
+			btn_uppAcc->Visible = !isAddMode;
+			btn_addAcc->Visible = isAddMode;
+			tb_account->Enabled = !isAddMode;
+		}
+
 };
 }

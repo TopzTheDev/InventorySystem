@@ -1,5 +1,9 @@
 ﻿  Login.cpp
+c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1738): warning C4101: 'ex': unreferenced local variable
+c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1840): warning C4101: 'ex': unreferenced local variable
   inventory.cpp
+c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1738): warning C4101: 'ex': unreferenced local variable
+c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1840): warning C4101: 'ex': unreferenced local variable
   Generating Code...
   cashier.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Inventory Management System.vcxproj -> C:\Users\Christopher\source\repos\InventorySystem\Debug\Inventory Management System.exe
