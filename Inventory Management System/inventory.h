@@ -1862,29 +1862,7 @@ private: System::ComponentModel::IContainer^  components;
 
 				try
 				{
-					MySqlConnection^ con = gcnew MySqlConnection(constr);
-					MySqlCommand^ cmd = gcnew MySqlCommand("SELECT * FROM account_tb WHERE username='"+ username +"'", con);
-					MySqlDataReader^ dr;
-					con->Open();
-					dr = cmd->ExecuteReader();
-					if (dr->Read()) {
-						MessageBox::Show("The username "+username+" is existing try another username");
-					}
-					else {
-						try
-						{
-							MySqlConnection^ con = gcnew MySqlConnection(constr);
-							MySqlCommand^ cmd = gcnew MySqlCommand("insert into account_tb values('"+username+"','"+password+"','"+loginAs+"')", con);
-							MySqlDataReader^ dr;
-							con->Open();
-							dr = cmd->ExecuteReader();
-							MessageBox::Show("The username " + username + " is added on account");
-							loadAccountTable();
-							clearfields();
-							con->Close();
-						}
-						catch (Exception^ ex) { MessageBox::Show("Error found on adding account " + ex); }
-					}
+					
 					
 				}
 				catch (Exception^ ex){MessageBox::Show("Error found on adding account " + ex);}
@@ -1893,12 +1871,7 @@ private: System::ComponentModel::IContainer^  components;
 			
 		// Read Account to the Database
 		void loadAccountTable() {
-			MySqlConnection^ con = gcnew MySqlConnection(constr);
-			MySqlDataAdapter^ sda = gcnew MySqlDataAdapter("select * from account_tb", con);
-			DataTable^ dt = gcnew DataTable();
-			sda->Fill(dt);
-			bindingSource2->DataSource = dt;
-			tb_account->DataSource = bindingSource2;
+			
 
 			if (tb_account->RowCount == 1) {
 				MessageBox::Show("No Accounts found");
@@ -1916,15 +1889,7 @@ private: System::ComponentModel::IContainer^  components;
 				String^ loginAs = cb_accLoginas->Text;
 				try
 				{
-					MySqlConnection^ con = gcnew MySqlConnection(constr);
-					MySqlCommand^ cmd = gcnew MySqlCommand("UPDATE account_tb SET password='"+ password +"',login_as='"+loginAs+"' WHERE username='"+username+"'", con);
-					MySqlDataReader^ dr;
-					con->Open();
-					dr = cmd->ExecuteReader();
-					MessageBox::Show("The username " + "" + " is update on account");
-					loadAccountTable();
-					clearfields();
-					con->Close();
+					
 				}
 				catch (Exception^ ex) { MessageBox::Show("Error found on updating account " + ex); }
 			}
@@ -1942,15 +1907,7 @@ private: System::ComponentModel::IContainer^  components;
 					MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 					try
 					{
-						MySqlConnection^ con = gcnew MySqlConnection(constr);
-						MySqlCommand^ cmd = gcnew MySqlCommand("DELETE FROM account_tb WHERE username='" + username + "'", con);
-						MySqlDataReader^ dr;
-						con->Open();
-						dr = cmd->ExecuteReader();
-						MessageBox::Show("The username " + username + " is deleted on account");
-						loadAccountTable();
-						clearfields();
-						con->Close();
+						
 					}
 					catch (Exception^ ex) { MessageBox::Show("Error found on updating account " + ex); }
 
@@ -1967,24 +1924,7 @@ private: System::ComponentModel::IContainer^  components;
 			String^ search = tb_account->Rows[e->RowIndex]->Cells["username"]->Value->ToString();
 			try
 			{
-				MySqlConnection^ con = gcnew MySqlConnection(constr);
-				MySqlCommand^ cmd = gcnew MySqlCommand("select * from account_tb WHERE username='" + search + "'", con);
-				MySqlDataReader^ dr;
-				con->Open();
-				dr = cmd->ExecuteReader();
-				clearfields();
-
-				if (dr->Read()) {
-					inp_accUser->Text = dr->GetString(0);
-					inp_accPass->Text = dr->GetString(1);
-					cb_accLoginas->SelectedItem = dr->GetString(2);
-
-				}
-				else {
-					MessageBox::Show("The cell clicked " + search + " is not existing.");
-					clearfields();
-				}
-				con->Close();
+				
 			}
 			catch (Exception^ ex)
 			{

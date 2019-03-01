@@ -10,7 +10,6 @@ namespace InventoryManagementSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for Login
@@ -282,7 +281,7 @@ namespace InventoryManagementSystem {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		try
 		{
-			String^ username = inp_userName->Text;
+			/*String^ username = inp_userName->Text;
 			String^ password = inp_loginPass->Text;
 			String^ loginAs = cb_loginAs->Text;
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
@@ -290,9 +289,9 @@ namespace InventoryManagementSystem {
 			MySqlCommand^ cmd = gcnew MySqlCommand("select * from account_tb WHERE username='" + username + "' && password='"+password+"' && login_as='"+loginAs+"'", con);
 			MySqlDataReader^ dr;
 			con->Open();
-			dr = cmd->ExecuteReader();
+			dr = cmd->ExecuteReader();*/
 			
-			if (dr->Read()) {
+			/*if (dr->Read()) {
 				if (String::Compare(loginAs, "Inventory") == 0) {
 					MessageBox::Show("Welcome to the Inventory");
 					this->Hide();
@@ -310,7 +309,7 @@ namespace InventoryManagementSystem {
 				MessageBox::Show("Your Account is not exisiting try to change your position");
 				
 			}
-			con->Close();
+			con->Close();*/
 		}
 		catch (Exception^ ex)
 		{

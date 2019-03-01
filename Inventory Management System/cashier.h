@@ -8,7 +8,6 @@ namespace InventoryManagementSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for cashier
@@ -666,29 +665,7 @@ namespace InventoryManagementSystem {
 	private: System::Void inp_proCode_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 		try
 		{
-			String^ code = inp_proCode->Text;
-			String^ type = convertSelection(cb_toSearch->Text);
-			MySqlConnection^ con = gcnew MySqlConnection(constr);
-			MySqlCommand^ cmd = gcnew MySqlCommand("select * from product_tb WHERE " + type + "='" + code + "'", con);
-			MySqlDataReader^ dr;
-			con->Open();
-			dr = cmd->ExecuteReader();
-
-			if (dr->Read()) {
-				barcode = dr->GetString(0);
-				proName = dr->GetString(1);
-				lbl_barcode->Text = dr->GetString(0);
-				lbl_proName->Text = dr->GetString(1);
-				lbl_proDesc->Text = dr->GetString(2);
-				lbl_proCategory->Text = dr->GetString(3);
-				lbl_proPrice->Text = dr->GetString(4);
-				lbl_proStock->Text = dr->GetString(5);
-				// Computer the total price by sending the price of searched product
-				proStock = Int32::Parse(dr->GetString(5));
-				currentPrice = Double::Parse(dr->GetString(4));
-				computeTotal();
-				MessageBox::Show("Text Change");
-			}
+			
 		}
 		catch (Exception^ ex)
 		{

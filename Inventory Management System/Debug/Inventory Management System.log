@@ -1,10 +1,9 @@
-﻿  Login.cpp
-c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1657): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  inventory.cpp
-c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1657): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  cashier.cpp
+  Login.cpp
+c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1656): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Generating Code...
-c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1614): warning C4715: 'InventoryManagementSystem::inventory::proSearch': not all control paths return a value
-c:\users\christopher\source\repos\inventorysystem\inventory management system\cashier.h(716): warning C4715: 'InventoryManagementSystem::cashier::CheckStock': not all control paths return a value
-c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1614): warning C4715: 'InventoryManagementSystem::inventory::proSearch': not all control paths return a value
+c:\users\christopher\source\repos\inventorysystem\inventory management system\cashier.h(693): warning C4715: 'InventoryManagementSystem::cashier::CheckStock': not all control paths return a value
+c:\users\christopher\source\repos\inventorysystem\inventory management system\inventory.h(1613): warning C4715: 'InventoryManagementSystem::inventory::proSearch': not all control paths return a value
+c:\users\christopher\source\repos\inventorysystem\inventory management system\cashier.h(693): warning C4715: 'InventoryManagementSystem::cashier::CheckStock': not all control paths return a value
   cashier.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Inventory Management System.vcxproj -> C:\Users\Christopher\source\repos\InventorySystem\Debug\Inventory Management System.exe
