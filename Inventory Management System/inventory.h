@@ -1,8 +1,15 @@
 #pragma once
+#include <conio.h>
 #include <iostream>
 #include <string>
-#include <vector> 
+#include <list>
+#include <vector>
+#include <array>
+#include <fstream> 
+#include <stdio.h>
+
 namespace InventoryManagementSystem {
+	
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -10,9 +17,8 @@ namespace InventoryManagementSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace MySql::Data::MySqlClient;
-	using namespace std;
-	
+	using namespace System::IO;
+
 	/// <summary>
 	/// Summary for inventory
 	/// </summary>
@@ -20,7 +26,8 @@ namespace InventoryManagementSystem {
 	{
 	public:
 		Form ^obj;
-		
+
+	
 	private: System::Windows::Forms::TextBox^  inp_prevCategory;
 	private: System::Windows::Forms::Label^  lbl_prevCode;
 	private: System::Windows::Forms::Label^  lbl_searchError;
@@ -34,11 +41,16 @@ namespace InventoryManagementSystem {
 
 	private: System::Windows::Forms::BindingSource^  bindingSource2;
 	private: System::Windows::Forms::Button^  btn_accMode;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_barcode;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_name;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_description;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_category;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_stock;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_price;
+	private: System::Windows::Forms::NumericUpDown^  inp_proStock;
 
-
-
-
-
+	private: System::Windows::Forms::NumericUpDown^  inp_proPrice;
+	private: System::Windows::Forms::TextBox^  inp_proCode;
 
 	public:
 
@@ -46,7 +58,6 @@ namespace InventoryManagementSystem {
 		//Connection to database
 
 		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
-		
 		inventory(void)
 		{
 			
@@ -113,10 +124,10 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Button^  button2;
 
 	private: System::Windows::Forms::Label^  label7;
-	private: System::Windows::Forms::TextBox^  inp_proStock;
-	private: System::Windows::Forms::TextBox^  inp_proPrice;
+
+
 	private: System::Windows::Forms::TextBox^  inp_proDesc;
-	private: System::Windows::Forms::TextBox^  inp_proCode;
+
 	private: System::Windows::Forms::TextBox^  inp_proName;
 	private: System::Windows::Forms::Label^  label6;
 
@@ -182,10 +193,6 @@ private: System::Windows::Forms::Button^  btn_uppAcc;
 
 private: System::Windows::Forms::Button^  btn_addAcc;
 
-
-
-
-
 private: System::Windows::Forms::DataGridView^  tb_account;
 
 private: System::Windows::Forms::Label^  label31;
@@ -204,8 +211,7 @@ private: System::ComponentModel::IContainer^  components;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-
-
+		
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -213,7 +219,7 @@ private: System::ComponentModel::IContainer^  components;
 		/// </summary>
 
 		void InitalizeOtherComponent(void){
-			loadTable("Default");
+			/*loadTable("Default");
 			loadAccountTable();
 			table_prevProduct->MultiSelect = true;
 			cb_category->SelectedItem = "Barcode";
@@ -224,7 +230,9 @@ private: System::ComponentModel::IContainer^  components;
 			table_prevProduct->Columns[3]->HeaderText = "Category";
 			table_prevProduct->Columns[4]->HeaderText = "Price";
 			table_prevProduct->Columns[5]->HeaderText = "Stocks";
-			cb_searchCategory->Visible = false;
+			cb_searchCategory->Visible = false;*/
+			table_prevProduct->AllowUserToAddRows = false;
+			loadTable();
 		}
 		void InitializeComponent(void)
 		{	
@@ -233,6 +241,12 @@ private: System::ComponentModel::IContainer^  components;
 			this->cb_searchCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->table_prevProduct = (gcnew System::Windows::Forms::DataGridView());
+			this->cl_barcode = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cl_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cl_description = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cl_category = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cl_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cl_price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->lbl_searchError = (gcnew System::Windows::Forms::Label());
 			this->lbl_prevCode = (gcnew System::Windows::Forms::Label());
 			this->inp_prevCategory = (gcnew System::Windows::Forms::TextBox());
@@ -254,16 +268,15 @@ private: System::ComponentModel::IContainer^  components;
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->tab_addproduct = (gcnew System::Windows::Forms::TabPage());
+			this->inp_proPrice = (gcnew System::Windows::Forms::NumericUpDown());
+			this->inp_proStock = (gcnew System::Windows::Forms::NumericUpDown());
 			this->cb_proCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->inp_proStock = (gcnew System::Windows::Forms::TextBox());
-			this->inp_proPrice = (gcnew System::Windows::Forms::TextBox());
 			this->inp_proDesc = (gcnew System::Windows::Forms::TextBox());
-			this->inp_proCode = (gcnew System::Windows::Forms::TextBox());
 			this->inp_proName = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -313,9 +326,12 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_dashboard = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->inp_proCode = (gcnew System::Windows::Forms::TextBox());
 			this->tab_dashboard->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->table_prevProduct))->BeginInit();
 			this->tab_addproduct->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proPrice))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proStock))->BeginInit();
 			this->tab_control->SuspendLayout();
 			this->tab_editproduct->SuspendLayout();
 			this->tab_accounts->SuspendLayout();
@@ -389,11 +405,50 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			this->table_prevProduct->BackgroundColor = System::Drawing::Color::White;
 			this->table_prevProduct->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->table_prevProduct->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+				this->cl_barcode,
+					this->cl_name, this->cl_description, this->cl_category, this->cl_stock, this->cl_price
+			});
 			this->table_prevProduct->Location = System::Drawing::Point(438, 87);
 			this->table_prevProduct->Name = L"table_prevProduct";
 			this->table_prevProduct->Size = System::Drawing::Size(703, 401);
 			this->table_prevProduct->TabIndex = 42;
 			this->table_prevProduct->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::table_prevProduct_CellClick);
+			// 
+			// cl_barcode
+			// 
+			this->cl_barcode->HeaderText = L"Barcode";
+			this->cl_barcode->Name = L"cl_barcode";
+			// 
+			// cl_name
+			// 
+			this->cl_name->HeaderText = L"Name";
+			this->cl_name->Name = L"cl_name";
+			this->cl_name->ReadOnly = true;
+			// 
+			// cl_description
+			// 
+			this->cl_description->HeaderText = L"Description";
+			this->cl_description->Name = L"cl_description";
+			this->cl_description->ReadOnly = true;
+			// 
+			// cl_category
+			// 
+			this->cl_category->HeaderText = L"Category";
+			this->cl_category->Name = L"cl_category";
+			this->cl_category->ReadOnly = true;
+			// 
+			// cl_stock
+			// 
+			this->cl_stock->HeaderText = L"Stock";
+			this->cl_stock->Name = L"cl_stock";
+			this->cl_stock->ReadOnly = true;
+			// 
+			// cl_price
+			// 
+			this->cl_price->HeaderText = L"Price";
+			this->cl_price->Name = L"cl_price";
+			this->cl_price->ReadOnly = true;
 			// 
 			// lbl_searchError
 			// 
@@ -644,16 +699,16 @@ private: System::ComponentModel::IContainer^  components;
 			// tab_addproduct
 			// 
 			this->tab_addproduct->BackColor = System::Drawing::Color::White;
+			this->tab_addproduct->Controls->Add(this->inp_proCode);
+			this->tab_addproduct->Controls->Add(this->inp_proPrice);
+			this->tab_addproduct->Controls->Add(this->inp_proStock);
 			this->tab_addproduct->Controls->Add(this->cb_proCategory);
 			this->tab_addproduct->Controls->Add(this->label34);
 			this->tab_addproduct->Controls->Add(this->label33);
 			this->tab_addproduct->Controls->Add(this->label31);
 			this->tab_addproduct->Controls->Add(this->button2);
 			this->tab_addproduct->Controls->Add(this->label7);
-			this->tab_addproduct->Controls->Add(this->inp_proStock);
-			this->tab_addproduct->Controls->Add(this->inp_proPrice);
 			this->tab_addproduct->Controls->Add(this->inp_proDesc);
-			this->tab_addproduct->Controls->Add(this->inp_proCode);
 			this->tab_addproduct->Controls->Add(this->inp_proName);
 			this->tab_addproduct->Controls->Add(this->label6);
 			this->tab_addproduct->Controls->Add(this->label5);
@@ -668,6 +723,29 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_addproduct->Size = System::Drawing::Size(1173, 530);
 			this->tab_addproduct->TabIndex = 0;
 			this->tab_addproduct->Text = L"Add Product";
+			// 
+			// inp_proPrice
+			// 
+			this->inp_proPrice->DecimalPlaces = 2;
+			this->inp_proPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_proPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_proPrice->Location = System::Drawing::Point(773, 234);
+			this->inp_proPrice->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
+			this->inp_proPrice->Name = L"inp_proPrice";
+			this->inp_proPrice->Size = System::Drawing::Size(351, 28);
+			this->inp_proPrice->TabIndex = 43;
+			// 
+			// inp_proStock
+			// 
+			this->inp_proStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_proStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_proStock->Location = System::Drawing::Point(773, 315);
+			this->inp_proStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
+			this->inp_proStock->Name = L"inp_proStock";
+			this->inp_proStock->Size = System::Drawing::Size(351, 28);
+			this->inp_proStock->TabIndex = 42;
 			// 
 			// cb_proCategory
 			// 
@@ -739,34 +817,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->label7->TabIndex = 24;
 			this->label7->Text = L"Add Product";
 			// 
-			// inp_proStock
-			// 
-			this->inp_proStock->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->inp_proStock->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_proStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->inp_proStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proStock->HideSelection = false;
-			this->inp_proStock->Location = System::Drawing::Point(773, 315);
-			this->inp_proStock->Name = L"inp_proStock";
-			this->inp_proStock->Size = System::Drawing::Size(351, 28);
-			this->inp_proStock->TabIndex = 23;
-			// 
-			// inp_proPrice
-			// 
-			this->inp_proPrice->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->inp_proPrice->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_proPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->inp_proPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proPrice->HideSelection = false;
-			this->inp_proPrice->Location = System::Drawing::Point(773, 234);
-			this->inp_proPrice->Name = L"inp_proPrice";
-			this->inp_proPrice->Size = System::Drawing::Size(351, 28);
-			this->inp_proPrice->TabIndex = 21;
-			// 
 			// inp_proDesc
 			// 
 			this->inp_proDesc->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -780,20 +830,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proDesc->Name = L"inp_proDesc";
 			this->inp_proDesc->Size = System::Drawing::Size(351, 28);
 			this->inp_proDesc->TabIndex = 14;
-			// 
-			// inp_proCode
-			// 
-			this->inp_proCode->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->inp_proCode->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_proCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->inp_proCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proCode->HideSelection = false;
-			this->inp_proCode->Location = System::Drawing::Point(384, 158);
-			this->inp_proCode->Name = L"inp_proCode";
-			this->inp_proCode->Size = System::Drawing::Size(351, 28);
-			this->inp_proCode->TabIndex = 12;
 			// 
 			// inp_proName
 			// 
@@ -1419,6 +1455,20 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_dashboard->UseVisualStyleBackColor = true;
 			this->btn_dashboard->Click += gcnew System::EventHandler(this, &inventory::btn_dashboard_Click);
 			// 
+			// inp_proCode
+			// 
+			this->inp_proCode->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->inp_proCode->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_proCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_proCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_proCode->HideSelection = false;
+			this->inp_proCode->Location = System::Drawing::Point(387, 157);
+			this->inp_proCode->Name = L"inp_proCode";
+			this->inp_proCode->Size = System::Drawing::Size(351, 28);
+			this->inp_proCode->TabIndex = 44;
+			// 
 			// inventory
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1436,6 +1486,8 @@ private: System::ComponentModel::IContainer^  components;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->table_prevProduct))->EndInit();
 			this->tab_addproduct->ResumeLayout(false);
 			this->tab_addproduct->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proPrice))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proStock))->EndInit();
 			this->tab_control->ResumeLayout(false);
 			this->tab_editproduct->ResumeLayout(false);
 			this->tab_editproduct->PerformLayout();
@@ -1450,48 +1502,140 @@ private: System::ComponentModel::IContainer^  components;
 		}
 
 #pragma endregion
-		//Create Product to the database
+		public: value struct Product {
+			String^ barcode;
+			String^ name;
+			String^ description;
+			String^ category;
+			int stock;
+			float price;
+		};
+
+		array<Product>^ pro = gcnew array< Product >(1000);
+
+		int productCount;
+
+		void loadProductFromFile() {
+			String^ fileName = "product_tb.txt";
+			try
+			{
+				Console::WriteLine("trying to open file {0}...", fileName);
+				StreamReader^ din = File::OpenText(fileName);
+
+				productCount = Int32::Parse(din->ReadLine());
+				if (productCount > 0) {
+					for (int i = 0; i < productCount; i++) {
+						pro[i].barcode = din->ReadLine();
+						pro[i].name = din->ReadLine();
+						pro[i].description = din->ReadLine();
+						pro[i].category = din->ReadLine();
+						pro[i].stock = Int32::Parse(din->ReadLine());
+						pro[i].price = float::Parse(din->ReadLine());
+					}
+				}
+				else {
+					MessageBox::Show("The database is empty");
+				}
+				
+				din->Close();
+				
+			}
+			catch (const std::exception&)
+			{
+
+			}
+		}
+
+		void loadTable() {
+			table_prevProduct->Rows->Clear();
+			table_prevProduct->Refresh();
+			loadProductFromFile();
+			for (int i = 0; i < productCount; i++) {
+				int index = table_prevProduct->Rows->Add();
+				table_prevProduct->Rows[index]->Cells[0]->Value = pro[i].barcode;
+				table_prevProduct->Rows[index]->Cells[1]->Value = pro[i].name;
+				table_prevProduct->Rows[index]->Cells[2]->Value = pro[i].description;
+				table_prevProduct->Rows[index]->Cells[3]->Value = pro[i].category;
+				table_prevProduct->Rows[index]->Cells[4]->Value = pro[i].price;
+				table_prevProduct->Rows[index]->Cells[5]->Value = pro[i].stock;
+			}
+			
+		}
+
+		void saveToDatabase() {
+			String^ fileName = "product_tb.txt";
+
+			StreamWriter^ sw = gcnew StreamWriter(fileName);
+			sw->WriteLine(productCount);
+			for (int i = 0; i < productCount; i++) {
+				sw->WriteLine(pro[i].barcode);
+				sw->WriteLine(pro[i].name);
+				sw->WriteLine(pro[i].description);
+				sw->WriteLine(pro[i].category);
+				sw->WriteLine(pro[i].stock);
+				sw->WriteLine(pro[i].price);
+			}
+
+			sw->Close();
+
+		}
+
+		public: value struct searchProduct {
+			String^ barcode;
+			String^ name;
+			String^ description;
+			String^ category;
+			int stock;
+			float price;
+			int idx;
+		};
+		
+		public: searchProduct *proSearch(String^ bcode) {
+			searchProduct *searched = (value struct searchProduct*) malloc(sizeof(value struct searchProduct));
+
+			 for (int i = 0; i < productCount; i++) {
+
+				 if (String::Compare(pro[i].barcode, bcode) == 0) {
+					 searched->barcode = pro[i].barcode;
+					 searched->name = pro[i].name;
+					 searched->description = pro[i].description;
+					 searched->stock = pro[i].stock;
+					 searched->price = pro[i].price;
+					 searched->category = pro[i].category;
+					 searched->idx = i;
+					 return searched;
+					 free(searched);
+				 }
+
+			 }
+
+			
+		}
+
 		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			
+		
 			if (validateFields("add_emptyFields")) {
 				MessageBox::Show("Empty fields, Adding Product is not applied");
 			}
 			else {
-				try
-				{
-					MySqlConnection^ con = gcnew MySqlConnection(constr);
-
-					String^	barcode = inp_proCode->Text;
-					String^	proName = inp_proName->Text;
-					String^	proDesc = inp_proDesc->Text;
-					String^	proCategory = cb_proCategory->Text;
-					double	proPrice = double::Parse(inp_proPrice->Text);
-					int	proStock = Int32::Parse(inp_proStock->Text);
-
-
-					MySqlCommand^ cmd = gcnew MySqlCommand("insert into product_tb values(" + barcode + ",'" + proName + "','" + proDesc + "','" + proCategory + "','" + proPrice + "','" + proStock + "')", con);
-					//"INSERT INTO `product_tb`(`barcode`, `pro_name`, `pro_desc`, `pro_category`, `pro_price`, `pro_stock`) VALUES ("+barcode+","+proName+","+proDesc+","+proCategory+","+proPrice+","+proStock+")"
-					//"insert into product_tb values("+barcode+","+proName+","+proDesc+"," +proCategory+","+proPrice+"," + proStock + ")"
-					MySqlDataReader^ dr;
-					con->Open();
-					dr = cmd->ExecuteReader();
-					MessageBox::Show("The product " + proName + " with barcode of " + barcode + " added");
-					clearfields();
-					tab_control->SelectTab(1);
-					loadTable("Default");
-
-
-					con->Close();
-				}
-				catch (Exception^ ex)
-				{
-					MessageBox::Show("Something wrong in adding the product: " + ex);
-				}
+				pro[productCount].barcode = inp_proCode->Text;
+				pro[productCount].name = inp_proName->Text;
+				pro[productCount].description = inp_proDesc->Text;
+				pro[productCount].category = cb_proCategory->Text;
+				pro[productCount].price = float::Parse(inp_proPrice->Text);
+				pro[productCount].stock = Int32::Parse(inp_proStock->Text);
+				clearfields();
+				productCount++;
+				MessageBox::Show("The product " + pro[productCount].name + " with barcode of " + pro[productCount].barcode + " added");
+				saveToDatabase();
+				loadTable();
+				tab_control->SelectTab(1);
 			}
 		}
 		
 		//Update Product to the Databse
 		private: System::Void inp_editUpdate_Click(System::Object^  sender, System::EventArgs^  e) {
-			
 			if (validateFields("update_sameFields")) {
 				MessageBox::Show("Nothing to change, update is not applied");
 			}
@@ -1501,28 +1645,32 @@ private: System::ComponentModel::IContainer^  components;
 				}
 				else {
 					try
-					{
-						String^	barcode = inp_editCode->Text;
-						String^	proName = inp_editName->Text;
-						String^	proDesc = inp_editDesc->Text;
-						String^	proCategory = cb_editCategory->Text;
-						double	proPrice = double::Parse(inp_editPrice->Text);
-						int	proStock = Int32::Parse(inp_editStock->Text);
-						MessageBox::Show("" + barcode + " " + proName + " " + proDesc + " " + proCategory + " " + proPrice + " " + proStock);
-						MySqlConnection ^con = gcnew MySqlConnection(constr);
-						MySqlCommand ^cmd = gcnew MySqlCommand("update product_tb set pro_name='" + proName + "',pro_desc='" + proDesc + "',pro_category='" + proCategory + "',pro_price='" + proPrice + "',pro_stock='" + proStock + "' WHERE barcode=" + barcode + "", con);
-						MySqlDataReader^ dr;
-						con->Open();
+					{	
+						searchProduct *product, *toUpdate = (value struct searchProduct*) malloc(sizeof(value struct searchProduct));
 
-						//update product_tb set pro_name='"+proName+"',pro_desc='"+proDesc+"',pro_category='"+proCategory+"',pro_price='" +proPrice+ "',pro_stock='"+proStock+"' WHERE barcode='"+barcode+"'"
-						dr = cmd->ExecuteReader();
+						toUpdate->barcode = inp_editCode->Text;
+						toUpdate->name = inp_editName->Text;
+						toUpdate->description = inp_editDesc->Text;
+						toUpdate->category = cb_editCategory->Text;
+						toUpdate->stock = Int32::Parse(inp_editStock->Text);
+						toUpdate->price = double::Parse(inp_editPrice->Text);
+						
+						product = proSearch(toUpdate->barcode);
 
-						MessageBox::Show("Product " + barcode + " information updated");
+						pro[product->idx].barcode = toUpdate->barcode;
+						pro[product->idx].name = toUpdate->name;
+						pro[product->idx].description = toUpdate->description;
+						pro[product->idx].category = toUpdate->category;
+						pro[product->idx].stock = toUpdate->stock;
+						pro[product->idx].price = toUpdate->price;
+						
+
+						MessageBox::Show("The product " + pro[product->idx].name + " with barcode of " + pro[product->idx].barcode + " updated");
+						saveToDatabase();
+						loadTable();
 						tab_control->SelectTab(1);
-						clearfields();
-						loadTable("Default");
-
-						con->Close();
+						free(product);
+						free(toUpdate);
 					}
 					catch (Exception^ ex)
 					{
@@ -1540,16 +1688,25 @@ private: System::ComponentModel::IContainer^  components;
 			String^ barcode = inp_editCode->Text;
 			if (MessageBox::Show("Are you sure to delete " + barcode + " ?", "Inventory Management System",
 				MessageBoxButtons::YesNo, MessageBoxIcon::Question)==System::Windows::Forms::DialogResult::Yes) {
-				MySqlConnection ^con = gcnew MySqlConnection(constr);
-				MySqlCommand ^cmd = gcnew MySqlCommand("DELETE FROM product_tb WHERE barcode="+ barcode +"", con);
-				MySqlDataReader^ dr;
-				con->Open();
-				dr = cmd->ExecuteReader();
+				
+				searchProduct *product = (value struct searchProduct*) malloc(sizeof(value struct searchProduct));
+				product = proSearch(barcode);
 
-				MessageBox::Show("Product " + barcode + " Information Deleted");
+				for (int i = product->idx; i < productCount; i++) {
+
+					pro[i].barcode = pro[i + 1].barcode;
+					pro[i].name = pro[i + 1].name;
+					pro[i].description = pro[i + 1].description;
+					pro[i].category = pro[i + 1].category;
+					pro[i].stock = pro[i + 1].stock;
+					pro[i].price = pro[i + 1].price;
+				}
+
+				productCount--;
+				saveToDatabase();
+				loadTable();
 				clearfields();
-				loadTable("Default");
-				con->Close();
+				free(product);
 			}
 			else {
 				MessageBox::Show("Product Deletion Aborted");
@@ -1564,7 +1721,7 @@ private: System::ComponentModel::IContainer^  components;
 
 		//Load Products on Data Grid
 		void loadTable(String^ query) {
-			String^ queryStr;
+			/*String^ queryStr;
 			String^ column = SearchFilterChecker(cb_category->Text);
 			
 			if (String::Compare(query, "Default") == 0) {
@@ -1590,7 +1747,7 @@ private: System::ComponentModel::IContainer^  components;
 			catch (Exception^ ex)
 			{
 				MessageBox::Show("Something wrong in fetching the product to data grid: " + ex);
-			}
+			}*/
 
 		}
 		
@@ -1610,24 +1767,18 @@ private: System::ComponentModel::IContainer^  components;
 
 		private: System::Void table_prevProduct_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 			
-			String^ search = table_prevProduct->Rows[e->RowIndex]->Cells["barcode"]->Value->ToString();
+			String^ search = table_prevProduct->Rows[e->RowIndex]->Cells[0]->Value->ToString();
 			try
 			{
-				MySqlConnection^ con = gcnew MySqlConnection(constr);
-				MySqlCommand^ cmd = gcnew MySqlCommand("select * from product_tb WHERE barcode='"+search+"'", con);
-				MySqlDataReader^ dr;
-				con->Open();
-				dr = cmd->ExecuteReader();
-				clearfields();
-
-				if (dr->Read()) {
-
-					checkCode = dr->GetString(0);
-					checkName = dr->GetString(1);
-					checkDesc = dr->GetString(2);
-					checkPrice = dr->GetString(4);
-					checkStock = dr->GetString(5);
-					checkCategory = dr->GetString(3);
+				searchProduct *product = (value struct searchProduct*) malloc(sizeof(value struct searchProduct));
+				product = proSearch(search);
+				if (!product==NULL) {
+					checkCode = product->barcode;
+					checkName = product->name;
+					checkDesc = product->description;
+					checkPrice = product->price.ToString();
+					checkStock = product->stock.ToString();
+					checkCategory = product->category;
 					lbl_prevCode->Text = checkCode;
 					inp_prevName->Text = checkName;
 					inp_prevDesc->Text = checkDesc;
@@ -1641,13 +1792,12 @@ private: System::ComponentModel::IContainer^  components;
 					cb_editCategory->SelectedItem = checkCategory;
 					inp_editPrice->Text = checkPrice;
 					inp_editStock->Text = checkStock;
-
+					free(product);
+					
 				}
 				else {
-					MessageBox::Show("The cell clicked " + search + " is not existing try to change the filter.");
-					clearfields();
+					MessageBox::Show("Cannot find what you want to search");
 				}
-				con->Close();
 
 			}
 			catch (Exception^ ex)

@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#include "ctype.h"
 namespace InventoryManagementSystem {
 
 	using namespace System;
@@ -15,6 +15,7 @@ namespace InventoryManagementSystem {
 	/// </summary>
 	public ref class cashier : public System::Windows::Forms::Form
 	{
+		
 	public:
 		Form ^obj;
 	private: System::Windows::Forms::Label^  lbl_barcode;
@@ -23,23 +24,32 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  lbl_proCategory;
 
 	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::NumericUpDown^  inp_quantity;
+	public:
 			 String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
 		cashier(void)
 		{
+			
 			InitializeComponent();
+			
 			//
 			//TODO: Add the constructor code here
 			//
 		}
 
-		cashier(Form ^obj1)
+
+		cashier(Form^ obj1)
 		{
 			obj = obj1;
 			InitializeComponent();
+			IntializeOtherComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 		}
+
+		
 
 	protected:
 		/// <summary>
@@ -54,16 +64,13 @@ namespace InventoryManagementSystem {
 		}
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::Button^  button7;
-	private: System::Windows::Forms::DataGridView^  dataGridView1;
-
-
-
-
+	private: System::Windows::Forms::DataGridView^  tb_cashier;
 
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::TextBox^  inp_proCode;
-	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  lbl_searchMode;
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  pro_code;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  pro_name;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  pro_quan;
@@ -78,13 +85,15 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  lbl_proPrice;
 
 	private: System::Windows::Forms::Label^  label10;
-	private: System::Windows::Forms::TextBox^  textBox1;
+
+
 	private: System::Windows::Forms::Label^  label11;
 	private: System::Windows::Forms::Label^  lbl_proStock;
 
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label14;
-	private: System::Windows::Forms::Label^  label15;
+	private: System::Windows::Forms::Label^  lbl_totalPrice;
+
 	private: System::Windows::Forms::Button^  btn_prevDelete;
 	private: System::Windows::Forms::Button^  btn_prevEdit;
 	private: System::Windows::Forms::ComboBox^  cb_toSearch;
@@ -106,7 +115,7 @@ namespace InventoryManagementSystem {
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		void InitalizeOtherComponent(void) {
+		void IntializeOtherComponent(void) {
 			cb_toSearch->SelectedItem = "Barcode";
 		}
 
@@ -114,7 +123,7 @@ namespace InventoryManagementSystem {
 		{
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->tb_cashier = (gcnew System::Windows::Forms::DataGridView());
 			this->pro_code = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->pro_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->pro_quan = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -123,19 +132,18 @@ namespace InventoryManagementSystem {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->inp_proCode = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->lbl_searchMode = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->lbl_proName = (gcnew System::Windows::Forms::Label());
 			this->lbl_proDesc = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->lbl_proPrice = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->lbl_proStock = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->lbl_totalPrice = (gcnew System::Windows::Forms::Label());
 			this->btn_prevDelete = (gcnew System::Windows::Forms::Button());
 			this->btn_prevEdit = (gcnew System::Windows::Forms::Button());
 			this->cb_toSearch = (gcnew System::Windows::Forms::ComboBox());
@@ -146,7 +154,10 @@ namespace InventoryManagementSystem {
 			this->Barcode = (gcnew System::Windows::Forms::Label());
 			this->lbl_proCategory = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->inp_quantity = (gcnew System::Windows::Forms::NumericUpDown());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_quantity))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label7
@@ -176,18 +187,18 @@ namespace InventoryManagementSystem {
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &cashier::button7_Click);
 			// 
-			// dataGridView1
+			// tb_cashier
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+			this->tb_cashier->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->tb_cashier->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->tb_cashier->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->pro_code,
 					this->pro_name, this->pro_quan, this->pro_price, this->pro_total
 			});
-			this->dataGridView1->Location = System::Drawing::Point(19, 136);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(674, 310);
-			this->dataGridView1->TabIndex = 27;
+			this->tb_cashier->Location = System::Drawing::Point(19, 136);
+			this->tb_cashier->Name = L"tb_cashier";
+			this->tb_cashier->Size = System::Drawing::Size(674, 310);
+			this->tb_cashier->TabIndex = 27;
 			// 
 			// pro_code
 			// 
@@ -264,18 +275,19 @@ namespace InventoryManagementSystem {
 			this->inp_proCode->Name = L"inp_proCode";
 			this->inp_proCode->Size = System::Drawing::Size(254, 28);
 			this->inp_proCode->TabIndex = 30;
-			this->inp_proCode->TextChanged += gcnew System::EventHandler(this, &cashier::inp_searchCode);
+			this->inp_proCode->TextChanged += gcnew System::EventHandler(this, &cashier::inp_proCode_TextChanged);
 			// 
-			// label3
+			// lbl_searchMode
 			// 
-			this->label3->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->lbl_searchMode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_searchMode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label3->Location = System::Drawing::Point(14, 63);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(200, 28);
-			this->label3->TabIndex = 31;
-			this->label3->Text = L"Barcode";
+			this->lbl_searchMode->Location = System::Drawing::Point(14, 63);
+			this->lbl_searchMode->Name = L"lbl_searchMode";
+			this->lbl_searchMode->Size = System::Drawing::Size(226, 28);
+			this->lbl_searchMode->TabIndex = 31;
+			this->lbl_searchMode->Text = L"Barcode";
+			this->lbl_searchMode->Click += gcnew System::EventHandler(this, &cashier::lbl_searchMode_Click);
 			// 
 			// label4
 			// 
@@ -346,20 +358,6 @@ namespace InventoryManagementSystem {
 			this->label10->TabIndex = 36;
 			this->label10->Text = L"Price";
 			// 
-			// textBox1
-			// 
-			this->textBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
-			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->textBox1->HideSelection = false;
-			this->textBox1->Location = System::Drawing::Point(278, 95);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(95, 28);
-			this->textBox1->TabIndex = 38;
-			// 
 			// label11
 			// 
 			this->label11->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
@@ -401,22 +399,21 @@ namespace InventoryManagementSystem {
 				static_cast<System::Byte>(0)));
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label14->Location = System::Drawing::Point(388, 91);
+			this->label14->Location = System::Drawing::Point(388, 95);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(67, 29);
 			this->label14->TabIndex = 42;
 			this->label14->Text = L"Total";
 			// 
-			// label15
+			// lbl_totalPrice
 			// 
-			this->label15->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
-			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->lbl_totalPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
+			this->lbl_totalPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label15->Location = System::Drawing::Point(457, 92);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(235, 26);
-			this->label15->TabIndex = 43;
-			this->label15->Text = L"₱500.50";
+			this->lbl_totalPrice->Location = System::Drawing::Point(483, 96);
+			this->lbl_totalPrice->Name = L"lbl_totalPrice";
+			this->lbl_totalPrice->Size = System::Drawing::Size(209, 26);
+			this->lbl_totalPrice->TabIndex = 43;
 			// 
 			// btn_prevDelete
 			// 
@@ -445,6 +442,7 @@ namespace InventoryManagementSystem {
 			this->btn_prevEdit->TabIndex = 44;
 			this->btn_prevEdit->Text = L"Add to Cart";
 			this->btn_prevEdit->UseVisualStyleBackColor = true;
+			this->btn_prevEdit->Click += gcnew System::EventHandler(this, &cashier::btn_prevEdit_Click);
 			// 
 			// cb_toSearch
 			// 
@@ -458,6 +456,7 @@ namespace InventoryManagementSystem {
 			this->cb_toSearch->Name = L"cb_toSearch";
 			this->cb_toSearch->Size = System::Drawing::Size(222, 28);
 			this->cb_toSearch->TabIndex = 46;
+			this->cb_toSearch->SelectedIndexChanged += gcnew System::EventHandler(this, &cashier::cb_toSearch_SelectedIndexChanged);
 			// 
 			// button1
 			// 
@@ -532,7 +531,6 @@ namespace InventoryManagementSystem {
 			this->lbl_proCategory->Size = System::Drawing::Size(289, 26);
 			this->lbl_proCategory->TabIndex = 53;
 			this->lbl_proCategory->Text = L"Cholate Filling";
-			this->lbl_proCategory->Click += gcnew System::EventHandler(this, &cashier::label5_Click);
 			// 
 			// label6
 			// 
@@ -545,7 +543,29 @@ namespace InventoryManagementSystem {
 			this->label6->Size = System::Drawing::Size(90, 24);
 			this->label6->TabIndex = 52;
 			this->label6->Text = L"Category";
-			this->label6->Click += gcnew System::EventHandler(this, &cashier::label6_Click);
+			// 
+			// label3
+			// 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label3->Location = System::Drawing::Point(461, 97);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(26, 26);
+			this->label3->TabIndex = 54;
+			this->label3->Text = L"₱";
+			// 
+			// inp_quantity
+			// 
+			this->inp_quantity->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_quantity->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_quantity->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_quantity->Location = System::Drawing::Point(280, 95);
+			this->inp_quantity->Name = L"inp_quantity";
+			this->inp_quantity->Size = System::Drawing::Size(102, 28);
+			this->inp_quantity->TabIndex = 55;
+			this->inp_quantity->ValueChanged += gcnew System::EventHandler(this, &cashier::inp_quantity_ValueChanged);
 			// 
 			// cashier
 			// 
@@ -553,6 +573,8 @@ namespace InventoryManagementSystem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1050, 507);
+			this->Controls->Add(this->inp_quantity);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->lbl_proCategory);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->lbl_barcode);
@@ -562,11 +584,10 @@ namespace InventoryManagementSystem {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->btn_prevDelete);
 			this->Controls->Add(this->btn_prevEdit);
-			this->Controls->Add(this->label15);
+			this->Controls->Add(this->lbl_totalPrice);
 			this->Controls->Add(this->label14);
 			this->Controls->Add(this->lbl_proStock);
 			this->Controls->Add(this->label13);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->lbl_proPrice);
 			this->Controls->Add(this->label10);
@@ -575,17 +596,19 @@ namespace InventoryManagementSystem {
 			this->Controls->Add(this->lbl_proName);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->inp_proCode);
-			this->Controls->Add(this->label3);
+			this->Controls->Add(this->lbl_searchMode);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->tb_cashier);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->cb_toSearch);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"cashier";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Cashier";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_quantity))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -594,47 +617,129 @@ namespace InventoryManagementSystem {
 	//Global Declaration of Variables
 		//For Products
 		String ^barcode, ^proName, ^proDesc;
-		double proPrice=0;
+		double proPrice=0.0, currentPrice=0.0;
 		int proStock;
 
 		//For Values
 		double tax= .12, totalPrice=0.0 , amountDue=0.0;
 		int proQuan = 1;
+		int showRoll = 0;
 
 	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Hide();
 		obj->Show();
 	}
 	
-	private: System::Void inp_searchCode(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void cb_toSearch_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		if (String::Compare(cb_toSearch->Text, "Barcode") == 0) {
+			lbl_searchMode->Text = "Barcode";
+		}
+		else {
+			lbl_searchMode->Text = "Product Name";
+		}
+	}
+	
+	private: System::Void lbl_searchMode_Click(System::Object^  sender, System::EventArgs^  e) {
+		
+		if (showRoll == 0) {
+			cb_toSearch->DroppedDown = true;
+			showRoll++;
+		}
+		else {
+			cb_toSearch->DroppedDown = false;
+			showRoll--;
+		}
+
+	}
+
+	String^ convertSelection(String^ type) {
+		String^ choosen;
+		if (String::Compare(type, "Barcode") == 0) {
+			choosen = "barcode";
+		}
+		else {
+			choosen = "pro_name";
+		}
+		return choosen;
+	}
+
+	private: System::Void inp_proCode_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 		try
 		{
 			String^ code = inp_proCode->Text;
-			String^ type = cb_toSearch->Text;
-
+			String^ type = convertSelection(cb_toSearch->Text);
 			MySqlConnection^ con = gcnew MySqlConnection(constr);
-			MySqlCommand^ cmd = gcnew MySqlCommand("", con);
+			MySqlCommand^ cmd = gcnew MySqlCommand("select * from product_tb WHERE " + type + "='" + code + "'", con);
 			MySqlDataReader^ dr;
 			con->Open();
 			dr = cmd->ExecuteReader();
 
 			if (dr->Read()) {
+				barcode = dr->GetString(0);
+				proName = dr->GetString(1);
 				lbl_barcode->Text = dr->GetString(0);
 				lbl_proName->Text = dr->GetString(1);
 				lbl_proDesc->Text = dr->GetString(2);
 				lbl_proCategory->Text = dr->GetString(3);
 				lbl_proPrice->Text = dr->GetString(4);
 				lbl_proStock->Text = dr->GetString(5);
+				// Computer the total price by sending the price of searched product
+				proStock = Int32::Parse(dr->GetString(5));
+				currentPrice = Double::Parse(dr->GetString(4));
+				computeTotal();
+				MessageBox::Show("Text Change");
 			}
 		}
 		catch (Exception^ ex)
 		{
-
+			MessageBox::Show("Error on barcode" + ex);
 		}
 	}
-private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e) {
-}
+
+	void computeTotal() {
+		//Int32::Parse(inp_quantity->Text);
+		int quantity = Int32::Parse(inp_quantity->Text);
+		if (!CheckStock(quantity)) {
+			proPrice = quantity * currentPrice;
+			lbl_totalPrice->Text = proPrice.ToString();
+		}
+		else {
+			MessageBox::Show("Insufficient Stocks");
+		}
+		
+	}
+
+	bool CheckStock(int quan) {
+		if (quan > proStock) {
+			return true;
+		}
+	}
+
+	private: System::Void inp_quantity_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+		computeTotal();
+	}
+	
+
+	private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
+		int index = tb_cashier->Rows->Add();
+		int quantity = Int32::Parse(inp_quantity->Text);
+		tb_cashier->Rows[index]->Cells[0]->Value = barcode;
+		tb_cashier->Rows[index]->Cells[1]->Value = proName;
+		tb_cashier->Rows[index]->Cells[2]->Value = quantity;
+		tb_cashier->Rows[index]->Cells[3]->Value = proStock;
+		tb_cashier->Rows[index]->Cells[4]->Value = proPrice;
+		
+		/*
+		//To know how many rows on the table
+		int index = dg_Name->Rows->Add();
+
+		dg_Name->Rows[index]->Cells[0]->Value = inp_barcode->Text;
+		dg_Name->Rows[index]->Cells[1]->Value = inp_proName->Text;
+		dg_Name->Rows[index]->Cells[2]->Value = inp_quantity->Text;
+		dg_Name->Rows[index]->Cells[3]->Value = inp_proStock->Text;
+		dg_Name->Rows[index]->Cells[4]->Value = inp_proPrice->Text;*/
+	}
 };
+
+
 }

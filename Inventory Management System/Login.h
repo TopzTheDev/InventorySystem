@@ -1,6 +1,7 @@
 #pragma once
-#include "inventory.h"
 #include "cashier.h"
+#include "inventory.h"
+
 namespace InventoryManagementSystem {
 
 	using namespace System;
@@ -55,6 +56,7 @@ namespace InventoryManagementSystem {
 
 	private: System::Windows::Forms::ComboBox^  cb_loginAs;
 	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Button^  button1;
 
 
 
@@ -88,6 +90,7 @@ namespace InventoryManagementSystem {
 			this->btn_signIn = (gcnew System::Windows::Forms::Button());
 			this->cb_loginAs = (gcnew System::Windows::Forms::ComboBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -232,12 +235,28 @@ namespace InventoryManagementSystem {
 			this->label6->TabIndex = 9;
 			this->label6->Text = L"Login As";
 			// 
+			// button1
+			// 
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->button1->Location = System::Drawing::Point(628, 367);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(160, 35);
+			this->button1->TabIndex = 10;
+			this->button1->Text = L"Sign In";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click_1);
+			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(855, 445);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->cb_loginAs);
 			this->Controls->Add(this->btn_signIn);
@@ -304,5 +323,11 @@ namespace InventoryManagementSystem {
 		inp_loginPass->Text = "";
 		cb_loginAs->SelectedItem = "Inventory";
 	}
+private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
+	MessageBox::Show("Welcome to the Cashier");
+	this->Hide();
+	inventory ^ frm2 = gcnew inventory(this);
+	frm2->ShowDialog();
+}
 };
 }
