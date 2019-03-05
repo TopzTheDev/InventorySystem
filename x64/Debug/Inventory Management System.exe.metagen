@@ -1,0 +1,62 @@
+  InventoryManagementSystem.cashier.resources - Embedded, ContainedInManifestFile, 
+  InventoryManagementSystem.inventory.resources - Embedded, ContainedInManifestFile, 
+  InventoryManagementSystem.Login.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Inventory Management System, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form obj : Public
+    System.String constr : Public
+Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form obj : Public
+    System.String constr : Public
+    Product[] pro : Public
+    Product[] proTable : Public
+    Int32 productCount : Public
+  Methods:
+    loadProductFromFile(): PrivateScope, Public, HideBySig
+    loadTable(String): PrivateScope, Public, HideBySig
+    saveToDatabase(): PrivateScope, Public, HideBySig
+    proSearch(String): PrivateScope, Public, HideBySig
+Struct InventoryManagementSystem.inventory+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    System.String barcode : Public
+    System.String name : Public
+    System.String description : Public
+    System.String category : Public
+    Int32 stock : Public
+    Single price : Public
+Struct InventoryManagementSystem.inventory+searchProduct: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    System.String barcode : Public
+    System.String name : Public
+    System.String description : Public
+    System.String category : Public
+    Int32 stock : Public
+    Single price : Public
+    Int32 idx : Public
+Class InventoryManagementSystem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
