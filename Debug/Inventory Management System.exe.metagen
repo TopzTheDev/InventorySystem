@@ -31,10 +31,11 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     System.Windows.Forms.Form obj : Public
     System.String constr : Public
     Product[] pro : Public
+    Product[] proTable : Public
     Int32 productCount : Public
   Methods:
     loadProductFromFile(): PrivateScope, Public, HideBySig
-    loadTable(): PrivateScope, Public, HideBySig
+    loadTable(String): PrivateScope, Public, HideBySig
     saveToDatabase(): PrivateScope, Public, HideBySig
     proSearch(String): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.inventory+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit

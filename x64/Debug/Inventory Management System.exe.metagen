@@ -30,14 +30,19 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
   Fields:
     System.Windows.Forms.Form obj : Public
     System.String constr : Public
+    Int32 productCount : Public
     Product[] pro : Public
     Product[] proTable : Public
-    Int32 productCount : Public
+    Account[] acc : Public
+    Int32 accountCount : Public
   Methods:
     loadProductFromFile(): PrivateScope, Public, HideBySig
     loadTable(String): PrivateScope, Public, HideBySig
     saveToDatabase(): PrivateScope, Public, HideBySig
     proSearch(String): PrivateScope, Public, HideBySig
+    loadAccountFromFile(): PrivateScope, Public, HideBySig
+    loadAccTable(String): PrivateScope, Public, HideBySig
+    saveAccToDatabase(): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.inventory+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -57,6 +62,12 @@ Struct InventoryManagementSystem.inventory+searchProduct: AutoLayout, AnsiClass,
     Int32 stock : Public
     Single price : Public
     Int32 idx : Public
+Struct InventoryManagementSystem.inventory+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    System.String username : Public
+    System.String password : Public
+    System.String loginAs : Public
 Class InventoryManagementSystem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

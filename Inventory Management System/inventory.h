@@ -27,7 +27,6 @@ namespace InventoryManagementSystem {
 	public:
 		Form ^obj;
 
-	
 	private: System::Windows::Forms::TextBox^  inp_prevCategory;
 	private: System::Windows::Forms::Label^  lbl_prevCode;
 	private: System::Windows::Forms::Label^  lbl_searchError;
@@ -51,6 +50,11 @@ namespace InventoryManagementSystem {
 
 	private: System::Windows::Forms::NumericUpDown^  inp_proPrice;
 	private: System::Windows::Forms::TextBox^  inp_proCode;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  acc_usetCl;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  acc_passCl;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  acc_loginAsCl;
+
+
 
 	public:
 
@@ -232,7 +236,9 @@ private: System::ComponentModel::IContainer^  components;
 			table_prevProduct->Columns[5]->HeaderText = "Stocks";
 			cb_searchCategory->Visible = false;*/
 			table_prevProduct->AllowUserToAddRows = false;
+			tb_account->AllowUserToAddRows = false;
 			loadTable("default");
+			loadAccTable("default");
 		}
 		void InitializeComponent(void)
 		{	
@@ -327,6 +333,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_dashboard = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->acc_usetCl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->acc_passCl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->acc_loginAsCl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tab_dashboard->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->table_prevProduct))->BeginInit();
 			this->tab_addproduct->SuspendLayout();
@@ -1325,6 +1334,10 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			this->tb_account->BackgroundColor = System::Drawing::Color::White;
 			this->tb_account->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->tb_account->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+				this->acc_usetCl,
+					this->acc_passCl, this->acc_loginAsCl
+			});
 			this->tb_account->Enabled = false;
 			this->tb_account->Location = System::Drawing::Point(563, 46);
 			this->tb_account->Margin = System::Windows::Forms::Padding(4);
@@ -1332,6 +1345,7 @@ private: System::ComponentModel::IContainer^  components;
 			this->tb_account->Size = System::Drawing::Size(927, 544);
 			this->tb_account->TabIndex = 51;
 			this->tb_account->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_account_CellClick);
+			this->tb_account->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_account_CellContentClick);
 			// 
 			// btn_addAcc
 			// 
@@ -1553,6 +1567,24 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_dashboard->UseVisualStyleBackColor = true;
 			this->btn_dashboard->Click += gcnew System::EventHandler(this, &inventory::btn_dashboard_Click);
 			// 
+			// acc_usetCl
+			// 
+			this->acc_usetCl->HeaderText = L"Username";
+			this->acc_usetCl->Name = L"acc_usetCl";
+			this->acc_usetCl->Width = 200;
+			// 
+			// acc_passCl
+			// 
+			this->acc_passCl->HeaderText = L"Password";
+			this->acc_passCl->Name = L"acc_passCl";
+			this->acc_passCl->Width = 200;
+			// 
+			// acc_loginAsCl
+			// 
+			this->acc_loginAsCl->HeaderText = L"User type";
+			this->acc_loginAsCl->Name = L"acc_loginAsCl";
+			this->acc_loginAsCl->Width = 200;
+			// 
 			// inventory
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1595,11 +1627,10 @@ private: System::ComponentModel::IContainer^  components;
 			int stock;
 			float price;
 		};
+		int productCount;
 
 		array<Product>^ pro = gcnew array< Product >(1000);
-		array<Product>^ proTable;
-
-		int productCount;
+		array<Product>^ proTable = gcnew array<Product>(1000);
 
 		void loadProductFromFile() {
 			String^ fileName = "product_tb.txt";
@@ -1631,27 +1662,20 @@ private: System::ComponentModel::IContainer^  components;
 
 			}
 		}
-
+		
 		void loadTable(String^ query) {
 			int i;
-			int proTbLength = 0;
 			String^ search = inp_proSearch->Text;
 			String^ searchCb = cb_searchCategory->Text;
 			if (String::Compare(query, "default") == 0) {
-				for (i = 0; i < productCount; i++) {
-
-					proTable[proTbLength] = pro[i];
-					proTbLength++;
-				}
-				
 				proTable = pro;
 			}
 			else if (String::Compare(query, "Barcode") == 0) {
 				for (i = 0; i < productCount; i++) {
 					
 					if (String::Compare(pro[i].barcode, search) == 0) {
-						proTable[proTbLength] = pro[i];
-						proTbLength++;
+						proTable[i] = pro[i];
+						
 					}
 
 				}
@@ -1660,8 +1684,8 @@ private: System::ComponentModel::IContainer^  components;
 				for (i = 0; i < productCount; i++) {
 
 					if (String::Compare(pro[i].name, search) == 0) {
-						proTable[proTbLength] = pro[i];
-						proTbLength++;
+						proTable[i] = pro[i];
+						
 					}
 				}
 			}
@@ -1678,8 +1702,8 @@ private: System::ComponentModel::IContainer^  components;
 			table_prevProduct->Rows->Clear();
 			table_prevProduct->Refresh();
 			loadProductFromFile();
-			inp_prevStock->Text = proTbLength.ToString();
-			for (i = 0; i < proTbLength; i++) {
+			inp_prevStock->Text = productCount.ToString();
+			for (i = 0; i < productCount; i++) {
 				int index = table_prevProduct->Rows->Add();
 				table_prevProduct->Rows[index]->Cells[0]->Value = proTable[i].barcode;
 				table_prevProduct->Rows[index]->Cells[1]->Value = proTable[i].name;
@@ -1740,7 +1764,7 @@ private: System::ComponentModel::IContainer^  components;
 
 			
 		}
-
+		//Add product to database
 		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			
 		
@@ -1848,38 +1872,7 @@ private: System::ComponentModel::IContainer^  components;
 			loadTable(search);
 		}
 
-		//Load Products on Data Grid
-		//void loadTable(String^ query) {
-			/*String^ queryStr;
-			String^ column = SearchFilterChecker(cb_category->Text);
-			
-			if (String::Compare(query, "Default") == 0) {
-				queryStr = "select * from product_tb";
-			}
-			else {
-				queryStr = "select * from product_tb WHERE " + column + " LIKE '%" + query + "%'";
-			}
-
-			try{
-				MySqlConnection^ con = gcnew MySqlConnection(constr);
-				MySqlDataAdapter^ sda = gcnew MySqlDataAdapter(queryStr,con);
-				DataTable^ dt = gcnew DataTable();
-				sda->Fill(dt);
-				bindingSource1->DataSource = dt;
-				table_prevProduct->DataSource = bindingSource1;
-
-				if (table_prevProduct->RowCount == 1) {
-					MessageBox::Show("No product found");
-					loadTable("Default");
-				}
-			}
-			catch (Exception^ ex)
-			{
-				MessageBox::Show("Something wrong in fetching the product to data grid: " + ex);
-			}*/
-
-		//}
-		
+		//Field validation for product
 		String ^checkCode, ^checkName, ^checkDesc, ^checkPrice, ^checkStock, ^checkCategory;
 		String^ SearchFilterChecker(String^ cb_category) {
 			
@@ -1894,6 +1887,7 @@ private: System::ComponentModel::IContainer^  components;
 			return code;
 		}
 
+		//By clicking table the data from database fetch and store into fields
 		private: System::Void table_prevProduct_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 			
 			String^ search = table_prevProduct->Rows[e->RowIndex]->Cells[0]->Value->ToString();
@@ -1966,7 +1960,7 @@ private: System::ComponentModel::IContainer^  components;
 				inp_proSearch->Visible = false;
 			}
 			else if (String::Compare(cb_category->Text, "Default") == 0) {
-				loadTable("Default");
+				loadTable("default");
 			}
 			else {
 				inp_proSearch->Visible = true;
@@ -1979,8 +1973,82 @@ private: System::ComponentModel::IContainer^  components;
 		}
 		
 		// ACCOUNT SECTION ===================================================================
+
+		//For account array
+		public: value struct Account {
+			String^ username;
+			String^ password;
+			String^ loginAs;
+		};
+		array<Account>^ acc = gcnew array<Account>(1000);
+		int accountCount;
+
+		void loadAccountFromFile() {
+			String^ fileName = "account_tb.txt";
+			try
+			{
+				StreamReader^ din = File::OpenText(fileName);
+
+				accountCount = Int32::Parse(din->ReadLine());
+				if (accountCount > 0) {
+					for (int i = 0; i < accountCount; i++) {
+						acc[i].username = din->ReadLine();
+						acc[i].password = din->ReadLine();
+						acc[i].loginAs = din->ReadLine();
+					}
+				}
+				else {
+					MessageBox::Show("The account  database is empty");
+				}
+
+				din->Close();
+
+			}
+			catch (const std::exception&)
+			{
+
+			}
+		}
+
+		void loadAccTable(String^ query) {
+
+
+			int i;
+			tb_account->Rows->Clear();
+			tb_account->Refresh();
+			loadAccountFromFile();
+			inp_accPass->Text = accountCount.ToString();
+			for (i = 0; i < accountCount; i++) {
+				int index = tb_account->Rows->Add();
+				tb_account->Rows[index]->Cells[0]->Value = acc[i].username;
+				tb_account->Rows[index]->Cells[1]->Value = acc[i].password;
+				tb_account->Rows[index]->Cells[2]->Value = acc[i].loginAs;
+			}
+
+			if (tb_account->RowCount < 0) {
+				MessageBox::Show("No Accounts found");
+			}
+
+		}
+
+		void saveAccToDatabase() {
+			String^ fileName = "account_tb.txt";
+
+			StreamWriter^ sw = gcnew StreamWriter(fileName);
+			sw->WriteLine(accountCount);
+			for (int i = 0; i < accountCount; i++) {
+				sw->WriteLine(acc[i].username);
+				sw->WriteLine(acc[i].password);
+				sw->WriteLine(acc[i].loginAs);
+			}
+
+			sw->Close();
+
+		}
+
 		//Add Account
 		private: System::Void btn_addAcc_Click(System::Object^  sender, System::EventArgs^  e) {
+		
 			if (validateFields("add_accEmptyFields")) {
 				MessageBox::Show("Some fields is empty, Adding Account is not applied");
 			}
@@ -1989,21 +2057,14 @@ private: System::ComponentModel::IContainer^  components;
 				String^ password = inp_accPass->Text;
 				String^ loginAs = cb_accLoginas->Text;
 
-				try
-				{
-					
-					
-				}
-				catch (Exception^ ex){MessageBox::Show("Error found on adding account " + ex);}
-			}
-		}
-			
-		// Read Account to the Database
-		void loadAccountTable() {
-			
-
-			if (tb_account->RowCount == 1) {
-				MessageBox::Show("No Accounts found");
+				acc[accountCount].username = username;
+				acc[accountCount].password = password;
+				acc[accountCount].loginAs = loginAs;
+				clearfields();
+				accountCount++;
+				MessageBox::Show("The account " + acc[accountCount].username + " with barcode of " + acc[accountCount].password + " added");
+				saveAccToDatabase();
+				loadAccTable("default");
 			}
 		}
 		
@@ -2016,11 +2077,7 @@ private: System::ComponentModel::IContainer^  components;
 				String^ username = inp_accUser->Text;
 				String^ password = inp_accPass->Text;
 				String^ loginAs = cb_accLoginas->Text;
-				try
-				{
-					
-				}
-				catch (Exception^ ex) { MessageBox::Show("Error found on updating account " + ex); }
+
 			}
 		
 		}
@@ -2147,5 +2204,7 @@ private: System::ComponentModel::IContainer^  components;
 			tb_account->Enabled = !isAddMode;
 		}
 
+private: System::Void tb_account_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+}
 };
 }

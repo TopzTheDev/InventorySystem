@@ -98,16 +98,18 @@ namespace InventoryManagementSystem {
 			// 
 			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Location = System::Drawing::Point(1, 1);
+			this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(421, 439);
+			this->panel1->Size = System::Drawing::Size(561, 540);
 			this->panel1->TabIndex = 0;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(3, 11);
+			this->pictureBox1->Location = System::Drawing::Point(4, 14);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(419, 440);
+			this->pictureBox1->Size = System::Drawing::Size(559, 542);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -116,23 +118,25 @@ namespace InventoryManagementSystem {
 			this->inp_userName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_userName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_userName->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_userName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->inp_userName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_userName->HideSelection = false;
-			this->inp_userName->Location = System::Drawing::Point(462, 178);
+			this->inp_userName->Location = System::Drawing::Point(616, 219);
+			this->inp_userName->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_userName->Name = L"inp_userName";
-			this->inp_userName->Size = System::Drawing::Size(351, 28);
+			this->inp_userName->Size = System::Drawing::Size(467, 32);
 			this->inp_userName->TabIndex = 1;
 			// 
 			// label1
 			// 
-			this->label1->Font = (gcnew System::Drawing::Font(L"Roboto", 23, System::Drawing::FontStyle::Bold));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label1->Location = System::Drawing::Point(452, 19);
+			this->label1->Location = System::Drawing::Point(603, 23);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(349, 77);
+			this->label1->Size = System::Drawing::Size(465, 95);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Grocery Inventory Management System";
 			// 
@@ -140,41 +144,45 @@ namespace InventoryManagementSystem {
 			// 
 			this->label2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label2->Location = System::Drawing::Point(459, 97);
+			this->label2->Location = System::Drawing::Point(612, 119);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(200, 5);
+			this->label2->Size = System::Drawing::Size(267, 6);
 			this->label2->TabIndex = 3;
 			// 
 			// label3
 			// 
-			this->label3->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10.25F));
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label3->Location = System::Drawing::Point(457, 106);
+			this->label3->Location = System::Drawing::Point(609, 130);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(370, 17);
+			this->label3->Size = System::Drawing::Size(493, 21);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Enter your username and the password of your account";
 			// 
 			// label4
 			// 
-			this->label4->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label4->Location = System::Drawing::Point(459, 151);
+			this->label4->Location = System::Drawing::Point(612, 186);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(370, 26);
+			this->label4->Size = System::Drawing::Size(493, 32);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Username";
 			// 
 			// label5
 			// 
-			this->label5->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label5->Location = System::Drawing::Point(459, 226);
+			this->label5->Location = System::Drawing::Point(612, 278);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(370, 26);
+			this->label5->Size = System::Drawing::Size(493, 32);
 			this->label5->TabIndex = 7;
 			this->label5->Text = L"Password";
 			// 
@@ -183,26 +191,28 @@ namespace InventoryManagementSystem {
 			this->inp_loginPass->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_loginPass->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_loginPass->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->inp_loginPass->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->inp_loginPass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_loginPass->HideSelection = false;
-			this->inp_loginPass->Location = System::Drawing::Point(462, 253);
+			this->inp_loginPass->Location = System::Drawing::Point(616, 311);
+			this->inp_loginPass->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_loginPass->Name = L"inp_loginPass";
 			this->inp_loginPass->PasswordChar = '*';
-			this->inp_loginPass->Size = System::Drawing::Size(351, 28);
+			this->inp_loginPass->Size = System::Drawing::Size(467, 32);
 			this->inp_loginPass->TabIndex = 6;
 			// 
 			// btn_signIn
 			// 
 			this->btn_signIn->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_signIn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_signIn->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->btn_signIn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_signIn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_signIn->Location = System::Drawing::Point(462, 367);
+			this->btn_signIn->Location = System::Drawing::Point(616, 452);
+			this->btn_signIn->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btn_signIn->Name = L"btn_signIn";
-			this->btn_signIn->Size = System::Drawing::Size(160, 35);
+			this->btn_signIn->Size = System::Drawing::Size(213, 43);
 			this->btn_signIn->TabIndex = 8;
 			this->btn_signIn->Text = L"Sign In";
 			this->btn_signIn->UseVisualStyleBackColor = true;
@@ -213,24 +223,26 @@ namespace InventoryManagementSystem {
 			this->cb_loginAs->BackColor = System::Drawing::Color::White;
 			this->cb_loginAs->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cb_loginAs->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->cb_loginAs->Font = (gcnew System::Drawing::Font(L"Roboto Light", 13));
+			this->cb_loginAs->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->cb_loginAs->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_loginAs->FormattingEnabled = true;
 			this->cb_loginAs->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Inventory", L"Cashier" });
-			this->cb_loginAs->Location = System::Drawing::Point(462, 325);
+			this->cb_loginAs->Location = System::Drawing::Point(616, 400);
+			this->cb_loginAs->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cb_loginAs->Name = L"cb_loginAs";
-			this->cb_loginAs->Size = System::Drawing::Size(351, 28);
+			this->cb_loginAs->Size = System::Drawing::Size(467, 34);
 			this->cb_loginAs->TabIndex = 3;
 			// 
 			// label6
 			// 
-			this->label6->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label6->Location = System::Drawing::Point(459, 298);
+			this->label6->Location = System::Drawing::Point(612, 367);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(370, 26);
+			this->label6->Size = System::Drawing::Size(493, 32);
 			this->label6->TabIndex = 9;
 			this->label6->Text = L"Login As";
 			// 
@@ -238,12 +250,13 @@ namespace InventoryManagementSystem {
 			// 
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button1->Location = System::Drawing::Point(628, 367);
+			this->button1->Location = System::Drawing::Point(837, 452);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(160, 35);
+			this->button1->Size = System::Drawing::Size(213, 43);
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Sign In";
 			this->button1->UseVisualStyleBackColor = true;
@@ -251,10 +264,10 @@ namespace InventoryManagementSystem {
 			// 
 			// Login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(855, 445);
+			this->ClientSize = System::Drawing::Size(1140, 548);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->cb_loginAs);
@@ -268,6 +281,7 @@ namespace InventoryManagementSystem {
 			this->Controls->Add(this->inp_userName);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";
