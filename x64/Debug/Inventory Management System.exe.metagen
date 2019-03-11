@@ -40,9 +40,12 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     loadTable(String): PrivateScope, Public, HideBySig
     saveToDatabase(): PrivateScope, Public, HideBySig
     proSearch(String): PrivateScope, Public, HideBySig
+    checkBarcode(String): PrivateScope, Public, HideBySig
     loadAccountFromFile(): PrivateScope, Public, HideBySig
     loadAccTable(String): PrivateScope, Public, HideBySig
     saveAccToDatabase(): PrivateScope, Public, HideBySig
+    checkUsername(String): PrivateScope, Public, HideBySig
+    accSearch(String): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.inventory+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -68,6 +71,27 @@ Struct InventoryManagementSystem.inventory+Account: AutoLayout, AnsiClass, Class
     System.String username : Public
     System.String password : Public
     System.String loginAs : Public
+Struct InventoryManagementSystem.inventory+searchAccount: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    System.String username : Public
+    System.String password : Public
+    System.String loginAs : Public
+    Int32 idx : Public
 Class InventoryManagementSystem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Account[] acc : Public
+    Int32 accountCount : Public
+  Methods:
+    loadAccountFromFile(): PrivateScope, Public, HideBySig
+    verifyAccount(String, String, String): PrivateScope, Public, HideBySig
+    clearFields(): PrivateScope, Public, HideBySig
+    fieldValidation(): PrivateScope, Public, HideBySig
+Struct InventoryManagementSystem.Login+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    System.String username : Public
+    System.String password : Public
+    System.String loginAs : Public

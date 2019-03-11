@@ -31,14 +31,14 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  lbl_prevCode;
 	private: System::Windows::Forms::Label^  lbl_searchError;
 
-	private: System::Windows::Forms::BindingSource^  bindingSource1;
+
 	private: System::Windows::Forms::DataGridView^  table_prevProduct;
 	private: System::Windows::Forms::ComboBox^  cb_proCategory;
 	private: System::Windows::Forms::Label^  label16;
 	private: System::Windows::Forms::Label^  label38;
 	private: System::Windows::Forms::ComboBox^  cb_searchCategory;
 
-	private: System::Windows::Forms::BindingSource^  bindingSource2;
+
 	private: System::Windows::Forms::Button^  btn_accMode;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_barcode;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_name;
@@ -50,9 +50,16 @@ namespace InventoryManagementSystem {
 
 	private: System::Windows::Forms::NumericUpDown^  inp_proPrice;
 	private: System::Windows::Forms::TextBox^  inp_proCode;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  acc_usetCl;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  acc_passCl;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  acc_loginAsCl;
+	private: System::Windows::Forms::DataGridView^  tb_account;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_username;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_password;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_loginas;
+
+
+
+
+
+
 
 
 
@@ -197,7 +204,7 @@ private: System::Windows::Forms::Button^  btn_uppAcc;
 
 private: System::Windows::Forms::Button^  btn_addAcc;
 
-private: System::Windows::Forms::DataGridView^  tb_account;
+
 
 private: System::Windows::Forms::Label^  label31;
 private: System::Windows::Forms::Label^  label32;
@@ -242,7 +249,6 @@ private: System::ComponentModel::IContainer^  components;
 		}
 		void InitializeComponent(void)
 		{	
-			this->components = (gcnew System::ComponentModel::Container());
 			this->tab_dashboard = (gcnew System::Windows::Forms::TabPage());
 			this->cb_searchCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
@@ -312,10 +318,13 @@ private: System::ComponentModel::IContainer^  components;
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->tab_accounts = (gcnew System::Windows::Forms::TabPage());
+			this->tb_account = (gcnew System::Windows::Forms::DataGridView());
+			this->cl_username = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cl_password = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cl_loginas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->btn_accMode = (gcnew System::Windows::Forms::Button());
 			this->label35 = (gcnew System::Windows::Forms::Label());
 			this->label37 = (gcnew System::Windows::Forms::Label());
-			this->tb_account = (gcnew System::Windows::Forms::DataGridView());
 			this->btn_addAcc = (gcnew System::Windows::Forms::Button());
 			this->btn_delAcc = (gcnew System::Windows::Forms::Button());
 			this->btn_uppAcc = (gcnew System::Windows::Forms::Button());
@@ -331,11 +340,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->btn_addproduct = (gcnew System::Windows::Forms::Button());
 			this->btn_dashboard = (gcnew System::Windows::Forms::Button());
-			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
-			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
-			this->acc_usetCl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->acc_passCl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->acc_loginAsCl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tab_dashboard->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->table_prevProduct))->BeginInit();
 			this->tab_addproduct->SuspendLayout();
@@ -346,8 +350,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_accounts->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_account))->BeginInit();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tab_dashboard
@@ -376,11 +378,10 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_dashboard->Controls->Add(this->label8);
 			this->tab_dashboard->Controls->Add(this->label9);
 			this->tab_dashboard->Controls->Add(this->label10);
-			this->tab_dashboard->Location = System::Drawing::Point(4, 28);
-			this->tab_dashboard->Margin = System::Windows::Forms::Padding(4);
+			this->tab_dashboard->Location = System::Drawing::Point(4, 25);
 			this->tab_dashboard->Name = L"tab_dashboard";
-			this->tab_dashboard->Padding = System::Windows::Forms::Padding(4);
-			this->tab_dashboard->Size = System::Drawing::Size(1567, 656);
+			this->tab_dashboard->Padding = System::Windows::Forms::Padding(3);
+			this->tab_dashboard->Size = System::Drawing::Size(1173, 530);
 			this->tab_dashboard->TabIndex = 1;
 			this->tab_dashboard->Text = L"Dashboard";
 			// 
@@ -397,10 +398,9 @@ private: System::ComponentModel::IContainer^  components;
 					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
 					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
 			});
-			this->cb_searchCategory->Location = System::Drawing::Point(905, 46);
-			this->cb_searchCategory->Margin = System::Windows::Forms::Padding(4);
+			this->cb_searchCategory->Location = System::Drawing::Point(679, 37);
 			this->cb_searchCategory->Name = L"cb_searchCategory";
-			this->cb_searchCategory->Size = System::Drawing::Size(385, 34);
+			this->cb_searchCategory->Size = System::Drawing::Size(290, 28);
 			this->cb_searchCategory->TabIndex = 44;
 			this->cb_searchCategory->Visible = false;
 			this->cb_searchCategory->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::cb_searchCategory_SelectedIndexChanged);
@@ -409,10 +409,9 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			this->label16->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label16->Location = System::Drawing::Point(-3, 20);
-			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label16->Location = System::Drawing::Point(-2, 16);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(28, 6);
+			this->label16->Size = System::Drawing::Size(21, 5);
 			this->label16->TabIndex = 43;
 			// 
 			// table_prevProduct
@@ -423,10 +422,9 @@ private: System::ComponentModel::IContainer^  components;
 				this->cl_barcode,
 					this->cl_name, this->cl_description, this->cl_category, this->cl_stock, this->cl_price
 			});
-			this->table_prevProduct->Location = System::Drawing::Point(584, 107);
-			this->table_prevProduct->Margin = System::Windows::Forms::Padding(4);
+			this->table_prevProduct->Location = System::Drawing::Point(438, 87);
 			this->table_prevProduct->Name = L"table_prevProduct";
-			this->table_prevProduct->Size = System::Drawing::Size(937, 494);
+			this->table_prevProduct->Size = System::Drawing::Size(708, 401);
 			this->table_prevProduct->TabIndex = 42;
 			this->table_prevProduct->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::table_prevProduct_CellClick);
 			// 
@@ -469,10 +467,9 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			this->lbl_searchError->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
 			this->lbl_searchError->ForeColor = System::Drawing::Color::Red;
-			this->lbl_searchError->Location = System::Drawing::Point(699, 84);
-			this->lbl_searchError->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lbl_searchError->Location = System::Drawing::Point(524, 68);
 			this->lbl_searchError->Name = L"lbl_searchError";
-			this->lbl_searchError->Size = System::Drawing::Size(543, 27);
+			this->lbl_searchError->Size = System::Drawing::Size(407, 22);
 			this->lbl_searchError->TabIndex = 40;
 			// 
 			// lbl_prevCode
@@ -480,10 +477,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->lbl_prevCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->lbl_prevCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_prevCode->Location = System::Drawing::Point(33, 137);
-			this->lbl_prevCode->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lbl_prevCode->Location = System::Drawing::Point(25, 111);
 			this->lbl_prevCode->Name = L"lbl_prevCode";
-			this->lbl_prevCode->Size = System::Drawing::Size(411, 32);
+			this->lbl_prevCode->Size = System::Drawing::Size(308, 26);
 			this->lbl_prevCode->TabIndex = 39;
 			// 
 			// inp_prevCategory
@@ -495,20 +491,18 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_prevCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_prevCategory->HideSelection = false;
-			this->inp_prevCategory->Location = System::Drawing::Point(41, 357);
-			this->inp_prevCategory->Margin = System::Windows::Forms::Padding(4);
+			this->inp_prevCategory->Location = System::Drawing::Point(31, 290);
 			this->inp_prevCategory->Name = L"inp_prevCategory";
-			this->inp_prevCategory->Size = System::Drawing::Size(485, 32);
+			this->inp_prevCategory->Size = System::Drawing::Size(364, 27);
 			this->inp_prevCategory->TabIndex = 38;
 			// 
 			// label32
 			// 
 			this->label32->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label32->Location = System::Drawing::Point(292, 20);
-			this->label32->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label32->Location = System::Drawing::Point(219, 16);
 			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(1280, 6);
+			this->label32->Size = System::Drawing::Size(960, 5);
 			this->label32->TabIndex = 37;
 			// 
 			// cb_category
@@ -520,10 +514,9 @@ private: System::ComponentModel::IContainer^  components;
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_category->FormattingEnabled = true;
 			this->cb_category->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Default", L"Barcode", L"Product Name", L"Category" });
-			this->cb_category->Location = System::Drawing::Point(699, 44);
-			this->cb_category->Margin = System::Windows::Forms::Padding(4);
+			this->cb_category->Location = System::Drawing::Point(524, 36);
 			this->cb_category->Name = L"cb_category";
-			this->cb_category->Size = System::Drawing::Size(197, 34);
+			this->cb_category->Size = System::Drawing::Size(149, 28);
 			this->cb_category->TabIndex = 36;
 			this->cb_category->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::cb_category_SelectedIndexChanged);
 			// 
@@ -533,10 +526,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label15->Location = System::Drawing::Point(32, 44);
-			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label15->Location = System::Drawing::Point(24, 36);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(184, 44);
+			this->label15->Size = System::Drawing::Size(146, 35);
 			this->label15->TabIndex = 34;
 			this->label15->Text = L"Products";
 			// 
@@ -545,10 +537,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label14->Location = System::Drawing::Point(579, 47);
-			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label14->Location = System::Drawing::Point(434, 38);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(112, 32);
+			this->label14->Size = System::Drawing::Size(84, 26);
 			this->label14->TabIndex = 33;
 			this->label14->Text = L"Search by";
 			// 
@@ -561,10 +552,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proSearch->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proSearch->HideSelection = false;
-			this->inp_proSearch->Location = System::Drawing::Point(905, 46);
-			this->inp_proSearch->Margin = System::Windows::Forms::Padding(4);
+			this->inp_proSearch->Location = System::Drawing::Point(679, 37);
 			this->inp_proSearch->Name = L"inp_proSearch";
-			this->inp_proSearch->Size = System::Drawing::Size(385, 32);
+			this->inp_proSearch->Size = System::Drawing::Size(289, 27);
 			this->inp_proSearch->TabIndex = 32;
 			this->inp_proSearch->TextChanged += gcnew System::EventHandler(this, &inventory::inp_search);
 			// 
@@ -577,10 +567,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_prevStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_prevStock->HideSelection = false;
-			this->inp_prevStock->Location = System::Drawing::Point(41, 506);
-			this->inp_prevStock->Margin = System::Windows::Forms::Padding(4);
+			this->inp_prevStock->Location = System::Drawing::Point(31, 411);
 			this->inp_prevStock->Name = L"inp_prevStock";
-			this->inp_prevStock->Size = System::Drawing::Size(481, 32);
+			this->inp_prevStock->Size = System::Drawing::Size(361, 27);
 			this->inp_prevStock->TabIndex = 29;
 			// 
 			// inp_prevPrice
@@ -592,10 +581,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_prevPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_prevPrice->HideSelection = false;
-			this->inp_prevPrice->Location = System::Drawing::Point(41, 432);
-			this->inp_prevPrice->Margin = System::Windows::Forms::Padding(4);
+			this->inp_prevPrice->Location = System::Drawing::Point(31, 351);
 			this->inp_prevPrice->Name = L"inp_prevPrice";
-			this->inp_prevPrice->Size = System::Drawing::Size(481, 32);
+			this->inp_prevPrice->Size = System::Drawing::Size(361, 27);
 			this->inp_prevPrice->TabIndex = 27;
 			// 
 			// inp_prevDesc
@@ -607,10 +595,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_prevDesc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_prevDesc->HideSelection = false;
-			this->inp_prevDesc->Location = System::Drawing::Point(40, 284);
-			this->inp_prevDesc->Margin = System::Windows::Forms::Padding(4);
+			this->inp_prevDesc->Location = System::Drawing::Point(30, 231);
 			this->inp_prevDesc->Name = L"inp_prevDesc";
-			this->inp_prevDesc->Size = System::Drawing::Size(485, 32);
+			this->inp_prevDesc->Size = System::Drawing::Size(364, 27);
 			this->inp_prevDesc->TabIndex = 20;
 			// 
 			// inp_prevName
@@ -622,10 +609,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_prevName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_prevName->HideSelection = false;
-			this->inp_prevName->Location = System::Drawing::Point(39, 212);
-			this->inp_prevName->Margin = System::Windows::Forms::Padding(4);
+			this->inp_prevName->Location = System::Drawing::Point(29, 172);
 			this->inp_prevName->Name = L"inp_prevName";
-			this->inp_prevName->Size = System::Drawing::Size(485, 32);
+			this->inp_prevName->Size = System::Drawing::Size(364, 27);
 			this->inp_prevName->TabIndex = 16;
 			// 
 			// btn_prevDelete
@@ -635,10 +621,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_prevDelete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_prevDelete->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)));
-			this->btn_prevDelete->Location = System::Drawing::Point(288, 558);
-			this->btn_prevDelete->Margin = System::Windows::Forms::Padding(4);
+			this->btn_prevDelete->Location = System::Drawing::Point(216, 453);
 			this->btn_prevDelete->Name = L"btn_prevDelete";
-			this->btn_prevDelete->Size = System::Drawing::Size(235, 43);
+			this->btn_prevDelete->Size = System::Drawing::Size(176, 35);
 			this->btn_prevDelete->TabIndex = 31;
 			this->btn_prevDelete->Text = L"Delete Product";
 			this->btn_prevDelete->UseVisualStyleBackColor = true;
@@ -651,10 +636,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_prevEdit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_prevEdit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_prevEdit->Location = System::Drawing::Point(41, 558);
-			this->btn_prevEdit->Margin = System::Windows::Forms::Padding(4);
+			this->btn_prevEdit->Location = System::Drawing::Point(31, 453);
 			this->btn_prevEdit->Name = L"btn_prevEdit";
-			this->btn_prevEdit->Size = System::Drawing::Size(223, 43);
+			this->btn_prevEdit->Size = System::Drawing::Size(167, 35);
 			this->btn_prevEdit->TabIndex = 30;
 			this->btn_prevEdit->Text = L"Edit Product";
 			this->btn_prevEdit->UseVisualStyleBackColor = true;
@@ -665,10 +649,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label11->Location = System::Drawing::Point(35, 470);
-			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label11->Location = System::Drawing::Point(26, 382);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(407, 32);
+			this->label11->Size = System::Drawing::Size(305, 26);
 			this->label11->TabIndex = 28;
 			this->label11->Text = L"Stock";
 			// 
@@ -677,10 +660,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label12->Location = System::Drawing::Point(36, 322);
-			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label12->Location = System::Drawing::Point(27, 262);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(407, 32);
+			this->label12->Size = System::Drawing::Size(305, 26);
 			this->label12->TabIndex = 25;
 			this->label12->Text = L"Category";
 			// 
@@ -689,10 +671,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label13->Location = System::Drawing::Point(35, 396);
-			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label13->Location = System::Drawing::Point(26, 322);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(407, 32);
+			this->label13->Size = System::Drawing::Size(305, 26);
 			this->label13->TabIndex = 24;
 			this->label13->Text = L"Price";
 			// 
@@ -701,10 +682,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label8->Location = System::Drawing::Point(36, 251);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Location = System::Drawing::Point(27, 204);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(411, 32);
+			this->label8->Size = System::Drawing::Size(308, 26);
 			this->label8->TabIndex = 21;
 			this->label8->Text = L"Description";
 			// 
@@ -713,10 +693,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label9->Location = System::Drawing::Point(33, 107);
-			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label9->Location = System::Drawing::Point(25, 87);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(411, 32);
+			this->label9->Size = System::Drawing::Size(308, 26);
 			this->label9->TabIndex = 19;
 			this->label9->Text = L"Barcode";
 			// 
@@ -725,10 +704,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label10->Location = System::Drawing::Point(35, 178);
-			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label10->Location = System::Drawing::Point(26, 145);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(411, 32);
+			this->label10->Size = System::Drawing::Size(308, 26);
 			this->label10->TabIndex = 17;
 			this->label10->Text = L"Product Name";
 			// 
@@ -753,11 +731,10 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_addproduct->Controls->Add(this->label1);
 			this->tab_addproduct->Controls->Add(this->label4);
 			this->tab_addproduct->Controls->Add(this->button1);
-			this->tab_addproduct->Location = System::Drawing::Point(4, 28);
-			this->tab_addproduct->Margin = System::Windows::Forms::Padding(4);
+			this->tab_addproduct->Location = System::Drawing::Point(4, 25);
 			this->tab_addproduct->Name = L"tab_addproduct";
-			this->tab_addproduct->Padding = System::Windows::Forms::Padding(4);
-			this->tab_addproduct->Size = System::Drawing::Size(1567, 656);
+			this->tab_addproduct->Padding = System::Windows::Forms::Padding(3);
+			this->tab_addproduct->Size = System::Drawing::Size(1173, 530);
 			this->tab_addproduct->TabIndex = 0;
 			this->tab_addproduct->Text = L"Add Product";
 			// 
@@ -770,10 +747,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proCode->HideSelection = false;
-			this->inp_proCode->Location = System::Drawing::Point(516, 193);
-			this->inp_proCode->Margin = System::Windows::Forms::Padding(4);
+			this->inp_proCode->Location = System::Drawing::Point(387, 157);
 			this->inp_proCode->Name = L"inp_proCode";
-			this->inp_proCode->Size = System::Drawing::Size(467, 32);
+			this->inp_proCode->Size = System::Drawing::Size(351, 27);
 			this->inp_proCode->TabIndex = 44;
 			// 
 			// inp_proPrice
@@ -782,11 +758,10 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->inp_proPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proPrice->Location = System::Drawing::Point(1031, 288);
-			this->inp_proPrice->Margin = System::Windows::Forms::Padding(4);
+			this->inp_proPrice->Location = System::Drawing::Point(773, 234);
 			this->inp_proPrice->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->inp_proPrice->Name = L"inp_proPrice";
-			this->inp_proPrice->Size = System::Drawing::Size(468, 32);
+			this->inp_proPrice->Size = System::Drawing::Size(351, 27);
 			this->inp_proPrice->TabIndex = 43;
 			// 
 			// inp_proStock
@@ -794,11 +769,10 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->inp_proStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proStock->Location = System::Drawing::Point(1031, 388);
-			this->inp_proStock->Margin = System::Windows::Forms::Padding(4);
+			this->inp_proStock->Location = System::Drawing::Point(773, 315);
 			this->inp_proStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
 			this->inp_proStock->Name = L"inp_proStock";
-			this->inp_proStock->Size = System::Drawing::Size(468, 32);
+			this->inp_proStock->Size = System::Drawing::Size(351, 27);
 			this->inp_proStock->TabIndex = 42;
 			// 
 			// cb_proCategory
@@ -813,40 +787,36 @@ private: System::ComponentModel::IContainer^  components;
 					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
 					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
 			});
-			this->cb_proCategory->Location = System::Drawing::Point(1029, 193);
-			this->cb_proCategory->Margin = System::Windows::Forms::Padding(4);
+			this->cb_proCategory->Location = System::Drawing::Point(772, 157);
 			this->cb_proCategory->Name = L"cb_proCategory";
-			this->cb_proCategory->Size = System::Drawing::Size(467, 34);
+			this->cb_proCategory->Size = System::Drawing::Size(351, 28);
 			this->cb_proCategory->TabIndex = 40;
 			// 
 			// label34
 			// 
 			this->label34->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label34->Location = System::Drawing::Point(-7, 20);
-			this->label34->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label34->Location = System::Drawing::Point(-5, 16);
 			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(300, 6);
+			this->label34->Size = System::Drawing::Size(225, 5);
 			this->label34->TabIndex = 39;
 			// 
 			// label33
 			// 
 			this->label33->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label33->Location = System::Drawing::Point(560, 20);
-			this->label33->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label33->Location = System::Drawing::Point(420, 16);
 			this->label33->Name = L"label33";
-			this->label33->Size = System::Drawing::Size(1013, 6);
+			this->label33->Size = System::Drawing::Size(760, 5);
 			this->label33->TabIndex = 38;
 			// 
 			// label31
 			// 
 			this->label31->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label31->Location = System::Drawing::Point(268, 18);
-			this->label31->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label31->Location = System::Drawing::Point(201, 15);
 			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(1296, 1);
+			this->label31->Size = System::Drawing::Size(972, 1);
 			this->label31->TabIndex = 27;
 			// 
 			// button2
@@ -856,10 +826,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button2->Location = System::Drawing::Point(1064, 523);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
+			this->button2->Location = System::Drawing::Point(798, 425);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(213, 43);
+			this->button2->Size = System::Drawing::Size(160, 35);
 			this->button2->TabIndex = 26;
 			this->button2->Text = L"Back";
 			this->button2->UseVisualStyleBackColor = true;
@@ -870,10 +839,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label7->Location = System::Drawing::Point(505, 85);
-			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label7->Location = System::Drawing::Point(379, 69);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(247, 44);
+			this->label7->Size = System::Drawing::Size(196, 35);
 			this->label7->TabIndex = 24;
 			this->label7->Text = L"Add Product";
 			// 
@@ -886,10 +854,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proDesc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proDesc->HideSelection = false;
-			this->inp_proDesc->Location = System::Drawing::Point(515, 388);
-			this->inp_proDesc->Margin = System::Windows::Forms::Padding(4);
+			this->inp_proDesc->Location = System::Drawing::Point(386, 315);
 			this->inp_proDesc->Name = L"inp_proDesc";
-			this->inp_proDesc->Size = System::Drawing::Size(467, 32);
+			this->inp_proDesc->Size = System::Drawing::Size(351, 27);
 			this->inp_proDesc->TabIndex = 14;
 			// 
 			// inp_proName
@@ -901,10 +868,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_proName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proName->HideSelection = false;
-			this->inp_proName->Location = System::Drawing::Point(513, 288);
-			this->inp_proName->Margin = System::Windows::Forms::Padding(4);
+			this->inp_proName->Location = System::Drawing::Point(385, 234);
 			this->inp_proName->Name = L"inp_proName";
-			this->inp_proName->Size = System::Drawing::Size(467, 32);
+			this->inp_proName->Size = System::Drawing::Size(351, 27);
 			this->inp_proName->TabIndex = 10;
 			// 
 			// label6
@@ -912,10 +878,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label6->Location = System::Drawing::Point(1024, 352);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Location = System::Drawing::Point(768, 286);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(472, 32);
+			this->label6->Size = System::Drawing::Size(354, 26);
 			this->label6->TabIndex = 22;
 			this->label6->Text = L"Stock";
 			// 
@@ -924,10 +889,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label5->Location = System::Drawing::Point(1025, 159);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(769, 129);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(472, 32);
+			this->label5->Size = System::Drawing::Size(354, 26);
 			this->label5->TabIndex = 19;
 			this->label5->Text = L"Category";
 			// 
@@ -936,10 +900,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label3->Location = System::Drawing::Point(1024, 252);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(768, 205);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(472, 32);
+			this->label3->Size = System::Drawing::Size(354, 26);
 			this->label3->TabIndex = 17;
 			this->label3->Text = L"Price";
 			// 
@@ -948,10 +911,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label2->Location = System::Drawing::Point(511, 354);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(383, 288);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(472, 32);
+			this->label2->Size = System::Drawing::Size(354, 26);
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"Description";
 			// 
@@ -960,10 +922,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label1->Location = System::Drawing::Point(508, 161);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(381, 131);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(472, 32);
+			this->label1->Size = System::Drawing::Size(354, 26);
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Barcode";
 			// 
@@ -972,10 +933,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label4->Location = System::Drawing::Point(509, 255);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(382, 207);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(472, 32);
+			this->label4->Size = System::Drawing::Size(354, 26);
 			this->label4->TabIndex = 11;
 			this->label4->Text = L"Product Name";
 			// 
@@ -986,10 +946,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button1->Location = System::Drawing::Point(1285, 523);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Location = System::Drawing::Point(964, 425);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(213, 43);
+			this->button1->Size = System::Drawing::Size(160, 35);
 			this->button1->TabIndex = 9;
 			this->button1->Text = L"Add";
 			this->button1->UseVisualStyleBackColor = true;
@@ -1002,11 +961,10 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_control->Controls->Add(this->tab_dashboard);
 			this->tab_control->Controls->Add(this->tab_editproduct);
 			this->tab_control->Controls->Add(this->tab_accounts);
-			this->tab_control->Location = System::Drawing::Point(-8, 1);
-			this->tab_control->Margin = System::Windows::Forms::Padding(4);
+			this->tab_control->Location = System::Drawing::Point(-6, 1);
 			this->tab_control->Name = L"tab_control";
 			this->tab_control->SelectedIndex = 1;
-			this->tab_control->Size = System::Drawing::Size(1575, 688);
+			this->tab_control->Size = System::Drawing::Size(1181, 559);
 			this->tab_control->TabIndex = 10;
 			// 
 			// tab_editproduct
@@ -1029,11 +987,10 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_editproduct->Controls->Add(this->label21);
 			this->tab_editproduct->Controls->Add(this->label22);
 			this->tab_editproduct->Controls->Add(this->label23);
-			this->tab_editproduct->Location = System::Drawing::Point(4, 28);
-			this->tab_editproduct->Margin = System::Windows::Forms::Padding(4);
+			this->tab_editproduct->Location = System::Drawing::Point(4, 25);
 			this->tab_editproduct->Name = L"tab_editproduct";
-			this->tab_editproduct->Padding = System::Windows::Forms::Padding(4);
-			this->tab_editproduct->Size = System::Drawing::Size(1567, 656);
+			this->tab_editproduct->Padding = System::Windows::Forms::Padding(3);
+			this->tab_editproduct->Size = System::Drawing::Size(1173, 530);
 			this->tab_editproduct->TabIndex = 2;
 			this->tab_editproduct->Text = L"Edit Product";
 			// 
@@ -1041,20 +998,18 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			this->label38->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label38->Location = System::Drawing::Point(-3, 20);
-			this->label38->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label38->Location = System::Drawing::Point(-2, 16);
 			this->label38->Name = L"label38";
-			this->label38->Size = System::Drawing::Size(28, 6);
+			this->label38->Size = System::Drawing::Size(21, 5);
 			this->label38->TabIndex = 41;
 			// 
 			// label36
 			// 
 			this->label36->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label36->Location = System::Drawing::Point(292, 20);
-			this->label36->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label36->Location = System::Drawing::Point(219, 16);
 			this->label36->Name = L"label36";
-			this->label36->Size = System::Drawing::Size(1271, 6);
+			this->label36->Size = System::Drawing::Size(953, 5);
 			this->label36->TabIndex = 40;
 			// 
 			// btn_editBack
@@ -1064,10 +1019,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_editBack->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_editBack->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_editBack->Location = System::Drawing::Point(912, 506);
-			this->btn_editBack->Margin = System::Windows::Forms::Padding(4);
+			this->btn_editBack->Location = System::Drawing::Point(684, 411);
 			this->btn_editBack->Name = L"btn_editBack";
-			this->btn_editBack->Size = System::Drawing::Size(213, 43);
+			this->btn_editBack->Size = System::Drawing::Size(160, 35);
 			this->btn_editBack->TabIndex = 39;
 			this->btn_editBack->Text = L"Back";
 			this->btn_editBack->UseVisualStyleBackColor = true;
@@ -1080,10 +1034,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editUpdate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->inp_editUpdate->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_editUpdate->Location = System::Drawing::Point(1133, 506);
-			this->inp_editUpdate->Margin = System::Windows::Forms::Padding(4);
+			this->inp_editUpdate->Location = System::Drawing::Point(850, 411);
 			this->inp_editUpdate->Name = L"inp_editUpdate";
-			this->inp_editUpdate->Size = System::Drawing::Size(213, 43);
+			this->inp_editUpdate->Size = System::Drawing::Size(160, 35);
 			this->inp_editUpdate->TabIndex = 38;
 			this->inp_editUpdate->Text = L"Update Product";
 			this->inp_editUpdate->UseVisualStyleBackColor = true;
@@ -1095,10 +1048,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label17->Location = System::Drawing::Point(355, 101);
-			this->label17->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label17->Location = System::Drawing::Point(266, 82);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(246, 44);
+			this->label17->Size = System::Drawing::Size(196, 35);
 			this->label17->TabIndex = 37;
 			this->label17->Text = L"Edit Product";
 			// 
@@ -1111,10 +1063,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editStock->HideSelection = false;
-			this->inp_editStock->Location = System::Drawing::Point(879, 405);
-			this->inp_editStock->Margin = System::Windows::Forms::Padding(4);
+			this->inp_editStock->Location = System::Drawing::Point(659, 329);
 			this->inp_editStock->Name = L"inp_editStock";
-			this->inp_editStock->Size = System::Drawing::Size(467, 32);
+			this->inp_editStock->Size = System::Drawing::Size(351, 27);
 			this->inp_editStock->TabIndex = 36;
 			// 
 			// inp_editPrice
@@ -1126,10 +1077,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editPrice->HideSelection = false;
-			this->inp_editPrice->Location = System::Drawing::Point(879, 305);
-			this->inp_editPrice->Margin = System::Windows::Forms::Padding(4);
+			this->inp_editPrice->Location = System::Drawing::Point(659, 248);
 			this->inp_editPrice->Name = L"inp_editPrice";
-			this->inp_editPrice->Size = System::Drawing::Size(467, 32);
+			this->inp_editPrice->Size = System::Drawing::Size(351, 27);
 			this->inp_editPrice->TabIndex = 34;
 			// 
 			// inp_editDesc
@@ -1141,10 +1091,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editDesc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editDesc->HideSelection = false;
-			this->inp_editDesc->Location = System::Drawing::Point(363, 405);
-			this->inp_editDesc->Margin = System::Windows::Forms::Padding(4);
+			this->inp_editDesc->Location = System::Drawing::Point(272, 329);
 			this->inp_editDesc->Name = L"inp_editDesc";
-			this->inp_editDesc->Size = System::Drawing::Size(467, 32);
+			this->inp_editDesc->Size = System::Drawing::Size(351, 27);
 			this->inp_editDesc->TabIndex = 29;
 			// 
 			// inp_editCode
@@ -1157,10 +1106,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editCode->HideSelection = false;
-			this->inp_editCode->Location = System::Drawing::Point(360, 212);
-			this->inp_editCode->Margin = System::Windows::Forms::Padding(4);
+			this->inp_editCode->Location = System::Drawing::Point(270, 172);
 			this->inp_editCode->Name = L"inp_editCode";
-			this->inp_editCode->Size = System::Drawing::Size(467, 32);
+			this->inp_editCode->Size = System::Drawing::Size(351, 27);
 			this->inp_editCode->TabIndex = 27;
 			// 
 			// inp_editName
@@ -1172,10 +1120,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_editName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editName->HideSelection = false;
-			this->inp_editName->Location = System::Drawing::Point(361, 305);
-			this->inp_editName->Margin = System::Windows::Forms::Padding(4);
+			this->inp_editName->Location = System::Drawing::Point(271, 248);
 			this->inp_editName->Name = L"inp_editName";
-			this->inp_editName->Size = System::Drawing::Size(467, 32);
+			this->inp_editName->Size = System::Drawing::Size(351, 27);
 			this->inp_editName->TabIndex = 25;
 			// 
 			// label18
@@ -1183,10 +1130,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label18->Location = System::Drawing::Point(872, 369);
-			this->label18->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label18->Location = System::Drawing::Point(654, 300);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(472, 32);
+			this->label18->Size = System::Drawing::Size(354, 26);
 			this->label18->TabIndex = 35;
 			this->label18->Text = L"Stock";
 			// 
@@ -1202,10 +1148,9 @@ private: System::ComponentModel::IContainer^  components;
 					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
 					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
 			});
-			this->cb_editCategory->Location = System::Drawing::Point(879, 212);
-			this->cb_editCategory->Margin = System::Windows::Forms::Padding(4);
+			this->cb_editCategory->Location = System::Drawing::Point(659, 172);
 			this->cb_editCategory->Name = L"cb_editCategory";
-			this->cb_editCategory->Size = System::Drawing::Size(467, 34);
+			this->cb_editCategory->Size = System::Drawing::Size(351, 28);
 			this->cb_editCategory->TabIndex = 33;
 			// 
 			// label19
@@ -1213,10 +1158,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label19->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label19->Location = System::Drawing::Point(873, 176);
-			this->label19->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label19->Location = System::Drawing::Point(655, 143);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(472, 32);
+			this->label19->Size = System::Drawing::Size(354, 26);
 			this->label19->TabIndex = 32;
 			this->label19->Text = L"Category";
 			// 
@@ -1225,10 +1169,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label20->Location = System::Drawing::Point(872, 270);
-			this->label20->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label20->Location = System::Drawing::Point(654, 219);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(472, 32);
+			this->label20->Size = System::Drawing::Size(354, 26);
 			this->label20->TabIndex = 31;
 			this->label20->Text = L"Price";
 			// 
@@ -1237,10 +1180,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label21->Location = System::Drawing::Point(359, 372);
-			this->label21->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label21->Location = System::Drawing::Point(269, 302);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(472, 32);
+			this->label21->Size = System::Drawing::Size(354, 26);
 			this->label21->TabIndex = 30;
 			this->label21->Text = L"Description";
 			// 
@@ -1249,10 +1191,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label22->Location = System::Drawing::Point(356, 178);
-			this->label22->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label22->Location = System::Drawing::Point(267, 145);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(472, 32);
+			this->label22->Size = System::Drawing::Size(354, 26);
 			this->label22->TabIndex = 28;
 			this->label22->Text = L"Barcode";
 			// 
@@ -1261,20 +1202,19 @@ private: System::ComponentModel::IContainer^  components;
 			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label23->Location = System::Drawing::Point(357, 272);
-			this->label23->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label23->Location = System::Drawing::Point(268, 221);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(472, 32);
+			this->label23->Size = System::Drawing::Size(354, 26);
 			this->label23->TabIndex = 26;
 			this->label23->Text = L"Product Name";
 			// 
 			// tab_accounts
 			// 
 			this->tab_accounts->BackColor = System::Drawing::Color::White;
+			this->tab_accounts->Controls->Add(this->tb_account);
 			this->tab_accounts->Controls->Add(this->btn_accMode);
 			this->tab_accounts->Controls->Add(this->label35);
 			this->tab_accounts->Controls->Add(this->label37);
-			this->tab_accounts->Controls->Add(this->tb_account);
 			this->tab_accounts->Controls->Add(this->btn_addAcc);
 			this->tab_accounts->Controls->Add(this->btn_delAcc);
 			this->tab_accounts->Controls->Add(this->btn_uppAcc);
@@ -1285,13 +1225,45 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_accounts->Controls->Add(this->inp_accUser);
 			this->tab_accounts->Controls->Add(this->label25);
 			this->tab_accounts->Controls->Add(this->label27);
-			this->tab_accounts->Location = System::Drawing::Point(4, 28);
-			this->tab_accounts->Margin = System::Windows::Forms::Padding(4);
+			this->tab_accounts->Location = System::Drawing::Point(4, 25);
 			this->tab_accounts->Name = L"tab_accounts";
-			this->tab_accounts->Padding = System::Windows::Forms::Padding(4);
-			this->tab_accounts->Size = System::Drawing::Size(1567, 656);
+			this->tab_accounts->Padding = System::Windows::Forms::Padding(3);
+			this->tab_accounts->Size = System::Drawing::Size(1173, 530);
 			this->tab_accounts->TabIndex = 3;
 			this->tab_accounts->Text = L"Accounts";
+			// 
+			// tb_account
+			// 
+			this->tb_account->BackgroundColor = System::Drawing::Color::White;
+			this->tb_account->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->tb_account->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+				this->cl_username,
+					this->cl_password, this->cl_loginas
+			});
+			this->tb_account->Enabled = false;
+			this->tb_account->Location = System::Drawing::Point(420, 37);
+			this->tb_account->Name = L"tb_account";
+			this->tb_account->Size = System::Drawing::Size(724, 456);
+			this->tb_account->TabIndex = 59;
+			this->tb_account->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_account_CellClick);
+			// 
+			// cl_username
+			// 
+			this->cl_username->HeaderText = L"Username";
+			this->cl_username->Name = L"cl_username";
+			this->cl_username->Width = 200;
+			// 
+			// cl_password
+			// 
+			this->cl_password->HeaderText = L"Password";
+			this->cl_password->Name = L"cl_password";
+			this->cl_password->Width = 200;
+			// 
+			// cl_loginas
+			// 
+			this->cl_loginas->HeaderText = L"Login As";
+			this->cl_loginas->Name = L"cl_loginas";
+			this->cl_loginas->Width = 200;
 			// 
 			// btn_accMode
 			// 
@@ -1301,10 +1273,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_accMode->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_accMode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->btn_accMode->ForeColor = System::Drawing::Color::White;
-			this->btn_accMode->Location = System::Drawing::Point(344, 96);
-			this->btn_accMode->Margin = System::Windows::Forms::Padding(4);
+			this->btn_accMode->Location = System::Drawing::Point(258, 78);
 			this->btn_accMode->Name = L"btn_accMode";
-			this->btn_accMode->Size = System::Drawing::Size(172, 43);
+			this->btn_accMode->Size = System::Drawing::Size(129, 35);
 			this->btn_accMode->TabIndex = 58;
 			this->btn_accMode->Text = L"Add Mode";
 			this->btn_accMode->UseVisualStyleBackColor = false;
@@ -1314,38 +1285,19 @@ private: System::ComponentModel::IContainer^  components;
 			// 
 			this->label35->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label35->Location = System::Drawing::Point(-1, 20);
-			this->label35->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label35->Location = System::Drawing::Point(-1, 16);
 			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(563, 6);
+			this->label35->Size = System::Drawing::Size(422, 5);
 			this->label35->TabIndex = 57;
 			// 
 			// label37
 			// 
 			this->label37->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label37->Location = System::Drawing::Point(828, 20);
-			this->label37->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label37->Location = System::Drawing::Point(621, 16);
 			this->label37->Name = L"label37";
-			this->label37->Size = System::Drawing::Size(735, 6);
+			this->label37->Size = System::Drawing::Size(551, 5);
 			this->label37->TabIndex = 56;
-			// 
-			// tb_account
-			// 
-			this->tb_account->BackgroundColor = System::Drawing::Color::White;
-			this->tb_account->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->tb_account->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
-				this->acc_usetCl,
-					this->acc_passCl, this->acc_loginAsCl
-			});
-			this->tb_account->Enabled = false;
-			this->tb_account->Location = System::Drawing::Point(563, 46);
-			this->tb_account->Margin = System::Windows::Forms::Padding(4);
-			this->tb_account->Name = L"tb_account";
-			this->tb_account->Size = System::Drawing::Size(927, 544);
-			this->tb_account->TabIndex = 51;
-			this->tb_account->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_account_CellClick);
-			this->tb_account->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_account_CellContentClick);
 			// 
 			// btn_addAcc
 			// 
@@ -1354,10 +1306,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_addAcc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_addAcc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_addAcc->Location = System::Drawing::Point(292, 442);
-			this->btn_addAcc->Margin = System::Windows::Forms::Padding(4);
+			this->btn_addAcc->Location = System::Drawing::Point(219, 359);
 			this->btn_addAcc->Name = L"btn_addAcc";
-			this->btn_addAcc->Size = System::Drawing::Size(213, 43);
+			this->btn_addAcc->Size = System::Drawing::Size(160, 35);
 			this->btn_addAcc->TabIndex = 50;
 			this->btn_addAcc->Text = L"Add Account";
 			this->btn_addAcc->UseVisualStyleBackColor = true;
@@ -1370,10 +1321,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_delAcc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_delAcc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)));
-			this->btn_delAcc->Location = System::Drawing::Point(292, 442);
-			this->btn_delAcc->Margin = System::Windows::Forms::Padding(4);
+			this->btn_delAcc->Location = System::Drawing::Point(219, 359);
 			this->btn_delAcc->Name = L"btn_delAcc";
-			this->btn_delAcc->Size = System::Drawing::Size(213, 43);
+			this->btn_delAcc->Size = System::Drawing::Size(160, 35);
 			this->btn_delAcc->TabIndex = 49;
 			this->btn_delAcc->Text = L"Delete Account";
 			this->btn_delAcc->UseVisualStyleBackColor = true;
@@ -1387,10 +1337,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_uppAcc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_uppAcc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_uppAcc->Location = System::Drawing::Point(45, 442);
-			this->btn_uppAcc->Margin = System::Windows::Forms::Padding(4);
+			this->btn_uppAcc->Location = System::Drawing::Point(34, 359);
 			this->btn_uppAcc->Name = L"btn_uppAcc";
-			this->btn_uppAcc->Size = System::Drawing::Size(213, 43);
+			this->btn_uppAcc->Size = System::Drawing::Size(160, 35);
 			this->btn_uppAcc->TabIndex = 48;
 			this->btn_uppAcc->Text = L"Update Account";
 			this->btn_uppAcc->UseVisualStyleBackColor = true;
@@ -1402,10 +1351,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label28->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label28->Location = System::Drawing::Point(41, 338);
-			this->label28->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label28->Location = System::Drawing::Point(31, 275);
 			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(472, 32);
+			this->label28->Size = System::Drawing::Size(354, 26);
 			this->label28->TabIndex = 47;
 			this->label28->Text = L"Login as.";
 			// 
@@ -1416,10 +1364,9 @@ private: System::ComponentModel::IContainer^  components;
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_accLoginas->FormattingEnabled = true;
 			this->cb_accLoginas->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Inventory", L"Cashier" });
-			this->cb_accLoginas->Location = System::Drawing::Point(45, 375);
-			this->cb_accLoginas->Margin = System::Windows::Forms::Padding(4);
+			this->cb_accLoginas->Location = System::Drawing::Point(34, 305);
 			this->cb_accLoginas->Name = L"cb_accLoginas";
-			this->cb_accLoginas->Size = System::Drawing::Size(467, 34);
+			this->cb_accLoginas->Size = System::Drawing::Size(351, 28);
 			this->cb_accLoginas->TabIndex = 45;
 			// 
 			// inp_accPass
@@ -1431,11 +1378,10 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_accPass->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_accPass->HideSelection = false;
-			this->inp_accPass->Location = System::Drawing::Point(45, 270);
-			this->inp_accPass->Margin = System::Windows::Forms::Padding(4);
+			this->inp_accPass->Location = System::Drawing::Point(34, 219);
 			this->inp_accPass->Name = L"inp_accPass";
 			this->inp_accPass->PasswordChar = '*';
-			this->inp_accPass->Size = System::Drawing::Size(467, 32);
+			this->inp_accPass->Size = System::Drawing::Size(351, 27);
 			this->inp_accPass->TabIndex = 46;
 			// 
 			// label24
@@ -1444,10 +1390,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label24->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label24->Location = System::Drawing::Point(40, 46);
-			this->label24->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label24->Location = System::Drawing::Point(30, 37);
 			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(191, 44);
+			this->label24->Size = System::Drawing::Size(152, 35);
 			this->label24->TabIndex = 44;
 			this->label24->Text = L"Accounts";
 			// 
@@ -1460,10 +1405,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->inp_accUser->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_accUser->HideSelection = false;
-			this->inp_accUser->Location = System::Drawing::Point(47, 176);
-			this->inp_accUser->Margin = System::Windows::Forms::Padding(4);
+			this->inp_accUser->Location = System::Drawing::Point(35, 143);
 			this->inp_accUser->Name = L"inp_accUser";
-			this->inp_accUser->Size = System::Drawing::Size(467, 32);
+			this->inp_accUser->Size = System::Drawing::Size(351, 27);
 			this->inp_accUser->TabIndex = 38;
 			// 
 			// label25
@@ -1471,10 +1415,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label25->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label25->Location = System::Drawing::Point(44, 234);
-			this->label25->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label25->Location = System::Drawing::Point(33, 190);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(472, 32);
+			this->label25->Size = System::Drawing::Size(354, 26);
 			this->label25->TabIndex = 43;
 			this->label25->Text = L"Password";
 			// 
@@ -1483,10 +1426,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label27->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label27->Location = System::Drawing::Point(43, 143);
-			this->label27->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label27->Location = System::Drawing::Point(32, 116);
 			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(472, 32);
+			this->label27->Size = System::Drawing::Size(354, 26);
 			this->label27->TabIndex = 39;
 			this->label27->Text = L"Username";
 			// 
@@ -1497,10 +1439,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->panel1->Controls->Add(this->button7);
 			this->panel1->Controls->Add(this->btn_addproduct);
 			this->panel1->Controls->Add(this->btn_dashboard);
-			this->panel1->Location = System::Drawing::Point(-8, -4);
-			this->panel1->Margin = System::Windows::Forms::Padding(4);
+			this->panel1->Location = System::Drawing::Point(-6, -3);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1569, 57);
+			this->panel1->Size = System::Drawing::Size(1177, 46);
 			this->panel1->TabIndex = 27;
 			// 
 			// button8
@@ -1510,10 +1451,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->button8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button8->Location = System::Drawing::Point(565, 6);
-			this->button8->Margin = System::Windows::Forms::Padding(4);
+			this->button8->Location = System::Drawing::Point(424, 5);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(269, 52);
+			this->button8->Size = System::Drawing::Size(202, 42);
 			this->button8->TabIndex = 13;
 			this->button8->Text = L"Accounts";
 			this->button8->UseVisualStyleBackColor = true;
@@ -1526,10 +1466,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button7->Location = System::Drawing::Point(833, 6);
-			this->button7->Margin = System::Windows::Forms::Padding(4);
+			this->button7->Location = System::Drawing::Point(625, 5);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(269, 52);
+			this->button7->Size = System::Drawing::Size(202, 42);
 			this->button7->TabIndex = 12;
 			this->button7->Text = L"Settings";
 			this->button7->UseVisualStyleBackColor = true;
@@ -1542,10 +1481,9 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_addproduct->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_addproduct->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_addproduct->Location = System::Drawing::Point(297, 6);
-			this->btn_addproduct->Margin = System::Windows::Forms::Padding(4);
+			this->btn_addproduct->Location = System::Drawing::Point(223, 5);
 			this->btn_addproduct->Name = L"btn_addproduct";
-			this->btn_addproduct->Size = System::Drawing::Size(269, 52);
+			this->btn_addproduct->Size = System::Drawing::Size(202, 42);
 			this->btn_addproduct->TabIndex = 11;
 			this->btn_addproduct->Text = L"Add Product";
 			this->btn_addproduct->UseVisualStyleBackColor = true;
@@ -1558,43 +1496,23 @@ private: System::ComponentModel::IContainer^  components;
 			this->btn_dashboard->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->btn_dashboard->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_dashboard->Location = System::Drawing::Point(29, 6);
-			this->btn_dashboard->Margin = System::Windows::Forms::Padding(4);
+			this->btn_dashboard->Location = System::Drawing::Point(22, 5);
 			this->btn_dashboard->Name = L"btn_dashboard";
-			this->btn_dashboard->Size = System::Drawing::Size(269, 52);
+			this->btn_dashboard->Size = System::Drawing::Size(202, 42);
 			this->btn_dashboard->TabIndex = 10;
 			this->btn_dashboard->Text = L"Dashboard";
 			this->btn_dashboard->UseVisualStyleBackColor = true;
 			this->btn_dashboard->Click += gcnew System::EventHandler(this, &inventory::btn_dashboard_Click);
 			// 
-			// acc_usetCl
-			// 
-			this->acc_usetCl->HeaderText = L"Username";
-			this->acc_usetCl->Name = L"acc_usetCl";
-			this->acc_usetCl->Width = 200;
-			// 
-			// acc_passCl
-			// 
-			this->acc_passCl->HeaderText = L"Password";
-			this->acc_passCl->Name = L"acc_passCl";
-			this->acc_passCl->Width = 200;
-			// 
-			// acc_loginAsCl
-			// 
-			this->acc_loginAsCl->HeaderText = L"User type";
-			this->acc_loginAsCl->Name = L"acc_loginAsCl";
-			this->acc_loginAsCl->Width = 200;
-			// 
 			// inventory
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->ClientSize = System::Drawing::Size(1561, 679);
+			this->ClientSize = System::Drawing::Size(1174, 552);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->tab_control);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"inventory";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"inventory";
@@ -1612,8 +1530,6 @@ private: System::ComponentModel::IContainer^  components;
 			this->tab_accounts->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_account))->EndInit();
 			this->panel1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1632,11 +1548,10 @@ private: System::ComponentModel::IContainer^  components;
 		array<Product>^ pro = gcnew array< Product >(1000);
 		array<Product>^ proTable = gcnew array<Product>(1000);
 
-		void loadProductFromFile() {
+		public: void loadProductFromFile() {
 			String^ fileName = "product_tb.txt";
 			try
 			{
-				Console::WriteLine("trying to open file {0}...", fileName);
 				StreamReader^ din = File::OpenText(fileName);
 
 				productCount = Int32::Parse(din->ReadLine());
@@ -1663,7 +1578,7 @@ private: System::ComponentModel::IContainer^  components;
 			}
 		}
 		
-		void loadTable(String^ query) {
+		public: void loadTable(String^ query) {
 			int i;
 			String^ search = inp_proSearch->Text;
 			String^ searchCb = cb_searchCategory->Text;
@@ -1675,7 +1590,6 @@ private: System::ComponentModel::IContainer^  components;
 					
 					if (String::Compare(pro[i].barcode, search) == 0) {
 						proTable[i] = pro[i];
-						
 					}
 
 				}
@@ -1689,7 +1603,6 @@ private: System::ComponentModel::IContainer^  components;
 					}
 				}
 			}
-
 			else if (String::Compare(query, "Category") == 0) {
 				for (i = 0; i < productCount; i++) {
 
@@ -1715,7 +1628,7 @@ private: System::ComponentModel::IContainer^  components;
 			
 		}
 
-		void saveToDatabase() {
+		public: void saveToDatabase() {
 			String^ fileName = "product_tb.txt";
 
 			StreamWriter^ sw = gcnew StreamWriter(fileName);
@@ -1764,26 +1677,42 @@ private: System::ComponentModel::IContainer^  components;
 
 			
 		}
+
+		public: bool checkBarcode(String^ barcode) {
+			bool toReturn;
+			for (int i = 0; i < productCount; i++) {
+				MessageBox::Show(productCount+" "+barcode+" "+ pro[i].barcode);
+				if (String::Compare(pro[i].barcode, barcode) == 0) { toReturn =  true;  break; }
+				else { toReturn = false; }
+			}
+			return toReturn;
+		}
+
 		//Add product to database
 		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			
-		
 			if (validateFields("add_emptyFields")) {
 				MessageBox::Show("Empty fields, Adding Product is not applied");
 			}
 			else {
-				pro[productCount].barcode = inp_proCode->Text;
-				pro[productCount].name = inp_proName->Text;
-				pro[productCount].description = inp_proDesc->Text;
-				pro[productCount].category = cb_proCategory->Text;
-				pro[productCount].price = float::Parse(inp_proPrice->Text);
-				pro[productCount].stock = Int32::Parse(inp_proStock->Text);
-				clearfields();
-				productCount++;
-				MessageBox::Show("The product " + pro[productCount].name + " with barcode of " + pro[productCount].barcode + " added");
-				saveToDatabase();
-				loadTable("default");
-				tab_control->SelectTab(1);
+				if (!checkBarcode(inp_proCode->Text)) {
+					pro[productCount].barcode = inp_proCode->Text;
+					pro[productCount].name = inp_proName->Text;
+					pro[productCount].description = inp_proDesc->Text;
+					pro[productCount].category = cb_proCategory->Text;
+					pro[productCount].price = float::Parse(inp_proPrice->Text);
+					pro[productCount].stock = Int32::Parse(inp_proStock->Text);
+					clearfields();
+					MessageBox::Show("The product " + pro[productCount].name + " with barcode of " + pro[productCount].barcode + " added");
+					productCount++;
+					saveToDatabase();
+					loadTable("default");
+					tab_control->SelectTab(1);
+				}
+				else {
+					MessageBox::Show("The product that you want to add is already exisiting.");
+				}
+				
 			}
 		}
 		
@@ -2011,8 +1940,6 @@ private: System::ComponentModel::IContainer^  components;
 		}
 
 		void loadAccTable(String^ query) {
-
-
 			int i;
 			tb_account->Rows->Clear();
 			tb_account->Refresh();
@@ -2046,6 +1973,42 @@ private: System::ComponentModel::IContainer^  components;
 
 		}
 
+		public: bool checkUsername(String^ username) {
+			bool toReturn;
+			for (int i = 0; i < accountCount; i++) {
+				MessageBox::Show(accountCount + " " + username + " " + acc[i].username);
+				if (String::Compare(acc[i].username, username) == 0) { toReturn = true;  break; }
+				else { toReturn = false; }
+			}
+			return toReturn;
+		}
+
+		public: value struct searchAccount {
+			String^ username;
+			String^ password;
+			String^ loginAs;
+			int idx;
+		};
+		
+
+		//Search Account on database
+		public: searchAccount *accSearch(String^ username) {
+			searchAccount *searched = (value struct searchAccount*) malloc(sizeof(value struct searchAccount));
+
+			for (int i = 0; i < accountCount; i++) {
+
+				if (String::Compare(acc[i].username, username) == 0) {
+					searched->username = acc[i].username;
+					searched->password = acc[i].password;
+					searched->loginAs = acc[i].loginAs;
+					searched->idx = i;
+					return searched;
+					free(searched);
+				}
+
+			}
+		}
+
 		//Add Account
 		private: System::Void btn_addAcc_Click(System::Object^  sender, System::EventArgs^  e) {
 		
@@ -2053,18 +2016,23 @@ private: System::ComponentModel::IContainer^  components;
 				MessageBox::Show("Some fields is empty, Adding Account is not applied");
 			}
 			else {
-				String^ username = inp_accUser->Text;
-				String^ password = inp_accPass->Text;
-				String^ loginAs = cb_accLoginas->Text;
+				if (!checkUsername(inp_accUser->Text)) {
+					String^ username = inp_accUser->Text;
+					String^ password = inp_accPass->Text;
+					String^ loginAs = cb_accLoginas->Text;
 
-				acc[accountCount].username = username;
-				acc[accountCount].password = password;
-				acc[accountCount].loginAs = loginAs;
-				clearfields();
-				accountCount++;
-				MessageBox::Show("The account " + acc[accountCount].username + " with barcode of " + acc[accountCount].password + " added");
-				saveAccToDatabase();
-				loadAccTable("default");
+					acc[accountCount].username = username;
+					acc[accountCount].password = password;
+					acc[accountCount].loginAs = loginAs;
+					clearfields();
+					accountCount++;
+					MessageBox::Show("The account " + acc[accountCount].username + " added");
+					saveAccToDatabase();
+					loadAccTable("default");
+				}
+				else {
+					MessageBox::Show("The account that you want to add is already exisiting.");
+				}
 			}
 		}
 		
@@ -2074,9 +2042,32 @@ private: System::ComponentModel::IContainer^  components;
 				MessageBox::Show("Some fields is empty, Updating Account is not applied");
 			}
 			else {
-				String^ username = inp_accUser->Text;
-				String^ password = inp_accPass->Text;
-				String^ loginAs = cb_accLoginas->Text;
+
+				if (!validateFields("update_sameAccFields")) {
+					
+					searchAccount *account, *toUpdate = (value struct searchAccount*) malloc(sizeof(value struct searchAccount));
+
+					toUpdate->username = inp_accUser->Text;
+					toUpdate->password = inp_accPass->Text;
+					toUpdate->loginAs = cb_accLoginas->Text;
+
+					account = accSearch(toUpdate->username);
+
+					acc[account->idx].username = toUpdate->username;
+					acc[account->idx].password = toUpdate->password;
+					acc[account->idx].loginAs = toUpdate->loginAs;
+
+
+					MessageBox::Show("The product " + acc[account->idx].username + " updated");
+					saveAccToDatabase();
+					loadAccTable("default");
+					free(account);
+					free(toUpdate);
+				}
+				else {
+					MessageBox::Show("Nothing to update here");
+				}
+				
 
 			}
 		
@@ -2091,11 +2082,22 @@ private: System::ComponentModel::IContainer^  components;
 				String^ username = inp_accUser->Text;
 				if (MessageBox::Show("Are you sure to delete " + username + " ?", "Inventory Management System",
 					MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-					try
-					{
-						
+					
+					searchAccount *account = (value struct searchAccount*) malloc(sizeof(value struct searchAccount));
+					account = accSearch(username);
+
+					for (int i = account->idx; i < accountCount; i++) {
+
+						acc[i].username = acc[i + 1].username;
+						acc[i].password = acc[i + 1].password;
+						acc[i].loginAs = acc[i + 1].loginAs;
 					}
-					catch (Exception^ ex) { MessageBox::Show("Error found on updating account " + ex); }
+
+					accountCount--;
+					saveAccToDatabase();
+					loadAccTable("default");
+					clearfields();
+					free(account);
 
 				}
 				else {
@@ -2106,16 +2108,24 @@ private: System::ComponentModel::IContainer^  components;
 		}
 		
 		//Load field by click
+		String^ Username; String^ Pass; String^ LoginAs;
 		private: System::Void tb_account_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-			String^ search = tb_account->Rows[e->RowIndex]->Cells["username"]->Value->ToString();
-			try
-			{
-				
+			String^ search = tb_account->Rows[e->RowIndex]->Cells["cl_username"]->Value->ToString();
+			
+			searchAccount *account = (value struct searchAccount*) malloc(sizeof(value struct searchAccount));
+			account = accSearch(search);
+			if (!search == NULL) {
+				Username = account->username;
+				Pass = account->password;
+				LoginAs = account->loginAs;
+				inp_accUser->Text = Username;
+				inp_accPass->Text = Pass;
+				cb_accLoginas->Text = LoginAs;
 			}
-			catch (Exception^ ex)
-			{
-				MessageBox::Show("Error on loading fields account " + ex);
+			else {
+				MessageBox::Show("Error on loading fields account");
 			}
+					
 		}
 
 		// Utilities
@@ -2170,6 +2180,11 @@ private: System::ComponentModel::IContainer^  components;
 				isValidated = String::Compare(inp_accUser->Text, "") == 0 || String::Compare(inp_accPass->Text, "") == 0
 					|| String::Compare(cb_accLoginas->Text, "") == 0 ? true : false;
 			}
+			if (String::Compare(toValidate, "update_sameAccFields") == 0) {
+				isValidated = String::Compare(inp_accUser->Text, Username) == 0
+					&& String::Compare(inp_accPass->Text, Pass) == 0 && String::Compare(cb_accLoginas->Text, LoginAs) == 0 ? true : false;
+			}
+			
 			return isValidated;
 
 		}
@@ -2204,7 +2219,5 @@ private: System::ComponentModel::IContainer^  components;
 			tb_account->Enabled = !isAddMode;
 		}
 
-private: System::Void tb_account_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-}
 };
 }

@@ -1,13 +1,10 @@
-4
+3
 lugod
 titi
 Inventory
 errol
-gago
-cashier
-552
-52525525
+22
 Cashier
-Siasol
-titi
+errol
+13131
 Cashier
