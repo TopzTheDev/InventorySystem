@@ -168,7 +168,7 @@ namespace InventoryManagementSystem {
 
 
 	private: System::Windows::Forms::Label^  label18;
-private: System::Windows::Forms::ComboBox^  cb_editCategory;
+	private: System::Windows::Forms::ComboBox^  cb_editCategory;
 
 
 	private: System::Windows::Forms::Label^  label19;
@@ -183,38 +183,38 @@ private: System::Windows::Forms::ComboBox^  cb_editCategory;
 	private: System::Windows::Forms::Button^  button7;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::TabPage^  tab_accounts;
-private: System::Windows::Forms::Label^  label24;
-private: System::Windows::Forms::TextBox^  inp_accUser;
+	private: System::Windows::Forms::Label^  label24;
+	private: System::Windows::Forms::TextBox^  inp_accUser;
 
 
 
 
-private: System::Windows::Forms::Label^  label25;
+	private: System::Windows::Forms::Label^  label25;
 
-private: System::Windows::Forms::Label^  label27;
-private: System::Windows::Forms::ComboBox^  cb_accLoginas;
+	private: System::Windows::Forms::Label^  label27;
+	private: System::Windows::Forms::ComboBox^  cb_accLoginas;
 
-private: System::Windows::Forms::TextBox^  inp_accPass;
-
-
-private: System::Windows::Forms::Label^  label28;
-private: System::Windows::Forms::Button^  btn_delAcc;
-private: System::Windows::Forms::Button^  btn_uppAcc;
+	private: System::Windows::Forms::TextBox^  inp_accPass;
 
 
-private: System::Windows::Forms::Button^  btn_addAcc;
+	private: System::Windows::Forms::Label^  label28;
+	private: System::Windows::Forms::Button^  btn_delAcc;
+	private: System::Windows::Forms::Button^  btn_uppAcc;
+
+
+	private: System::Windows::Forms::Button^  btn_addAcc;
 
 
 
-private: System::Windows::Forms::Label^  label31;
-private: System::Windows::Forms::Label^  label32;
-private: System::Windows::Forms::Label^  label34;
-private: System::Windows::Forms::Label^  label33;
+	private: System::Windows::Forms::Label^  label31;
+	private: System::Windows::Forms::Label^  label32;
+	private: System::Windows::Forms::Label^  label34;
+	private: System::Windows::Forms::Label^  label33;
 
-private: System::Windows::Forms::Label^  label36;
-private: System::Windows::Forms::Label^  label35;
-private: System::Windows::Forms::Label^  label37;
-private: System::ComponentModel::IContainer^  components;
+	private: System::Windows::Forms::Label^  label36;
+	private: System::Windows::Forms::Label^  label35;
+	private: System::Windows::Forms::Label^  label37;
+	private: System::ComponentModel::IContainer^  components;
 
 	protected:
 
@@ -230,18 +230,6 @@ private: System::ComponentModel::IContainer^  components;
 		/// </summary>
 
 		void InitalizeOtherComponent(void){
-			/*loadTable("Default");
-			loadAccountTable();
-			table_prevProduct->MultiSelect = true;
-			cb_category->SelectedItem = "Barcode";
-			cb_proCategory->SelectedItem = "Others";
-			table_prevProduct->Columns[0]->HeaderText = "Barcode";
-			table_prevProduct->Columns[1]->HeaderText = "Product Name";
-			table_prevProduct->Columns[2]->HeaderText = "Description";
-			table_prevProduct->Columns[3]->HeaderText = "Category";
-			table_prevProduct->Columns[4]->HeaderText = "Price";
-			table_prevProduct->Columns[5]->HeaderText = "Stocks";
-			cb_searchCategory->Visible = false;*/
 			table_prevProduct->AllowUserToAddRows = false;
 			tb_account->AllowUserToAddRows = false;
 			loadTable("default");

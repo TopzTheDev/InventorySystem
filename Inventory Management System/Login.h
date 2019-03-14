@@ -319,8 +319,7 @@ namespace InventoryManagementSystem {
 		String^ username = inp_userName->Text;
 		String^ password = inp_loginPass->Text;
 		String^ loginAs = cb_loginAs->Text;
-
-		MessageBox::Show(""+ verifyAccount(username, password, loginAs));
+		MessageBox::Show(""+(verifyAccount(username, password, loginAs)));
 		if (!fieldValidation()) {
 			if (verifyAccount(username, password, loginAs)) {
 				if (String::Compare(loginAs, "Inventory") == 0) {
@@ -345,19 +344,22 @@ namespace InventoryManagementSystem {
 		else {
 			MessageBox::Show("Some fields is empty");
 		}
-
-		
 		
 	}
 
 	public: bool verifyAccount(String^ username, String^ password, String^ loginAs) {
-		
+		bool toReturn;
 		for (int i = 0; i < accountCount-1; i++) {
 			if (String::Compare(acc[i].username, username) == 0 && String::Compare(acc[i].password, password) == 0 && String::Compare(acc[i].loginAs, loginAs) == 0) {
-				return true;
+				toReturn = true;
+				break;
+			}
+			else {
+				toReturn = false;
 			}
 		}
 
+		return toReturn;
 	}
 
 	void clearFields() {
@@ -376,7 +378,7 @@ namespace InventoryManagementSystem {
 	private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 		MessageBox::Show("Welcome to the Cashier");
 		this->Hide();
-		inventory ^ frm2 = gcnew inventory(this);
+		cashier ^ frm2 = gcnew cashier(this);
 		frm2->ShowDialog();
 	}
 };

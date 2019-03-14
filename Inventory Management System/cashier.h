@@ -1,5 +1,12 @@
 ﻿#pragma once
-#include "ctype.h"
+#include <conio.h>
+#include <iostream>
+#include <string>
+#include <list>
+#include <vector>
+#include <array>
+#include <fstream> 
+#include <stdio.h>
 namespace InventoryManagementSystem {
 
 	using namespace System;
@@ -8,6 +15,7 @@ namespace InventoryManagementSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Summary for cashier
@@ -24,9 +32,10 @@ namespace InventoryManagementSystem {
 
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::NumericUpDown^  inp_quantity;
 	public:
-			 String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
 		cashier(void)
 		{
 			
@@ -37,7 +46,7 @@ namespace InventoryManagementSystem {
 			//
 		}
 
-
+	public:
 		cashier(Form^ obj1)
 		{
 			obj = obj1;
@@ -47,9 +56,6 @@ namespace InventoryManagementSystem {
 			//TODO: Add the constructor code here
 			//
 		}
-
-		
-
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -66,7 +72,8 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::DataGridView^  tb_cashier;
 
 	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Label^  lbl_amountDue;
+
 	private: System::Windows::Forms::TextBox^  inp_proCode;
 	private: System::Windows::Forms::Label^  lbl_searchMode;
 
@@ -115,7 +122,10 @@ namespace InventoryManagementSystem {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		void IntializeOtherComponent(void) {
+			tb_cashier->AllowUserToAddRows = false;
 			cb_toSearch->SelectedItem = "Barcode";
+			loadProductFromFile();
+			resetfields();
 		}
 
 		void InitializeComponent(void)
@@ -129,7 +139,7 @@ namespace InventoryManagementSystem {
 			this->pro_price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->pro_total = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->lbl_amountDue = (gcnew System::Windows::Forms::Label());
 			this->inp_proCode = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_searchMode = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -155,6 +165,8 @@ namespace InventoryManagementSystem {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->inp_quantity = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_quantity))->BeginInit();
 			this->SuspendLayout();
@@ -248,18 +260,17 @@ namespace InventoryManagementSystem {
 			this->label1->TabIndex = 28;
 			this->label1->Text = L"Amount Due:";
 			// 
-			// label2
+			// lbl_amountDue
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbl_amountDue->AutoSize = true;
+			this->lbl_amountDue->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->lbl_amountDue->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label2->Location = System::Drawing::Point(165, 458);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(112, 29);
-			this->label2->TabIndex = 29;
-			this->label2->Text = L"₱120,000";
+			this->lbl_amountDue->Location = System::Drawing::Point(183, 456);
+			this->lbl_amountDue->Name = L"lbl_amountDue";
+			this->lbl_amountDue->Size = System::Drawing::Size(0, 29);
+			this->lbl_amountDue->TabIndex = 29;
 			// 
 			// inp_proCode
 			// 
@@ -309,7 +320,6 @@ namespace InventoryManagementSystem {
 			this->lbl_proName->Name = L"lbl_proName";
 			this->lbl_proName->Size = System::Drawing::Size(289, 26);
 			this->lbl_proName->TabIndex = 33;
-			this->lbl_proName->Text = L"Hansel Chocolate";
 			// 
 			// lbl_proDesc
 			// 
@@ -320,7 +330,6 @@ namespace InventoryManagementSystem {
 			this->lbl_proDesc->Name = L"lbl_proDesc";
 			this->lbl_proDesc->Size = System::Drawing::Size(289, 26);
 			this->lbl_proDesc->TabIndex = 35;
-			this->lbl_proDesc->Text = L"Cholate Filling";
 			// 
 			// label8
 			// 
@@ -339,11 +348,10 @@ namespace InventoryManagementSystem {
 			this->lbl_proPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->lbl_proPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_proPrice->Location = System::Drawing::Point(713, 374);
+			this->lbl_proPrice->Location = System::Drawing::Point(737, 374);
 			this->lbl_proPrice->Name = L"lbl_proPrice";
-			this->lbl_proPrice->Size = System::Drawing::Size(289, 26);
+			this->lbl_proPrice->Size = System::Drawing::Size(265, 26);
 			this->lbl_proPrice->TabIndex = 37;
-			this->lbl_proPrice->Text = L"₱25.50";
 			// 
 			// label10
 			// 
@@ -377,7 +385,6 @@ namespace InventoryManagementSystem {
 			this->lbl_proStock->Name = L"lbl_proStock";
 			this->lbl_proStock->Size = System::Drawing::Size(289, 26);
 			this->lbl_proStock->TabIndex = 41;
-			this->lbl_proStock->Text = L"12";
 			// 
 			// label13
 			// 
@@ -506,7 +513,6 @@ namespace InventoryManagementSystem {
 			this->lbl_barcode->Name = L"lbl_barcode";
 			this->lbl_barcode->Size = System::Drawing::Size(289, 26);
 			this->lbl_barcode->TabIndex = 51;
-			this->lbl_barcode->Text = L"Hansel Chocolate";
 			// 
 			// Barcode
 			// 
@@ -529,7 +535,6 @@ namespace InventoryManagementSystem {
 			this->lbl_proCategory->Name = L"lbl_proCategory";
 			this->lbl_proCategory->Size = System::Drawing::Size(289, 26);
 			this->lbl_proCategory->TabIndex = 53;
-			this->lbl_proCategory->Text = L"Cholate Filling";
 			// 
 			// label6
 			// 
@@ -561,10 +566,35 @@ namespace InventoryManagementSystem {
 			this->inp_quantity->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_quantity->Location = System::Drawing::Point(280, 95);
+			this->inp_quantity->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->inp_quantity->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_quantity->Name = L"inp_quantity";
 			this->inp_quantity->Size = System::Drawing::Size(102, 28);
 			this->inp_quantity->TabIndex = 55;
+			this->inp_quantity->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_quantity->ValueChanged += gcnew System::EventHandler(this, &cashier::inp_quantity_ValueChanged);
+			// 
+			// label5
+			// 
+			this->label5->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label5->Location = System::Drawing::Point(710, 374);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(26, 26);
+			this->label5->TabIndex = 56;
+			this->label5->Text = L"₱";
+			// 
+			// label2
+			// 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label2->Location = System::Drawing::Point(163, 457);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(26, 26);
+			this->label2->TabIndex = 57;
+			this->label2->Text = L"₱";
 			// 
 			// cashier
 			// 
@@ -572,6 +602,8 @@ namespace InventoryManagementSystem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1050, 507);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->inp_quantity);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->lbl_proCategory);
@@ -596,7 +628,7 @@ namespace InventoryManagementSystem {
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->inp_proCode);
 			this->Controls->Add(this->lbl_searchMode);
-			this->Controls->Add(this->label2);
+			this->Controls->Add(this->lbl_amountDue);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->tb_cashier);
 			this->Controls->Add(this->button7);
@@ -624,98 +656,273 @@ namespace InventoryManagementSystem {
 		int proQuan = 1;
 		int showRoll = 0;
 
-	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
-		this->Hide();
-		obj->Show();
-	}
-	
-	private: System::Void cb_toSearch_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		if (String::Compare(cb_toSearch->Text, "Barcode") == 0) {
-			lbl_searchMode->Text = "Barcode";
-		}
-		else {
-			lbl_searchMode->Text = "Product Name";
-		}
-	}
-	
-	private: System::Void lbl_searchMode_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-		if (showRoll == 0) {
-			cb_toSearch->DroppedDown = true;
-			showRoll++;
-		}
-		else {
-			cb_toSearch->DroppedDown = false;
-			showRoll--;
+		//Struct of Products
+		public: value struct Product {
+			String^ barcode;
+			String^ name;
+			String^ description;
+			String^ category;
+			int stock;
+			float price;
+		};
+
+		//Count of products in textfile
+		int productCount;
+
+		//Array of Structure for products
+		array<Product>^ pro = gcnew array< Product >(1000);
+
+		//Load the array from textfile
+		public: void loadProductFromFile() {
+			String^ fileName = "product_tb.txt";
+			try
+			{
+				StreamReader^ din = File::OpenText(fileName);
+
+				productCount = Int32::Parse(din->ReadLine());
+				if (productCount > 0) {
+					for (int i = 0; i < productCount; i++) {
+						pro[i].barcode = din->ReadLine();
+						pro[i].name = din->ReadLine();
+						pro[i].description = din->ReadLine();
+						pro[i].category = din->ReadLine();
+						pro[i].stock = Int32::Parse(din->ReadLine());
+						pro[i].price = float::Parse(din->ReadLine());
+					}
+				}
+				else {
+					MessageBox::Show("The database is empty");
+				}
+
+				din->Close();
+
+			}
+			catch (const std::exception&)
+			{
+
+			}
 		}
 
-	}
+		//Searching product
+		public: value struct searchProduct {
+			String^ barcode;
+			String^ name;
+			String^ description;
+			String^ category;
+			int stock;
+			float price;
+			int idx;
+		};
 
-	String^ convertSelection(String^ type) {
-		String^ choosen;
-		if (String::Compare(type, "Barcode") == 0) {
-			choosen = "barcode";
-		}
-		else {
-			choosen = "pro_name";
-		}
-		return choosen;
-	}
+		public: searchProduct *proSearch(String^ bcode) {
+			searchProduct *searched = (value struct searchProduct*) malloc(sizeof(value struct searchProduct));
 
-	private: System::Void inp_proCode_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		try
-		{
+			for (int i = 0; i < productCount; i++) {
+
+				if (String::Compare(pro[i].barcode, bcode) == 0) {
+					searched->barcode = pro[i].barcode;
+					searched->name = pro[i].name;
+					searched->description = pro[i].description;
+					searched->stock = pro[i].stock;
+					searched->price = pro[i].price;
+					searched->category = pro[i].category;
+					searched->idx = i;
+					break;
+				}
+				else {
+					searched->barcode = "NULL";
+				}
+
+			}
+			return searched;
+			free(searched);
+		}
+
+
+		//Current in cart
+		public: value struct cartProduct {
+			String^ barcode;
+			String^ name;
+			int quantity;
+			float price;
+			float totalPrice;
+		};
+		int cartCount=0;
+		array<cartProduct>^ cart = gcnew array< cartProduct >(1000);
+
+		private: System::Void inp_proCode_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			String^ toSearch = inp_proCode->Text;
+			if (!String::IsNullOrEmpty(toSearch)) {
+
+				searchProduct *product = (value struct searchProduct*) malloc(sizeof(value struct searchProduct));
+				product = proSearch(toSearch);
+				
+				if (!String::Compare(product->barcode, "NULL")==0)
+				{
+					barcode = product->barcode;
+					proName = product->name;
+					proDesc = product->description;
+					currentPrice = product->price;
+					proStock = product->stock;
+					lbl_barcode->Text = barcode;
+					lbl_proName->Text = proName;
+					lbl_proDesc->Text = proDesc;
+					lbl_proCategory->Text = product->category;
+					lbl_proPrice->Text = "" + proPrice;
+					lbl_proStock->Text = "" + proStock;
+					computeTotal(proQuan);
+					toDisableAdd(true);
+				}
+				free(product);
+			}
+			else {
+				resetfields();
+				toDisableAdd(false);
+			}
 			
 		}
-		catch (Exception^ ex)
-		{
-			MessageBox::Show("Error on barcode" + ex);
-		}
-	}
 
-	void computeTotal() {
-		//Int32::Parse(inp_quantity->Text);
-		int quantity = Int32::Parse(inp_quantity->Text);
-		if (!CheckStock(quantity)) {
-			proPrice = quantity * currentPrice;
-			lbl_totalPrice->Text = proPrice.ToString();
-		}
-		else {
-			MessageBox::Show("Insufficient Stocks");
+		private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
+			int index = checkBarcodeExist(barcode);
+			MessageBox::Show(""+index);
+			if (!(index==-1)) {
+				MessageBox::Show("Executed this line 785 " + index);
+				int idxQuan = cart[index].quantity, idxTotal;
+				idxQuan += proQuan;
+				idxTotal = idxQuan * currentPrice;
+				cart[index].quantity = idxQuan;
+				cart[index].totalPrice = idxTotal;
+			}
+			else {
+				cart[cartCount].barcode = barcode;
+				cart[cartCount].name = proName;
+				cart[cartCount].quantity = proQuan;
+				cart[cartCount].price = currentPrice;
+				cart[cartCount].totalPrice = proPrice;
+				cartCount++;
+			}
+			
+			loadCartTable();
+			resetfields();
 		}
 		
-	}
-
-	bool CheckStock(int quan) {
-		if (quan > proStock) {
-			return true;
+		public: void loadCartTable() {
+			tb_cashier->Rows->Clear();
+			for (int i = 0; i <=cartCount; i++) {
+				int index = tb_cashier->Rows->Add();
+				int quantity = Int32::Parse(inp_quantity->Text);
+				tb_cashier->Rows[index]->Cells[0]->Value = cart[i].barcode;
+				tb_cashier->Rows[index]->Cells[1]->Value = cart[i].name;
+				tb_cashier->Rows[index]->Cells[2]->Value = cart[i].quantity;
+				tb_cashier->Rows[index]->Cells[3]->Value = cart[i].price;
+				tb_cashier->Rows[index]->Cells[4]->Value = cart[i].totalPrice;
+				amountDue += cart[i].totalPrice;
+				lbl_amountDue->Text = amountDue + "";
+			}
+			
+			
 		}
-	}
+		
+		public: int checkBarcodeExist(String^ barcode) {
+			if (!cartCount == 0) {
+				for (int i = 0; i <= cartCount; i++) {
+					MessageBox::Show("Same boi!");
+					if (String::Compare(cart[i].barcode, barcode) == 0) {
+						return i; 
+						break;
+					}else {
+						return -1;
+					}
 
-	private: System::Void inp_quantity_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
-		computeTotal();
-	}
+				}
+			}
+			else {
+				return -1;
+			}
+			
+			
+		}
+
+		private: System::Void cb_toSearch_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+			if (String::Compare(cb_toSearch->Text, "Barcode") == 0) {
+				lbl_searchMode->Text = "Barcode";
+			}
+			else {
+				lbl_searchMode->Text = "Product Name";
+			}
+		}
 	
-
-	private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
-		int index = tb_cashier->Rows->Add();
-		int quantity = Int32::Parse(inp_quantity->Text);
-		tb_cashier->Rows[index]->Cells[0]->Value = barcode;
-		tb_cashier->Rows[index]->Cells[1]->Value = proName;
-		tb_cashier->Rows[index]->Cells[2]->Value = quantity;
-		tb_cashier->Rows[index]->Cells[3]->Value = proStock;
-		tb_cashier->Rows[index]->Cells[4]->Value = proPrice;
+		private: System::Void lbl_searchMode_Click(System::Object^  sender, System::EventArgs^  e) {
 		
-		/*
-		//To know how many rows on the table
-		int index = dg_Name->Rows->Add();
+			if (showRoll == 0) {
+				cb_toSearch->DroppedDown = true;
+				showRoll++;
+			}
+			else {
+				cb_toSearch->DroppedDown = false;
+				showRoll--;
+			}
 
-		dg_Name->Rows[index]->Cells[0]->Value = inp_barcode->Text;
-		dg_Name->Rows[index]->Cells[1]->Value = inp_proName->Text;
-		dg_Name->Rows[index]->Cells[2]->Value = inp_quantity->Text;
-		dg_Name->Rows[index]->Cells[3]->Value = inp_proStock->Text;
-		dg_Name->Rows[index]->Cells[4]->Value = inp_proPrice->Text;*/
-	}
+		}
+
+		String^ convertSelection(String^ type) {
+			String^ choosen;
+			if (String::Compare(type, "Barcode") == 0) {
+				choosen = "barcode";
+			}
+			else {
+				choosen = "pro_name";
+			}
+			return choosen;
+		}
+
+		void computeTotal(int quantity) {
+			
+			if (!CheckStock(quantity)) {
+				proPrice = currentPrice * quantity;
+				lbl_totalPrice->Text =""+ proPrice;
+			}
+			else {
+				MessageBox::Show("Insufficient Stocks the product stock is "+ proStock + " and your quantity is "+ quantity);
+			}
+		
+		}
+
+		bool CheckStock(int quan) {
+			return quan > proStock ? true : false;
+		}
+
+		void resetfields() {
+			toDisableAdd(false);
+			lbl_barcode->Text = "";
+			lbl_proName->Text = "";
+			lbl_proDesc->Text = "";
+			lbl_proCategory->Text = "";
+			lbl_proPrice->Text = "";
+			lbl_proStock->Text = "";
+			inp_proCode->Text = "";
+			lbl_totalPrice->Text = "";
+			inp_quantity->Text = "1";
+			proPrice = 0.0;
+			amountDue = 0.0;
+			lbl_totalPrice->Text = "" + proPrice;
+		}
+
+		public: void toDisableAdd(bool isEnabled) {
+			inp_quantity->Enabled = isEnabled;
+			btn_prevEdit->Enabled = isEnabled;
+		}
+
+		private: System::Void inp_quantity_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+			proQuan = Convert::ToInt32(inp_quantity->Value);
+			computeTotal(proQuan);
+		}
+
+		private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
+			this->Hide();
+			obj->Show();
+		}
+	
 };
 
 

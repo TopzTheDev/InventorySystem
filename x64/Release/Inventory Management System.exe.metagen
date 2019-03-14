@@ -24,14 +24,9 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     System.Windows.Forms.Form obj : Public
     Int32 productCount : Public
     Product[] pro : Public
-    Int32 cartCount : Public
-    cartProduct[] cart : Public
   Methods:
     loadProductFromFile(): PrivateScope, Public, HideBySig
     proSearch(String): PrivateScope, Public, HideBySig
-    loadCartTable(): PrivateScope, Public, HideBySig
-    checkBarcodeExist(String): PrivateScope, Public, HideBySig
-    toDisableAdd(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.cashier+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -51,14 +46,6 @@ Struct InventoryManagementSystem.cashier+searchProduct: AutoLayout, AnsiClass, C
     Int32 stock : Public
     Single price : Public
     Int32 idx : Public
-Struct InventoryManagementSystem.cashier+cartProduct: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
-  :System.ValueType
-  Fields:
-    System.String barcode : Public
-    System.String name : Public
-    Int32 quantity : Public
-    Single price : Public
-    Single totalPrice : Public
 Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
