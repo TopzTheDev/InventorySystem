@@ -1,20 +1,14 @@
-7
-442422
-24242425
-353535
-Fresh meat
-42
-244.50
+6
 sf
 d
 ad
 asd
-200
+199
 300
 131
 1
 1313
-Bathroom toiletries
+Others
 2
 3
 4424221
@@ -26,13 +20,13 @@ Bathroom toiletries
 13
 13
 3
-31
+Fresh meat
 3
 1
 313
 313
 3131
-31
+Soft drinks
 3131
 313131
 1313

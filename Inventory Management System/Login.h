@@ -285,7 +285,9 @@ namespace InventoryManagementSystem {
 		String^ password;
 		String^ loginAs;
 	};
+
 	array<Account>^ acc = gcnew array<Account>(1000);
+
 	int accountCount;
 
 	void loadAccountFromFile() {
@@ -373,7 +375,6 @@ namespace InventoryManagementSystem {
 			|| String::Compare(cb_loginAs->Text, "") == 0 ? true : false;
 		
 	}
-
 
 	private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 		MessageBox::Show("Welcome to the Cashier");

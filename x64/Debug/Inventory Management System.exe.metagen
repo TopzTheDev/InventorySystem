@@ -26,11 +26,26 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     Product[] pro : Public
     Int32 cartCount : Public
     cartProduct[] cart : Public
+    System.String selectedCart : Public
+    Account[] acc : Public
+    Int32 accountCount : Public
   Methods:
     loadProductFromFile(): PrivateScope, Public, HideBySig
+    loadTable(String): PrivateScope, Public, HideBySig
     proSearch(String): PrivateScope, Public, HideBySig
     loadCartTable(): PrivateScope, Public, HideBySig
+    tableSelection(): PrivateScope, Public, HideBySig
+    computeTotal(Int32): PrivateScope, Public, HideBySig
+    CheckStock(Int32): PrivateScope, Public, HideBySig
+    updateTextfile(): PrivateScope, Public, HideBySig
+    saveToDatabase(): PrivateScope, Public, HideBySig
     checkBarcodeExist(String): PrivateScope, Public, HideBySig
+    validatePayment(): PrivateScope, Public, HideBySig
+    loadAccountFromFile(): PrivateScope, Public, HideBySig
+    verifyAccount(String, String, String): PrivateScope, Public, HideBySig
+    MessagePnl(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    convertSelection(String): PrivateScope, Public, HideBySig
+    resetfields(): PrivateScope, Public, HideBySig
     toDisableAdd(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.cashier+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
@@ -40,7 +55,7 @@ Struct InventoryManagementSystem.cashier+Product: AutoLayout, AnsiClass, Class, 
     System.String description : Public
     System.String category : Public
     Int32 stock : Public
-    Single price : Public
+    Double price : Public
 Struct InventoryManagementSystem.cashier+searchProduct: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -49,7 +64,7 @@ Struct InventoryManagementSystem.cashier+searchProduct: AutoLayout, AnsiClass, C
     System.String description : Public
     System.String category : Public
     Int32 stock : Public
-    Single price : Public
+    Double price : Public
     Int32 idx : Public
 Struct InventoryManagementSystem.cashier+cartProduct: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
@@ -59,6 +74,12 @@ Struct InventoryManagementSystem.cashier+cartProduct: AutoLayout, AnsiClass, Cla
     Int32 quantity : Public
     Single price : Public
     Single totalPrice : Public
+Struct InventoryManagementSystem.cashier+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    System.String username : Public
+    System.String password : Public
+    System.String loginAs : Public
 Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

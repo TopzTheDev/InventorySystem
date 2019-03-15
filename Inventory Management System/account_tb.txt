@@ -3,8 +3,8 @@ lugod
 titi
 Inventory
 errol
-22
-Cashier
-errol
 13131
+Cashier
+siasol
+manalo
 Cashier
