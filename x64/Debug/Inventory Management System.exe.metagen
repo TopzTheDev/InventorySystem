@@ -27,6 +27,8 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     Int32 cartCount : Public
     cartProduct[] cart : Public
     System.String selectedCart : Public
+    Int32 saleReportCount : Public
+    salesReport[] sales : Public
     Account[] acc : Public
     Int32 accountCount : Public
   Methods:
@@ -39,11 +41,18 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     CheckStock(Int32): PrivateScope, Public, HideBySig
     updateTextfile(): PrivateScope, Public, HideBySig
     saveToDatabase(): PrivateScope, Public, HideBySig
+    loadSalesFromFile(): PrivateScope, Public, HideBySig
+    saveSalesToDatabase(): PrivateScope, Public, HideBySig
+    addSalesReport(): PrivateScope, Public, HideBySig
+    cartQuantity(): PrivateScope, Public, HideBySig
+    saveCartReport(): PrivateScope, Public, HideBySig
     checkBarcodeExist(String): PrivateScope, Public, HideBySig
     validatePayment(): PrivateScope, Public, HideBySig
     loadAccountFromFile(): PrivateScope, Public, HideBySig
     verifyAccount(String, String, String): PrivateScope, Public, HideBySig
-    MessagePnl(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    paymentPnl(): PrivateScope, Public, HideBySig
+    voidItemPnl(): PrivateScope, Public, HideBySig
+    newTransPnl(): PrivateScope, Public, HideBySig
     convertSelection(String): PrivateScope, Public, HideBySig
     resetfields(): PrivateScope, Public, HideBySig
     toDisableAdd(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
@@ -74,6 +83,14 @@ Struct InventoryManagementSystem.cashier+cartProduct: AutoLayout, AnsiClass, Cla
     Int32 quantity : Public
     Single price : Public
     Single totalPrice : Public
+Struct InventoryManagementSystem.cashier+salesReport: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 transCode : Public
+    System.String customer : Public
+    System.ValueType totalPrice Double IsBoxed : Public
+    System.ValueType totalQuantity Int32 IsBoxed : Public
+    System.String date : Public
 Struct InventoryManagementSystem.cashier+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -92,6 +109,9 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     Product[] proTable : Public
     Account[] acc : Public
     Int32 accountCount : Public
+    Int32 saleReportCount : Public
+    salesReport[] sales : Public
+    Int32 toggle : Public
   Methods:
     loadProductFromFile(): PrivateScope, Public, HideBySig
     loadTable(String): PrivateScope, Public, HideBySig
@@ -103,6 +123,8 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     saveAccToDatabase(): PrivateScope, Public, HideBySig
     checkUsername(String): PrivateScope, Public, HideBySig
     accSearch(String): PrivateScope, Public, HideBySig
+    clearfields(): PrivateScope, Public, HideBySig
+    validateFields(String): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.inventory+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -135,6 +157,14 @@ Struct InventoryManagementSystem.inventory+searchAccount: AutoLayout, AnsiClass,
     System.String password : Public
     System.String loginAs : Public
     Int32 idx : Public
+Struct InventoryManagementSystem.inventory+salesReport: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    System.String transCode : Public
+    System.String customer : Public
+    System.ValueType totalPrice Double IsBoxed : Public
+    System.ValueType totalQuantity Int32 IsBoxed : Public
+    System.String date : Public
 Class InventoryManagementSystem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -181,11 +181,11 @@ private: System::Windows::Forms::DataGridView^  dataGridView1;
 
 
 private: System::Windows::Forms::Label^  label15;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn7;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn8;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn9;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn10;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn11;
+
+
+
+
+
 private: System::Windows::Forms::Panel^  panel11;
 private: System::Windows::Forms::Label^  label28;
 private: System::Windows::Forms::Label^  label24;
@@ -211,6 +211,12 @@ private: System::Windows::Forms::Panel^  panel15;
 private: System::Windows::Forms::Label^  lbl_overCrit;
 
 private: System::Windows::Forms::Label^  label67;
+private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn7;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn8;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn9;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn10;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn11;
 
 
 
@@ -309,10 +315,8 @@ private: System::Windows::Forms::Label^  label67;
 
 
 	private: System::Windows::Forms::TextBox^  inp_proDesc;
-
 	private: System::Windows::Forms::TextBox^  inp_proName;
 	private: System::Windows::Forms::Label^  label6;
-
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label2;
@@ -320,73 +324,16 @@ private: System::Windows::Forms::Label^  label67;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::TabControl^  tab_control;
-
 	private: System::Windows::Forms::TabPage^  tab_editproduct;
 	private: System::Windows::Forms::Button^  btn_editBack;
 	private: System::Windows::Forms::Button^  inp_editUpdate;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Label^  label18;
-
-
-
 	private: System::Windows::Forms::Label^  label19;
 	private: System::Windows::Forms::Label^  label20;
 	private: System::Windows::Forms::Label^  label21;
 	private: System::Windows::Forms::Label^  label22;
 	private: System::Windows::Forms::Label^  label23;
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::TabPage^  tab_accounts;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::ComponentModel::IContainer^  components;
 
 	protected:
@@ -411,18 +358,18 @@ private: System::Windows::Forms::Label^  label67;
 		void InitializeComponent(void)
 		{	
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(inventory::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle17 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle18 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle19 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle20 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle21 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle22 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle23 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle24 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->tab_dashboard = (gcnew System::Windows::Forms::TabPage());
 			this->panel15 = (gcnew System::Windows::Forms::Panel());
 			this->lbl_overCrit = (gcnew System::Windows::Forms::Label());
@@ -545,6 +492,7 @@ private: System::Windows::Forms::Label^  label67;
 			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -1094,51 +1042,51 @@ private: System::Windows::Forms::Label^  label67;
 			this->table_prevProduct->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->table_prevProduct->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->table_prevProduct->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
-			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle13->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->table_prevProduct->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->table_prevProduct->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->table_prevProduct->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->table_prevProduct->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
 				this->dataGridViewTextBoxColumn1,
 					this->dataGridViewTextBoxColumn2, this->cl_description, this->cl_categories, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4
 			});
 			this->table_prevProduct->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle14->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle14->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle2->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->table_prevProduct->DefaultCellStyle = dataGridViewCellStyle14;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->table_prevProduct->DefaultCellStyle = dataGridViewCellStyle2;
 			this->table_prevProduct->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->table_prevProduct->Location = System::Drawing::Point(322, 88);
 			this->table_prevProduct->Name = L"table_prevProduct";
 			this->table_prevProduct->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle15->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle3->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle15->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle15->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->table_prevProduct->RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->table_prevProduct->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this->table_prevProduct->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle16->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle16->Padding = System::Windows::Forms::Padding(2);
-			this->table_prevProduct->RowsDefaultCellStyle = dataGridViewCellStyle16;
+			dataGridViewCellStyle4->Padding = System::Windows::Forms::Padding(2);
+			this->table_prevProduct->RowsDefaultCellStyle = dataGridViewCellStyle4;
 			this->table_prevProduct->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->table_prevProduct->Size = System::Drawing::Size(846, 335);
 			this->table_prevProduct->TabIndex = 72;
@@ -2018,50 +1966,50 @@ private: System::Windows::Forms::Label^  label67;
 			this->tb_account->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tb_account->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->tb_account->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle17->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle17->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle17->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
-			dataGridViewCellStyle17->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle17->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle17->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle5->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle17->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle17->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_account->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_account->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this->tb_account->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tb_account->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {
 				this->dataGridViewTextBoxColumn5,
 					this->dataGridViewTextBoxColumn6
 			});
 			this->tb_account->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle18->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle18->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle18->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			dataGridViewCellStyle18->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle18->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle18->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle6->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle6->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle6->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle18->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle18->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->tb_account->DefaultCellStyle = dataGridViewCellStyle18;
+			dataGridViewCellStyle6->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle6->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->tb_account->DefaultCellStyle = dataGridViewCellStyle6;
 			this->tb_account->Enabled = false;
 			this->tb_account->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->tb_account->Location = System::Drawing::Point(366, 38);
 			this->tb_account->Name = L"tb_account";
 			this->tb_account->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle19->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle19->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle7->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle19->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle19->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle19->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle19->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_account->RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+			dataGridViewCellStyle7->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle7->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle7->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle7->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_account->RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this->tb_account->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle20->Padding = System::Windows::Forms::Padding(2);
-			this->tb_account->RowsDefaultCellStyle = dataGridViewCellStyle20;
+			dataGridViewCellStyle8->Padding = System::Windows::Forms::Padding(2);
+			this->tb_account->RowsDefaultCellStyle = dataGridViewCellStyle8;
 			this->tb_account->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->tb_account->Size = System::Drawing::Size(542, 430);
 			this->tb_account->TabIndex = 73;
@@ -2241,6 +2189,7 @@ private: System::Windows::Forms::Label^  label67;
 			// 
 			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(103)),
 				static_cast<System::Int32>(static_cast<System::Byte>(165)));
+			this->panel8->Controls->Add(this->dateTimePicker1);
 			this->panel8->Controls->Add(this->label15);
 			this->panel8->Controls->Add(this->label25);
 			this->panel8->Controls->Add(this->textBox1);
@@ -2258,6 +2207,21 @@ private: System::Windows::Forms::Label^  label67;
 			this->panel8->Name = L"panel8";
 			this->panel8->Size = System::Drawing::Size(333, 556);
 			this->panel8->TabIndex = 75;
+			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->CalendarFont = (gcnew System::Drawing::Font(L"Roboto Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateTimePicker1->Location = System::Drawing::Point(32, 425);
+			this->dateTimePicker1->MaxDate = System::DateTime(2019, 3, 15, 0, 0, 0, 0);
+			this->dateTimePicker1->MinDate = System::DateTime(2019, 3, 15, 0, 0, 0, 0);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(276, 27);
+			this->dateTimePicker1->TabIndex = 76;
+			this->dateTimePicker1->Value = System::DateTime(2019, 3, 15, 0, 0, 0, 0);
 			// 
 			// label15
 			// 
@@ -2435,14 +2399,14 @@ private: System::Windows::Forms::Label^  label67;
 			this->panel10->Controls->Add(this->label62);
 			this->panel10->Location = System::Drawing::Point(367, 142);
 			this->panel10->Name = L"panel10";
-			this->panel10->Size = System::Drawing::Size(761, 36);
+			this->panel10->Size = System::Drawing::Size(787, 36);
 			this->panel10->TabIndex = 77;
 			// 
 			// label58
 			// 
 			this->label58->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label58->ForeColor = System::Drawing::Color::White;
-			this->label58->Location = System::Drawing::Point(496, 6);
+			this->label58->Location = System::Drawing::Point(513, 10);
 			this->label58->Name = L"label58";
 			this->label58->Size = System::Drawing::Size(123, 26);
 			this->label58->TabIndex = 64;
@@ -2452,7 +2416,7 @@ private: System::Windows::Forms::Label^  label67;
 			// 
 			this->label59->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label59->ForeColor = System::Drawing::Color::White;
-			this->label59->Location = System::Drawing::Point(2, 7);
+			this->label59->Location = System::Drawing::Point(3, 10);
 			this->label59->Name = L"label59";
 			this->label59->Size = System::Drawing::Size(151, 26);
 			this->label59->TabIndex = 63;
@@ -2462,7 +2426,7 @@ private: System::Windows::Forms::Label^  label67;
 			// 
 			this->label60->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label60->ForeColor = System::Drawing::Color::White;
-			this->label60->Location = System::Drawing::Point(644, 6);
+			this->label60->Location = System::Drawing::Point(658, 10);
 			this->label60->Name = L"label60";
 			this->label60->Size = System::Drawing::Size(117, 26);
 			this->label60->TabIndex = 62;
@@ -2472,7 +2436,7 @@ private: System::Windows::Forms::Label^  label67;
 			// 
 			this->label61->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label61->ForeColor = System::Drawing::Color::White;
-			this->label61->Location = System::Drawing::Point(331, 6);
+			this->label61->Location = System::Drawing::Point(354, 10);
 			this->label61->Name = L"label61";
 			this->label61->Size = System::Drawing::Size(123, 26);
 			this->label61->TabIndex = 61;
@@ -2482,7 +2446,7 @@ private: System::Windows::Forms::Label^  label67;
 			// 
 			this->label62->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
 			this->label62->ForeColor = System::Drawing::Color::White;
-			this->label62->Location = System::Drawing::Point(159, 6);
+			this->label62->Location = System::Drawing::Point(150, 10);
 			this->label62->Name = L"label62";
 			this->label62->Size = System::Drawing::Size(151, 26);
 			this->label62->TabIndex = 60;
@@ -2494,53 +2458,53 @@ private: System::Windows::Forms::Label^  label67;
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->dataGridView1->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle21->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle21->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle21->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
-			dataGridViewCellStyle21->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle21->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle21->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle9->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle9->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle9->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle9->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle21->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle21->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+			dataGridViewCellStyle9->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle9->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->dataGridViewTextBoxColumn7,
 					this->dataGridViewTextBoxColumn8, this->dataGridViewTextBoxColumn9, this->dataGridViewTextBoxColumn10, this->dataGridViewTextBoxColumn11
 			});
 			this->dataGridView1->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle22->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle22->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle22->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			dataGridViewCellStyle22->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle22->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle22->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle10->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle10->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle10->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle10->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle10->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle10->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle22->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle22->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle22;
+			dataGridViewCellStyle10->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle10->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle10;
 			this->dataGridView1->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->dataGridView1->Location = System::Drawing::Point(324, 157);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle23->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle23->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle23->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle11->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle11->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle11->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle23->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle23->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle23->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle23->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+			dataGridViewCellStyle11->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle11->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle11->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle11->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
 			this->dataGridView1->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle24->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle24->Padding = System::Windows::Forms::Padding(2);
-			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle24;
+			dataGridViewCellStyle12->Padding = System::Windows::Forms::Padding(2);
+			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle12;
 			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dataGridView1->Size = System::Drawing::Size(811, 350);
+			this->dataGridView1->Size = System::Drawing::Size(830, 350);
 			this->dataGridView1->TabIndex = 76;
 			// 
 			// dataGridViewTextBoxColumn7
@@ -2556,7 +2520,7 @@ private: System::Windows::Forms::Label^  label67;
 			this->dataGridViewTextBoxColumn8->HeaderText = L"Customer Name";
 			this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
 			this->dataGridViewTextBoxColumn8->ReadOnly = true;
-			this->dataGridViewTextBoxColumn8->Width = 180;
+			this->dataGridViewTextBoxColumn8->Width = 200;
 			// 
 			// dataGridViewTextBoxColumn9
 			// 
@@ -3321,6 +3285,21 @@ private: System::Windows::Forms::Label^  label67;
 					
 		}
 
+	    //Sale Report
+		public: value struct salesReport {
+			String^ transCode;
+			String^ customer;
+			double^ totalPrice;
+			int^ totalQuantity;
+			String^ date;
+		};
+		int saleReportCount;
+
+		array<salesReport>^ sales = gcnew array< salesReport >(1000);
+
+
+
+
 		// Utilities
 		void clearfields() {
 			inp_proName->Text = "";
@@ -3425,12 +3404,10 @@ private: System::Windows::Forms::Label^  label67;
 			this->Hide();
 			obj->Show();
 		}
-		
-
-	private: System::Void tab_sales_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void btn_sales_Click(System::Object^  sender, System::EventArgs^  e) {
-		tab_control->SelectTab(4);
-	}
+		private: System::Void tab_sales_Click(System::Object^  sender, System::EventArgs^  e) {
+		}
+		private: System::Void btn_sales_Click(System::Object^  sender, System::EventArgs^  e) {
+			tab_control->SelectTab(4);
+		}
 };
 }

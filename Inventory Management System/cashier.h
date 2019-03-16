@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <conio.h>
-#include <iostream>
+//#include <iostream>
 #include <string>
-#include <list>
-#include <vector>
-#include <array>
-#include <fstream> 
-#include <stdio.h>
+//#include <vector>
+//#include <array>
+//#include <stdio.h>
+
+
 namespace InventoryManagementSystem {
 
 	using namespace System;
@@ -44,9 +44,6 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  lbl_totalPayment;
 	private: System::Windows::Forms::NumericUpDown^  inp_payCash;
-
-
-
 	private: System::Windows::Forms::Label^  label17;
 	private: System::Windows::Forms::Label^  label18;
 
@@ -69,41 +66,16 @@ namespace InventoryManagementSystem {
 
 	private: System::Windows::Forms::Label^  label23;
 	private: System::Windows::Forms::Label^  label24;
-	private: System::Windows::Forms::Label^  label26;
+	private: System::Windows::Forms::Label^  lbl_transNo;
+
 	private: System::Windows::Forms::Label^  label25;
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Panel^  panel2;
-
-
-
-
-
-
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label14;
-
 	private: System::Windows::Forms::Label^  label15;
 	private: System::Windows::Forms::Label^  label16;
-
-
-
-
-
-
 	private: System::Windows::Forms::Panel^  panel4;
 	private: System::Windows::Forms::Panel^  panel3;
 	private: System::Windows::Forms::Label^  label33;
@@ -125,74 +97,56 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  label37;
 	private: System::Windows::Forms::Label^  label38;
 	private: System::Windows::Forms::DataGridView^  tb_viewPro;
+	private: System::Windows::Forms::Panel^  panel7;
+	private: System::Windows::Forms::Label^  lbl_prevStock;
 
+	private: System::Windows::Forms::Label^  lbl_prevCat;
 
+	private: System::Windows::Forms::Label^  label41;
 
+	private: System::Windows::Forms::Label^  label43;
+	private: System::Windows::Forms::Label^  label44;
+	private: System::Windows::Forms::Label^  lbl_prevName;
 
+	private: System::Windows::Forms::Label^  label46;
+	private: System::Windows::Forms::Label^  lbl_prevDesc;
 
-private: System::Windows::Forms::Panel^  panel7;
-private: System::Windows::Forms::Label^  lbl_prevStock;
+	private: System::Windows::Forms::Label^  label48;
+	private: System::Windows::Forms::Label^  lbl_prevPrice;
 
-private: System::Windows::Forms::Label^  lbl_prevCat;
+	private: System::Windows::Forms::Label^  label50;
+	private: System::Windows::Forms::Label^  label51;
+	private: System::Windows::Forms::TextBox^  lbl_prevCode;
 
-private: System::Windows::Forms::Label^  label41;
+	private: System::Windows::Forms::Label^  label53;
+	private: System::Windows::Forms::Label^  label42;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_categories;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn4;
+	private: System::Windows::Forms::Label^  label12;
+	private: System::Windows::Forms::Label^  btn_logout;
+	private: System::Windows::Forms::Label^  btn_productView;
+	private: System::Windows::Forms::Label^  btn_cashier;
+	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::Label^  label29;
+	private: System::Windows::Forms::Panel^  pnl_navBar;
+	private: System::Windows::Forms::Panel^  pnl_newTrans;
 
-private: System::Windows::Forms::Label^  label43;
-private: System::Windows::Forms::Label^  label44;
-private: System::Windows::Forms::Label^  lbl_prevName;
+	private: System::Windows::Forms::Label^  label27;
+private: System::Windows::Forms::TextBox^  inp_custName;
 
-private: System::Windows::Forms::Label^  label46;
-private: System::Windows::Forms::Label^  lbl_prevDesc;
+private: System::Windows::Forms::Button^  btn_newTrans;
 
-private: System::Windows::Forms::Label^  label48;
-private: System::Windows::Forms::Label^  lbl_prevPrice;
+	private: System::Windows::Forms::Label^  label40;
+	private: System::Windows::Forms::Label^  label45;
+private: System::Windows::Forms::Label^  lbl_newTrans;
 
-private: System::Windows::Forms::Label^  label50;
-private: System::Windows::Forms::Label^  label51;
-private: System::Windows::Forms::TextBox^  lbl_prevCode;
+private: System::Windows::Forms::Label^  label47;
+private: System::Windows::Forms::Label^  lbl_transName;
 
-private: System::Windows::Forms::Label^  label53;
-private: System::Windows::Forms::Label^  label42;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn2;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  cl_categories;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn3;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn4;
-private: System::Windows::Forms::Label^  label12;
-private: System::Windows::Forms::Label^  btn_logout;
-private: System::Windows::Forms::Label^  btn_productView;
-private: System::Windows::Forms::Label^  btn_cashier;
-private: System::Windows::Forms::Panel^  panel1;
-private: System::Windows::Forms::Label^  label29;
-private: System::Windows::Forms::Panel^  pnl_navBar;
-private: System::Windows::Forms::Panel^  panel8;
-private: System::Windows::Forms::Label^  label27;
-private: System::Windows::Forms::TextBox^  textBox2;
-private: System::Windows::Forms::Button^  button2;
-private: System::Windows::Forms::Label^  label40;
-private: System::Windows::Forms::Label^  label45;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+private: System::Windows::Forms::Label^  label52;
 	private: System::Windows::Forms::NumericUpDown^  inp_quantity;
 	public:
 		cashier(void)
@@ -285,20 +239,24 @@ private: System::Windows::Forms::Button^  btn_process;
 			tb_cashier->AllowUserToAddRows = false;
 			tb_viewPro->AllowUserToAddRows = false;
 			loadProductFromFile();
+			newTransPnl();
 			resetfields();
+			loadSalesFromFile();
+			lbl_transNo->Text = "#"+transCode;
+			lbl_newTrans->Text = "#" + transCode;
 		}
 
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle17 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle18 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle19 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle20 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(cashier::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle21 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle22 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle23 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle24 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->tb_cashier = (gcnew System::Windows::Forms::DataGridView());
 			this->pro_code = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -343,17 +301,10 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->pnl_messageBox = (gcnew System::Windows::Forms::Panel());
-			this->pnl_voidItem = (gcnew System::Windows::Forms::Panel());
-			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->inp_loginPass = (gcnew System::Windows::Forms::TextBox());
-			this->inp_userName = (gcnew System::Windows::Forms::TextBox());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->btn_void = (gcnew System::Windows::Forms::Button());
-			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->pnl_payment = (gcnew System::Windows::Forms::Panel());
-			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->lbl_transName = (gcnew System::Windows::Forms::Label());
+			this->label52 = (gcnew System::Windows::Forms::Label());
+			this->lbl_transNo = (gcnew System::Windows::Forms::Label());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
@@ -365,6 +316,23 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->btn_payment = (gcnew System::Windows::Forms::Button());
+			this->pnl_newTrans = (gcnew System::Windows::Forms::Panel());
+			this->lbl_newTrans = (gcnew System::Windows::Forms::Label());
+			this->label47 = (gcnew System::Windows::Forms::Label());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->inp_custName = (gcnew System::Windows::Forms::TextBox());
+			this->btn_newTrans = (gcnew System::Windows::Forms::Button());
+			this->label40 = (gcnew System::Windows::Forms::Label());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->pnl_voidItem = (gcnew System::Windows::Forms::Panel());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->inp_loginPass = (gcnew System::Windows::Forms::TextBox());
+			this->inp_userName = (gcnew System::Windows::Forms::TextBox());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->btn_void = (gcnew System::Windows::Forms::Button());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->tbC_cashier = (gcnew System::Windows::Forms::TabControl());
 			this->tab_mainCashier = (gcnew System::Windows::Forms::TabPage());
 			this->tab_messageBox = (gcnew System::Windows::Forms::TabPage());
@@ -406,21 +374,16 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->pnl_navBar = (gcnew System::Windows::Forms::Panel());
-			this->panel8 = (gcnew System::Windows::Forms::Panel());
-			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label40 = (gcnew System::Windows::Forms::Label());
-			this->label45 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_quantity))->BeginInit();
 			this->pnl_mainCashier->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->pnl_messageBox->SuspendLayout();
-			this->pnl_voidItem->SuspendLayout();
 			this->pnl_payment->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_payCash))->BeginInit();
+			this->pnl_newTrans->SuspendLayout();
+			this->pnl_voidItem->SuspendLayout();
 			this->tbC_cashier->SuspendLayout();
 			this->tab_mainCashier->SuspendLayout();
 			this->tab_messageBox->SuspendLayout();
@@ -429,7 +392,6 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->panel6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_viewPro))->BeginInit();
 			this->pnl_navBar->SuspendLayout();
-			this->panel8->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label7
@@ -450,52 +412,52 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tb_cashier->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tb_cashier->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->tb_cashier->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle17->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle17->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle17->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
-			dataGridViewCellStyle17->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle17->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle17->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle9->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle9->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle9->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle9->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle17->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle17->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_cashier->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+			dataGridViewCellStyle9->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle9->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_cashier->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
 			this->tb_cashier->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tb_cashier->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->pro_code,
 					this->pro_name, this->pro_quan, this->pro_price, this->pro_total
 			});
 			this->tb_cashier->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle18->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle18->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle18->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			dataGridViewCellStyle18->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle18->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle18->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle10->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle10->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle10->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle10->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle10->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle10->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle18->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle18->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->tb_cashier->DefaultCellStyle = dataGridViewCellStyle18;
+			dataGridViewCellStyle10->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle10->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->tb_cashier->DefaultCellStyle = dataGridViewCellStyle10;
 			this->tb_cashier->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->tb_cashier->Location = System::Drawing::Point(518, 124);
 			this->tb_cashier->Name = L"tb_cashier";
 			this->tb_cashier->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle19->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle19->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle11->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle11->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle19->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle19->Padding = System::Windows::Forms::Padding(2);
-			dataGridViewCellStyle19->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle19->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle19->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_cashier->RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+			dataGridViewCellStyle11->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle11->Padding = System::Windows::Forms::Padding(2);
+			dataGridViewCellStyle11->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle11->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle11->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_cashier->RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
 			this->tb_cashier->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle20->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle20->Padding = System::Windows::Forms::Padding(2);
-			this->tb_cashier->RowsDefaultCellStyle = dataGridViewCellStyle20;
+			dataGridViewCellStyle12->Padding = System::Windows::Forms::Padding(2);
+			this->tb_cashier->RowsDefaultCellStyle = dataGridViewCellStyle12;
 			this->tb_cashier->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->tb_cashier->Size = System::Drawing::Size(594, 303);
 			this->tb_cashier->TabIndex = 27;
@@ -744,7 +706,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->btn_process->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
 			this->btn_process->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_process->Location = System::Drawing::Point(948, 6);
+			this->btn_process->Location = System::Drawing::Point(948, 11);
 			this->btn_process->Name = L"btn_process";
 			this->btn_process->Size = System::Drawing::Size(164, 42);
 			this->btn_process->TabIndex = 47;
@@ -998,13 +960,339 @@ private: System::Windows::Forms::Button^  btn_process;
 			// pnl_messageBox
 			// 
 			this->pnl_messageBox->BackColor = System::Drawing::Color::Gainsboro;
-			this->pnl_messageBox->Controls->Add(this->panel8);
-			this->pnl_messageBox->Controls->Add(this->pnl_voidItem);
+			this->pnl_messageBox->Controls->Add(this->pnl_newTrans);
 			this->pnl_messageBox->Controls->Add(this->pnl_payment);
+			this->pnl_messageBox->Controls->Add(this->pnl_voidItem);
 			this->pnl_messageBox->Location = System::Drawing::Point(0, 0);
 			this->pnl_messageBox->Name = L"pnl_messageBox";
 			this->pnl_messageBox->Size = System::Drawing::Size(1132, 535);
 			this->pnl_messageBox->TabIndex = 58;
+			// 
+			// pnl_payment
+			// 
+			this->pnl_payment->BackColor = System::Drawing::Color::White;
+			this->pnl_payment->Controls->Add(this->lbl_transName);
+			this->pnl_payment->Controls->Add(this->label52);
+			this->pnl_payment->Controls->Add(this->lbl_transNo);
+			this->pnl_payment->Controls->Add(this->label25);
+			this->pnl_payment->Controls->Add(this->label22);
+			this->pnl_payment->Controls->Add(this->label23);
+			this->pnl_payment->Controls->Add(this->lbl_payChange);
+			this->pnl_payment->Controls->Add(this->label18);
+			this->pnl_payment->Controls->Add(this->inp_payCash);
+			this->pnl_payment->Controls->Add(this->label17);
+			this->pnl_payment->Controls->Add(this->lbl_totalPayment);
+			this->pnl_payment->Controls->Add(this->label9);
+			this->pnl_payment->Controls->Add(this->button4);
+			this->pnl_payment->Controls->Add(this->btn_payment);
+			this->pnl_payment->Location = System::Drawing::Point(319, 36);
+			this->pnl_payment->Name = L"pnl_payment";
+			this->pnl_payment->Size = System::Drawing::Size(356, 453);
+			this->pnl_payment->TabIndex = 0;
+			// 
+			// lbl_transName
+			// 
+			this->lbl_transName->AutoEllipsis = true;
+			this->lbl_transName->AutoSize = true;
+			this->lbl_transName->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->lbl_transName->Font = (gcnew System::Drawing::Font(L"Roboto", 12));
+			this->lbl_transName->ForeColor = System::Drawing::Color::White;
+			this->lbl_transName->Location = System::Drawing::Point(142, 122);
+			this->lbl_transName->MaximumSize = System::Drawing::Size(200, 25);
+			this->lbl_transName->Name = L"lbl_transName";
+			this->lbl_transName->Padding = System::Windows::Forms::Padding(3);
+			this->lbl_transName->Size = System::Drawing::Size(145, 25);
+			this->lbl_transName->TabIndex = 67;
+			this->lbl_transName->Text = L"Christopher Lugod";
+			// 
+			// label52
+			// 
+			this->label52->AutoSize = true;
+			this->label52->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label52->Font = (gcnew System::Drawing::Font(L"Roboto", 12));
+			this->label52->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label52->Location = System::Drawing::Point(16, 122);
+			this->label52->Name = L"label52";
+			this->label52->Padding = System::Windows::Forms::Padding(2);
+			this->label52->Size = System::Drawing::Size(129, 25);
+			this->label52->TabIndex = 66;
+			this->label52->Text = L"Customer Name";
+			// 
+			// lbl_transNo
+			// 
+			this->lbl_transNo->AutoSize = true;
+			this->lbl_transNo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->lbl_transNo->Font = (gcnew System::Drawing::Font(L"Roboto", 12));
+			this->lbl_transNo->ForeColor = System::Drawing::Color::White;
+			this->lbl_transNo->Location = System::Drawing::Point(111, 89);
+			this->lbl_transNo->Name = L"lbl_transNo";
+			this->lbl_transNo->Padding = System::Windows::Forms::Padding(3);
+			this->lbl_transNo->Size = System::Drawing::Size(34, 25);
+			this->lbl_transNo->TabIndex = 65;
+			this->lbl_transNo->Text = L"#1";
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label25->Font = (gcnew System::Drawing::Font(L"Roboto", 12));
+			this->label25->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label25->Location = System::Drawing::Point(16, 89);
+			this->label25->Name = L"label25";
+			this->label25->Padding = System::Windows::Forms::Padding(2);
+			this->label25->Size = System::Drawing::Size(99, 25);
+			this->label25->TabIndex = 64;
+			this->label25->Text = L"Transaction";
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Font = (gcnew System::Drawing::Font(L"Roboto", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label22->Location = System::Drawing::Point(15, 17);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(245, 29);
+			this->label22->TabIndex = 61;
+			this->label22->Text = L"Purchase Transaction";
+			// 
+			// label23
+			// 
+			this->label23->BackColor = System::Drawing::Color::Transparent;
+			this->label23->Font = (gcnew System::Drawing::Font(L"Roboto Light", 9.25F));
+			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label23->Location = System::Drawing::Point(18, 46);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(314, 33);
+			this->label23->TabIndex = 63;
+			this->label23->Text = L"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in"
+				L"cididunt ut. ";
+			this->label23->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// lbl_payChange
+			// 
+			this->lbl_payChange->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
+			this->lbl_payChange->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->lbl_payChange->Location = System::Drawing::Point(18, 347);
+			this->lbl_payChange->Name = L"lbl_payChange";
+			this->lbl_payChange->Size = System::Drawing::Size(209, 37);
+			this->lbl_payChange->TabIndex = 62;
+			this->lbl_payChange->Text = L"55.45";
+			this->lbl_payChange->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label18
+			// 
+			this->label18->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label18->Location = System::Drawing::Point(19, 325);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(120, 32);
+			this->label18->TabIndex = 60;
+			this->label18->Text = L"Change";
+			// 
+			// inp_payCash
+			// 
+			this->inp_payCash->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_payCash->DecimalPlaces = 2;
+			this->inp_payCash->Font = (gcnew System::Drawing::Font(L"Roboto Light", 25));
+			this->inp_payCash->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_payCash->Location = System::Drawing::Point(21, 262);
+			this->inp_payCash->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->inp_payCash->Name = L"inp_payCash";
+			this->inp_payCash->Size = System::Drawing::Size(313, 48);
+			this->inp_payCash->TabIndex = 58;
+			this->inp_payCash->Tag = L"";
+			this->inp_payCash->ThousandsSeparator = true;
+			this->inp_payCash->ValueChanged += gcnew System::EventHandler(this, &cashier::inp_payCashValueChange);
+			// 
+			// label17
+			// 
+			this->label17->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label17->Location = System::Drawing::Point(19, 233);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(120, 26);
+			this->label17->TabIndex = 57;
+			this->label17->Text = L"Cash";
+			// 
+			// lbl_totalPayment
+			// 
+			this->lbl_totalPayment->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
+			this->lbl_totalPayment->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->lbl_totalPayment->Location = System::Drawing::Point(15, 190);
+			this->lbl_totalPayment->Name = L"lbl_totalPayment";
+			this->lbl_totalPayment->Size = System::Drawing::Size(209, 37);
+			this->lbl_totalPayment->TabIndex = 55;
+			this->lbl_totalPayment->Text = L"1924.55";
+			this->lbl_totalPayment->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label9->Location = System::Drawing::Point(17, 166);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(131, 23);
+			this->label9->TabIndex = 47;
+			this->label9->Text = L"Total Payment";
+			// 
+			// button4
+			// 
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->button4->Location = System::Drawing::Point(25, 396);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(120, 35);
+			this->button4->TabIndex = 46;
+			this->button4->Text = L"Cancel";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &cashier::button4_Click);
+			// 
+			// btn_payment
+			// 
+			this->btn_payment->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->btn_payment->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_payment->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_payment->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->btn_payment->ForeColor = System::Drawing::Color::White;
+			this->btn_payment->Location = System::Drawing::Point(192, 396);
+			this->btn_payment->Name = L"btn_payment";
+			this->btn_payment->Size = System::Drawing::Size(140, 37);
+			this->btn_payment->TabIndex = 45;
+			this->btn_payment->Text = L"Pay";
+			this->btn_payment->UseVisualStyleBackColor = false;
+			this->btn_payment->Click += gcnew System::EventHandler(this, &cashier::btn_payment_Click);
+			// 
+			// pnl_newTrans
+			// 
+			this->pnl_newTrans->BackColor = System::Drawing::Color::White;
+			this->pnl_newTrans->Controls->Add(this->lbl_newTrans);
+			this->pnl_newTrans->Controls->Add(this->label47);
+			this->pnl_newTrans->Controls->Add(this->label27);
+			this->pnl_newTrans->Controls->Add(this->inp_custName);
+			this->pnl_newTrans->Controls->Add(this->btn_newTrans);
+			this->pnl_newTrans->Controls->Add(this->label40);
+			this->pnl_newTrans->Controls->Add(this->label45);
+			this->pnl_newTrans->Location = System::Drawing::Point(278, 129);
+			this->pnl_newTrans->Name = L"pnl_newTrans";
+			this->pnl_newTrans->Size = System::Drawing::Size(427, 275);
+			this->pnl_newTrans->TabIndex = 65;
+			this->pnl_newTrans->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &cashier::panel8_Paint);
+			// 
+			// lbl_newTrans
+			// 
+			this->lbl_newTrans->AutoSize = true;
+			this->lbl_newTrans->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->lbl_newTrans->Font = (gcnew System::Drawing::Font(L"Roboto", 12));
+			this->lbl_newTrans->ForeColor = System::Drawing::Color::White;
+			this->lbl_newTrans->Location = System::Drawing::Point(114, 179);
+			this->lbl_newTrans->Name = L"lbl_newTrans";
+			this->lbl_newTrans->Padding = System::Windows::Forms::Padding(3);
+			this->lbl_newTrans->Size = System::Drawing::Size(34, 25);
+			this->lbl_newTrans->TabIndex = 67;
+			this->lbl_newTrans->Text = L"#1";
+			// 
+			// label47
+			// 
+			this->label47->AutoSize = true;
+			this->label47->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label47->Font = (gcnew System::Drawing::Font(L"Roboto", 12));
+			this->label47->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label47->Location = System::Drawing::Point(19, 179);
+			this->label47->Name = L"label47";
+			this->label47->Padding = System::Windows::Forms::Padding(2);
+			this->label47->Size = System::Drawing::Size(99, 25);
+			this->label47->TabIndex = 66;
+			this->label47->Text = L"Transaction";
+			// 
+			// label27
+			// 
+			this->label27->BackColor = System::Drawing::Color::Transparent;
+			this->label27->Font = (gcnew System::Drawing::Font(L"Roboto Light", 9.25F));
+			this->label27->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label27->Location = System::Drawing::Point(18, 53);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(393, 33);
+			this->label27->TabIndex = 64;
+			this->label27->Text = L"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in"
+				L"cididunt ut. ";
+			this->label27->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// inp_custName
+			// 
+			this->inp_custName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->inp_custName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_custName->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->inp_custName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_custName->HideSelection = false;
+			this->inp_custName->Location = System::Drawing::Point(19, 125);
+			this->inp_custName->Multiline = true;
+			this->inp_custName->Name = L"inp_custName";
+			this->inp_custName->Size = System::Drawing::Size(391, 46);
+			this->inp_custName->TabIndex = 49;
+			this->inp_custName->WordWrap = false;
+			// 
+			// btn_newTrans
+			// 
+			this->btn_newTrans->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_newTrans->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_newTrans->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			this->btn_newTrans->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->btn_newTrans->Location = System::Drawing::Point(235, 224);
+			this->btn_newTrans->Name = L"btn_newTrans";
+			this->btn_newTrans->Size = System::Drawing::Size(176, 35);
+			this->btn_newTrans->TabIndex = 53;
+			this->btn_newTrans->Text = L"Enter";
+			this->btn_newTrans->UseVisualStyleBackColor = true;
+			this->btn_newTrans->Click += gcnew System::EventHandler(this, &cashier::btn_newTrans_Click);
+			// 
+			// label40
+			// 
+			this->label40->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label40->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label40->Location = System::Drawing::Point(16, 99);
+			this->label40->Name = L"label40";
+			this->label40->Size = System::Drawing::Size(370, 26);
+			this->label40->TabIndex = 50;
+			this->label40->Text = L"Customer Name";
+			// 
+			// label45
+			// 
+			this->label45->AutoSize = true;
+			this->label45->Font = (gcnew System::Drawing::Font(L"Roboto", 24));
+			this->label45->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label45->Location = System::Drawing::Point(13, 14);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(256, 38);
+			this->label45->TabIndex = 48;
+			this->label45->Text = L"New Transaction";
 			// 
 			// pnl_voidItem
 			// 
@@ -1136,185 +1424,6 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label19->Size = System::Drawing::Size(152, 38);
 			this->label19->TabIndex = 48;
 			this->label19->Text = L"Void Item";
-			// 
-			// pnl_payment
-			// 
-			this->pnl_payment->BackColor = System::Drawing::Color::White;
-			this->pnl_payment->Controls->Add(this->label26);
-			this->pnl_payment->Controls->Add(this->label25);
-			this->pnl_payment->Controls->Add(this->label22);
-			this->pnl_payment->Controls->Add(this->label23);
-			this->pnl_payment->Controls->Add(this->lbl_payChange);
-			this->pnl_payment->Controls->Add(this->label18);
-			this->pnl_payment->Controls->Add(this->inp_payCash);
-			this->pnl_payment->Controls->Add(this->label17);
-			this->pnl_payment->Controls->Add(this->lbl_totalPayment);
-			this->pnl_payment->Controls->Add(this->label9);
-			this->pnl_payment->Controls->Add(this->button4);
-			this->pnl_payment->Controls->Add(this->btn_payment);
-			this->pnl_payment->Location = System::Drawing::Point(317, 47);
-			this->pnl_payment->Name = L"pnl_payment";
-			this->pnl_payment->Size = System::Drawing::Size(356, 420);
-			this->pnl_payment->TabIndex = 0;
-			// 
-			// label26
-			// 
-			this->label26->AutoSize = true;
-			this->label26->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label26->Font = (gcnew System::Drawing::Font(L"Roboto", 12));
-			this->label26->ForeColor = System::Drawing::Color::White;
-			this->label26->Location = System::Drawing::Point(111, 89);
-			this->label26->Name = L"label26";
-			this->label26->Padding = System::Windows::Forms::Padding(3);
-			this->label26->Size = System::Drawing::Size(34, 25);
-			this->label26->TabIndex = 65;
-			this->label26->Text = L"#1";
-			// 
-			// label25
-			// 
-			this->label25->AutoSize = true;
-			this->label25->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label25->Font = (gcnew System::Drawing::Font(L"Roboto", 12));
-			this->label25->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label25->Location = System::Drawing::Point(16, 89);
-			this->label25->Name = L"label25";
-			this->label25->Padding = System::Windows::Forms::Padding(2);
-			this->label25->Size = System::Drawing::Size(99, 25);
-			this->label25->TabIndex = 64;
-			this->label25->Text = L"Transaction";
-			// 
-			// label22
-			// 
-			this->label22->AutoSize = true;
-			this->label22->Font = (gcnew System::Drawing::Font(L"Roboto", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label22->Location = System::Drawing::Point(15, 17);
-			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(245, 29);
-			this->label22->TabIndex = 61;
-			this->label22->Text = L"Purchase Transaction";
-			// 
-			// label23
-			// 
-			this->label23->BackColor = System::Drawing::Color::Transparent;
-			this->label23->Font = (gcnew System::Drawing::Font(L"Roboto Light", 9.25F));
-			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label23->Location = System::Drawing::Point(18, 46);
-			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(314, 33);
-			this->label23->TabIndex = 63;
-			this->label23->Text = L"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in"
-				L"cididunt ut. ";
-			this->label23->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// lbl_payChange
-			// 
-			this->lbl_payChange->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
-			this->lbl_payChange->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_payChange->Location = System::Drawing::Point(18, 303);
-			this->lbl_payChange->Name = L"lbl_payChange";
-			this->lbl_payChange->Size = System::Drawing::Size(209, 37);
-			this->lbl_payChange->TabIndex = 62;
-			this->lbl_payChange->Text = L"55.45";
-			this->lbl_payChange->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// label18
-			// 
-			this->label18->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
-			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label18->Location = System::Drawing::Point(19, 281);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(120, 32);
-			this->label18->TabIndex = 60;
-			this->label18->Text = L"Change";
-			// 
-			// inp_payCash
-			// 
-			this->inp_payCash->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_payCash->DecimalPlaces = 2;
-			this->inp_payCash->Font = (gcnew System::Drawing::Font(L"Roboto Light", 25));
-			this->inp_payCash->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_payCash->Location = System::Drawing::Point(21, 218);
-			this->inp_payCash->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
-			this->inp_payCash->Name = L"inp_payCash";
-			this->inp_payCash->Size = System::Drawing::Size(313, 48);
-			this->inp_payCash->TabIndex = 58;
-			this->inp_payCash->Tag = L"";
-			this->inp_payCash->ThousandsSeparator = true;
-			this->inp_payCash->ValueChanged += gcnew System::EventHandler(this, &cashier::inp_payCashValueChange);
-			// 
-			// label17
-			// 
-			this->label17->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
-			this->label17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label17->Location = System::Drawing::Point(19, 189);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(120, 26);
-			this->label17->TabIndex = 57;
-			this->label17->Text = L"Cash";
-			// 
-			// lbl_totalPayment
-			// 
-			this->lbl_totalPayment->Font = (gcnew System::Drawing::Font(L"Roboto Light", 16.25F));
-			this->lbl_totalPayment->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_totalPayment->Location = System::Drawing::Point(15, 146);
-			this->lbl_totalPayment->Name = L"lbl_totalPayment";
-			this->lbl_totalPayment->Size = System::Drawing::Size(209, 37);
-			this->lbl_totalPayment->TabIndex = 55;
-			this->lbl_totalPayment->Text = L"1924.55";
-			this->lbl_totalPayment->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
-			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label9->Location = System::Drawing::Point(17, 122);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(131, 23);
-			this->label9->TabIndex = 47;
-			this->label9->Text = L"Total Payment";
-			// 
-			// button4
-			// 
-			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			this->button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)));
-			this->button4->Location = System::Drawing::Point(22, 363);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(120, 35);
-			this->button4->TabIndex = 46;
-			this->button4->Text = L"Cancel";
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &cashier::button4_Click);
-			// 
-			// btn_payment
-			// 
-			this->btn_payment->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_payment->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_payment->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			this->btn_payment->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_payment->Location = System::Drawing::Point(195, 363);
-			this->btn_payment->Name = L"btn_payment";
-			this->btn_payment->Size = System::Drawing::Size(140, 35);
-			this->btn_payment->TabIndex = 45;
-			this->btn_payment->Text = L"Pay";
-			this->btn_payment->UseVisualStyleBackColor = true;
-			this->btn_payment->Click += gcnew System::EventHandler(this, &cashier::btn_payment_Click);
 			// 
 			// tbC_cashier
 			// 
@@ -1638,49 +1747,49 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tb_viewPro->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tb_viewPro->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->tb_viewPro->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle21->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle21->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle21->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
-			dataGridViewCellStyle21->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle21->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle21->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle13->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle21->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle21->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_viewPro->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_viewPro->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
 			this->tb_viewPro->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tb_viewPro->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->dataGridViewTextBoxColumn1,
 					this->dataGridViewTextBoxColumn2, this->cl_categories, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4
 			});
 			this->tb_viewPro->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle22->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle22->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle22->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			dataGridViewCellStyle22->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle22->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle22->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle14->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle14->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle22->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle22->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->tb_viewPro->DefaultCellStyle = dataGridViewCellStyle22;
+			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->tb_viewPro->DefaultCellStyle = dataGridViewCellStyle14;
 			this->tb_viewPro->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->tb_viewPro->Location = System::Drawing::Point(-16, 69);
 			this->tb_viewPro->Name = L"tb_viewPro";
 			this->tb_viewPro->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle23->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle23->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle15->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle23->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle23->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle23->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle23->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_viewPro->RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+			dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle15->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle15->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_viewPro->RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
 			this->tb_viewPro->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle24->Padding = System::Windows::Forms::Padding(2);
-			this->tb_viewPro->RowsDefaultCellStyle = dataGridViewCellStyle24;
+			dataGridViewCellStyle16->Padding = System::Windows::Forms::Padding(2);
+			this->tb_viewPro->RowsDefaultCellStyle = dataGridViewCellStyle16;
 			this->tb_viewPro->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->tb_viewPro->Size = System::Drawing::Size(763, 430);
 			this->tb_viewPro->TabIndex = 67;
@@ -1805,89 +1914,6 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->pnl_navBar->Size = System::Drawing::Size(72, 535);
 			this->pnl_navBar->TabIndex = 4;
 			// 
-			// panel8
-			// 
-			this->panel8->BackColor = System::Drawing::Color::White;
-			this->panel8->Controls->Add(this->label27);
-			this->panel8->Controls->Add(this->textBox2);
-			this->panel8->Controls->Add(this->button2);
-			this->panel8->Controls->Add(this->label40);
-			this->panel8->Controls->Add(this->label45);
-			this->panel8->Location = System::Drawing::Point(278, 129);
-			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(427, 248);
-			this->panel8->TabIndex = 65;
-			this->panel8->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &cashier::panel8_Paint);
-			// 
-			// label27
-			// 
-			this->label27->BackColor = System::Drawing::Color::Transparent;
-			this->label27->Font = (gcnew System::Drawing::Font(L"Roboto Light", 9.25F));
-			this->label27->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label27->Location = System::Drawing::Point(18, 53);
-			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(393, 33);
-			this->label27->TabIndex = 64;
-			this->label27->Text = L"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in"
-				L"cididunt ut. ";
-			this->label27->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->textBox2->HideSelection = false;
-			this->textBox2->Location = System::Drawing::Point(20, 129);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(391, 40);
-			this->textBox2->TabIndex = 49;
-			this->textBox2->WordWrap = false;
-			// 
-			// button2
-			// 
-			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button2->Location = System::Drawing::Point(236, 186);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(176, 35);
-			this->button2->TabIndex = 53;
-			this->button2->Text = L"Enter";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// label40
-			// 
-			this->label40->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label40->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label40->Location = System::Drawing::Point(17, 103);
-			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(370, 26);
-			this->label40->TabIndex = 50;
-			this->label40->Text = L"Customer Name";
-			// 
-			// label45
-			// 
-			this->label45->AutoSize = true;
-			this->label45->Font = (gcnew System::Drawing::Font(L"Roboto", 24));
-			this->label45->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label45->Location = System::Drawing::Point(13, 14);
-			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(256, 38);
-			this->label45->TabIndex = 48;
-			this->label45->Text = L"New Transaction";
-			// 
 			// cashier
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1908,11 +1934,13 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->pnl_messageBox->ResumeLayout(false);
-			this->pnl_voidItem->ResumeLayout(false);
-			this->pnl_voidItem->PerformLayout();
 			this->pnl_payment->ResumeLayout(false);
 			this->pnl_payment->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_payCash))->EndInit();
+			this->pnl_newTrans->ResumeLayout(false);
+			this->pnl_newTrans->PerformLayout();
+			this->pnl_voidItem->ResumeLayout(false);
+			this->pnl_voidItem->PerformLayout();
 			this->tbC_cashier->ResumeLayout(false);
 			this->tab_mainCashier->ResumeLayout(false);
 			this->tab_messageBox->ResumeLayout(false);
@@ -1923,8 +1951,6 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->panel6->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_viewPro))->EndInit();
 			this->pnl_navBar->ResumeLayout(false);
-			this->panel8->ResumeLayout(false);
-			this->panel8->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -1939,6 +1965,10 @@ private: System::Windows::Forms::Button^  btn_process;
 		double tax= .12, totalPrice=0.0 , amountDue=0.0;
 		int proQuan = 1;
 		int showRoll = 0;
+
+		//Sales Report
+		String ^customerName;
+		int transCode;
 
 		//Struct of Products
 		public: value struct Product {
@@ -2126,8 +2156,7 @@ private: System::Windows::Forms::Button^  btn_process;
 		String^ selectedCart;
 		private: System::Void btn_prevDelete_Click(System::Object^  sender, System::EventArgs^  e) {
 			if (!String::IsNullOrEmpty(selectedCart)) {
-				tbC_cashier->SelectTab(1);
-				MessagePnl(false);
+				voidItemPnl();
 			}
 			else {
 				MessageBox::Show("Select item on cart first.");
@@ -2186,9 +2215,8 @@ private: System::Windows::Forms::Button^  btn_process;
 			
 			if (!amountDue<=0.0)
 			{
-				tbC_cashier->SelectTab(1);
 				lbl_totalPayment->Text = amountDue + "";
-				MessagePnl(true);
+				paymentPnl();
 			}
 			else {
 				MessageBox::Show("No items on cart please fill it in.");
@@ -2210,15 +2238,26 @@ private: System::Windows::Forms::Button^  btn_process;
 					updateTextfile();
 					tbC_cashier->SelectTab(0);
 					tb_cashier->Rows->Clear();
+
+					//Sales Reporting
+					//Creating cart sales report
+					saveCartReport();
+
+					//Adding the sales to array and save it to database
+					addSalesReport();
+					
 					cart = gcnew array< cartProduct >(1000);
 					cartCount = 0;
 					resetfields();
 					loadCartTable();
+					newTransPnl();
+					
 				}
 			}
 
 			
 		}
+		
 		//Update the stocks on textfile database
 		public: void updateTextfile() {
 
@@ -2256,6 +2295,107 @@ private: System::Windows::Forms::Button^  btn_process;
 
 			sw->Close();
 
+		}
+
+		//Creating Report
+		public: value struct salesReport {
+			int transCode;
+			String^ customer;
+			double^ totalPrice;
+			int^ totalQuantity;
+			String^ date;
+		};
+		int saleReportCount;
+
+		array<salesReport>^ sales = gcnew array< salesReport >(1000);
+
+		//Load sales report
+		public: void loadSalesFromFile() {
+			String^ fileName = "sales_tb.txt";
+			try
+			{
+				StreamReader^ din = File::OpenText(fileName);
+
+				saleReportCount = Int32::Parse(din->ReadLine());
+				if (saleReportCount > 0) {
+					for (int i = 0; i < saleReportCount; i++) {
+						sales[i].transCode = Int32::Parse(din->ReadLine());
+						sales[i].customer = din->ReadLine();
+						sales[i].totalPrice = double::Parse(din->ReadLine());
+						sales[i].totalQuantity = Int32::Parse(din->ReadLine());
+						sales[i].date = din->ReadLine();					}
+				}
+				else {
+					MessageBox::Show("The database is empty");
+				}
+				
+				transCode = sales[saleReportCount-1].transCode;
+				MessageBox::Show("" + transCode);
+				transCode++;
+				din->Close();
+
+			}
+			catch (const std::exception&)
+			{
+
+			}
+		}
+		
+		//Save sales
+		public: void saveSalesToDatabase() {
+			String^ fileName = "sales_tb.txt";
+
+			StreamWriter^ sw = gcnew StreamWriter(fileName);
+			sw->WriteLine(saleReportCount);
+			for (int i = 0; i < saleReportCount; i++) {
+				sw->WriteLine(sales[i].transCode);
+				sw->WriteLine(sales[i].customer);
+				sw->WriteLine(sales[i].totalPrice);
+				sw->WriteLine(sales[i].totalQuantity);
+				sw->WriteLine(sales[i].date);
+			}
+			sw->Close();
+			MessageBox::Show("Report saves to database");
+		}
+
+		//Add sales report
+		public: void addSalesReport() {
+			DateTime^ date = gcnew DateTime;
+			sales[saleReportCount].transCode = transCode;
+			sales[saleReportCount].customer = customerName;
+			sales[saleReportCount].totalPrice = amountDue;
+			sales[saleReportCount].totalQuantity = cartQuantity();
+			sales[saleReportCount].date =""+ date->Now;
+			saleReportCount++;
+			saveSalesToDatabase();
+			loadSalesFromFile();
+			MessageBox::Show("sales report added");
+		}
+
+		//Get the cart total quantity
+		public: int cartQuantity() {
+			int totalQuan = 0;
+			for (int i = 0; i < cartCount; i++) {
+				totalQuan += cart[i].quantity;
+			}
+			return totalQuan;
+		}
+
+		//Creating cart sales report connectio to sales report
+		public: void saveCartReport() {
+			String^ fileName = "salesReport\\"+ transCode +".txt";
+
+			StreamWriter^ sw = gcnew StreamWriter(fileName);
+			sw->WriteLine(cartCount);
+			for (int i = 0; i < cartCount; i++) {
+				sw->WriteLine(cart[i].barcode);
+				sw->WriteLine(cart[i].name);
+				sw->WriteLine(cart[i].quantity);
+				sw->WriteLine(cart[i].price);
+				sw->WriteLine(cart[i].totalPrice);
+			}
+			sw->Close();
+			MessageBox::Show("cart ordered report added");
 		}
 
 		public: int checkBarcodeExist(String^ barcode) {
@@ -2394,9 +2534,23 @@ private: System::Windows::Forms::Button^  btn_process;
 		}
 		
 		//Other functions
-		public: void MessagePnl(bool show) {
-			pnl_payment->Visible = show;
-			pnl_voidItem->Visible = !show;
+		public: void paymentPnl() {
+			tbC_cashier->SelectTab(1);
+			pnl_payment->Visible = true;
+			pnl_voidItem->Visible = false;
+			pnl_newTrans->Visible = false;
+		}
+		public: void voidItemPnl() {
+			tbC_cashier->SelectTab(1);
+			pnl_payment->Visible = false;
+			pnl_voidItem->Visible = true;
+			pnl_newTrans->Visible = false;
+		}
+		public: void newTransPnl() {
+			tbC_cashier->SelectTab(1);
+			pnl_payment->Visible = false;
+			pnl_voidItem->Visible = false;
+			pnl_newTrans->Visible = true;
 		}
 
 		String^ convertSelection(String^ type) {
@@ -2423,6 +2577,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			lbl_totalPayment->Text = "";
 			inp_quantity->Text = "1";
 			lbl_payChange->Text = "";
+			inp_custName->Text = "";
 			proPrice = 0.0;
 			amountDue = 0.0;
 			lbl_amountDue->Text = "0";
@@ -2475,8 +2630,20 @@ private: System::Windows::Forms::Button^  btn_process;
 
 			
 		}
-private: System::Void panel8_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-}
+		private: System::Void panel8_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+		}
+		private: System::Void btn_newTrans_Click(System::Object^  sender, System::EventArgs^  e) {
+			customerName = inp_custName->Text;
+			if (!String::IsNullOrEmpty(customerName)) {
+				tbC_cashier->SelectTab(0);
+				lbl_transName->Text = customerName;
+				resetfields();
+			}
+			else {
+				MessageBox::Show("Please enter the customer name.");
+			}
+			
+		}
 };
 
 
