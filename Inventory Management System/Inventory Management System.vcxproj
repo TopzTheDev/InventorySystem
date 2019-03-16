@@ -141,7 +141,6 @@
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="person.cpp" />
-    <ClCompile Include="salesReport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cashier.h">
@@ -155,7 +154,6 @@
     </ClInclude>
     <ClInclude Include="person.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="salesReport.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="cashier.resx">

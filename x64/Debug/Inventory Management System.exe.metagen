@@ -88,8 +88,8 @@ Struct InventoryManagementSystem.cashier+salesReport: AutoLayout, AnsiClass, Cla
   Fields:
     Int32 transCode : Public
     System.String customer : Public
-    System.ValueType totalPrice Double IsBoxed : Public
-    System.ValueType totalQuantity Int32 IsBoxed : Public
+    Double totalPrice : Public
+    Int32 totalQuantity : Public
     System.String date : Public
 Struct InventoryManagementSystem.cashier+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
@@ -111,7 +111,6 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     Int32 accountCount : Public
     Int32 saleReportCount : Public
     salesReport[] sales : Public
-    Int32 toggle : Public
   Methods:
     loadProductFromFile(): PrivateScope, Public, HideBySig
     loadTable(String): PrivateScope, Public, HideBySig
@@ -123,8 +122,9 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     saveAccToDatabase(): PrivateScope, Public, HideBySig
     checkUsername(String): PrivateScope, Public, HideBySig
     accSearch(String): PrivateScope, Public, HideBySig
-    clearfields(): PrivateScope, Public, HideBySig
-    validateFields(String): PrivateScope, Public, HideBySig
+    loadSalesFromFile(): PrivateScope, Public, HideBySig
+    loadSalesTable(): PrivateScope, Public, HideBySig
+    repSearch(String): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.inventory+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -160,11 +160,20 @@ Struct InventoryManagementSystem.inventory+searchAccount: AutoLayout, AnsiClass,
 Struct InventoryManagementSystem.inventory+salesReport: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
-    System.String transCode : Public
+    Int32 transCode : Public
     System.String customer : Public
-    System.ValueType totalPrice Double IsBoxed : Public
-    System.ValueType totalQuantity Int32 IsBoxed : Public
+    Single totalPrice : Public
+    Int32 totalQuantity : Public
     System.String date : Public
+Struct InventoryManagementSystem.inventory+searchReport: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 transCode : Public
+    System.String customer : Public
+    Double totalPrice : Public
+    Int32 totalQuantity : Public
+    System.String date : Public
+    Int32 idx : Public
 Class InventoryManagementSystem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

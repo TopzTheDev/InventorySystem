@@ -1,10 +1,6 @@
 ﻿#pragma once
 #include <conio.h>
-//#include <iostream>
 #include <string>
-//#include <vector>
-//#include <array>
-//#include <stdio.h>
 
 
 namespace InventoryManagementSystem {
@@ -242,8 +238,6 @@ private: System::Windows::Forms::Button^  btn_process;
 			newTransPnl();
 			resetfields();
 			loadSalesFromFile();
-			lbl_transNo->Text = "#"+transCode;
-			lbl_newTrans->Text = "#" + transCode;
 		}
 
 		void InitializeComponent(void)
@@ -2301,8 +2295,8 @@ private: System::Windows::Forms::Button^  btn_process;
 		public: value struct salesReport {
 			int transCode;
 			String^ customer;
-			double^ totalPrice;
-			int^ totalQuantity;
+			double totalPrice;
+			int totalQuantity;
 			String^ date;
 		};
 		int saleReportCount;
@@ -2332,6 +2326,8 @@ private: System::Windows::Forms::Button^  btn_process;
 				transCode = sales[saleReportCount-1].transCode;
 				MessageBox::Show("" + transCode);
 				transCode++;
+				lbl_transNo->Text = "#" + transCode;
+				lbl_newTrans->Text = "#" + transCode;
 				din->Close();
 
 			}
