@@ -184,8 +184,9 @@ Class InventoryManagementSystem.Login: AutoLayout, AnsiClass, Class, Public, Bef
     Int32 accountCount : Public
   Methods:
     loadAccountFromFile(): PrivateScope, Public, HideBySig
-    verifyAccount(String, String, String): PrivateScope, Public, HideBySig
+    verifyAccount(String, String): PrivateScope, Public, HideBySig
     clearFields(): PrivateScope, Public, HideBySig
+    accSearch(String, String): PrivateScope, Public, HideBySig
     fieldValidation(): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.Login+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType

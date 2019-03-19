@@ -54,9 +54,9 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Button^  btn_signIn;
 
 
-	private: System::Windows::Forms::Label^  label6;
+
 	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::ComboBox^  cb_loginAs;
+
 
 
 
@@ -88,9 +88,7 @@ namespace InventoryManagementSystem {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->inp_loginPass = (gcnew System::Windows::Forms::TextBox());
 			this->btn_signIn = (gcnew System::Windows::Forms::Button());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->cb_loginAs = (gcnew System::Windows::Forms::ComboBox());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -209,17 +207,6 @@ namespace InventoryManagementSystem {
 			this->btn_signIn->UseVisualStyleBackColor = true;
 			this->btn_signIn->Click += gcnew System::EventHandler(this, &Login::button1_Click);
 			// 
-			// label6
-			// 
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label6->Location = System::Drawing::Point(459, 298);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(370, 26);
-			this->label6->TabIndex = 9;
-			this->label6->Text = L"Login As";
-			// 
 			// button1
 			// 
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
@@ -235,21 +222,6 @@ namespace InventoryManagementSystem {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click_1);
 			// 
-			// cb_loginAs
-			// 
-			this->cb_loginAs->BackColor = System::Drawing::Color::White;
-			this->cb_loginAs->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->cb_loginAs->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->cb_loginAs->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
-			this->cb_loginAs->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->cb_loginAs->FormattingEnabled = true;
-			this->cb_loginAs->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Inventory", L"Cashier" });
-			this->cb_loginAs->Location = System::Drawing::Point(462, 325);
-			this->cb_loginAs->Name = L"cb_loginAs";
-			this->cb_loginAs->Size = System::Drawing::Size(351, 28);
-			this->cb_loginAs->TabIndex = 3;
-			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -257,8 +229,6 @@ namespace InventoryManagementSystem {
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(855, 445);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->cb_loginAs);
 			this->Controls->Add(this->btn_signIn);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->inp_loginPass);
@@ -284,7 +254,10 @@ namespace InventoryManagementSystem {
 		String^ username;
 		String^ password;
 		String^ loginAs;
+
 	};
+
+	
 
 	array<Account>^ acc = gcnew array<Account>(1000);
 
@@ -294,13 +267,14 @@ namespace InventoryManagementSystem {
 		String^ fileName = "account_tb.txt";
 		try
 		{
+
 			StreamReader^ din = File::OpenText(fileName);
 			accountCount = Int32::Parse(din->ReadLine());
 			if (accountCount > 0) {
-				for (int i = 0; i < accountCount; i++) {
+				for (int i = 0; i <accountCount; i++) {
 					acc[i].username = din->ReadLine();
-					acc[i].password = din->ReadLine();
-					acc[i].loginAs = din->ReadLine();
+					acc[i].password = din->ReadLine(); 
+					acc[i].loginAs = din->ReadLine();  
 				}
 			}
 			else {
@@ -320,27 +294,36 @@ namespace InventoryManagementSystem {
 		
 		String^ username = inp_userName->Text;
 		String^ password = inp_loginPass->Text;
-		String^ loginAs = cb_loginAs->Text;
-		MessageBox::Show(""+(verifyAccount(username, password, loginAs)));
+
 		if (!fieldValidation()) {
-			if (verifyAccount(username, password, loginAs)) {
-				if (String::Compare(loginAs, "Inventory") == 0) {
+
+			Account *accVerify = (value struct Account*) malloc(sizeof(value struct Account));
+			accVerify = accSearch(username, password);
+			MessageBox::Show("user: " + accVerify->username + " pass: " + accVerify->password + " loginAs:" + accVerify->loginAs);
+			if (!String::IsNullOrEmpty(accVerify->username)) {
+				if (String::Compare(accVerify->loginAs, "Inventory") == 0) {
 					MessageBox::Show("Welcome to the Inventory");
 					this->Hide();
 					inventory ^ frm2 = gcnew inventory(this);
 					frm2->ShowDialog();
-				}
+				} 
+				/*else if (String::Compare(accVerify->loginAs, "Administrator") == 0) {
+					MessageBox::Show("Welcome to the Inventory");
+					this->Hide();
+					inventory ^ frm2 = gcnew inventory(this);
+					frm2->ShowDialog();
+				}*/
 				else {
 					MessageBox::Show("Welcome to the Cashier");
 					this->Hide();
 					cashier ^ frm3 = gcnew cashier(this);
 					frm3->ShowDialog();
 				}
+				free(accVerify);
 				clearFields();
 			}
 			else {
 				MessageBox::Show("Your Account is not exisiting try to change your position");
-
 			}
 		}
 		else {
@@ -349,10 +332,10 @@ namespace InventoryManagementSystem {
 		
 	}
 
-	public: bool verifyAccount(String^ username, String^ password, String^ loginAs) {
+	public: bool verifyAccount(String^ username, String^ password) {
 		bool toReturn;
 		for (int i = 0; i < accountCount-1; i++) {
-			if (String::Compare(acc[i].username, username) == 0 && String::Compare(acc[i].password, password) == 0 && String::Compare(acc[i].loginAs, loginAs) == 0) {
+			if (String::Compare(acc[i].username, username) == 0 && String::Compare(acc[i].password, password) == 0) {
 				toReturn = true;
 				break;
 			}
@@ -367,12 +350,33 @@ namespace InventoryManagementSystem {
 	void clearFields() {
 		inp_userName->Text = "";
 		inp_loginPass->Text = "";
-		cb_loginAs->SelectedItem = "Inventory";
+	}
+
+	public: Account *accSearch(String^ username, String^ password) {
+		Account *searched = (value struct Account*) malloc(sizeof(value struct Account));
+
+		MessageBox::Show("Verifying Account == user: "+ username + " pass: " + password);
+		for (int i = 0; i < accountCount; i++) {
+			
+			if (String::Compare(acc[i].username, username) == 0 &&  String::Compare(acc[i].password, password) == 0 ) {
+				MessageBox::Show("Account is here");
+				searched->username = acc[i].username;
+				searched->password = acc[i].password;
+				searched->loginAs = acc[i].loginAs;
+				break;
+			}
+			else {
+				MessageBox::Show("Account is not here");
+				searched->username = "";
+			}
+
+		}
+
+		return searched;
 	}
 
 	bool fieldValidation() {
-		return String::Compare(inp_userName->Text, "") == 0 || String::Compare(inp_loginPass->Text, "") == 0
-			|| String::Compare(cb_loginAs->Text, "") == 0 ? true : false;
+		return String::Compare(inp_userName->Text, "") == 0 || String::Compare(inp_loginPass->Text, "") == 0 ? true : false;
 		
 	}
 

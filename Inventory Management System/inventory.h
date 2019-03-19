@@ -2831,9 +2831,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 
 		//Add product to database
 		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			/*Double priceVat = double::Parse(inp_proPrice->Text);
-			priceVat = priceVat * .12;
-			priceVat = priceVat + double::Parse(inp_proPrice->Text);*/
+			
+
 			if (validateFields("add_emptyFields")) {
 				MessageBox::Show("Empty fields, Adding Product is not applied");
 			}
@@ -3039,7 +3038,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			String^ loginAs;
 		};
 		array<Account>^ acc = gcnew array<Account>(1000);
-
+		
 		int accountCount;
 
 		void loadAccountFromFile() {

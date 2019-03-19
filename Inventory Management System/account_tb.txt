@@ -1,4 +1,4 @@
-3
+4
 lugod
 titi
 Inventory
@@ -8,3 +8,6 @@ Cashier
 siasol
 manalo
 Cashier
+lugod1
+titi1
+Inventory1
