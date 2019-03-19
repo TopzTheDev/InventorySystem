@@ -1,19 +1,16 @@
 ﻿  Login.cpp
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2117): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2119): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2125): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2126): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2210): warning C4804: '<=': unsafe use of type 'bool' in operation
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2265): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(2877): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  inventory.cpp
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(2877): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2125): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2235): warning C4804: '<=': unsafe use of type 'bool' in operation
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2290): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(2846): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(2890): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  cashier.cpp
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2125): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2235): warning C4804: '<=': unsafe use of type 'bool' in operation
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\cashier.h(2290): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Generating Code...
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(2818): warning C4715: 'InventoryManagementSystem::inventory::proSearch': not all control paths return a value
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(3134): warning C4715: 'InventoryManagementSystem::inventory::accSearch': not all control paths return a value
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(3349): warning C4715: 'InventoryManagementSystem::inventory::repSearch': not all control paths return a value
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(2818): warning C4715: 'InventoryManagementSystem::inventory::proSearch': not all control paths return a value
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(3134): warning C4715: 'InventoryManagementSystem::inventory::accSearch': not all control paths return a value
-c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(3349): warning C4715: 'InventoryManagementSystem::inventory::repSearch': not all control paths return a value
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(2820): warning C4715: 'InventoryManagementSystem::inventory::proSearch': not all control paths return a value
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(3138): warning C4715: 'InventoryManagementSystem::inventory::accSearch': not all control paths return a value
+c:\users\christopher\desktop\my websites\inventorysystem\inventory management system\inventory.h(3353): warning C4715: 'InventoryManagementSystem::inventory::repSearch': not all control paths return a value
   cashier.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Inventory Management System.vcxproj -> C:\Users\Christopher\Desktop\My Websites\InventorySystem\x64\Debug\Inventory Management System.exe

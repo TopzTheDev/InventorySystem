@@ -68,7 +68,8 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Panel^  panel2;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  lbl_vatAmount;
+
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label15;
 	private: System::Windows::Forms::Label^  label16;
@@ -126,7 +127,8 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  btn_productView;
 	private: System::Windows::Forms::Label^  btn_cashier;
 	private: System::Windows::Forms::Panel^  panel1;
-	private: System::Windows::Forms::Label^  label29;
+private: System::Windows::Forms::Label^  lbl_indicator;
+
 	private: System::Windows::Forms::Panel^  pnl_navBar;
 	private: System::Windows::Forms::Panel^  pnl_newTrans;
 
@@ -242,15 +244,15 @@ private: System::Windows::Forms::Button^  btn_process;
 
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(cashier::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->tb_cashier = (gcnew System::Windows::Forms::DataGridView());
 			this->pro_code = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -290,7 +292,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->lbl_vatAmount = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
@@ -366,7 +368,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->btn_productView = (gcnew System::Windows::Forms::Label());
 			this->btn_cashier = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->lbl_indicator = (gcnew System::Windows::Forms::Label());
 			this->pnl_navBar = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_quantity))->BeginInit();
@@ -406,56 +408,57 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tb_cashier->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tb_cashier->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->tb_cashier->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle9->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
-			dataGridViewCellStyle9->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle9->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle9->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle9->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle9->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_cashier->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_cashier->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->tb_cashier->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tb_cashier->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->pro_code,
 					this->pro_name, this->pro_quan, this->pro_price, this->pro_total
 			});
 			this->tb_cashier->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle10->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle10->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle10->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			dataGridViewCellStyle10->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle10->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle10->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle2->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle10->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle10->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->tb_cashier->DefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->tb_cashier->DefaultCellStyle = dataGridViewCellStyle2;
 			this->tb_cashier->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->tb_cashier->Location = System::Drawing::Point(518, 124);
 			this->tb_cashier->Name = L"tb_cashier";
 			this->tb_cashier->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle11->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle11->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle3->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle11->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle11->Padding = System::Windows::Forms::Padding(2);
-			dataGridViewCellStyle11->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle11->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle11->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_cashier->RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle3->Padding = System::Windows::Forms::Padding(2);
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_cashier->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this->tb_cashier->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle12->Padding = System::Windows::Forms::Padding(2);
-			this->tb_cashier->RowsDefaultCellStyle = dataGridViewCellStyle12;
+			dataGridViewCellStyle4->Padding = System::Windows::Forms::Padding(2);
+			this->tb_cashier->RowsDefaultCellStyle = dataGridViewCellStyle4;
 			this->tb_cashier->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->tb_cashier->Size = System::Drawing::Size(594, 303);
 			this->tb_cashier->TabIndex = 27;
 			this->tb_cashier->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &cashier::tb_cashier_CellClick);
+			this->tb_cashier->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &cashier::tb_cashier_CellContentClick);
 			this->tb_cashier->CellLeave += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &cashier::tb_cashier_CellLeave);
 			// 
 			// pro_code
@@ -717,6 +720,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->lbl_barcode->Name = L"lbl_barcode";
 			this->lbl_barcode->Size = System::Drawing::Size(280, 26);
 			this->lbl_barcode->TabIndex = 51;
+			this->lbl_barcode->Click += gcnew System::EventHandler(this, &cashier::lbl_barcode_Click);
 			// 
 			// Barcode
 			// 
@@ -775,7 +779,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->pnl_mainCashier->Controls->Add(this->label16);
 			this->pnl_mainCashier->Controls->Add(this->label15);
 			this->pnl_mainCashier->Controls->Add(this->label14);
-			this->pnl_mainCashier->Controls->Add(this->label5);
+			this->pnl_mainCashier->Controls->Add(this->lbl_vatAmount);
 			this->pnl_mainCashier->Controls->Add(this->label3);
 			this->pnl_mainCashier->Controls->Add(this->label2);
 			this->pnl_mainCashier->Controls->Add(this->panel2);
@@ -834,7 +838,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label33->Name = L"label33";
 			this->label33->Size = System::Drawing::Size(123, 26);
 			this->label33->TabIndex = 63;
-			this->label33->Text = L"Total";
+			this->label33->Text = L"Total Price";
 			// 
 			// label32
 			// 
@@ -844,7 +848,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label32->Name = L"label32";
 			this->label32->Size = System::Drawing::Size(123, 26);
 			this->label32->TabIndex = 62;
-			this->label32->Text = L"Product Price";
+			this->label32->Text = L"Original Price";
 			// 
 			// label31
 			// 
@@ -902,18 +906,19 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label14->Size = System::Drawing::Size(344, 2);
 			this->label14->TabIndex = 62;
 			// 
-			// label5
+			// lbl_vatAmount
 			// 
-			this->label5->Font = (gcnew System::Drawing::Font(L"Roboto", 17.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbl_vatAmount->Font = (gcnew System::Drawing::Font(L"Roboto", 17.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->lbl_vatAmount->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label5->Location = System::Drawing::Point(884, 426);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(230, 40);
-			this->label5->TabIndex = 61;
-			this->label5->Text = L"1,200.00";
-			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->lbl_vatAmount->Location = System::Drawing::Point(884, 426);
+			this->lbl_vatAmount->Name = L"lbl_vatAmount";
+			this->lbl_vatAmount->Size = System::Drawing::Size(230, 40);
+			this->lbl_vatAmount->TabIndex = 61;
+			this->lbl_vatAmount->Text = L"1,200.00";
+			this->lbl_vatAmount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->lbl_vatAmount->Click += gcnew System::EventHandler(this, &cashier::label5_Click);
 			// 
 			// label3
 			// 
@@ -954,8 +959,8 @@ private: System::Windows::Forms::Button^  btn_process;
 			// pnl_messageBox
 			// 
 			this->pnl_messageBox->BackColor = System::Drawing::Color::Gainsboro;
-			this->pnl_messageBox->Controls->Add(this->pnl_newTrans);
 			this->pnl_messageBox->Controls->Add(this->pnl_payment);
+			this->pnl_messageBox->Controls->Add(this->pnl_newTrans);
 			this->pnl_messageBox->Controls->Add(this->pnl_voidItem);
 			this->pnl_messageBox->Location = System::Drawing::Point(0, 0);
 			this->pnl_messageBox->Name = L"pnl_messageBox";
@@ -1100,7 +1105,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->inp_payCash->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_payCash->Location = System::Drawing::Point(21, 262);
-			this->inp_payCash->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->inp_payCash->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->inp_payCash->Name = L"inp_payCash";
 			this->inp_payCash->Size = System::Drawing::Size(313, 48);
 			this->inp_payCash->TabIndex = 58;
@@ -1741,49 +1746,49 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tb_viewPro->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tb_viewPro->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->tb_viewPro->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
-			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle13->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle5->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_viewPro->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_viewPro->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this->tb_viewPro->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tb_viewPro->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->dataGridViewTextBoxColumn1,
 					this->dataGridViewTextBoxColumn2, this->cl_categories, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4
 			});
 			this->tb_viewPro->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle14->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
-			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle14->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle6->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle6->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle6->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->tb_viewPro->DefaultCellStyle = dataGridViewCellStyle14;
+			dataGridViewCellStyle6->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle6->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->tb_viewPro->DefaultCellStyle = dataGridViewCellStyle6;
 			this->tb_viewPro->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->tb_viewPro->Location = System::Drawing::Point(-16, 69);
 			this->tb_viewPro->Name = L"tb_viewPro";
 			this->tb_viewPro->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle15->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle7->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle15->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle15->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_viewPro->RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle7->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle7->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle7->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle7->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_viewPro->RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this->tb_viewPro->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle16->Padding = System::Windows::Forms::Padding(2);
-			this->tb_viewPro->RowsDefaultCellStyle = dataGridViewCellStyle16;
+			dataGridViewCellStyle8->Padding = System::Windows::Forms::Padding(2);
+			this->tb_viewPro->RowsDefaultCellStyle = dataGridViewCellStyle8;
 			this->tb_viewPro->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->tb_viewPro->Size = System::Drawing::Size(763, 430);
 			this->tb_viewPro->TabIndex = 67;
@@ -1882,22 +1887,23 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->panel1->Size = System::Drawing::Size(200, 100);
 			this->panel1->TabIndex = 58;
 			// 
-			// label29
+			// lbl_indicator
 			// 
-			this->label29->BackColor = System::Drawing::Color::White;
-			this->label29->Font = (gcnew System::Drawing::Font(L"Roboto", 1));
-			this->label29->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->lbl_indicator->BackColor = System::Drawing::Color::White;
+			this->lbl_indicator->Font = (gcnew System::Drawing::Font(L"Roboto", 1));
+			this->lbl_indicator->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label29->Location = System::Drawing::Point(-1, 130);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(5, 56);
-			this->label29->TabIndex = 65;
+			this->lbl_indicator->Location = System::Drawing::Point(-1, 130);
+			this->lbl_indicator->Name = L"lbl_indicator";
+			this->lbl_indicator->Size = System::Drawing::Size(5, 56);
+			this->lbl_indicator->TabIndex = 65;
+			this->lbl_indicator->Click += gcnew System::EventHandler(this, &cashier::lbl_indicator_Click);
 			// 
 			// pnl_navBar
 			// 
 			this->pnl_navBar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->pnl_navBar->Controls->Add(this->label29);
+			this->pnl_navBar->Controls->Add(this->lbl_indicator);
 			this->pnl_navBar->Controls->Add(this->panel1);
 			this->pnl_navBar->Controls->Add(this->btn_cashier);
 			this->pnl_navBar->Controls->Add(this->btn_productView);
@@ -1956,7 +1962,7 @@ private: System::Windows::Forms::Button^  btn_process;
 		int proStock;
 
 		//For Values
-		double tax= .12, totalPrice=0.0 , amountDue=0.0;
+		double tax= .12, totalPrice=0.0 , amountDue=0.0, vat=0.0;
 		int proQuan = 1;
 		int showRoll = 0;
 
@@ -2068,12 +2074,14 @@ private: System::Windows::Forms::Button^  btn_process;
 			String^ barcode;
 			String^ name;
 			int quantity;
-			float price;
-			float totalPrice;
+			double price;
+			double totalPrice;
+			double vat;
 		};
 		int cartCount=0;
 
 		array<cartProduct>^ cart = gcnew array< cartProduct >(1000);
+	
 
 		private: System::Void inp_proCode_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			String^ toSearch = inp_proCode->Text;
@@ -2109,26 +2117,40 @@ private: System::Windows::Forms::Button^  btn_process;
 
 		private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
 			int index = checkBarcodeExist(barcode);
-			MessageBox::Show(""+index);
-			if (!(index==-1)) {
-				MessageBox::Show("Executed this line 785 " + index);
-				int idxQuan = cart[index].quantity, idxTotal;
-				idxQuan += proQuan;
-				idxTotal = idxQuan * currentPrice;
-				cart[index].quantity = idxQuan;
-				cart[index].totalPrice = idxTotal;
+
+			if (!checkStock(Int32::Parse(inp_quantity->Text))) {
+				if (!(index==-1)) {
+					int idxQuan = cart[index].quantity, idxTotal;
+					idxQuan += proQuan;
+					idxTotal = idxQuan * currentPrice;
+					cart[index].quantity = idxQuan;
+					cart[cartCount].vat = (currentPrice * idxQuan) * tax;
+					cart[index].totalPrice = idxTotal + cart[cartCount].vat;
+					
+				}
+				else {
+					cart[cartCount].barcode = barcode;
+					cart[cartCount].name = proName;
+					cart[cartCount].quantity = proQuan;
+					cart[cartCount].price = currentPrice;
+					cart[cartCount].vat = currentPrice * tax;
+					cart[cartCount].totalPrice = proPrice + cart[cartCount].vat;
+
+					cartCount++;
+				}
+				resetfields();
+				loadCartTable();
 			}
 			else {
-				cart[cartCount].barcode = barcode;
-				cart[cartCount].name = proName;
-				cart[cartCount].quantity = proQuan;
-				cart[cartCount].price = currentPrice;
-				cart[cartCount].totalPrice = proPrice;
-				cartCount++;
+				MessageBox::Show("Insufficient Stock");
 			}
-			resetfields();
-			loadCartTable();
 			
+
+			
+		}
+
+		public: bool checkStock(int quan) {
+			return quan > proStock ? true : false;
 		}
 		
 		public: void loadCartTable() {
@@ -2142,7 +2164,9 @@ private: System::Windows::Forms::Button^  btn_process;
 				tb_cashier->Rows[index]->Cells[3]->Value = cart[i].price;
 				tb_cashier->Rows[index]->Cells[4]->Value = cart[i].totalPrice;
 				amountDue += cart[i].totalPrice;
+				vat += cart[i].vat;
 				lbl_amountDue->Text = amountDue + "";
+				lbl_vatAmount->Text = vat + "";
 				tb_cashier->ClearSelection();
 			}
 		}
@@ -2183,14 +2207,8 @@ private: System::Windows::Forms::Button^  btn_process;
 		}
 
 		void computeTotal(int quantity) {
-			
-			if (!CheckStock(quantity)) {
-				proPrice = currentPrice * quantity;
-				lbl_totalPrice->Text =""+ proPrice;
-			}
-			else {
-				MessageBox::Show("Insufficient Stocks the product stock is "+ proStock + " and your quantity is "+ quantity);
-			}
+			proPrice = currentPrice * quantity;
+			lbl_totalPrice->Text = "" + proPrice;
 		
 		}
 
@@ -2201,12 +2219,19 @@ private: System::Windows::Forms::Button^  btn_process;
 		
 		private: System::Void inp_quantity_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 			proQuan = Convert::ToInt32(inp_quantity->Value);
-			computeTotal(proQuan);
-		}
+
+			if (!CheckStock(proQuan)) {
+				computeTotal(proQuan);
+			}
+			else {
+				MessageBox::Show("Insufficient Stocks the product stock is " + proStock + " and your quantity is " + proQuan);
+				inp_quantity->Text = lbl_proStock->Text;
+			}
+			}
 
 		//Processing the transactions
 		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			
+			pnl_navBar->Enabled = false;
 			if (!amountDue<=0.0)
 			{
 				lbl_totalPayment->Text = amountDue + "";
@@ -2248,7 +2273,7 @@ private: System::Windows::Forms::Button^  btn_process;
 					
 				}
 			}
-
+			pnl_navBar->Enabled = true;
 			
 		}
 		
@@ -2527,6 +2552,7 @@ private: System::Windows::Forms::Button^  btn_process;
 		}
 		private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 			tbC_cashier->SelectTab(0);
+			pnl_navBar->Enabled = true;
 		}
 		
 		//Other functions
@@ -2599,9 +2625,11 @@ private: System::Windows::Forms::Button^  btn_process;
 		private: System::Void btn_productView_Click(System::Object^  sender, System::EventArgs^  e) {
 			loadTable("Default");
 			tbC_cashier->SelectTab(2);
+			lbl_indicator->Location = btn_productView->Location;
 		}
 		private: System::Void btn_cashier_Click(System::Object^  sender, System::EventArgs^  e) {
 			tbC_cashier->SelectTab(0);
+			lbl_indicator->Location = btn_cashier->Location;
 		}
 
 		private: System::Void tb_viewPro_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
@@ -2640,6 +2668,14 @@ private: System::Windows::Forms::Button^  btn_process;
 			}
 			
 		}
+private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void lbl_barcode_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void lbl_indicator_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void tb_cashier_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+}
 };
 
 

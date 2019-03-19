@@ -35,6 +35,7 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     loadProductFromFile(): PrivateScope, Public, HideBySig
     loadTable(String): PrivateScope, Public, HideBySig
     proSearch(String): PrivateScope, Public, HideBySig
+    checkStock(Int32): PrivateScope, Public, HideBySig
     loadCartTable(): PrivateScope, Public, HideBySig
     tableSelection(): PrivateScope, Public, HideBySig
     computeTotal(Int32): PrivateScope, Public, HideBySig
@@ -81,8 +82,9 @@ Struct InventoryManagementSystem.cashier+cartProduct: AutoLayout, AnsiClass, Cla
     System.String barcode : Public
     System.String name : Public
     Int32 quantity : Public
-    Single price : Public
-    Single totalPrice : Public
+    Double price : Public
+    Double totalPrice : Public
+    Double vat : Public
 Struct InventoryManagementSystem.cashier+salesReport: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -142,7 +144,7 @@ Struct InventoryManagementSystem.inventory+searchProduct: AutoLayout, AnsiClass,
     System.String description : Public
     System.String category : Public
     Int32 stock : Public
-    Single price : Public
+    Double price : Public
     Int32 idx : Public
 Struct InventoryManagementSystem.inventory+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
