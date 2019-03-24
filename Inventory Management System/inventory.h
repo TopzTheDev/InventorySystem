@@ -1,12 +1,5 @@
 #pragma once
-#include <conio.h>
 #include <iostream>
-#include <string>
-#include <list>
-#include <vector>
-#include <array>
-#include <fstream> 
-#include <stdio.h>
 
 namespace InventoryManagementSystem {
 	
@@ -31,9 +24,10 @@ namespace InventoryManagementSystem {
 
 	private: System::Windows::Forms::Label^  lbl_searchError;
 	private: System::Windows::Forms::ComboBox^  cb_proCategory;
-	private: System::Windows::Forms::ComboBox^  cb_searchCategory;
+
 	private: System::Windows::Forms::Button^  btn_accMode;
-	private: System::Windows::Forms::NumericUpDown^  inp_proStock;
+	private: System::Windows::Forms::NumericUpDown^  inp_proMinStock;
+
 	private: System::Windows::Forms::NumericUpDown^  inp_proPrice;
 	private: System::Windows::Forms::TextBox^  inp_proCode;
 	private: System::Windows::Forms::Panel^  pnl_navBar;
@@ -80,7 +74,7 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn3;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn4;
 	private: System::Windows::Forms::Label^  btn_sales;
-	private: System::Windows::Forms::ComboBox^  cb_editCategory;
+
 	private: System::Windows::Forms::NumericUpDown^  inp_editPrice;
 	private: System::Windows::Forms::NumericUpDown^  inp_editStock;
 
@@ -152,6 +146,7 @@ private: System::Windows::Forms::Label^  label60;
 private: System::Windows::Forms::Label^  label61;
 private: System::Windows::Forms::Label^  label62;
 private: System::Windows::Forms::DataGridView^  tb_sales;
+private: System::Windows::Forms::Label^  btn_salesView;
 
 
 
@@ -159,7 +154,7 @@ private: System::Windows::Forms::DataGridView^  tb_sales;
 
 
 
-private: System::Windows::Forms::Label^  label15;
+
 
 
 
@@ -199,6 +194,73 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn8;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn9;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn10;
+private: System::Windows::Forms::TabPage^  tab_transaction;
+
+private: System::Windows::Forms::Panel^  panel19;
+private: System::Windows::Forms::Label^  label15;
+private: System::Windows::Forms::Label^  label28;
+private: System::Windows::Forms::Label^  label29;
+private: System::Windows::Forms::Label^  label31;
+private: System::Windows::Forms::Label^  label45;
+private: System::Windows::Forms::DataGridView^  tb_tranProduct;
+
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn12;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn13;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn14;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn15;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn16;
+private: System::Windows::Forms::Panel^  panel20;
+private: System::Windows::Forms::Panel^  panel21;
+
+
+
+private: System::Windows::Forms::Label^  label55;
+private: System::Windows::Forms::Label^  lbl_tranQuan;
+
+private: System::Windows::Forms::Label^  label64;
+private: System::Windows::Forms::Label^  label66;
+private: System::Windows::Forms::Label^  label68;
+private: System::Windows::Forms::Label^  lbl_tranName;
+
+private: System::Windows::Forms::Label^  label70;
+private: System::Windows::Forms::Label^  lbl_tranPrice;
+
+
+private: System::Windows::Forms::Label^  label74;
+private: System::Windows::Forms::Label^  lbl_tranDate;
+private: System::Windows::Forms::Button^  btn_tranBack;
+private: System::Windows::Forms::Label^  btn_tranDel;
+
+
+
+
+private: System::Windows::Forms::Label^  lbl_tranCode;
+private: System::Windows::Forms::ComboBox^  cb_searchType;
+
+private: System::Windows::Forms::Label^  label49;
+private: System::Windows::Forms::TextBox^  inp_searchPro;
+private: System::Windows::Forms::ComboBox^  cb_searchCategory;
+private: System::Windows::Forms::NumericUpDown^  inp_proStock;
+
+private: System::Windows::Forms::Label^  label54;
+private: System::Windows::Forms::TextBox^  textBox1;
+private: System::Windows::Forms::NumericUpDown^  inp_editMinStock;
+
+private: System::Windows::Forms::Label^  label57;
+private: System::Windows::Forms::ComboBox^  cb_editCategory;
+private: System::Windows::Forms::Label^  label69;
+private: System::Windows::Forms::TextBox^  textBox2;
+
+
+
+
+
+
+
+
+
+
+
 private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn11;
 
 
@@ -228,7 +290,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 	public:
 		//Connection to database
 
-		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventorysystem_db";
 		inventory(void)
 		{
 			
@@ -265,7 +326,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 		}
 
 	private: System::Windows::Forms::TabPage^  tab_dashboard;
-	private: System::Windows::Forms::ComboBox^  cb_category;
+
 	protected:
 
 	protected:
@@ -273,7 +334,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 
 
 	private: System::Windows::Forms::Label^  label14;
-	private: System::Windows::Forms::TextBox^  inp_proSearch;
+
 
 
 
@@ -292,7 +353,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 
 	private: System::Windows::Forms::TabPage^  tab_addproduct;
 
-	private: System::Windows::Forms::Button^  button2;
+
 
 	private: System::Windows::Forms::Label^  label7;
 
@@ -311,7 +372,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 	private: System::Windows::Forms::Button^  btn_editBack;
 	private: System::Windows::Forms::Button^  inp_editUpdate;
 	private: System::Windows::Forms::Label^  label18;
-	private: System::Windows::Forms::Label^  label19;
+
 	private: System::Windows::Forms::Label^  label20;
 	private: System::Windows::Forms::Label^  label21;
 	private: System::Windows::Forms::Label^  label22;
@@ -335,7 +396,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 		void InitalizeOtherComponent(void){
 			table_prevProduct->AllowUserToAddRows = false;
 			tb_account->AllowUserToAddRows = false;
-			loadTable("default");
+			loadTable("Default");
 			loadAccTable("default");
 			loadSalesTable();
 
@@ -355,7 +416,15 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->tab_dashboard = (gcnew System::Windows::Forms::TabPage());
+			this->cb_searchCategory = (gcnew System::Windows::Forms::ComboBox());
+			this->label49 = (gcnew System::Windows::Forms::Label());
+			this->inp_searchPro = (gcnew System::Windows::Forms::TextBox());
+			this->cb_searchType = (gcnew System::Windows::Forms::ComboBox());
 			this->panel15 = (gcnew System::Windows::Forms::Panel());
 			this->lbl_overCrit = (gcnew System::Windows::Forms::Label());
 			this->label67 = (gcnew System::Windows::Forms::Label());
@@ -401,18 +470,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->cl_categories = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->cb_searchCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->lbl_searchError = (gcnew System::Windows::Forms::Label());
-			this->cb_category = (gcnew System::Windows::Forms::ComboBox());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->inp_proSearch = (gcnew System::Windows::Forms::TextBox());
 			this->tab_addproduct = (gcnew System::Windows::Forms::TabPage());
+			this->inp_proStock = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label54 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->inp_proCode = (gcnew System::Windows::Forms::TextBox());
 			this->inp_proPrice = (gcnew System::Windows::Forms::NumericUpDown());
-			this->inp_proStock = (gcnew System::Windows::Forms::NumericUpDown());
+			this->inp_proMinStock = (gcnew System::Windows::Forms::NumericUpDown());
 			this->cb_proCategory = (gcnew System::Windows::Forms::ComboBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->inp_proDesc = (gcnew System::Windows::Forms::TextBox());
 			this->inp_proName = (gcnew System::Windows::Forms::TextBox());
@@ -423,20 +490,24 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->tab_control = (gcnew System::Windows::Forms::TabControl());
 			this->tab_editproduct = (gcnew System::Windows::Forms::TabPage());
+			this->cb_editCategory = (gcnew System::Windows::Forms::ComboBox());
+			this->label69 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->inp_editMinStock = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->inp_editCode = (gcnew System::Windows::Forms::TextBox());
 			this->inp_editDesc = (gcnew System::Windows::Forms::TextBox());
 			this->inp_editName = (gcnew System::Windows::Forms::TextBox());
-			this->cb_editCategory = (gcnew System::Windows::Forms::ComboBox());
 			this->inp_editPrice = (gcnew System::Windows::Forms::NumericUpDown());
 			this->inp_editStock = (gcnew System::Windows::Forms::NumericUpDown());
 			this->btn_editBack = (gcnew System::Windows::Forms::Button());
 			this->inp_editUpdate = (gcnew System::Windows::Forms::Button());
 			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->label22 = (gcnew System::Windows::Forms::Label());
@@ -477,7 +548,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_overSale = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->panel8 = (gcnew System::Windows::Forms::Panel());
-			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->btn_salesView = (gcnew System::Windows::Forms::Label());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->lbl_salesCode = (gcnew System::Windows::Forms::TextBox());
 			this->label27 = (gcnew System::Windows::Forms::Label());
@@ -503,6 +574,34 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->tab_transaction = (gcnew System::Windows::Forms::TabPage());
+			this->panel21 = (gcnew System::Windows::Forms::Panel());
+			this->lbl_tranCode = (gcnew System::Windows::Forms::Label());
+			this->btn_tranDel = (gcnew System::Windows::Forms::Label());
+			this->btn_tranBack = (gcnew System::Windows::Forms::Button());
+			this->label55 = (gcnew System::Windows::Forms::Label());
+			this->lbl_tranQuan = (gcnew System::Windows::Forms::Label());
+			this->label64 = (gcnew System::Windows::Forms::Label());
+			this->label66 = (gcnew System::Windows::Forms::Label());
+			this->label68 = (gcnew System::Windows::Forms::Label());
+			this->lbl_tranName = (gcnew System::Windows::Forms::Label());
+			this->label70 = (gcnew System::Windows::Forms::Label());
+			this->lbl_tranPrice = (gcnew System::Windows::Forms::Label());
+			this->label74 = (gcnew System::Windows::Forms::Label());
+			this->lbl_tranDate = (gcnew System::Windows::Forms::Label());
+			this->panel19 = (gcnew System::Windows::Forms::Panel());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->panel20 = (gcnew System::Windows::Forms::Panel());
+			this->tb_tranProduct = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->pnl_navBar = (gcnew System::Windows::Forms::Panel());
 			this->lbl_indicator = (gcnew System::Windows::Forms::Label());
 			this->btn_sales = (gcnew System::Windows::Forms::Label());
@@ -521,11 +620,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->table_prevProduct))->BeginInit();
 			this->tab_addproduct->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proStock))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proPrice))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proStock))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proMinStock))->BeginInit();
 			this->tab_control->SuspendLayout();
 			this->tab_editproduct->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_editMinStock))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_editPrice))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_editStock))->BeginInit();
@@ -541,12 +642,20 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel8->SuspendLayout();
 			this->panel10->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_sales))->BeginInit();
+			this->tab_transaction->SuspendLayout();
+			this->panel21->SuspendLayout();
+			this->panel19->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_tranProduct))->BeginInit();
 			this->pnl_navBar->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tab_dashboard
 			// 
 			this->tab_dashboard->BackColor = System::Drawing::Color::White;
+			this->tab_dashboard->Controls->Add(this->cb_searchCategory);
+			this->tab_dashboard->Controls->Add(this->label49);
+			this->tab_dashboard->Controls->Add(this->inp_searchPro);
+			this->tab_dashboard->Controls->Add(this->cb_searchType);
 			this->tab_dashboard->Controls->Add(this->panel15);
 			this->tab_dashboard->Controls->Add(this->panel16);
 			this->tab_dashboard->Controls->Add(this->panel17);
@@ -555,11 +664,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_dashboard->Controls->Add(this->panel5);
 			this->tab_dashboard->Controls->Add(this->panel6);
 			this->tab_dashboard->Controls->Add(this->table_prevProduct);
-			this->tab_dashboard->Controls->Add(this->cb_searchCategory);
 			this->tab_dashboard->Controls->Add(this->lbl_searchError);
-			this->tab_dashboard->Controls->Add(this->cb_category);
 			this->tab_dashboard->Controls->Add(this->label14);
-			this->tab_dashboard->Controls->Add(this->inp_proSearch);
 			this->tab_dashboard->Location = System::Drawing::Point(4, 25);
 			this->tab_dashboard->Name = L"tab_dashboard";
 			this->tab_dashboard->Padding = System::Windows::Forms::Padding(3);
@@ -567,15 +673,77 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_dashboard->TabIndex = 1;
 			this->tab_dashboard->Text = L"Dashboard";
 			// 
+			// cb_searchCategory
+			// 
+			this->cb_searchCategory->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->cb_searchCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cb_searchCategory->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cb_searchCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F));
+			this->cb_searchCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->cb_searchCategory->FormattingEnabled = true;
+			this->cb_searchCategory->ItemHeight = 33;
+			this->cb_searchCategory->Location = System::Drawing::Point(717, 20);
+			this->cb_searchCategory->Name = L"cb_searchCategory";
+			this->cb_searchCategory->Size = System::Drawing::Size(332, 41);
+			this->cb_searchCategory->TabIndex = 90;
+			this->cb_searchCategory->Visible = false;
+			this->cb_searchCategory->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::cb_searchCategory_SelectedIndexChanged);
+			// 
+			// label49
+			// 
+			this->label49->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->label49->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label49->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label49->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label49.Image")));
+			this->label49->Location = System::Drawing::Point(1008, 20);
+			this->label49->Name = L"label49";
+			this->label49->Size = System::Drawing::Size(41, 38);
+			this->label49->TabIndex = 89;
+			// 
+			// inp_searchPro
+			// 
+			this->inp_searchPro->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->inp_searchPro->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->inp_searchPro->Font = (gcnew System::Drawing::Font(L"Roboto Light", 21));
+			this->inp_searchPro->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_searchPro->HideSelection = false;
+			this->inp_searchPro->Location = System::Drawing::Point(715, 20);
+			this->inp_searchPro->Multiline = true;
+			this->inp_searchPro->Name = L"inp_searchPro";
+			this->inp_searchPro->Size = System::Drawing::Size(329, 38);
+			this->inp_searchPro->TabIndex = 88;
+			this->inp_searchPro->WordWrap = false;
+			this->inp_searchPro->TextChanged += gcnew System::EventHandler(this, &inventory::inp_searchPro_TextChanged);
+			// 
+			// cb_searchType
+			// 
+			this->cb_searchType->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->cb_searchType->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cb_searchType->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cb_searchType->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F));
+			this->cb_searchType->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->cb_searchType->FormattingEnabled = true;
+			this->cb_searchType->ItemHeight = 33;
+			this->cb_searchType->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Default", L"Barcode", L"Product Name", L"Category" });
+			this->cb_searchType->Location = System::Drawing::Point(467, 22);
+			this->cb_searchType->Name = L"cb_searchType";
+			this->cb_searchType->Size = System::Drawing::Size(220, 41);
+			this->cb_searchType->TabIndex = 87;
+			this->cb_searchType->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::cb_searchType_SelectedIndexChanged);
+			// 
 			// panel15
 			// 
 			this->panel15->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)));
 			this->panel15->Controls->Add(this->lbl_overCrit);
 			this->panel15->Controls->Add(this->label67);
-			this->panel15->Location = System::Drawing::Point(969, 440);
+			this->panel15->Location = System::Drawing::Point(1002, 440);
 			this->panel15->Name = L"panel15";
-			this->panel15->Size = System::Drawing::Size(159, 100);
+			this->panel15->Size = System::Drawing::Size(163, 100);
 			this->panel15->TabIndex = 86;
 			// 
 			// lbl_overCrit
@@ -607,9 +775,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(84)));
 			this->panel16->Controls->Add(this->lbl_proCounts);
 			this->panel16->Controls->Add(this->ss);
-			this->panel16->Location = System::Drawing::Point(803, 440);
+			this->panel16->Location = System::Drawing::Point(809, 440);
 			this->panel16->Name = L"panel16";
-			this->panel16->Size = System::Drawing::Size(159, 100);
+			this->panel16->Size = System::Drawing::Size(185, 100);
 			this->panel16->TabIndex = 85;
 			// 
 			// lbl_proCounts
@@ -643,7 +811,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel17->Controls->Add(this->label71);
 			this->panel17->Location = System::Drawing::Point(608, 440);
 			this->panel17->Name = L"panel17";
-			this->panel17->Size = System::Drawing::Size(188, 100);
+			this->panel17->Size = System::Drawing::Size(195, 100);
 			this->panel17->TabIndex = 84;
 			// 
 			// lbl_overStocks
@@ -1117,26 +1285,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->dataGridViewTextBoxColumn4->ReadOnly = true;
 			this->dataGridViewTextBoxColumn4->Width = 122;
 			// 
-			// cb_searchCategory
-			// 
-			this->cb_searchCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->cb_searchCategory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
-			this->cb_searchCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->cb_searchCategory->FormattingEnabled = true;
-			this->cb_searchCategory->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
-				L"Alcohol", L"Fruit/veg/salads", L"Dairy",
-					L"Chilled convenience", L"Bathroom toiletries", L"Household/cleaning", L"Fresh meat", L"Frozen prepared foods", L"Ambient bakery",
-					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
-					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
-			});
-			this->cb_searchCategory->Location = System::Drawing::Point(604, 21);
-			this->cb_searchCategory->Name = L"cb_searchCategory";
-			this->cb_searchCategory->Size = System::Drawing::Size(290, 28);
-			this->cb_searchCategory->TabIndex = 44;
-			this->cb_searchCategory->Visible = false;
-			this->cb_searchCategory->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::cb_searchCategory_SelectedIndexChanged);
-			// 
 			// lbl_searchError
 			// 
 			this->lbl_searchError->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
@@ -1146,56 +1294,27 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_searchError->Size = System::Drawing::Size(407, 22);
 			this->lbl_searchError->TabIndex = 40;
 			// 
-			// cb_category
-			// 
-			this->cb_category->DisplayMember = L"Barcode";
-			this->cb_category->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->cb_category->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
-			this->cb_category->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->cb_category->FormattingEnabled = true;
-			this->cb_category->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Default", L"Barcode", L"Product Name", L"Category" });
-			this->cb_category->Location = System::Drawing::Point(449, 21);
-			this->cb_category->Name = L"cb_category";
-			this->cb_category->Size = System::Drawing::Size(149, 28);
-			this->cb_category->TabIndex = 36;
-			this->cb_category->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::cb_category_SelectedIndexChanged);
-			// 
 			// label14
 			// 
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label14->Location = System::Drawing::Point(359, 24);
+			this->label14->Location = System::Drawing::Point(359, 31);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(84, 26);
 			this->label14->TabIndex = 33;
 			this->label14->Text = L"Search by";
 			// 
-			// inp_proSearch
-			// 
-			this->inp_proSearch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->inp_proSearch->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_proSearch->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
-			this->inp_proSearch->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proSearch->HideSelection = false;
-			this->inp_proSearch->Location = System::Drawing::Point(618, 22);
-			this->inp_proSearch->Name = L"inp_proSearch";
-			this->inp_proSearch->Size = System::Drawing::Size(289, 27);
-			this->inp_proSearch->TabIndex = 32;
-			this->inp_proSearch->TextChanged += gcnew System::EventHandler(this, &inventory::inp_search);
-			// 
 			// tab_addproduct
 			// 
 			this->tab_addproduct->BackColor = System::Drawing::Color::White;
+			this->tab_addproduct->Controls->Add(this->inp_proStock);
+			this->tab_addproduct->Controls->Add(this->label54);
 			this->tab_addproduct->Controls->Add(this->pictureBox1);
 			this->tab_addproduct->Controls->Add(this->inp_proCode);
 			this->tab_addproduct->Controls->Add(this->inp_proPrice);
-			this->tab_addproduct->Controls->Add(this->inp_proStock);
+			this->tab_addproduct->Controls->Add(this->inp_proMinStock);
 			this->tab_addproduct->Controls->Add(this->cb_proCategory);
-			this->tab_addproduct->Controls->Add(this->button2);
 			this->tab_addproduct->Controls->Add(this->label7);
 			this->tab_addproduct->Controls->Add(this->inp_proDesc);
 			this->tab_addproduct->Controls->Add(this->inp_proName);
@@ -1206,12 +1325,39 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_addproduct->Controls->Add(this->label1);
 			this->tab_addproduct->Controls->Add(this->label4);
 			this->tab_addproduct->Controls->Add(this->button1);
+			this->tab_addproduct->Controls->Add(this->textBox1);
 			this->tab_addproduct->Location = System::Drawing::Point(4, 25);
 			this->tab_addproduct->Name = L"tab_addproduct";
 			this->tab_addproduct->Padding = System::Windows::Forms::Padding(3);
 			this->tab_addproduct->Size = System::Drawing::Size(1200, 557);
 			this->tab_addproduct->TabIndex = 0;
 			this->tab_addproduct->Text = L"Add Product";
+			// 
+			// inp_proStock
+			// 
+			this->inp_proStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->inp_proStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_proStock->Location = System::Drawing::Point(436, 228);
+			this->inp_proStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
+			this->inp_proStock->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->inp_proStock->Name = L"inp_proStock";
+			this->inp_proStock->Size = System::Drawing::Size(350, 40);
+			this->inp_proStock->TabIndex = 47;
+			this->inp_proStock->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			// 
+			// label54
+			// 
+			this->label54->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label54->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label54->Location = System::Drawing::Point(431, 199);
+			this->label54->Name = L"label54";
+			this->label54->Size = System::Drawing::Size(354, 26);
+			this->label54->TabIndex = 46;
+			this->label54->Text = L"Stock";
 			// 
 			// pictureBox1
 			// 
@@ -1245,58 +1391,49 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Byte>(0)));
 			this->inp_proPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proPrice->Location = System::Drawing::Point(434, 227);
-			this->inp_proPrice->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
+			this->inp_proPrice->Location = System::Drawing::Point(436, 323);
+			this->inp_proPrice->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1215752191, 23, 0, 0 });
+			this->inp_proPrice->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_proPrice->Name = L"inp_proPrice";
 			this->inp_proPrice->Size = System::Drawing::Size(350, 40);
 			this->inp_proPrice->TabIndex = 43;
+			this->inp_proPrice->ThousandsSeparator = true;
+			this->inp_proPrice->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
-			// inp_proStock
+			// inp_proMinStock
 			// 
-			this->inp_proStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_proMinStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->inp_proStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->inp_proMinStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proStock->Location = System::Drawing::Point(434, 323);
-			this->inp_proStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
-			this->inp_proStock->Name = L"inp_proStock";
-			this->inp_proStock->Size = System::Drawing::Size(350, 40);
-			this->inp_proStock->TabIndex = 42;
+			this->inp_proMinStock->Location = System::Drawing::Point(435, 132);
+			this->inp_proMinStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
+			this->inp_proMinStock->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->inp_proMinStock->Name = L"inp_proMinStock";
+			this->inp_proMinStock->Size = System::Drawing::Size(350, 40);
+			this->inp_proMinStock->TabIndex = 42;
+			this->inp_proMinStock->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->inp_proMinStock->ValueChanged += gcnew System::EventHandler(this, &inventory::inp_proMinStock_ValueChanged);
 			// 
 			// cb_proCategory
 			// 
-			this->cb_proCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->cb_proCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cb_proCategory->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cb_proCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18.25F));
 			this->cb_proCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_proCategory->FormattingEnabled = true;
-			this->cb_proCategory->ItemHeight = 33;
+			this->cb_proCategory->ItemHeight = 29;
 			this->cb_proCategory->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
 				L"Alcohol", L"Fruit/veg/salads", L"Dairy",
 					L"Chilled convenience", L"Bathroom toiletries", L"Household/cleaning", L"Fresh meat", L"Frozen prepared foods", L"Ambient bakery",
 					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
 					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
 			});
-			this->cb_proCategory->Location = System::Drawing::Point(432, 132);
-			this->cb_proCategory->MaximumSize = System::Drawing::Size(350, 0);
-			this->cb_proCategory->MinimumSize = System::Drawing::Size(350, 0);
+			this->cb_proCategory->Location = System::Drawing::Point(47, 417);
 			this->cb_proCategory->Name = L"cb_proCategory";
-			this->cb_proCategory->Size = System::Drawing::Size(350, 41);
+			this->cb_proCategory->Size = System::Drawing::Size(346, 37);
 			this->cb_proCategory->TabIndex = 40;
-			// 
-			// button2
-			// 
-			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
-			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->button2->Location = System::Drawing::Point(48, 393);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(160, 35);
-			this->button2->TabIndex = 26;
-			this->button2->Text = L"Back";
-			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// label7
 			// 
@@ -1348,11 +1485,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label6->Location = System::Drawing::Point(429, 294);
+			this->label6->Location = System::Drawing::Point(430, 103);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(354, 26);
 			this->label6->TabIndex = 22;
-			this->label6->Text = L"Stock";
+			this->label6->Text = L"Minimum Stock";
 			// 
 			// label5
 			// 
@@ -1360,7 +1497,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label5->Location = System::Drawing::Point(429, 104);
+			this->label5->Location = System::Drawing::Point(39, 389);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(354, 26);
 			this->label5->TabIndex = 19;
@@ -1372,7 +1509,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label3->Location = System::Drawing::Point(429, 198);
+			this->label3->Location = System::Drawing::Point(431, 294);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(354, 26);
 			this->label3->TabIndex = 17;
@@ -1422,7 +1559,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(214, 391);
+			this->button1->Location = System::Drawing::Point(983, 479);
 			this->button1->Margin = System::Windows::Forms::Padding(0);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(181, 45);
@@ -1430,6 +1567,22 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->button1->Text = L"Add Product";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &inventory::button1_Click);
+			// 
+			// textBox1
+			// 
+			this->textBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->textBox1->HideSelection = false;
+			this->textBox1->Location = System::Drawing::Point(44, 416);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(350, 40);
+			this->textBox1->TabIndex = 48;
 			// 
 			// tab_control
 			// 
@@ -1439,6 +1592,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_control->Controls->Add(this->tab_editproduct);
 			this->tab_control->Controls->Add(this->tab_accounts);
 			this->tab_control->Controls->Add(this->tab_sales);
+			this->tab_control->Controls->Add(this->tab_transaction);
 			this->tab_control->Location = System::Drawing::Point(67, -26);
 			this->tab_control->Name = L"tab_control";
 			this->tab_control->SelectedIndex = 1;
@@ -1448,18 +1602,21 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// tab_editproduct
 			// 
 			this->tab_editproduct->BackColor = System::Drawing::Color::White;
+			this->tab_editproduct->Controls->Add(this->cb_editCategory);
+			this->tab_editproduct->Controls->Add(this->label69);
+			this->tab_editproduct->Controls->Add(this->textBox2);
+			this->tab_editproduct->Controls->Add(this->inp_editMinStock);
+			this->tab_editproduct->Controls->Add(this->label57);
 			this->tab_editproduct->Controls->Add(this->pictureBox2);
 			this->tab_editproduct->Controls->Add(this->label13);
 			this->tab_editproduct->Controls->Add(this->inp_editCode);
 			this->tab_editproduct->Controls->Add(this->inp_editDesc);
 			this->tab_editproduct->Controls->Add(this->inp_editName);
-			this->tab_editproduct->Controls->Add(this->cb_editCategory);
 			this->tab_editproduct->Controls->Add(this->inp_editPrice);
 			this->tab_editproduct->Controls->Add(this->inp_editStock);
 			this->tab_editproduct->Controls->Add(this->btn_editBack);
 			this->tab_editproduct->Controls->Add(this->inp_editUpdate);
 			this->tab_editproduct->Controls->Add(this->label18);
-			this->tab_editproduct->Controls->Add(this->label19);
 			this->tab_editproduct->Controls->Add(this->label20);
 			this->tab_editproduct->Controls->Add(this->label21);
 			this->tab_editproduct->Controls->Add(this->label22);
@@ -1470,6 +1627,79 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_editproduct->Size = System::Drawing::Size(1200, 557);
 			this->tab_editproduct->TabIndex = 2;
 			this->tab_editproduct->Text = L"Edit Product";
+			// 
+			// cb_editCategory
+			// 
+			this->cb_editCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cb_editCategory->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cb_editCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18.25F));
+			this->cb_editCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->cb_editCategory->FormattingEnabled = true;
+			this->cb_editCategory->ItemHeight = 29;
+			this->cb_editCategory->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
+				L"Alcohol", L"Fruit/veg/salads", L"Dairy",
+					L"Chilled convenience", L"Bathroom toiletries", L"Household/cleaning", L"Fresh meat", L"Frozen prepared foods", L"Ambient bakery",
+					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
+					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
+			});
+			this->cb_editCategory->Location = System::Drawing::Point(41, 394);
+			this->cb_editCategory->Name = L"cb_editCategory";
+			this->cb_editCategory->Size = System::Drawing::Size(346, 37);
+			this->cb_editCategory->TabIndex = 55;
+			// 
+			// label69
+			// 
+			this->label69->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label69->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label69->Location = System::Drawing::Point(33, 366);
+			this->label69->Name = L"label69";
+			this->label69->Size = System::Drawing::Size(354, 26);
+			this->label69->TabIndex = 54;
+			this->label69->Text = L"Category";
+			// 
+			// textBox2
+			// 
+			this->textBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->textBox2->HideSelection = false;
+			this->textBox2->Location = System::Drawing::Point(38, 393);
+			this->textBox2->Multiline = true;
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(350, 40);
+			this->textBox2->TabIndex = 56;
+			// 
+			// inp_editMinStock
+			// 
+			this->inp_editMinStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->inp_editMinStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_editMinStock->Location = System::Drawing::Point(430, 119);
+			this->inp_editMinStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
+			this->inp_editMinStock->Name = L"inp_editMinStock";
+			this->inp_editMinStock->Size = System::Drawing::Size(350, 40);
+			this->inp_editMinStock->TabIndex = 53;
+			this->inp_editMinStock->ValueChanged += gcnew System::EventHandler(this, &inventory::inp_editMinStock_ValueChanged);
+			// 
+			// label57
+			// 
+			this->label57->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label57->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label57->Location = System::Drawing::Point(425, 90);
+			this->label57->Name = L"label57";
+			this->label57->Size = System::Drawing::Size(354, 26);
+			this->label57->TabIndex = 52;
+			this->label57->Text = L"Minimum Stock";
 			// 
 			// pictureBox2
 			// 
@@ -1540,26 +1770,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_editName->Size = System::Drawing::Size(350, 40);
 			this->inp_editName->TabIndex = 47;
 			// 
-			// cb_editCategory
-			// 
-			this->cb_editCategory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18));
-			this->cb_editCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->cb_editCategory->FormattingEnabled = true;
-			this->cb_editCategory->ItemHeight = 29;
-			this->cb_editCategory->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
-				L"Alcohol", L"Fruit/veg/salads", L"Dairy",
-					L"Chilled convenience", L"Bathroom toiletries", L"Household/cleaning", L"Fresh meat", L"Frozen prepared foods", L"Ambient bakery",
-					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
-					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
-			});
-			this->cb_editCategory->Location = System::Drawing::Point(426, 121);
-			this->cb_editCategory->MaximumSize = System::Drawing::Size(350, 0);
-			this->cb_editCategory->MinimumSize = System::Drawing::Size(350, 0);
-			this->cb_editCategory->Name = L"cb_editCategory";
-			this->cb_editCategory->Size = System::Drawing::Size(350, 37);
-			this->cb_editCategory->TabIndex = 46;
-			// 
 			// inp_editPrice
 			// 
 			this->inp_editPrice->DecimalPlaces = 2;
@@ -1567,7 +1777,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Byte>(0)));
 			this->inp_editPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_editPrice->Location = System::Drawing::Point(428, 207);
+			this->inp_editPrice->Location = System::Drawing::Point(430, 309);
 			this->inp_editPrice->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->inp_editPrice->Name = L"inp_editPrice";
 			this->inp_editPrice->Size = System::Drawing::Size(350, 36);
@@ -1579,7 +1789,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Byte>(0)));
 			this->inp_editStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_editStock->Location = System::Drawing::Point(428, 306);
+			this->inp_editStock->Location = System::Drawing::Point(429, 209);
 			this->inp_editStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
 			this->inp_editStock->Name = L"inp_editStock";
 			this->inp_editStock->Size = System::Drawing::Size(350, 36);
@@ -1593,7 +1803,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_editBack->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
 			this->btn_editBack->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_editBack->Location = System::Drawing::Point(40, 384);
+			this->btn_editBack->Location = System::Drawing::Point(789, 477);
 			this->btn_editBack->Name = L"btn_editBack";
 			this->btn_editBack->Size = System::Drawing::Size(171, 41);
 			this->btn_editBack->TabIndex = 39;
@@ -1609,7 +1819,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_editUpdate->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->inp_editUpdate->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
 			this->inp_editUpdate->ForeColor = System::Drawing::Color::White;
-			this->inp_editUpdate->Location = System::Drawing::Point(229, 381);
+			this->inp_editUpdate->Location = System::Drawing::Point(978, 474);
 			this->inp_editUpdate->Name = L"inp_editUpdate";
 			this->inp_editUpdate->Size = System::Drawing::Size(189, 50);
 			this->inp_editUpdate->TabIndex = 38;
@@ -1622,29 +1832,18 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->label18->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
 			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label18->Location = System::Drawing::Point(426, 277);
+			this->label18->Location = System::Drawing::Point(427, 180);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(354, 26);
 			this->label18->TabIndex = 35;
 			this->label18->Text = L"Stock";
-			// 
-			// label19
-			// 
-			this->label19->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
-			this->label19->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label19->Location = System::Drawing::Point(426, 90);
-			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(354, 26);
-			this->label19->TabIndex = 32;
-			this->label19->Text = L"Category";
 			// 
 			// label20
 			// 
 			this->label20->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
 			this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label20->Location = System::Drawing::Point(426, 178);
+			this->label20->Location = System::Drawing::Point(428, 280);
 			this->label20->Name = L"label20";
 			this->label20->Size = System::Drawing::Size(354, 26);
 			this->label20->TabIndex = 31;
@@ -1655,7 +1854,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->label21->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
 			this->label21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label21->Location = System::Drawing::Point(41, 279);
+			this->label21->Location = System::Drawing::Point(39, 276);
 			this->label21->Name = L"label21";
 			this->label21->Size = System::Drawing::Size(354, 26);
 			this->label21->TabIndex = 30;
@@ -1666,7 +1865,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->label22->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
 			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label22->Location = System::Drawing::Point(38, 90);
+			this->label22->Location = System::Drawing::Point(38, 91);
 			this->label22->Name = L"label22";
 			this->label22->Size = System::Drawing::Size(354, 26);
 			this->label22->TabIndex = 28;
@@ -1677,7 +1876,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->label23->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
 			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label23->Location = System::Drawing::Point(40, 180);
+			this->label23->Location = System::Drawing::Point(38, 177);
 			this->label23->Name = L"label23";
 			this->label23->Size = System::Drawing::Size(354, 26);
 			this->label23->TabIndex = 26;
@@ -2173,7 +2372,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(103)),
 				static_cast<System::Int32>(static_cast<System::Byte>(165)));
-			this->panel8->Controls->Add(this->label15);
+			this->panel8->Controls->Add(this->btn_salesView);
 			this->panel8->Controls->Add(this->label25);
 			this->panel8->Controls->Add(this->lbl_salesCode);
 			this->panel8->Controls->Add(this->label27);
@@ -2191,22 +2390,23 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel8->Size = System::Drawing::Size(333, 556);
 			this->panel8->TabIndex = 75;
 			// 
-			// label15
+			// btn_salesView
 			// 
-			this->label15->BackColor = System::Drawing::Color::White;
-			this->label15->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
-			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btn_salesView->BackColor = System::Drawing::Color::White;
+			this->btn_salesView->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_salesView->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_salesView->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label15.Image")));
-			this->label15->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->label15->Location = System::Drawing::Point(194, 479);
-			this->label15->Name = L"label15";
-			this->label15->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->label15->Size = System::Drawing::Size(114, 45);
-			this->label15->TabIndex = 75;
-			this->label15->Text = L"View";
-			this->label15->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->btn_salesView->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_salesView.Image")));
+			this->btn_salesView->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_salesView->Location = System::Drawing::Point(204, 415);
+			this->btn_salesView->Name = L"btn_salesView";
+			this->btn_salesView->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
+			this->btn_salesView->Size = System::Drawing::Size(114, 45);
+			this->btn_salesView->TabIndex = 75;
+			this->btn_salesView->Text = L"View";
+			this->btn_salesView->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->btn_salesView->Click += gcnew System::EventHandler(this, &inventory::btn_salesView_Click);
 			// 
 			// label25
 			// 
@@ -2510,6 +2710,358 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->dataGridViewTextBoxColumn11->ReadOnly = true;
 			this->dataGridViewTextBoxColumn11->Width = 120;
 			// 
+			// tab_transaction
+			// 
+			this->tab_transaction->BackColor = System::Drawing::Color::White;
+			this->tab_transaction->Controls->Add(this->panel21);
+			this->tab_transaction->Controls->Add(this->panel19);
+			this->tab_transaction->Controls->Add(this->panel20);
+			this->tab_transaction->Controls->Add(this->tb_tranProduct);
+			this->tab_transaction->Location = System::Drawing::Point(4, 25);
+			this->tab_transaction->Name = L"tab_transaction";
+			this->tab_transaction->Padding = System::Windows::Forms::Padding(3);
+			this->tab_transaction->Size = System::Drawing::Size(1200, 557);
+			this->tab_transaction->TabIndex = 5;
+			this->tab_transaction->Text = L"tabPage1";
+			// 
+			// panel21
+			// 
+			this->panel21->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(103)),
+				static_cast<System::Int32>(static_cast<System::Byte>(165)));
+			this->panel21->Controls->Add(this->lbl_tranCode);
+			this->panel21->Controls->Add(this->btn_tranDel);
+			this->panel21->Controls->Add(this->btn_tranBack);
+			this->panel21->Controls->Add(this->label55);
+			this->panel21->Controls->Add(this->lbl_tranQuan);
+			this->panel21->Controls->Add(this->label64);
+			this->panel21->Controls->Add(this->label66);
+			this->panel21->Controls->Add(this->label68);
+			this->panel21->Controls->Add(this->lbl_tranName);
+			this->panel21->Controls->Add(this->label70);
+			this->panel21->Controls->Add(this->lbl_tranPrice);
+			this->panel21->Controls->Add(this->label74);
+			this->panel21->Controls->Add(this->lbl_tranDate);
+			this->panel21->Location = System::Drawing::Point(1, 1);
+			this->panel21->Name = L"panel21";
+			this->panel21->Size = System::Drawing::Size(333, 556);
+			this->panel21->TabIndex = 76;
+			// 
+			// lbl_tranCode
+			// 
+			this->lbl_tranCode->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_tranCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranCode->ForeColor = System::Drawing::Color::White;
+			this->lbl_tranCode->Location = System::Drawing::Point(35, 108);
+			this->lbl_tranCode->Name = L"lbl_tranCode";
+			this->lbl_tranCode->Size = System::Drawing::Size(280, 26);
+			this->lbl_tranCode->TabIndex = 77;
+			// 
+			// btn_tranDel
+			// 
+			this->btn_tranDel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)));
+			this->btn_tranDel->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_tranDel->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_tranDel->ForeColor = System::Drawing::Color::White;
+			this->btn_tranDel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_tranDel.Image")));
+			this->btn_tranDel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_tranDel->Location = System::Drawing::Point(177, 445);
+			this->btn_tranDel->Name = L"btn_tranDel";
+			this->btn_tranDel->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
+			this->btn_tranDel->Size = System::Drawing::Size(138, 45);
+			this->btn_tranDel->TabIndex = 76;
+			this->btn_tranDel->Text = L"Delete ";
+			this->btn_tranDel->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			// 
+			// btn_tranBack
+			// 
+			this->btn_tranBack->BackColor = System::Drawing::Color::White;
+			this->btn_tranBack->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_tranBack->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_tranBack->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
+			this->btn_tranBack->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->btn_tranBack->Location = System::Drawing::Point(26, 445);
+			this->btn_tranBack->Name = L"btn_tranBack";
+			this->btn_tranBack->Size = System::Drawing::Size(128, 45);
+			this->btn_tranBack->TabIndex = 75;
+			this->btn_tranBack->Text = L"Back";
+			this->btn_tranBack->UseVisualStyleBackColor = false;
+			this->btn_tranBack->Click += gcnew System::EventHandler(this, &inventory::btn_tranBack_Click);
+			// 
+			// label55
+			// 
+			this->label55->AutoSize = true;
+			this->label55->Font = (gcnew System::Drawing::Font(L"Roboto", 23, System::Drawing::FontStyle::Bold));
+			this->label55->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->label55->Location = System::Drawing::Point(23, 24);
+			this->label55->Name = L"label55";
+			this->label55->Size = System::Drawing::Size(198, 37);
+			this->label55->TabIndex = 71;
+			this->label55->Text = L"Transactions";
+			// 
+			// lbl_tranQuan
+			// 
+			this->lbl_tranQuan->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_tranQuan->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranQuan->ForeColor = System::Drawing::Color::White;
+			this->lbl_tranQuan->Location = System::Drawing::Point(28, 298);
+			this->lbl_tranQuan->Name = L"lbl_tranQuan";
+			this->lbl_tranQuan->Size = System::Drawing::Size(280, 26);
+			this->lbl_tranQuan->TabIndex = 65;
+			// 
+			// label64
+			// 
+			this->label64->AutoSize = true;
+			this->label64->BackColor = System::Drawing::Color::Transparent;
+			this->label64->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label64->ForeColor = System::Drawing::Color::White;
+			this->label64->Location = System::Drawing::Point(28, 271);
+			this->label64->Name = L"label64";
+			this->label64->Size = System::Drawing::Size(126, 23);
+			this->label64->TabIndex = 64;
+			this->label64->Text = L"Total Quantity";
+			// 
+			// label66
+			// 
+			this->label66->AutoSize = true;
+			this->label66->BackColor = System::Drawing::Color::Transparent;
+			this->label66->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label66->ForeColor = System::Drawing::Color::White;
+			this->label66->Location = System::Drawing::Point(28, 143);
+			this->label66->Name = L"label66";
+			this->label66->Size = System::Drawing::Size(148, 23);
+			this->label66->TabIndex = 54;
+			this->label66->Text = L"Customer Name";
+			// 
+			// label68
+			// 
+			this->label68->AutoSize = true;
+			this->label68->BackColor = System::Drawing::Color::Transparent;
+			this->label68->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label68->ForeColor = System::Drawing::Color::White;
+			this->label68->Location = System::Drawing::Point(28, 80);
+			this->label68->Name = L"label68";
+			this->label68->Size = System::Drawing::Size(157, 23);
+			this->label68->TabIndex = 62;
+			this->label68->Text = L"Transaction Code";
+			// 
+			// lbl_tranName
+			// 
+			this->lbl_tranName->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_tranName->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranName->ForeColor = System::Drawing::Color::White;
+			this->lbl_tranName->Location = System::Drawing::Point(28, 169);
+			this->lbl_tranName->Name = L"lbl_tranName";
+			this->lbl_tranName->Size = System::Drawing::Size(280, 26);
+			this->lbl_tranName->TabIndex = 55;
+			// 
+			// label70
+			// 
+			this->label70->AutoSize = true;
+			this->label70->BackColor = System::Drawing::Color::Transparent;
+			this->label70->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label70->ForeColor = System::Drawing::Color::White;
+			this->label70->Location = System::Drawing::Point(28, 212);
+			this->label70->Name = L"label70";
+			this->label70->Size = System::Drawing::Size(100, 23);
+			this->label70->TabIndex = 56;
+			this->label70->Text = L"Total Price";
+			// 
+			// lbl_tranPrice
+			// 
+			this->lbl_tranPrice->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_tranPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranPrice->ForeColor = System::Drawing::Color::White;
+			this->lbl_tranPrice->Location = System::Drawing::Point(28, 237);
+			this->lbl_tranPrice->Name = L"lbl_tranPrice";
+			this->lbl_tranPrice->Size = System::Drawing::Size(266, 26);
+			this->lbl_tranPrice->TabIndex = 57;
+			// 
+			// label74
+			// 
+			this->label74->AutoSize = true;
+			this->label74->BackColor = System::Drawing::Color::Transparent;
+			this->label74->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label74->ForeColor = System::Drawing::Color::White;
+			this->label74->Location = System::Drawing::Point(28, 334);
+			this->label74->Name = L"label74";
+			this->label74->Size = System::Drawing::Size(48, 23);
+			this->label74->TabIndex = 58;
+			this->label74->Text = L"Date";
+			// 
+			// lbl_tranDate
+			// 
+			this->lbl_tranDate->BackColor = System::Drawing::Color::Transparent;
+			this->lbl_tranDate->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranDate->ForeColor = System::Drawing::Color::White;
+			this->lbl_tranDate->Location = System::Drawing::Point(28, 361);
+			this->lbl_tranDate->Name = L"lbl_tranDate";
+			this->lbl_tranDate->Size = System::Drawing::Size(274, 26);
+			this->lbl_tranDate->TabIndex = 59;
+			// 
+			// panel19
+			// 
+			this->panel19->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->panel19->Controls->Add(this->label15);
+			this->panel19->Controls->Add(this->label28);
+			this->panel19->Controls->Add(this->label29);
+			this->panel19->Controls->Add(this->label31);
+			this->panel19->Controls->Add(this->label45);
+			this->panel19->Location = System::Drawing::Point(365, 18);
+			this->panel19->Name = L"panel19";
+			this->panel19->Size = System::Drawing::Size(811, 36);
+			this->panel19->TabIndex = 70;
+			// 
+			// label15
+			// 
+			this->label15->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label15->ForeColor = System::Drawing::Color::White;
+			this->label15->Location = System::Drawing::Point(523, 7);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(110, 26);
+			this->label15->TabIndex = 64;
+			this->label15->Text = L"Quantity";
+			// 
+			// label28
+			// 
+			this->label28->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label28->ForeColor = System::Drawing::Color::White;
+			this->label28->Location = System::Drawing::Point(2, 7);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(148, 26);
+			this->label28->TabIndex = 63;
+			this->label28->Text = L"Barcode";
+			// 
+			// label29
+			// 
+			this->label29->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label29->ForeColor = System::Drawing::Color::White;
+			this->label29->Location = System::Drawing::Point(649, 7);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(117, 26);
+			this->label29->TabIndex = 62;
+			this->label29->Text = L"Total Price";
+			// 
+			// label31
+			// 
+			this->label31->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label31->ForeColor = System::Drawing::Color::White;
+			this->label31->Location = System::Drawing::Point(373, 7);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(123, 26);
+			this->label31->TabIndex = 61;
+			this->label31->Text = L"Product Price";
+			// 
+			// label45
+			// 
+			this->label45->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label45->ForeColor = System::Drawing::Color::White;
+			this->label45->Location = System::Drawing::Point(172, 7);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(176, 26);
+			this->label45->TabIndex = 60;
+			this->label45->Text = L"Product Name";
+			// 
+			// panel20
+			// 
+			this->panel20->BackColor = System::Drawing::Color::White;
+			this->panel20->Location = System::Drawing::Point(322, 54);
+			this->panel20->Name = L"panel20";
+			this->panel20->Size = System::Drawing::Size(43, 455);
+			this->panel20->TabIndex = 71;
+			// 
+			// tb_tranProduct
+			// 
+			this->tb_tranProduct->BackgroundColor = System::Drawing::Color::White;
+			this->tb_tranProduct->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tb_tranProduct->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
+			this->tb_tranProduct->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
+			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle13->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
+			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_tranProduct->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+			this->tb_tranProduct->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->tb_tranProduct->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->dataGridViewTextBoxColumn12,
+					this->dataGridViewTextBoxColumn13, this->dataGridViewTextBoxColumn14, this->dataGridViewTextBoxColumn15, this->dataGridViewTextBoxColumn16
+			});
+			this->tb_tranProduct->Cursor = System::Windows::Forms::Cursors::Hand;
+			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle14->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle14->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
+			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->tb_tranProduct->DefaultCellStyle = dataGridViewCellStyle14;
+			this->tb_tranProduct->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
+				static_cast<System::Int32>(static_cast<System::Byte>(179)));
+			this->tb_tranProduct->Location = System::Drawing::Point(325, 31);
+			this->tb_tranProduct->Name = L"tb_tranProduct";
+			this->tb_tranProduct->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
+			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle15->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle15->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle15->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_tranProduct->RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+			this->tb_tranProduct->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
+			dataGridViewCellStyle16->Padding = System::Windows::Forms::Padding(2);
+			this->tb_tranProduct->RowsDefaultCellStyle = dataGridViewCellStyle16;
+			this->tb_tranProduct->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->tb_tranProduct->Size = System::Drawing::Size(837, 478);
+			this->tb_tranProduct->TabIndex = 69;
+			this->tb_tranProduct->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_viewPro_CellContentClick);
+			// 
+			// dataGridViewTextBoxColumn12
+			// 
+			this->dataGridViewTextBoxColumn12->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->dataGridViewTextBoxColumn12->FillWeight = 15;
+			this->dataGridViewTextBoxColumn12->HeaderText = L"Barcode";
+			this->dataGridViewTextBoxColumn12->Name = L"dataGridViewTextBoxColumn12";
+			this->dataGridViewTextBoxColumn12->Width = 170;
+			// 
+			// dataGridViewTextBoxColumn13
+			// 
+			this->dataGridViewTextBoxColumn13->HeaderText = L"Product Name";
+			this->dataGridViewTextBoxColumn13->Name = L"dataGridViewTextBoxColumn13";
+			this->dataGridViewTextBoxColumn13->ReadOnly = true;
+			this->dataGridViewTextBoxColumn13->Width = 200;
+			// 
+			// dataGridViewTextBoxColumn14
+			// 
+			this->dataGridViewTextBoxColumn14->HeaderText = L"Product Price";
+			this->dataGridViewTextBoxColumn14->Name = L"dataGridViewTextBoxColumn14";
+			this->dataGridViewTextBoxColumn14->Width = 150;
+			// 
+			// dataGridViewTextBoxColumn15
+			// 
+			this->dataGridViewTextBoxColumn15->HeaderText = L"Quantity";
+			this->dataGridViewTextBoxColumn15->Name = L"dataGridViewTextBoxColumn15";
+			this->dataGridViewTextBoxColumn15->ReadOnly = true;
+			this->dataGridViewTextBoxColumn15->Width = 120;
+			// 
+			// dataGridViewTextBoxColumn16
+			// 
+			this->dataGridViewTextBoxColumn16->HeaderText = L"Total Price";
+			this->dataGridViewTextBoxColumn16->Name = L"dataGridViewTextBoxColumn16";
+			this->dataGridViewTextBoxColumn16->ReadOnly = true;
+			this->dataGridViewTextBoxColumn16->Width = 150;
+			// 
 			// pnl_navBar
 			// 
 			this->pnl_navBar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
@@ -2542,9 +3094,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->btn_sales->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_sales->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_sales.Image")));
-			this->btn_sales->Location = System::Drawing::Point(3, 260);
+			this->btn_sales->Location = System::Drawing::Point(0, 260);
 			this->btn_sales->Name = L"btn_sales";
-			this->btn_sales->Size = System::Drawing::Size(66, 56);
+			this->btn_sales->Size = System::Drawing::Size(72, 56);
 			this->btn_sales->TabIndex = 67;
 			this->btn_sales->Click += gcnew System::EventHandler(this, &inventory::btn_sales_Click);
 			// 
@@ -2552,9 +3104,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->btn_account->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_account.Image")));
-			this->btn_account->Location = System::Drawing::Point(3, 322);
+			this->btn_account->Location = System::Drawing::Point(0, 322);
 			this->btn_account->Name = L"btn_account";
-			this->btn_account->Size = System::Drawing::Size(66, 56);
+			this->btn_account->Size = System::Drawing::Size(72, 56);
 			this->btn_account->TabIndex = 66;
 			this->btn_account->Click += gcnew System::EventHandler(this, &inventory::btn_account_Click);
 			// 
@@ -2569,9 +3121,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->btn_dashboard->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_dashboard->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_dashboard.Image")));
-			this->btn_dashboard->Location = System::Drawing::Point(3, 130);
+			this->btn_dashboard->Location = System::Drawing::Point(0, 130);
 			this->btn_dashboard->Name = L"btn_dashboard";
-			this->btn_dashboard->Size = System::Drawing::Size(66, 56);
+			this->btn_dashboard->Size = System::Drawing::Size(72, 56);
 			this->btn_dashboard->TabIndex = 30;
 			this->btn_dashboard->Click += gcnew System::EventHandler(this, &inventory::btn_dashboard_Click_1);
 			// 
@@ -2579,9 +3131,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->btn_addproduct->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_addproduct->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_addproduct.Image")));
-			this->btn_addproduct->Location = System::Drawing::Point(3, 198);
+			this->btn_addproduct->Location = System::Drawing::Point(0, 198);
 			this->btn_addproduct->Name = L"btn_addproduct";
-			this->btn_addproduct->Size = System::Drawing::Size(66, 56);
+			this->btn_addproduct->Size = System::Drawing::Size(72, 56);
 			this->btn_addproduct->TabIndex = 29;
 			this->btn_addproduct->Click += gcnew System::EventHandler(this, &inventory::btn_addproduct_Click_1);
 			// 
@@ -2599,9 +3151,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label26->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->label26->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label26.Image")));
-			this->label26->Location = System::Drawing::Point(3, 11);
+			this->label26->Location = System::Drawing::Point(0, 11);
 			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(66, 50);
+			this->label26->Size = System::Drawing::Size(72, 50);
 			this->label26->TabIndex = 27;
 			// 
 			// inventory
@@ -2632,12 +3184,14 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->table_prevProduct))->EndInit();
 			this->tab_addproduct->ResumeLayout(false);
 			this->tab_addproduct->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proStock))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proPrice))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proStock))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_proMinStock))->EndInit();
 			this->tab_control->ResumeLayout(false);
 			this->tab_editproduct->ResumeLayout(false);
 			this->tab_editproduct->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_editMinStock))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_editPrice))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_editStock))->EndInit();
@@ -2659,95 +3213,110 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel8->PerformLayout();
 			this->panel10->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_sales))->EndInit();
+			this->tab_transaction->ResumeLayout(false);
+			this->panel21->ResumeLayout(false);
+			this->panel21->PerformLayout();
+			this->panel19->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_tranProduct))->EndInit();
 			this->pnl_navBar->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
 
 #pragma endregion
+		
 		public: value struct Product {
 			String^ barcode;
 			String^ name;
 			String^ description;
 			String^ category;
 			int stock;
-			float price;
+			int minStock;
+			Double price;
 		};
 		int productCount;
-
+		
 		array<Product>^ pro = gcnew array< Product >(1000);
 		array<Product>^ proTable = gcnew array<Product>(1000);
 
 		public: void loadProductFromFile() {
 			String^ fileName = "product_tb.txt";
-			try
-			{
-				StreamReader^ din = File::OpenText(fileName);
+			StreamReader^ din = File::OpenText(fileName);
 
-				productCount = Int32::Parse(din->ReadLine());
-				if (productCount > 0) {
-					for (int i = 0; i < productCount; i++) {
-						pro[i].barcode = din->ReadLine();
-						pro[i].name = din->ReadLine();
-						pro[i].description = din->ReadLine();
-						pro[i].category = din->ReadLine();
-						pro[i].stock = Int32::Parse(din->ReadLine());
-						pro[i].price = float::Parse(din->ReadLine());
-					}
+			productCount = Int32::Parse(din->ReadLine());
+			if (productCount > 0) {
+				for (int i = 0; i < productCount; i++) {
+					pro[i].barcode = din->ReadLine();
+					pro[i].name = din->ReadLine();
+					pro[i].description = din->ReadLine();
+					pro[i].category = din->ReadLine();
+					pro[i].stock = Int32::Parse(din->ReadLine());
+					pro[i].minStock = Int32::Parse(din->ReadLine());
+					pro[i].price = float::Parse(din->ReadLine());
 				}
-				else {
-					MessageBox::Show("The database is empty");
-				}
-				
-				din->Close();
-				
 			}
-			catch (const std::exception&)
-			{
+			else {
+				MessageBox::Show("The database is empty");
+			}
 
-			}
+			loadSortCbBox();
+			din->Close();
+
 		}
 		
 		public: void loadTable(String^ query) {
-			int i;
-			String^ search = inp_proSearch->Text;
-			String^ searchCb = cb_searchCategory->Text;
-			if (String::Compare(query, "default") == 0) {
+			int i, overStocks = 0, overCrit = 0, proTableCount = 0;
+			Double overPrice = 0.0;
+
+			loadProductFromFile();
+
+			String^ findBy = cb_searchType->Text;
+			
+			if (String::Compare(query, "Default")==0 || String::Compare(findBy, "Default")==0) {
+				proTableCount = productCount;
 				proTable = pro;
 			}
-			else if (String::Compare(query, "Barcode") == 0) {
+			else if (String::Compare(findBy, "Barcode") == 0) {
+
 				for (i = 0; i < productCount; i++) {
-					
-					if (String::Compare(pro[i].barcode, search) == 0) {
-						proTable[i] = pro[i];
+
+					if (pro[i].barcode->Contains(query)) {
+						proTable[proTableCount] = pro[i];
+						proTableCount++;
 					}
 
 				}
+
 			}
-			else if (String::Compare(query, "Product Name") == 0) {
+			else if (String::Compare(findBy, "Product Name") == 0) {
+
 				for (i = 0; i < productCount; i++) {
 
-					if (String::Compare(pro[i].name, search) == 0) {
-						proTable[i] = pro[i];
-						
+					if (pro[i].name->Contains(query)) {
+						proTable[proTableCount] = pro[i];
+						proTableCount++;
 					}
+
 				}
+
 			}
-			else if (String::Compare(query, "Category") == 0) {
+			else if (String::Compare(findBy, "Category") == 0) {
+
 				for (i = 0; i < productCount; i++) {
 
-					if (String::Compare(pro[i].name, searchCb) == 0) {
-						proTable[proTable->Length] = pro[i];
+					if (pro[i].category->Contains(query)) {
+						proTable[proTableCount] = pro[i];
+						proTableCount++;
 					}
+
 				}
+
 			}
-			Double overPrice = 0.0;
-			int overStocks = 0, overCrit = 0;
+
 			table_prevProduct->Rows->Clear();
 			table_prevProduct->Refresh();
-			loadProductFromFile();
-			inp_prevStock->Text = productCount.ToString();
-			for (i = 0; i < productCount; i++) {
+
+			for (i = 0; i < proTableCount; i++) {
 				int index = table_prevProduct->Rows->Add();
 				table_prevProduct->Rows[index]->Cells[0]->Value = proTable[i].barcode;
 				table_prevProduct->Rows[index]->Cells[1]->Value = proTable[i].name;
@@ -2755,18 +3324,30 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				table_prevProduct->Rows[index]->Cells[3]->Value = proTable[i].category;
 				table_prevProduct->Rows[index]->Cells[4]->Value = proTable[i].stock;
 				table_prevProduct->Rows[index]->Cells[5]->Value = proTable[i].price;
-				overPrice += pro[i].price;
-				overStocks += pro[i].stock;
-				
-				if (pro[i].stock <= 5) {
+				overPrice += proTable[i].price;
+				overStocks += proTable[i].stock;
+
+				if (proTable[i].stock <= proTable[i].minStock) {
+
+					table_prevProduct->Rows[index]->DefaultCellStyle->BackColor = ColorTranslator::FromHtml("#ff7979");
+					table_prevProduct->Rows[index]->DefaultCellStyle->ForeColor = Color::White;
 					overCrit++;
 				}
 			}
+			
 			lbl_overPrice->Text = overPrice + "";
 			lbl_overStocks->Text = overStocks + "";
-			lbl_proCounts->Text = productCount + "";
+			lbl_proCounts->Text = proTableCount + "";
 			lbl_overCrit->Text = overCrit + "";
 			table_prevProduct->ClearSelection();
+		}
+
+		public: void loadSortCbBox() {
+			for (int i = 0; i < productCount ; i++) {
+				if (!cb_searchCategory->Items->Contains(pro[i].category)) {
+					cb_searchCategory->Items->Add(pro[i].category);
+				}
+			}
 		}
 
 		public: void saveToDatabase() {
@@ -2780,6 +3361,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				sw->WriteLine(pro[i].description);
 				sw->WriteLine(pro[i].category);
 				sw->WriteLine(pro[i].stock);
+				sw->WriteLine(pro[i].minStock);
 				sw->WriteLine(pro[i].price);
 			}
 
@@ -2793,6 +3375,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			String^ description;
 			String^ category;
 			int stock;
+			int minStock;
 			Double price;
 			int idx;
 		};
@@ -2806,6 +3389,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 					 searched->barcode = pro[i].barcode;
 					 searched->name = pro[i].name;
 					 searched->description = pro[i].description;
+					 searched->minStock = pro[i].minStock;
 					 searched->stock = pro[i].stock;
 					 searched->price = pro[i].price;
 					 searched->category = pro[i].category;
@@ -2813,15 +3397,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 					 return searched;
 					 free(searched);
 				 }
-
 			 }
-
-			
 		}
 
 		public: bool checkBarcode(String^ barcode) {
 			bool toReturn;
-			for (int i = 0; i < productCount; i++) {
+
+			for (int i = 0; i <= productCount; i++) {
 				MessageBox::Show(productCount+" "+barcode+" "+ pro[i].barcode);
 				if (String::Compare(pro[i].barcode, barcode) == 0) { toReturn =  true;  break; }
 				else { toReturn = false; }
@@ -2843,12 +3425,14 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 					pro[productCount].description = inp_proDesc->Text;
 					pro[productCount].category = cb_proCategory->Text;
 					pro[productCount].price = double::Parse(inp_proPrice->Text);
+					pro[productCount].minStock = Int32::Parse(inp_proMinStock->Text);
 					pro[productCount].stock = Int32::Parse(inp_proStock->Text);
 					clearfields();
 					MessageBox::Show("The product " + pro[productCount].name + " with barcode of " + pro[productCount].barcode + " added");
 					productCount++;
 					saveToDatabase();
-					loadTable("default");
+					lbl_indicator->Location = btn_dashboard->Location;
+					loadTable("Default");
 					tab_control->SelectTab(1);
 				}
 				else {
@@ -2877,6 +3461,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 						toUpdate->description = inp_editDesc->Text;
 						toUpdate->category = cb_editCategory->Text;
 						toUpdate->stock = Int32::Parse(inp_editStock->Text);
+						toUpdate->minStock = Int32::Parse(inp_editMinStock->Text);
 						toUpdate->price = double::Parse(inp_editPrice->Text);
 						
 						product = proSearch(toUpdate->barcode);
@@ -2886,12 +3471,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 						pro[product->idx].description = toUpdate->description;
 						pro[product->idx].category = toUpdate->category;
 						pro[product->idx].stock = toUpdate->stock;
+						pro[product->idx].minStock = toUpdate->minStock;
 						pro[product->idx].price = toUpdate->price;
 						
 
 						MessageBox::Show("The product " + pro[product->idx].name + " with barcode of " + pro[product->idx].barcode + " updated");
 						saveToDatabase();
-						loadTable("default");
+						loadTable("Default");
 						tab_control->SelectTab(1);
 						free(product);
 						free(toUpdate);
@@ -2923,12 +3509,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 					pro[i].description = pro[i + 1].description;
 					pro[i].category = pro[i + 1].category;
 					pro[i].stock = pro[i + 1].stock;
+					pro[i].minStock = pro[i + 1].minStock;
 					pro[i].price = pro[i + 1].price;
 				}
 
 				productCount--;
 				saveToDatabase();
-				loadTable("default");
+				loadTable("Default");
 				clearfields();
 				free(product);
 			}
@@ -2937,26 +3524,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			}
 		}
 
-		//Read Product from the Databse
-		private: System::Void inp_search(System::Object^  sender, System::EventArgs^  e) {
-			String^ search = inp_proSearch->Text;
-			loadTable(search);
-		}
-
 		//Field validation for product
 		String ^checkCode, ^checkName, ^checkDesc, ^checkPrice, ^checkStock, ^checkCategory;
-		String^ SearchFilterChecker(String^ cb_category) {
-			
-			String^ code;
-			if (String::Compare(cb_category,"Barcode")==0){
-				code = "barcode";
-			}else if (String::Compare(cb_category, "Product Name") == 0) {
-				code = "pro_name";
-			}else if (String::Compare(cb_category, "Category") == 0) {
-				code = "pro_category";
-			}
-			return code;
-		}
 
 		//By clicking table the data from database fetch and store into fields
 		private: System::Void table_prevProduct_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
@@ -3010,23 +3579,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 		}
 		private: System::Void btn_editBack_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab_control->SelectTab(1);
-		}
-		private: System::Void cb_category_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-			if (String::Compare(cb_category->Text, "Category")==0) {
-				cb_searchCategory->Visible = true;
-				inp_proSearch->Visible = false;
-			}
-			else if (String::Compare(cb_category->Text, "Default") == 0) {
-				loadTable("default");
-			}
-			else {
-				inp_proSearch->Visible = true;
-				cb_searchCategory->Visible = false;
-			}
-				
-		}
-		private: System::Void cb_searchCategory_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-			loadTable(cb_searchCategory->Text);
 		}
 		
 		// ACCOUNT SECTION ===================================================================
@@ -3351,7 +3903,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			
 		}
 	
-
 		private: System::Void tb_salesCellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 			String^ search = tb_sales->Rows[e->RowIndex]->Cells[0]->Value->ToString();
 
@@ -3363,41 +3914,101 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				lbl_salesPrice->Text = ""+ repSale->totalPrice;
 				lbl_salesQuan->Text = "" + repSale->totalQuantity;
 				lbl_salesDate->Text = repSale->date;
+				
+				lbl_tranCode->Text = "" + repSale->transCode;
+				lbl_tranName->Text = repSale->customer;
+				lbl_tranPrice->Text = "" + repSale->totalPrice;
+				lbl_tranQuan->Text = "" + repSale->totalQuantity;
+				lbl_tranDate->Text = repSale->date;
+
+				cartLoadTable(repSale->transCode.ToString());
+				free(repSale);
 			}
 			else {
 				MessageBox::Show("Error on loading fields account");
 			}
 		}
+
 		
+		//Current in cart
+		public: value struct cartProduct {
+			String^ barcode;
+			String^ name;
+			int quantity;
+			double price;
+			double totalPrice;
+		};
+		int cartCount = 0;
+
+		array<cartProduct>^ cart = gcnew array< cartProduct >(1000);
+
+		public: void cartLoadTable(String^ transCode) {
+
+			tb_tranProduct->Rows->Clear();
+			tb_tranProduct->Refresh();
+			readCartTextfile(transCode);
+			for (int i = 0; i < cartCount; i++) {
+				int index = tb_tranProduct->Rows->Add();
+				tb_tranProduct->Rows[index]->Cells[0]->Value = cart[i].barcode;
+				tb_tranProduct->Rows[index]->Cells[1]->Value = cart[i].name;
+				tb_tranProduct->Rows[index]->Cells[2]->Value = cart[i].quantity;
+				tb_tranProduct->Rows[index]->Cells[3]->Value = cart[i].price;
+				tb_tranProduct->Rows[index]->Cells[4]->Value = cart[i].totalPrice;
+
+			}
+			tb_sales->ClearSelection();
+		}
+
+		public: void readCartTextfile(String^ transCode) {
+			String^ fileName = "salesReport\\" + transCode + ".txt";
+			StreamReader^ din = File::OpenText(fileName);
+
+			cartCount = Int32::Parse(din->ReadLine());
+			if (cartCount > 0) {
+				for (int i = 0; i < cartCount; i++) {
+					cart[i].barcode = din->ReadLine();
+					cart[i].name = din->ReadLine();
+					cart[i].quantity = int::Parse(din->ReadLine());
+					cart[i].price = double::Parse(din->ReadLine());
+					cart[i].totalPrice = double::Parse(din->ReadLine());
+				}
+			}
+			din->Close();
+
+		}
+
 		// Utilities
 		void clearfields() {
 			inp_proName->Text = "";
 			inp_proCode->Text = "";
 			inp_proDesc->Text = "";
 			inp_proPrice->Text = "";
-			inp_proStock->Text = "";
+			inp_proStock->Value = 1;
+			inp_proMinStock->Text = "1.00";
 			inp_prevStock->Text = "";
 			inp_prevPrice->Text = "";
 			inp_prevDesc->Text = "";
 			lbl_prevCode->Text = "";
 			inp_prevName->Text = "";
-			cb_proCategory->Text = "";
+			cb_proCategory->SelectedText = "";
 			inp_prevCategory->Text = "";
 			lbl_searchError->Text = "";
 			inp_editCode->Text = "";
 			inp_editName->Text = "";
 			inp_editDesc->Text = "";
-			cb_editCategory->SelectedItem = "";
-			inp_editPrice->Text = "";
-			inp_editStock->Text = "";
+			cb_editCategory->SelectedText = "";
+			inp_editPrice->Value = 1;
+			inp_editStock->Value = 1;
+			inp_editMinStock->Text = "1.00";
+			inp_accUser->Text = "";
+			inp_accPass->Text = "";
+			cb_accLoginas->Text = "";
 			checkName = "";
 			checkDesc = "";
 			checkPrice = "";
 			checkStock = "";
 			checkCategory = "";
-			inp_accUser->Text="";
-			inp_accPass->Text="";
-			cb_accLoginas->SelectedItem ="";
+			
 		}
 
 		bool validateFields(String^ toValidate) {
@@ -3451,7 +4062,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 
 		}
 
-
 		void toggleAccMode(bool isAddMode) {
 			inp_accUser->Enabled = isAddMode;
 			btn_delAcc->Visible = !isAddMode;
@@ -3462,40 +4072,76 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 
 		private: System::Void btn_dashboard_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			tab_control->SelectTab(1);
-			int x = btn_dashboard->Location.Y;
-			int y = lbl_indicator->Location.Y;
 			lbl_indicator->Location = btn_dashboard->Location;
-
-				
-
 		}
 		private: System::Void btn_addproduct_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			tab_control->SelectTab(0);
-			int x = btn_addproduct->Location.Y;
-			int y = lbl_indicator->Location.Y;
 			lbl_indicator->Location = btn_addproduct->Location;
-
-
 		}
 		private: System::Void btn_account_Click(System::Object^  sender, System::EventArgs^  e) {
 			tab_control->SelectTab(3);
 			lbl_indicator->Location = btn_account->Location;
-			int x = btn_account->Location.Y;
-			int y = lbl_indicator->Location.Y;
-
 		}
+		private: System::Void btn_sales_Click(System::Object^  sender, System::EventArgs^  e) {
+			tab_control->SelectTab(4);
+			lbl_indicator->Location = btn_sales->Location;
+		}
+
 		private: System::Void btn_logout_Click(System::Object^  sender, System::EventArgs^  e) {
 			this->Hide();
 			obj->Show();
 		}
 		private: System::Void tab_sales_Click(System::Object^  sender, System::EventArgs^  e) {
 		}
-		private: System::Void btn_sales_Click(System::Object^  sender, System::EventArgs^  e) {
-			tab_control->SelectTab(4);
-			lbl_indicator->Location = btn_sales->Location;
-			int x = btn_sales->Location.Y;
-			int y = lbl_indicator->Location.Y;
+		
+		private: System::Void tb_viewPro_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		}
+		
+		private: System::Void btn_salesView_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			if (!String::IsNullOrEmpty(lbl_salesCode->Text)) {
+				tab_control->SelectTab(5);
+			}
+			else {
+				MessageBox::Show("Please select on sales transaction first.");
+			}
 
 		}
+
+		private: System::Void btn_tranBack_Click(System::Object^  sender, System::EventArgs^  e) {
+			tab_control->SelectTab(4);
+		}
+		private: System::Void inp_searchPro_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			String^ toSearch = inp_searchPro->Text;
+			if (String::IsNullOrEmpty(toSearch)) {
+				loadTable("Default");
+			}
+			else {
+				loadTable(toSearch);
+			}
+		
+		}
+		private: System::Void cb_searchType_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+			bool show;
+			if (cb_searchType->SelectedIndex == 3) {
+				show = true;
+			}
+			else {
+				show = false;
+			}
+			inp_searchPro->Text = "";
+			cb_searchCategory->Visible = show;
+			inp_searchPro->Visible = !show;
+		}
+		private: System::Void cb_searchCategory_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+			inp_searchPro->Text = cb_searchCategory->Text;
+		}
+
+	private: System::Void inp_editMinStock_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+		inp_editStock->Minimum = inp_editMinStock->Value;
+	}
+	private: System::Void inp_proMinStock_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+		inp_proStock->Minimum = inp_proMinStock->Value;
+	}
 };
 }

@@ -2402,7 +2402,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			return totalQuan;
 		}
 
-		//Creating cart sales report connectio to sales report
+		//Creating cart sales report connection to sales report
 		public: void saveCartReport() {
 			String^ fileName = "salesReport\\"+ transCode +".txt";
 

@@ -105,7 +105,6 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Windows.Forms.Form obj : Public
-    System.String constr : Public
     Int32 productCount : Public
     Product[] pro : Public
     Product[] proTable : Public
@@ -113,9 +112,13 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     Int32 accountCount : Public
     Int32 saleReportCount : Public
     salesReport[] sales : Public
+    Int32 cartCount : Public
+    cartProduct[] cart : Public
+    Int32 toggle : Public
   Methods:
     loadProductFromFile(): PrivateScope, Public, HideBySig
     loadTable(String): PrivateScope, Public, HideBySig
+    loadSortCbBox(): PrivateScope, Public, HideBySig
     saveToDatabase(): PrivateScope, Public, HideBySig
     proSearch(String): PrivateScope, Public, HideBySig
     checkBarcode(String): PrivateScope, Public, HideBySig
@@ -127,6 +130,10 @@ Class InventoryManagementSystem.inventory: AutoLayout, AnsiClass, Class, Public,
     loadSalesFromFile(): PrivateScope, Public, HideBySig
     loadSalesTable(): PrivateScope, Public, HideBySig
     repSearch(String): PrivateScope, Public, HideBySig
+    cartLoadTable(String): PrivateScope, Public, HideBySig
+    readCartTextfile(String): PrivateScope, Public, HideBySig
+    clearfields(): PrivateScope, Public, HideBySig
+    validateFields(String): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.inventory+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -135,7 +142,8 @@ Struct InventoryManagementSystem.inventory+Product: AutoLayout, AnsiClass, Class
     System.String description : Public
     System.String category : Public
     Int32 stock : Public
-    Single price : Public
+    Int32 minStock : Public
+    Double price : Public
 Struct InventoryManagementSystem.inventory+searchProduct: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -144,6 +152,7 @@ Struct InventoryManagementSystem.inventory+searchProduct: AutoLayout, AnsiClass,
     System.String description : Public
     System.String category : Public
     Int32 stock : Public
+    Int32 minStock : Public
     Double price : Public
     Int32 idx : Public
 Struct InventoryManagementSystem.inventory+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
@@ -176,6 +185,14 @@ Struct InventoryManagementSystem.inventory+searchReport: AutoLayout, AnsiClass, 
     Int32 totalQuantity : Public
     System.String date : Public
     Int32 idx : Public
+Struct InventoryManagementSystem.inventory+cartProduct: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    System.String barcode : Public
+    System.String name : Public
+    Int32 quantity : Public
+    Double price : Public
+    Double totalPrice : Public
 Class InventoryManagementSystem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
