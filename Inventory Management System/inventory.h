@@ -666,10 +666,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_dashboard->Controls->Add(this->table_prevProduct);
 			this->tab_dashboard->Controls->Add(this->lbl_searchError);
 			this->tab_dashboard->Controls->Add(this->label14);
-			this->tab_dashboard->Location = System::Drawing::Point(4, 25);
+			this->tab_dashboard->Location = System::Drawing::Point(4, 28);
+			this->tab_dashboard->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tab_dashboard->Name = L"tab_dashboard";
-			this->tab_dashboard->Padding = System::Windows::Forms::Padding(3);
-			this->tab_dashboard->Size = System::Drawing::Size(1200, 557);
+			this->tab_dashboard->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tab_dashboard->Size = System::Drawing::Size(1603, 689);
 			this->tab_dashboard->TabIndex = 1;
 			this->tab_dashboard->Text = L"Dashboard";
 			// 
@@ -678,14 +679,15 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->cb_searchCategory->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->cb_searchCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cb_searchCategory->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->cb_searchCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F));
+			this->cb_searchCategory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
 			this->cb_searchCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_searchCategory->FormattingEnabled = true;
-			this->cb_searchCategory->ItemHeight = 33;
-			this->cb_searchCategory->Location = System::Drawing::Point(717, 20);
+			this->cb_searchCategory->ItemHeight = 39;
+			this->cb_searchCategory->Location = System::Drawing::Point(956, 25);
+			this->cb_searchCategory->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cb_searchCategory->Name = L"cb_searchCategory";
-			this->cb_searchCategory->Size = System::Drawing::Size(332, 41);
+			this->cb_searchCategory->Size = System::Drawing::Size(441, 47);
 			this->cb_searchCategory->TabIndex = 90;
 			this->cb_searchCategory->Visible = false;
 			this->cb_searchCategory->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::cb_searchCategory_SelectedIndexChanged);
@@ -693,27 +695,29 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// label49
 			// 
 			this->label49->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->label49->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label49->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label49->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->label49->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label49.Image")));
-			this->label49->Location = System::Drawing::Point(1008, 20);
+			this->label49->Location = System::Drawing::Point(1344, 25);
+			this->label49->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label49->Name = L"label49";
-			this->label49->Size = System::Drawing::Size(41, 38);
+			this->label49->Size = System::Drawing::Size(55, 47);
 			this->label49->TabIndex = 89;
 			// 
 			// inp_searchPro
 			// 
 			this->inp_searchPro->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->inp_searchPro->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->inp_searchPro->Font = (gcnew System::Drawing::Font(L"Roboto Light", 21));
+			this->inp_searchPro->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21));
 			this->inp_searchPro->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_searchPro->HideSelection = false;
-			this->inp_searchPro->Location = System::Drawing::Point(715, 20);
+			this->inp_searchPro->Location = System::Drawing::Point(953, 25);
+			this->inp_searchPro->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_searchPro->Multiline = true;
 			this->inp_searchPro->Name = L"inp_searchPro";
-			this->inp_searchPro->Size = System::Drawing::Size(329, 38);
+			this->inp_searchPro->Size = System::Drawing::Size(439, 47);
 			this->inp_searchPro->TabIndex = 88;
 			this->inp_searchPro->WordWrap = false;
 			this->inp_searchPro->TextChanged += gcnew System::EventHandler(this, &inventory::inp_searchPro_TextChanged);
@@ -723,15 +727,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->cb_searchType->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->cb_searchType->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cb_searchType->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->cb_searchType->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F));
+			this->cb_searchType->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
 			this->cb_searchType->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_searchType->FormattingEnabled = true;
-			this->cb_searchType->ItemHeight = 33;
+			this->cb_searchType->ItemHeight = 39;
 			this->cb_searchType->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Default", L"Barcode", L"Product Name", L"Category" });
-			this->cb_searchType->Location = System::Drawing::Point(467, 22);
+			this->cb_searchType->Location = System::Drawing::Point(623, 27);
+			this->cb_searchType->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cb_searchType->Name = L"cb_searchType";
-			this->cb_searchType->Size = System::Drawing::Size(220, 41);
+			this->cb_searchType->Size = System::Drawing::Size(292, 47);
 			this->cb_searchType->TabIndex = 87;
 			this->cb_searchType->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::cb_searchType_SelectedIndexChanged);
 			// 
@@ -741,9 +746,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(60)));
 			this->panel15->Controls->Add(this->lbl_overCrit);
 			this->panel15->Controls->Add(this->label67);
-			this->panel15->Location = System::Drawing::Point(1002, 440);
+			this->panel15->Location = System::Drawing::Point(1336, 542);
+			this->panel15->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel15->Name = L"panel15";
-			this->panel15->Size = System::Drawing::Size(163, 100);
+			this->panel15->Size = System::Drawing::Size(217, 123);
 			this->panel15->TabIndex = 86;
 			// 
 			// lbl_overCrit
@@ -751,9 +757,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_overCrit->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_overCrit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_overCrit->ForeColor = System::Drawing::Color::White;
-			this->lbl_overCrit->Location = System::Drawing::Point(9, 38);
+			this->lbl_overCrit->Location = System::Drawing::Point(12, 47);
+			this->lbl_overCrit->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_overCrit->Name = L"lbl_overCrit";
-			this->lbl_overCrit->Size = System::Drawing::Size(120, 42);
+			this->lbl_overCrit->Size = System::Drawing::Size(160, 52);
 			this->lbl_overCrit->TabIndex = 77;
 			this->lbl_overCrit->Text = L"5";
 			// 
@@ -761,11 +768,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label67->AutoSize = true;
 			this->label67->BackColor = System::Drawing::Color::Transparent;
-			this->label67->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14));
+			this->label67->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label67->ForeColor = System::Drawing::Color::White;
-			this->label67->Location = System::Drawing::Point(12, 11);
+			this->label67->Location = System::Drawing::Point(16, 14);
+			this->label67->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label67->Name = L"label67";
-			this->label67->Size = System::Drawing::Size(114, 23);
+			this->label67->Size = System::Drawing::Size(151, 29);
 			this->label67->TabIndex = 76;
 			this->label67->Text = L"Critical Level";
 			// 
@@ -775,9 +783,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(84)));
 			this->panel16->Controls->Add(this->lbl_proCounts);
 			this->panel16->Controls->Add(this->ss);
-			this->panel16->Location = System::Drawing::Point(809, 440);
+			this->panel16->Location = System::Drawing::Point(1079, 542);
+			this->panel16->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel16->Name = L"panel16";
-			this->panel16->Size = System::Drawing::Size(185, 100);
+			this->panel16->Size = System::Drawing::Size(247, 123);
 			this->panel16->TabIndex = 85;
 			// 
 			// lbl_proCounts
@@ -785,9 +794,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_proCounts->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_proCounts->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_proCounts->ForeColor = System::Drawing::Color::White;
-			this->lbl_proCounts->Location = System::Drawing::Point(9, 38);
+			this->lbl_proCounts->Location = System::Drawing::Point(12, 47);
+			this->lbl_proCounts->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_proCounts->Name = L"lbl_proCounts";
-			this->lbl_proCounts->Size = System::Drawing::Size(120, 42);
+			this->lbl_proCounts->Size = System::Drawing::Size(160, 52);
 			this->lbl_proCounts->TabIndex = 77;
 			this->lbl_proCounts->Text = L"500";
 			// 
@@ -795,11 +805,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->ss->AutoSize = true;
 			this->ss->BackColor = System::Drawing::Color::Transparent;
-			this->ss->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14));
+			this->ss->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->ss->ForeColor = System::Drawing::Color::White;
-			this->ss->Location = System::Drawing::Point(12, 11);
+			this->ss->Location = System::Drawing::Point(16, 14);
+			this->ss->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->ss->Name = L"ss";
-			this->ss->Size = System::Drawing::Size(130, 23);
+			this->ss->Size = System::Drawing::Size(165, 29);
 			this->ss->TabIndex = 76;
 			this->ss->Text = L"Product Count";
 			// 
@@ -809,9 +820,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(99)));
 			this->panel17->Controls->Add(this->lbl_overStocks);
 			this->panel17->Controls->Add(this->label71);
-			this->panel17->Location = System::Drawing::Point(608, 440);
+			this->panel17->Location = System::Drawing::Point(811, 542);
+			this->panel17->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel17->Name = L"panel17";
-			this->panel17->Size = System::Drawing::Size(195, 100);
+			this->panel17->Size = System::Drawing::Size(260, 123);
 			this->panel17->TabIndex = 84;
 			// 
 			// lbl_overStocks
@@ -819,9 +831,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_overStocks->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_overStocks->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_overStocks->ForeColor = System::Drawing::Color::White;
-			this->lbl_overStocks->Location = System::Drawing::Point(9, 38);
+			this->lbl_overStocks->Location = System::Drawing::Point(12, 47);
+			this->lbl_overStocks->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_overStocks->Name = L"lbl_overStocks";
-			this->lbl_overStocks->Size = System::Drawing::Size(159, 42);
+			this->lbl_overStocks->Size = System::Drawing::Size(212, 52);
 			this->lbl_overStocks->TabIndex = 77;
 			this->lbl_overStocks->Text = L"1,000.50";
 			// 
@@ -829,11 +842,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label71->AutoSize = true;
 			this->label71->BackColor = System::Drawing::Color::Transparent;
-			this->label71->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14));
+			this->label71->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label71->ForeColor = System::Drawing::Color::White;
-			this->label71->Location = System::Drawing::Point(12, 11);
+			this->label71->Location = System::Drawing::Point(16, 14);
+			this->label71->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label71->Name = L"label71";
-			this->label71->Size = System::Drawing::Size(67, 23);
+			this->label71->Size = System::Drawing::Size(85, 29);
 			this->label71->TabIndex = 76;
 			this->label71->Text = L"Stocks";
 			// 
@@ -843,9 +857,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(107)));
 			this->panel18->Controls->Add(this->lbl_overPrice);
 			this->panel18->Controls->Add(this->label73);
-			this->panel18->Location = System::Drawing::Point(363, 440);
+			this->panel18->Location = System::Drawing::Point(484, 542);
+			this->panel18->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel18->Name = L"panel18";
-			this->panel18->Size = System::Drawing::Size(235, 100);
+			this->panel18->Size = System::Drawing::Size(313, 123);
 			this->panel18->TabIndex = 83;
 			// 
 			// lbl_overPrice
@@ -853,9 +868,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_overPrice->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_overPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_overPrice->ForeColor = System::Drawing::Color::White;
-			this->lbl_overPrice->Location = System::Drawing::Point(9, 38);
+			this->lbl_overPrice->Location = System::Drawing::Point(12, 47);
+			this->lbl_overPrice->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_overPrice->Name = L"lbl_overPrice";
-			this->lbl_overPrice->Size = System::Drawing::Size(221, 42);
+			this->lbl_overPrice->Size = System::Drawing::Size(295, 52);
 			this->lbl_overPrice->TabIndex = 77;
 			this->lbl_overPrice->Text = L"1,000,501.50";
 			// 
@@ -863,11 +879,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label73->AutoSize = true;
 			this->label73->BackColor = System::Drawing::Color::Transparent;
-			this->label73->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14));
+			this->label73->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label73->ForeColor = System::Drawing::Color::White;
-			this->label73->Location = System::Drawing::Point(12, 11);
+			this->label73->Location = System::Drawing::Point(16, 14);
+			this->label73->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label73->Name = L"label73";
-			this->label73->Size = System::Drawing::Size(113, 23);
+			this->label73->Size = System::Drawing::Size(152, 29);
 			this->label73->TabIndex = 76;
 			this->label73->Text = L"Overall Price";
 			// 
@@ -893,8 +910,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel7->Controls->Add(this->label50);
 			this->panel7->Controls->Add(this->label51);
 			this->panel7->Location = System::Drawing::Point(-1, 0);
+			this->panel7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(333, 556);
+			this->panel7->Size = System::Drawing::Size(444, 684);
 			this->panel7->TabIndex = 71;
 			// 
 			// btn_prevEdit
@@ -902,14 +920,15 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_prevEdit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->btn_prevEdit->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_prevEdit->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_prevEdit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->btn_prevEdit->ForeColor = System::Drawing::Color::White;
 			this->btn_prevEdit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_prevEdit.Image")));
 			this->btn_prevEdit->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_prevEdit->Location = System::Drawing::Point(28, 473);
+			this->btn_prevEdit->Location = System::Drawing::Point(37, 582);
+			this->btn_prevEdit->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_prevEdit->Name = L"btn_prevEdit";
-			this->btn_prevEdit->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->btn_prevEdit->Size = System::Drawing::Size(134, 45);
+			this->btn_prevEdit->Padding = System::Windows::Forms::Padding(13, 0, 13, 0);
+			this->btn_prevEdit->Size = System::Drawing::Size(179, 55);
 			this->btn_prevEdit->TabIndex = 75;
 			this->btn_prevEdit->Text = L"Update";
 			this->btn_prevEdit->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -920,14 +939,15 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_prevDel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)));
 			this->btn_prevDel->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_prevDel->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_prevDel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->btn_prevDel->ForeColor = System::Drawing::Color::White;
 			this->btn_prevDel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_prevDel.Image")));
 			this->btn_prevDel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_prevDel->Location = System::Drawing::Point(179, 473);
+			this->btn_prevDel->Location = System::Drawing::Point(239, 582);
+			this->btn_prevDel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_prevDel->Name = L"btn_prevDel";
-			this->btn_prevDel->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->btn_prevDel->Size = System::Drawing::Size(138, 45);
+			this->btn_prevDel->Padding = System::Windows::Forms::Padding(13, 0, 13, 0);
+			this->btn_prevDel->Size = System::Drawing::Size(184, 55);
 			this->btn_prevDel->TabIndex = 74;
 			this->btn_prevDel->Text = L"Delete ";
 			this->btn_prevDel->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -937,13 +957,14 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label42->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
 				static_cast<System::Int32>(static_cast<System::Byte>(195)));
-			this->label42->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label42->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->label42->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label42.Image")));
-			this->label42->Location = System::Drawing::Point(267, 110);
+			this->label42->Location = System::Drawing::Point(356, 135);
+			this->label42->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label42->Name = L"label42";
-			this->label42->Size = System::Drawing::Size(41, 36);
+			this->label42->Size = System::Drawing::Size(55, 44);
 			this->label42->TabIndex = 73;
 			// 
 			// lbl_prevCode
@@ -951,57 +972,62 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_prevCode->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
 				static_cast<System::Int32>(static_cast<System::Byte>(195)));
 			this->lbl_prevCode->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->lbl_prevCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 21));
+			this->lbl_prevCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21));
 			this->lbl_prevCode->ForeColor = System::Drawing::Color::White;
 			this->lbl_prevCode->HideSelection = false;
-			this->lbl_prevCode->Location = System::Drawing::Point(32, 110);
+			this->lbl_prevCode->Location = System::Drawing::Point(43, 135);
+			this->lbl_prevCode->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->lbl_prevCode->Multiline = true;
 			this->lbl_prevCode->Name = L"lbl_prevCode";
-			this->lbl_prevCode->Size = System::Drawing::Size(276, 36);
+			this->lbl_prevCode->Size = System::Drawing::Size(368, 44);
 			this->lbl_prevCode->TabIndex = 72;
 			this->lbl_prevCode->WordWrap = false;
 			// 
 			// label53
 			// 
 			this->label53->AutoSize = true;
-			this->label53->Font = (gcnew System::Drawing::Font(L"Roboto", 23, System::Drawing::FontStyle::Bold));
+			this->label53->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label53->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label53->Location = System::Drawing::Point(25, 24);
+			this->label53->Location = System::Drawing::Point(33, 30);
+			this->label53->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label53->Name = L"label53";
-			this->label53->Size = System::Drawing::Size(245, 37);
+			this->label53->Size = System::Drawing::Size(321, 44);
 			this->label53->TabIndex = 71;
 			this->label53->Text = L"Product Preview";
 			// 
 			// inp_prevStock
 			// 
 			this->inp_prevStock->BackColor = System::Drawing::Color::Transparent;
-			this->inp_prevStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->inp_prevStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->inp_prevStock->ForeColor = System::Drawing::Color::White;
-			this->inp_prevStock->Location = System::Drawing::Point(28, 428);
+			this->inp_prevStock->Location = System::Drawing::Point(37, 527);
+			this->inp_prevStock->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->inp_prevStock->Name = L"inp_prevStock";
-			this->inp_prevStock->Size = System::Drawing::Size(274, 26);
+			this->inp_prevStock->Size = System::Drawing::Size(365, 32);
 			this->inp_prevStock->TabIndex = 66;
 			// 
 			// inp_prevCategory
 			// 
 			this->inp_prevCategory->BackColor = System::Drawing::Color::Transparent;
-			this->inp_prevCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->inp_prevCategory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->inp_prevCategory->ForeColor = System::Drawing::Color::White;
-			this->inp_prevCategory->Location = System::Drawing::Point(28, 298);
+			this->inp_prevCategory->Location = System::Drawing::Point(37, 367);
+			this->inp_prevCategory->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->inp_prevCategory->Name = L"inp_prevCategory";
-			this->inp_prevCategory->Size = System::Drawing::Size(280, 26);
+			this->inp_prevCategory->Size = System::Drawing::Size(373, 32);
 			this->inp_prevCategory->TabIndex = 65;
 			// 
 			// label41
 			// 
 			this->label41->AutoSize = true;
 			this->label41->BackColor = System::Drawing::Color::Transparent;
-			this->label41->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label41->ForeColor = System::Drawing::Color::White;
-			this->label41->Location = System::Drawing::Point(28, 271);
+			this->label41->Location = System::Drawing::Point(37, 334);
+			this->label41->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label41->Name = L"label41";
-			this->label41->Size = System::Drawing::Size(85, 23);
+			this->label41->Size = System::Drawing::Size(110, 29);
 			this->label41->TabIndex = 64;
 			this->label41->Text = L"Category";
 			// 
@@ -1009,11 +1035,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label43->AutoSize = true;
 			this->label43->BackColor = System::Drawing::Color::Transparent;
-			this->label43->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label43->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label43->ForeColor = System::Drawing::Color::White;
-			this->label43->Location = System::Drawing::Point(28, 157);
+			this->label43->Location = System::Drawing::Point(37, 193);
+			this->label43->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label43->Name = L"label43";
-			this->label43->Size = System::Drawing::Size(132, 23);
+			this->label43->Size = System::Drawing::Size(167, 29);
 			this->label43->TabIndex = 54;
 			this->label43->Text = L"Product Name";
 			// 
@@ -1021,96 +1048,105 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label44->AutoSize = true;
 			this->label44->BackColor = System::Drawing::Color::Transparent;
-			this->label44->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label44->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label44->ForeColor = System::Drawing::Color::White;
-			this->label44->Location = System::Drawing::Point(28, 80);
+			this->label44->Location = System::Drawing::Point(37, 98);
+			this->label44->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label44->Name = L"label44";
-			this->label44->Size = System::Drawing::Size(80, 23);
+			this->label44->Size = System::Drawing::Size(104, 29);
 			this->label44->TabIndex = 62;
 			this->label44->Text = L"Barcode";
 			// 
 			// inp_prevName
 			// 
 			this->inp_prevName->BackColor = System::Drawing::Color::Transparent;
-			this->inp_prevName->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->inp_prevName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->inp_prevName->ForeColor = System::Drawing::Color::White;
-			this->inp_prevName->Location = System::Drawing::Point(28, 183);
+			this->inp_prevName->Location = System::Drawing::Point(37, 225);
+			this->inp_prevName->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->inp_prevName->Name = L"inp_prevName";
-			this->inp_prevName->Size = System::Drawing::Size(280, 26);
+			this->inp_prevName->Size = System::Drawing::Size(373, 32);
 			this->inp_prevName->TabIndex = 55;
 			// 
 			// label46
 			// 
 			this->label46->AutoSize = true;
 			this->label46->BackColor = System::Drawing::Color::Transparent;
-			this->label46->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label46->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label46->ForeColor = System::Drawing::Color::White;
-			this->label46->Location = System::Drawing::Point(28, 212);
+			this->label46->Location = System::Drawing::Point(37, 261);
+			this->label46->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label46->Name = L"label46";
-			this->label46->Size = System::Drawing::Size(106, 23);
+			this->label46->Size = System::Drawing::Size(135, 29);
 			this->label46->TabIndex = 56;
 			this->label46->Text = L"Description";
 			// 
 			// inp_prevDesc
 			// 
 			this->inp_prevDesc->BackColor = System::Drawing::Color::Transparent;
-			this->inp_prevDesc->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->inp_prevDesc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->inp_prevDesc->ForeColor = System::Drawing::Color::White;
-			this->inp_prevDesc->Location = System::Drawing::Point(28, 237);
+			this->inp_prevDesc->Location = System::Drawing::Point(37, 292);
+			this->inp_prevDesc->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->inp_prevDesc->Name = L"inp_prevDesc";
-			this->inp_prevDesc->Size = System::Drawing::Size(266, 26);
+			this->inp_prevDesc->Size = System::Drawing::Size(355, 32);
 			this->inp_prevDesc->TabIndex = 57;
 			// 
 			// label48
 			// 
 			this->label48->AutoSize = true;
 			this->label48->BackColor = System::Drawing::Color::Transparent;
-			this->label48->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label48->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label48->ForeColor = System::Drawing::Color::White;
-			this->label48->Location = System::Drawing::Point(28, 334);
+			this->label48->Location = System::Drawing::Point(37, 411);
+			this->label48->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label48->Name = L"label48";
-			this->label48->Size = System::Drawing::Size(53, 23);
+			this->label48->Size = System::Drawing::Size(69, 29);
 			this->label48->TabIndex = 58;
 			this->label48->Text = L"Price";
 			// 
 			// inp_prevPrice
 			// 
 			this->inp_prevPrice->BackColor = System::Drawing::Color::Transparent;
-			this->inp_prevPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->inp_prevPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->inp_prevPrice->ForeColor = System::Drawing::Color::White;
-			this->inp_prevPrice->Location = System::Drawing::Point(28, 361);
+			this->inp_prevPrice->Location = System::Drawing::Point(37, 444);
+			this->inp_prevPrice->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->inp_prevPrice->Name = L"inp_prevPrice";
-			this->inp_prevPrice->Size = System::Drawing::Size(274, 26);
+			this->inp_prevPrice->Size = System::Drawing::Size(365, 32);
 			this->inp_prevPrice->TabIndex = 59;
 			// 
 			// label50
 			// 
 			this->label50->AutoSize = true;
 			this->label50->BackColor = System::Drawing::Color::Transparent;
-			this->label50->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label50->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label50->ForeColor = System::Drawing::Color::White;
-			this->label50->Location = System::Drawing::Point(28, 399);
+			this->label50->Location = System::Drawing::Point(37, 491);
+			this->label50->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(58, 23);
+			this->label50->Size = System::Drawing::Size(73, 29);
 			this->label50->TabIndex = 60;
 			this->label50->Text = L"Stock";
 			// 
 			// label51
 			// 
 			this->label51->BackColor = System::Drawing::Color::Transparent;
-			this->label51->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label51->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label51->ForeColor = System::Drawing::Color::White;
-			this->label51->Location = System::Drawing::Point(28, 397);
+			this->label51->Location = System::Drawing::Point(37, 489);
+			this->label51->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(280, 26);
+			this->label51->Size = System::Drawing::Size(373, 32);
 			this->label51->TabIndex = 61;
 			// 
 			// panel5
 			// 
 			this->panel5->BackColor = System::Drawing::Color::White;
-			this->panel5->Location = System::Drawing::Point(320, 88);
+			this->panel5->Location = System::Drawing::Point(427, 108);
+			this->panel5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(43, 455);
+			this->panel5->Size = System::Drawing::Size(57, 560);
 			this->panel5->TabIndex = 74;
 			// 
 			// panel6
@@ -1123,68 +1159,75 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel6->Controls->Add(this->label9);
 			this->panel6->Controls->Add(this->label10);
 			this->panel6->Controls->Add(this->label11);
-			this->panel6->Location = System::Drawing::Point(363, 76);
+			this->panel6->Location = System::Drawing::Point(484, 103);
+			this->panel6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(805, 36);
+			this->panel6->Size = System::Drawing::Size(1073, 44);
 			this->panel6->TabIndex = 73;
 			// 
 			// label12
 			// 
-			this->label12->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label12->ForeColor = System::Drawing::Color::White;
-			this->label12->Location = System::Drawing::Point(255, 6);
+			this->label12->Location = System::Drawing::Point(340, 7);
+			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(123, 26);
+			this->label12->Size = System::Drawing::Size(164, 32);
 			this->label12->TabIndex = 65;
 			this->label12->Text = L"Description";
 			// 
 			// label39
 			// 
-			this->label39->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label39->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label39->ForeColor = System::Drawing::Color::White;
-			this->label39->Location = System::Drawing::Point(558, 7);
+			this->label39->Location = System::Drawing::Point(744, 9);
+			this->label39->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label39->Name = L"label39";
-			this->label39->Size = System::Drawing::Size(123, 26);
+			this->label39->Size = System::Drawing::Size(164, 32);
 			this->label39->TabIndex = 64;
 			this->label39->Text = L"Stocks";
 			// 
 			// label8
 			// 
-			this->label8->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label8->ForeColor = System::Drawing::Color::White;
-			this->label8->Location = System::Drawing::Point(2, 7);
+			this->label8->Location = System::Drawing::Point(3, 9);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(108, 26);
+			this->label8->Size = System::Drawing::Size(144, 32);
 			this->label8->TabIndex = 63;
 			this->label8->Text = L"Barcode";
 			// 
 			// label9
 			// 
-			this->label9->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label9->ForeColor = System::Drawing::Color::White;
-			this->label9->Location = System::Drawing::Point(685, 6);
+			this->label9->Location = System::Drawing::Point(913, 7);
+			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(117, 26);
+			this->label9->Size = System::Drawing::Size(156, 32);
 			this->label9->TabIndex = 62;
 			this->label9->Text = L"Price";
 			// 
 			// label10
 			// 
-			this->label10->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label10->ForeColor = System::Drawing::Color::White;
-			this->label10->Location = System::Drawing::Point(408, 6);
+			this->label10->Location = System::Drawing::Point(544, 7);
+			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(123, 26);
+			this->label10->Size = System::Drawing::Size(164, 32);
 			this->label10->TabIndex = 61;
 			this->label10->Text = L"Category";
 			// 
 			// label11
 			// 
-			this->label11->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label11->ForeColor = System::Drawing::Color::White;
-			this->label11->Location = System::Drawing::Point(125, 6);
+			this->label11->Location = System::Drawing::Point(167, 7);
+			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(128, 26);
+			this->label11->Size = System::Drawing::Size(171, 32);
 			this->label11->TabIndex = 60;
 			this->label11->Text = L"Product Name";
 			// 
@@ -1196,7 +1239,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->table_prevProduct->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
 			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle1->Padding = System::Windows::Forms::Padding(1);
 			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -1212,7 +1255,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->table_prevProduct->Cursor = System::Windows::Forms::Cursors::Hand;
 			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
 			dataGridViewCellStyle2->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
 			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -1222,12 +1265,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->table_prevProduct->DefaultCellStyle = dataGridViewCellStyle2;
 			this->table_prevProduct->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			this->table_prevProduct->Location = System::Drawing::Point(322, 88);
+			this->table_prevProduct->Location = System::Drawing::Point(429, 108);
+			this->table_prevProduct->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->table_prevProduct->Name = L"table_prevProduct";
 			this->table_prevProduct->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
 			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle3->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
@@ -1235,12 +1279,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->table_prevProduct->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this->table_prevProduct->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle4->Padding = System::Windows::Forms::Padding(2);
 			this->table_prevProduct->RowsDefaultCellStyle = dataGridViewCellStyle4;
 			this->table_prevProduct->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->table_prevProduct->Size = System::Drawing::Size(846, 335);
+			this->table_prevProduct->Size = System::Drawing::Size(1128, 412);
 			this->table_prevProduct->TabIndex = 72;
 			this->table_prevProduct->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::table_prevProduct_CellClick);
 			// 
@@ -1289,9 +1333,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->lbl_searchError->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
 			this->lbl_searchError->ForeColor = System::Drawing::Color::Red;
-			this->lbl_searchError->Location = System::Drawing::Point(524, 68);
+			this->lbl_searchError->Location = System::Drawing::Point(699, 84);
+			this->lbl_searchError->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_searchError->Name = L"lbl_searchError";
-			this->lbl_searchError->Size = System::Drawing::Size(407, 22);
+			this->lbl_searchError->Size = System::Drawing::Size(543, 27);
 			this->lbl_searchError->TabIndex = 40;
 			// 
 			// label14
@@ -1299,9 +1344,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label14->Location = System::Drawing::Point(359, 31);
+			this->label14->Location = System::Drawing::Point(479, 38);
+			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(84, 26);
+			this->label14->Size = System::Drawing::Size(112, 32);
 			this->label14->TabIndex = 33;
 			this->label14->Text = L"Search by";
 			// 
@@ -1326,45 +1372,49 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_addproduct->Controls->Add(this->label4);
 			this->tab_addproduct->Controls->Add(this->button1);
 			this->tab_addproduct->Controls->Add(this->textBox1);
-			this->tab_addproduct->Location = System::Drawing::Point(4, 25);
+			this->tab_addproduct->Location = System::Drawing::Point(4, 28);
+			this->tab_addproduct->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tab_addproduct->Name = L"tab_addproduct";
-			this->tab_addproduct->Padding = System::Windows::Forms::Padding(3);
-			this->tab_addproduct->Size = System::Drawing::Size(1200, 557);
+			this->tab_addproduct->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tab_addproduct->Size = System::Drawing::Size(1603, 689);
 			this->tab_addproduct->TabIndex = 0;
 			this->tab_addproduct->Text = L"Add Product";
 			// 
 			// inp_proStock
 			// 
-			this->inp_proStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_proStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_proStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proStock->Location = System::Drawing::Point(436, 228);
+			this->inp_proStock->Location = System::Drawing::Point(581, 281);
+			this->inp_proStock->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_proStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
 			this->inp_proStock->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_proStock->Name = L"inp_proStock";
-			this->inp_proStock->Size = System::Drawing::Size(350, 40);
+			this->inp_proStock->Size = System::Drawing::Size(467, 46);
 			this->inp_proStock->TabIndex = 47;
 			this->inp_proStock->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// label54
 			// 
-			this->label54->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label54->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label54->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label54->Location = System::Drawing::Point(431, 199);
+			this->label54->Location = System::Drawing::Point(575, 245);
+			this->label54->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label54->Name = L"label54";
-			this->label54->Size = System::Drawing::Size(354, 26);
+			this->label54->Size = System::Drawing::Size(472, 32);
 			this->label54->TabIndex = 46;
 			this->label54->Text = L"Stock";
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(46, 27);
+			this->pictureBox1->Location = System::Drawing::Point(61, 33);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(50, 50);
+			this->pictureBox1->Size = System::Drawing::Size(67, 62);
 			this->pictureBox1->TabIndex = 45;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -1373,44 +1423,47 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_proCode->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_proCode->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_proCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_proCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_proCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proCode->HideSelection = false;
-			this->inp_proCode->Location = System::Drawing::Point(47, 132);
+			this->inp_proCode->Location = System::Drawing::Point(63, 162);
+			this->inp_proCode->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_proCode->Multiline = true;
 			this->inp_proCode->Name = L"inp_proCode";
-			this->inp_proCode->Size = System::Drawing::Size(350, 40);
+			this->inp_proCode->Size = System::Drawing::Size(466, 49);
 			this->inp_proCode->TabIndex = 44;
 			// 
 			// inp_proPrice
 			// 
 			this->inp_proPrice->DecimalPlaces = 2;
-			this->inp_proPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_proPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_proPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proPrice->Location = System::Drawing::Point(436, 323);
+			this->inp_proPrice->Location = System::Drawing::Point(581, 398);
+			this->inp_proPrice->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_proPrice->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1215752191, 23, 0, 0 });
 			this->inp_proPrice->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_proPrice->Name = L"inp_proPrice";
-			this->inp_proPrice->Size = System::Drawing::Size(350, 40);
+			this->inp_proPrice->Size = System::Drawing::Size(467, 46);
 			this->inp_proPrice->TabIndex = 43;
 			this->inp_proPrice->ThousandsSeparator = true;
 			this->inp_proPrice->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// inp_proMinStock
 			// 
-			this->inp_proMinStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->inp_proMinStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->inp_proMinStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_proMinStock->Location = System::Drawing::Point(435, 132);
+			this->inp_proMinStock->Location = System::Drawing::Point(580, 162);
+			this->inp_proMinStock->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_proMinStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
 			this->inp_proMinStock->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_proMinStock->Name = L"inp_proMinStock";
-			this->inp_proMinStock->Size = System::Drawing::Size(350, 40);
+			this->inp_proMinStock->Size = System::Drawing::Size(467, 46);
 			this->inp_proMinStock->TabIndex = 42;
 			this->inp_proMinStock->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_proMinStock->ValueChanged += gcnew System::EventHandler(this, &inventory::inp_proMinStock_ValueChanged);
@@ -1419,20 +1472,21 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->cb_proCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cb_proCategory->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->cb_proCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18.25F));
+			this->cb_proCategory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
 			this->cb_proCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_proCategory->FormattingEnabled = true;
-			this->cb_proCategory->ItemHeight = 29;
+			this->cb_proCategory->ItemHeight = 36;
 			this->cb_proCategory->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
 				L"Alcohol", L"Fruit/veg/salads", L"Dairy",
 					L"Chilled convenience", L"Bathroom toiletries", L"Household/cleaning", L"Fresh meat", L"Frozen prepared foods", L"Ambient bakery",
 					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
 					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
 			});
-			this->cb_proCategory->Location = System::Drawing::Point(47, 417);
+			this->cb_proCategory->Location = System::Drawing::Point(63, 513);
+			this->cb_proCategory->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cb_proCategory->Name = L"cb_proCategory";
-			this->cb_proCategory->Size = System::Drawing::Size(346, 37);
+			this->cb_proCategory->Size = System::Drawing::Size(460, 44);
 			this->cb_proCategory->TabIndex = 40;
 			// 
 			// label7
@@ -1441,9 +1495,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label7->Location = System::Drawing::Point(102, 36);
+			this->label7->Location = System::Drawing::Point(136, 44);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(196, 35);
+			this->label7->Size = System::Drawing::Size(247, 44);
 			this->label7->TabIndex = 24;
 			this->label7->Text = L"Add Product";
 			// 
@@ -1452,15 +1507,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_proDesc->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_proDesc->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_proDesc->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_proDesc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_proDesc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proDesc->HideSelection = false;
-			this->inp_proDesc->Location = System::Drawing::Point(47, 323);
+			this->inp_proDesc->Location = System::Drawing::Point(63, 398);
+			this->inp_proDesc->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_proDesc->Multiline = true;
 			this->inp_proDesc->Name = L"inp_proDesc";
-			this->inp_proDesc->Size = System::Drawing::Size(350, 40);
+			this->inp_proDesc->Size = System::Drawing::Size(466, 49);
 			this->inp_proDesc->TabIndex = 14;
 			// 
 			// inp_proName
@@ -1468,86 +1524,93 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_proName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_proName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_proName->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_proName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_proName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proName->HideSelection = false;
-			this->inp_proName->Location = System::Drawing::Point(46, 227);
+			this->inp_proName->Location = System::Drawing::Point(61, 279);
+			this->inp_proName->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_proName->Multiline = true;
 			this->inp_proName->Name = L"inp_proName";
-			this->inp_proName->Size = System::Drawing::Size(350, 40);
+			this->inp_proName->Size = System::Drawing::Size(466, 49);
 			this->inp_proName->TabIndex = 10;
 			// 
 			// label6
 			// 
-			this->label6->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label6->Location = System::Drawing::Point(430, 103);
+			this->label6->Location = System::Drawing::Point(573, 127);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(354, 26);
+			this->label6->Size = System::Drawing::Size(472, 32);
 			this->label6->TabIndex = 22;
 			this->label6->Text = L"Minimum Stock";
 			// 
 			// label5
 			// 
-			this->label5->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label5->Location = System::Drawing::Point(39, 389);
+			this->label5->Location = System::Drawing::Point(52, 479);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(354, 26);
+			this->label5->Size = System::Drawing::Size(472, 32);
 			this->label5->TabIndex = 19;
 			this->label5->Text = L"Category";
 			// 
 			// label3
 			// 
-			this->label3->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label3->Location = System::Drawing::Point(431, 294);
+			this->label3->Location = System::Drawing::Point(575, 362);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(354, 26);
+			this->label3->Size = System::Drawing::Size(472, 32);
 			this->label3->TabIndex = 17;
 			this->label3->Text = L"Price";
 			// 
 			// label2
 			// 
-			this->label2->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label2->Location = System::Drawing::Point(44, 296);
+			this->label2->Location = System::Drawing::Point(59, 364);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(354, 26);
+			this->label2->Size = System::Drawing::Size(472, 32);
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"Description";
 			// 
 			// label1
 			// 
-			this->label1->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label1->Location = System::Drawing::Point(41, 106);
+			this->label1->Location = System::Drawing::Point(55, 130);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(354, 26);
+			this->label1->Size = System::Drawing::Size(472, 32);
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Barcode";
 			// 
 			// label4
 			// 
-			this->label4->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label4->Location = System::Drawing::Point(43, 200);
+			this->label4->Location = System::Drawing::Point(57, 246);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(354, 26);
+			this->label4->Size = System::Drawing::Size(472, 32);
 			this->label4->TabIndex = 11;
 			this->label4->Text = L"Product Name";
 			// 
@@ -1557,12 +1620,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(983, 479);
+			this->button1->Location = System::Drawing::Point(1311, 590);
 			this->button1->Margin = System::Windows::Forms::Padding(0);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(181, 45);
+			this->button1->Size = System::Drawing::Size(241, 55);
 			this->button1->TabIndex = 9;
 			this->button1->Text = L"Add Product";
 			this->button1->UseVisualStyleBackColor = false;
@@ -1573,15 +1636,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->textBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->textBox1->HideSelection = false;
-			this->textBox1->Location = System::Drawing::Point(44, 416);
+			this->textBox1->Location = System::Drawing::Point(59, 512);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(350, 40);
+			this->textBox1->Size = System::Drawing::Size(466, 49);
 			this->textBox1->TabIndex = 48;
 			// 
 			// tab_control
@@ -1593,10 +1657,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_control->Controls->Add(this->tab_accounts);
 			this->tab_control->Controls->Add(this->tab_sales);
 			this->tab_control->Controls->Add(this->tab_transaction);
-			this->tab_control->Location = System::Drawing::Point(67, -26);
+			this->tab_control->Location = System::Drawing::Point(89, -32);
+			this->tab_control->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tab_control->Name = L"tab_control";
 			this->tab_control->SelectedIndex = 1;
-			this->tab_control->Size = System::Drawing::Size(1208, 586);
+			this->tab_control->Size = System::Drawing::Size(1611, 721);
 			this->tab_control->TabIndex = 10;
 			// 
 			// tab_editproduct
@@ -1621,10 +1686,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_editproduct->Controls->Add(this->label21);
 			this->tab_editproduct->Controls->Add(this->label22);
 			this->tab_editproduct->Controls->Add(this->label23);
-			this->tab_editproduct->Location = System::Drawing::Point(4, 25);
+			this->tab_editproduct->Location = System::Drawing::Point(4, 28);
+			this->tab_editproduct->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tab_editproduct->Name = L"tab_editproduct";
-			this->tab_editproduct->Padding = System::Windows::Forms::Padding(3);
-			this->tab_editproduct->Size = System::Drawing::Size(1200, 557);
+			this->tab_editproduct->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tab_editproduct->Size = System::Drawing::Size(1603, 689);
 			this->tab_editproduct->TabIndex = 2;
 			this->tab_editproduct->Text = L"Edit Product";
 			// 
@@ -1632,31 +1698,33 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->cb_editCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cb_editCategory->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->cb_editCategory->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18.25F));
+			this->cb_editCategory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
 			this->cb_editCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_editCategory->FormattingEnabled = true;
-			this->cb_editCategory->ItemHeight = 29;
+			this->cb_editCategory->ItemHeight = 36;
 			this->cb_editCategory->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
 				L"Alcohol", L"Fruit/veg/salads", L"Dairy",
 					L"Chilled convenience", L"Bathroom toiletries", L"Household/cleaning", L"Fresh meat", L"Frozen prepared foods", L"Ambient bakery",
 					L"Soft drinks", L"Confectionery", L"Fresh Poultry/game", L"Biscuits", L"Canned goods", L"Petcare", L"Savoury home cooking", L"Savouries",
 					L"Hot beverages", L"Packet cereal", L"Healthcare", L"Others"
 			});
-			this->cb_editCategory->Location = System::Drawing::Point(41, 394);
+			this->cb_editCategory->Location = System::Drawing::Point(55, 485);
+			this->cb_editCategory->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cb_editCategory->Name = L"cb_editCategory";
-			this->cb_editCategory->Size = System::Drawing::Size(346, 37);
+			this->cb_editCategory->Size = System::Drawing::Size(460, 44);
 			this->cb_editCategory->TabIndex = 55;
 			// 
 			// label69
 			// 
-			this->label69->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label69->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label69->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label69->Location = System::Drawing::Point(33, 366);
+			this->label69->Location = System::Drawing::Point(44, 450);
+			this->label69->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label69->Name = L"label69";
-			this->label69->Size = System::Drawing::Size(354, 26);
+			this->label69->Size = System::Drawing::Size(472, 32);
 			this->label69->TabIndex = 54;
 			this->label69->Text = L"Category";
 			// 
@@ -1665,48 +1733,52 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->textBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->textBox2->HideSelection = false;
-			this->textBox2->Location = System::Drawing::Point(38, 393);
+			this->textBox2->Location = System::Drawing::Point(51, 484);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(350, 40);
+			this->textBox2->Size = System::Drawing::Size(466, 49);
 			this->textBox2->TabIndex = 56;
 			// 
 			// inp_editMinStock
 			// 
-			this->inp_editMinStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->inp_editMinStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->inp_editMinStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_editMinStock->Location = System::Drawing::Point(430, 119);
+			this->inp_editMinStock->Location = System::Drawing::Point(573, 146);
+			this->inp_editMinStock->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_editMinStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
 			this->inp_editMinStock->Name = L"inp_editMinStock";
-			this->inp_editMinStock->Size = System::Drawing::Size(350, 40);
+			this->inp_editMinStock->Size = System::Drawing::Size(467, 46);
 			this->inp_editMinStock->TabIndex = 53;
 			this->inp_editMinStock->ValueChanged += gcnew System::EventHandler(this, &inventory::inp_editMinStock_ValueChanged);
 			// 
 			// label57
 			// 
-			this->label57->Font = (gcnew System::Drawing::Font(L"Roboto", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label57->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label57->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label57->Location = System::Drawing::Point(425, 90);
+			this->label57->Location = System::Drawing::Point(567, 111);
+			this->label57->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label57->Name = L"label57";
-			this->label57->Size = System::Drawing::Size(354, 26);
+			this->label57->Size = System::Drawing::Size(472, 32);
 			this->label57->TabIndex = 52;
 			this->label57->Text = L"Minimum Stock";
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(40, 23);
+			this->pictureBox2->Location = System::Drawing::Point(53, 28);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(50, 50);
+			this->pictureBox2->Size = System::Drawing::Size(67, 62);
 			this->pictureBox2->TabIndex = 51;
 			this->pictureBox2->TabStop = false;
 			// 
@@ -1716,9 +1788,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label13->Location = System::Drawing::Point(96, 32);
+			this->label13->Location = System::Drawing::Point(128, 39);
+			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(243, 35);
+			this->label13->Size = System::Drawing::Size(307, 44);
 			this->label13->TabIndex = 50;
 			this->label13->Text = L"Update Product";
 			// 
@@ -1727,15 +1800,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_editCode->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_editCode->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_editCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_editCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_editCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editCode->HideSelection = false;
-			this->inp_editCode->Location = System::Drawing::Point(41, 119);
+			this->inp_editCode->Location = System::Drawing::Point(55, 146);
+			this->inp_editCode->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_editCode->Multiline = true;
 			this->inp_editCode->Name = L"inp_editCode";
-			this->inp_editCode->Size = System::Drawing::Size(350, 40);
+			this->inp_editCode->Size = System::Drawing::Size(466, 49);
 			this->inp_editCode->TabIndex = 49;
 			// 
 			// inp_editDesc
@@ -1743,15 +1817,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_editDesc->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_editDesc->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_editDesc->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_editDesc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_editDesc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editDesc->HideSelection = false;
-			this->inp_editDesc->Location = System::Drawing::Point(42, 304);
+			this->inp_editDesc->Location = System::Drawing::Point(56, 374);
+			this->inp_editDesc->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_editDesc->Multiline = true;
 			this->inp_editDesc->Name = L"inp_editDesc";
-			this->inp_editDesc->Size = System::Drawing::Size(350, 40);
+			this->inp_editDesc->Size = System::Drawing::Size(466, 49);
 			this->inp_editDesc->TabIndex = 48;
 			// 
 			// inp_editName
@@ -1759,40 +1834,43 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_editName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left));
 			this->inp_editName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_editName->Font = (gcnew System::Drawing::Font(L"Roboto Light", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_editName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_editName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editName->HideSelection = false;
-			this->inp_editName->Location = System::Drawing::Point(41, 205);
+			this->inp_editName->Location = System::Drawing::Point(55, 252);
+			this->inp_editName->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_editName->Multiline = true;
 			this->inp_editName->Name = L"inp_editName";
-			this->inp_editName->Size = System::Drawing::Size(350, 40);
+			this->inp_editName->Size = System::Drawing::Size(466, 49);
 			this->inp_editName->TabIndex = 47;
 			// 
 			// inp_editPrice
 			// 
 			this->inp_editPrice->DecimalPlaces = 2;
-			this->inp_editPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_editPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_editPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_editPrice->Location = System::Drawing::Point(430, 309);
+			this->inp_editPrice->Location = System::Drawing::Point(573, 380);
+			this->inp_editPrice->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_editPrice->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->inp_editPrice->Name = L"inp_editPrice";
-			this->inp_editPrice->Size = System::Drawing::Size(350, 36);
+			this->inp_editPrice->Size = System::Drawing::Size(467, 41);
 			this->inp_editPrice->TabIndex = 45;
 			// 
 			// inp_editStock
 			// 
-			this->inp_editStock->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->inp_editStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->inp_editStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_editStock->Location = System::Drawing::Point(429, 209);
+			this->inp_editStock->Location = System::Drawing::Point(572, 257);
+			this->inp_editStock->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_editStock->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1410065408, 2, 0, 0 });
 			this->inp_editStock->Name = L"inp_editStock";
-			this->inp_editStock->Size = System::Drawing::Size(350, 36);
+			this->inp_editStock->Size = System::Drawing::Size(467, 41);
 			this->inp_editStock->TabIndex = 44;
 			// 
 			// btn_editBack
@@ -1800,12 +1878,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_editBack->BackColor = System::Drawing::Color::White;
 			this->btn_editBack->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_editBack->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_editBack->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
+			this->btn_editBack->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->btn_editBack->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_editBack->Location = System::Drawing::Point(789, 477);
+			this->btn_editBack->Location = System::Drawing::Point(1052, 587);
+			this->btn_editBack->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btn_editBack->Name = L"btn_editBack";
-			this->btn_editBack->Size = System::Drawing::Size(171, 41);
+			this->btn_editBack->Size = System::Drawing::Size(228, 50);
 			this->btn_editBack->TabIndex = 39;
 			this->btn_editBack->Text = L"Back";
 			this->btn_editBack->UseVisualStyleBackColor = false;
@@ -1817,11 +1896,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_editUpdate->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->inp_editUpdate->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->inp_editUpdate->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
+			this->inp_editUpdate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->inp_editUpdate->ForeColor = System::Drawing::Color::White;
-			this->inp_editUpdate->Location = System::Drawing::Point(978, 474);
+			this->inp_editUpdate->Location = System::Drawing::Point(1304, 583);
+			this->inp_editUpdate->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_editUpdate->Name = L"inp_editUpdate";
-			this->inp_editUpdate->Size = System::Drawing::Size(189, 50);
+			this->inp_editUpdate->Size = System::Drawing::Size(252, 62);
 			this->inp_editUpdate->TabIndex = 38;
 			this->inp_editUpdate->Text = L"Update Product";
 			this->inp_editUpdate->UseVisualStyleBackColor = false;
@@ -1829,56 +1909,61 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			// label18
 			// 
-			this->label18->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label18->Location = System::Drawing::Point(427, 180);
+			this->label18->Location = System::Drawing::Point(569, 222);
+			this->label18->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(354, 26);
+			this->label18->Size = System::Drawing::Size(472, 32);
 			this->label18->TabIndex = 35;
 			this->label18->Text = L"Stock";
 			// 
 			// label20
 			// 
-			this->label20->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label20->Location = System::Drawing::Point(428, 280);
+			this->label20->Location = System::Drawing::Point(571, 345);
+			this->label20->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(354, 26);
+			this->label20->Size = System::Drawing::Size(472, 32);
 			this->label20->TabIndex = 31;
 			this->label20->Text = L"Price";
 			// 
 			// label21
 			// 
-			this->label21->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label21->Location = System::Drawing::Point(39, 276);
+			this->label21->Location = System::Drawing::Point(52, 340);
+			this->label21->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(354, 26);
+			this->label21->Size = System::Drawing::Size(472, 32);
 			this->label21->TabIndex = 30;
 			this->label21->Text = L"Description";
 			// 
 			// label22
 			// 
-			this->label22->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label22->Location = System::Drawing::Point(38, 91);
+			this->label22->Location = System::Drawing::Point(51, 112);
+			this->label22->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(354, 26);
+			this->label22->Size = System::Drawing::Size(472, 32);
 			this->label22->TabIndex = 28;
 			this->label22->Text = L"Barcode";
 			// 
 			// label23
 			// 
-			this->label23->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label23->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label23->Location = System::Drawing::Point(38, 177);
+			this->label23->Location = System::Drawing::Point(51, 218);
+			this->label23->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(354, 26);
+			this->label23->Size = System::Drawing::Size(472, 32);
 			this->label23->TabIndex = 26;
 			this->label23->Text = L"Product Name";
 			// 
@@ -1889,10 +1974,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_accounts->Controls->Add(this->panel3);
 			this->tab_accounts->Controls->Add(this->panel4);
 			this->tab_accounts->Controls->Add(this->tb_account);
-			this->tab_accounts->Location = System::Drawing::Point(4, 25);
+			this->tab_accounts->Location = System::Drawing::Point(4, 28);
+			this->tab_accounts->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tab_accounts->Name = L"tab_accounts";
-			this->tab_accounts->Padding = System::Windows::Forms::Padding(3);
-			this->tab_accounts->Size = System::Drawing::Size(1200, 557);
+			this->tab_accounts->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tab_accounts->Size = System::Drawing::Size(1603, 689);
 			this->tab_accounts->TabIndex = 3;
 			this->tab_accounts->Text = L"Accounts";
 			// 
@@ -1914,8 +2000,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel1->Controls->Add(this->label37);
 			this->panel1->Controls->Add(this->label38);
 			this->panel1->Location = System::Drawing::Point(1, 1);
+			this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(394, 556);
+			this->panel1->Size = System::Drawing::Size(525, 684);
 			this->panel1->TabIndex = 72;
 			// 
 			// btn_delAcc
@@ -1923,14 +2010,15 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_delAcc->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)));
 			this->btn_delAcc->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_delAcc->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_delAcc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->btn_delAcc->ForeColor = System::Drawing::Color::White;
 			this->btn_delAcc->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_delAcc.Image")));
 			this->btn_delAcc->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_delAcc->Location = System::Drawing::Point(210, 376);
+			this->btn_delAcc->Location = System::Drawing::Point(280, 463);
+			this->btn_delAcc->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_delAcc->Name = L"btn_delAcc";
-			this->btn_delAcc->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->btn_delAcc->Size = System::Drawing::Size(138, 45);
+			this->btn_delAcc->Padding = System::Windows::Forms::Padding(13, 0, 13, 0);
+			this->btn_delAcc->Size = System::Drawing::Size(184, 55);
 			this->btn_delAcc->TabIndex = 78;
 			this->btn_delAcc->Text = L"Delete ";
 			this->btn_delAcc->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -1941,15 +2029,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->cb_accLoginas->BackColor = System::Drawing::Color::White;
 			this->cb_accLoginas->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->cb_accLoginas->Font = (gcnew System::Drawing::Font(L"Roboto Light", 18.25F));
+			this->cb_accLoginas->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
 			this->cb_accLoginas->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->cb_accLoginas->FormattingEnabled = true;
-			this->cb_accLoginas->ItemHeight = 29;
+			this->cb_accLoginas->ItemHeight = 36;
 			this->cb_accLoginas->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Inventory", L"Cashier" });
-			this->cb_accLoginas->Location = System::Drawing::Point(32, 307);
+			this->cb_accLoginas->Location = System::Drawing::Point(43, 378);
+			this->cb_accLoginas->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cb_accLoginas->Name = L"cb_accLoginas";
-			this->cb_accLoginas->Size = System::Drawing::Size(316, 37);
+			this->cb_accLoginas->Size = System::Drawing::Size(420, 44);
 			this->cb_accLoginas->TabIndex = 77;
 			// 
 			// inp_accPass
@@ -1957,14 +2046,15 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_accPass->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
 				static_cast<System::Int32>(static_cast<System::Byte>(195)));
 			this->inp_accPass->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->inp_accPass->Font = (gcnew System::Drawing::Font(L"Roboto Light", 21));
+			this->inp_accPass->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21));
 			this->inp_accPass->ForeColor = System::Drawing::Color::White;
 			this->inp_accPass->HideSelection = false;
-			this->inp_accPass->Location = System::Drawing::Point(32, 201);
+			this->inp_accPass->Location = System::Drawing::Point(43, 247);
+			this->inp_accPass->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_accPass->Multiline = true;
 			this->inp_accPass->Name = L"inp_accPass";
 			this->inp_accPass->PasswordChar = 'o';
-			this->inp_accPass->Size = System::Drawing::Size(316, 36);
+			this->inp_accPass->Size = System::Drawing::Size(421, 44);
 			this->inp_accPass->TabIndex = 76;
 			this->inp_accPass->WordWrap = false;
 			// 
@@ -1973,14 +2063,15 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_uppAcc->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->btn_uppAcc->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_uppAcc->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_uppAcc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->btn_uppAcc->ForeColor = System::Drawing::Color::White;
 			this->btn_uppAcc->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_uppAcc.Image")));
 			this->btn_uppAcc->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_uppAcc->Location = System::Drawing::Point(28, 376);
+			this->btn_uppAcc->Location = System::Drawing::Point(37, 463);
+			this->btn_uppAcc->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_uppAcc->Name = L"btn_uppAcc";
-			this->btn_uppAcc->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->btn_uppAcc->Size = System::Drawing::Size(134, 45);
+			this->btn_uppAcc->Padding = System::Windows::Forms::Padding(13, 0, 13, 0);
+			this->btn_uppAcc->Size = System::Drawing::Size(179, 55);
 			this->btn_uppAcc->TabIndex = 75;
 			this->btn_uppAcc->Text = L"Update";
 			this->btn_uppAcc->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -1991,15 +2082,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->btn_addAcc->BackColor = System::Drawing::Color::White;
 			this->btn_addAcc->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_addAcc->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_addAcc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->btn_addAcc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->btn_addAcc->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_addAcc.Image")));
 			this->btn_addAcc->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_addAcc->Location = System::Drawing::Point(210, 376);
+			this->btn_addAcc->Location = System::Drawing::Point(280, 463);
+			this->btn_addAcc->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_addAcc->Name = L"btn_addAcc";
-			this->btn_addAcc->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->btn_addAcc->Size = System::Drawing::Size(138, 45);
+			this->btn_addAcc->Padding = System::Windows::Forms::Padding(13, 0, 13, 0);
+			this->btn_addAcc->Size = System::Drawing::Size(184, 55);
 			this->btn_addAcc->TabIndex = 74;
 			this->btn_addAcc->Text = L"Add";
 			this->btn_addAcc->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -2013,9 +2105,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_accMode->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btn_accMode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->btn_accMode->ForeColor = System::Drawing::Color::White;
-			this->btn_accMode->Location = System::Drawing::Point(241, 26);
+			this->btn_accMode->Location = System::Drawing::Point(321, 32);
+			this->btn_accMode->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btn_accMode->Name = L"btn_accMode";
-			this->btn_accMode->Size = System::Drawing::Size(107, 35);
+			this->btn_accMode->Size = System::Drawing::Size(143, 43);
 			this->btn_accMode->TabIndex = 58;
 			this->btn_accMode->Text = L"Add Mode";
 			this->btn_accMode->UseVisualStyleBackColor = false;
@@ -2026,25 +2119,27 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->inp_accUser->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
 				static_cast<System::Int32>(static_cast<System::Byte>(195)));
 			this->inp_accUser->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->inp_accUser->Font = (gcnew System::Drawing::Font(L"Roboto Light", 21));
+			this->inp_accUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21));
 			this->inp_accUser->ForeColor = System::Drawing::Color::White;
 			this->inp_accUser->HideSelection = false;
-			this->inp_accUser->Location = System::Drawing::Point(32, 110);
+			this->inp_accUser->Location = System::Drawing::Point(43, 135);
+			this->inp_accUser->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->inp_accUser->Multiline = true;
 			this->inp_accUser->Name = L"inp_accUser";
-			this->inp_accUser->Size = System::Drawing::Size(316, 36);
+			this->inp_accUser->Size = System::Drawing::Size(421, 44);
 			this->inp_accUser->TabIndex = 72;
 			this->inp_accUser->WordWrap = false;
 			// 
 			// label30
 			// 
 			this->label30->AutoSize = true;
-			this->label30->Font = (gcnew System::Drawing::Font(L"Roboto", 23, System::Drawing::FontStyle::Bold));
+			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label30->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label30->Location = System::Drawing::Point(25, 24);
+			this->label30->Location = System::Drawing::Point(33, 30);
+			this->label30->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(132, 37);
+			this->label30->Size = System::Drawing::Size(170, 44);
 			this->label30->TabIndex = 71;
 			this->label30->Text = L"Account";
 			// 
@@ -2052,11 +2147,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label34->AutoSize = true;
 			this->label34->BackColor = System::Drawing::Color::Transparent;
-			this->label34->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label34->ForeColor = System::Drawing::Color::White;
-			this->label34->Location = System::Drawing::Point(28, 167);
+			this->label34->Location = System::Drawing::Point(37, 206);
+			this->label34->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(94, 23);
+			this->label34->Size = System::Drawing::Size(120, 29);
 			this->label34->TabIndex = 54;
 			this->label34->Text = L"Password";
 			// 
@@ -2064,52 +2160,57 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label35->AutoSize = true;
 			this->label35->BackColor = System::Drawing::Color::Transparent;
-			this->label35->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label35->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label35->ForeColor = System::Drawing::Color::White;
-			this->label35->Location = System::Drawing::Point(28, 80);
+			this->label35->Location = System::Drawing::Point(37, 98);
+			this->label35->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(95, 23);
+			this->label35->Size = System::Drawing::Size(124, 29);
 			this->label35->TabIndex = 62;
 			this->label35->Text = L"Username";
 			// 
 			// label36
 			// 
 			this->label36->BackColor = System::Drawing::Color::Transparent;
-			this->label36->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label36->ForeColor = System::Drawing::Color::White;
-			this->label36->Location = System::Drawing::Point(28, 183);
+			this->label36->Location = System::Drawing::Point(37, 225);
+			this->label36->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label36->Name = L"label36";
-			this->label36->Size = System::Drawing::Size(280, 26);
+			this->label36->Size = System::Drawing::Size(373, 32);
 			this->label36->TabIndex = 55;
 			// 
 			// label37
 			// 
 			this->label37->AutoSize = true;
 			this->label37->BackColor = System::Drawing::Color::Transparent;
-			this->label37->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label37->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label37->ForeColor = System::Drawing::Color::White;
-			this->label37->Location = System::Drawing::Point(28, 272);
+			this->label37->Location = System::Drawing::Point(37, 335);
+			this->label37->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label37->Name = L"label37";
-			this->label37->Size = System::Drawing::Size(84, 23);
+			this->label37->Size = System::Drawing::Size(106, 29);
 			this->label37->TabIndex = 56;
 			this->label37->Text = L"Login As";
 			// 
 			// label38
 			// 
 			this->label38->BackColor = System::Drawing::Color::Transparent;
-			this->label38->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label38->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label38->ForeColor = System::Drawing::Color::White;
-			this->label38->Location = System::Drawing::Point(28, 237);
+			this->label38->Location = System::Drawing::Point(37, 292);
+			this->label38->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label38->Name = L"label38";
-			this->label38->Size = System::Drawing::Size(266, 26);
+			this->label38->Size = System::Drawing::Size(355, 32);
 			this->label38->TabIndex = 57;
 			// 
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::Color::White;
-			this->panel3->Location = System::Drawing::Point(364, 38);
+			this->panel3->Location = System::Drawing::Point(485, 47);
+			this->panel3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(43, 455);
+			this->panel3->Size = System::Drawing::Size(57, 560);
 			this->panel3->TabIndex = 75;
 			// 
 			// panel4
@@ -2118,28 +2219,31 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->panel4->Controls->Add(this->label16);
 			this->panel4->Controls->Add(this->label17);
-			this->panel4->Location = System::Drawing::Point(407, 25);
+			this->panel4->Location = System::Drawing::Point(543, 31);
+			this->panel4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(501, 36);
+			this->panel4->Size = System::Drawing::Size(668, 44);
 			this->panel4->TabIndex = 74;
 			// 
 			// label16
 			// 
-			this->label16->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label16->ForeColor = System::Drawing::Color::White;
-			this->label16->Location = System::Drawing::Point(2, 7);
+			this->label16->Location = System::Drawing::Point(3, 9);
+			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(148, 26);
+			this->label16->Size = System::Drawing::Size(197, 32);
 			this->label16->TabIndex = 63;
 			this->label16->Text = L"Username";
 			// 
 			// label17
 			// 
-			this->label17->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label17->ForeColor = System::Drawing::Color::White;
-			this->label17->Location = System::Drawing::Point(251, 6);
+			this->label17->Location = System::Drawing::Point(335, 7);
+			this->label17->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(117, 26);
+			this->label17->Size = System::Drawing::Size(156, 32);
 			this->label17->TabIndex = 62;
 			this->label17->Text = L"Staff Role";
 			// 
@@ -2151,7 +2255,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_account->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
 			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle5->Padding = System::Windows::Forms::Padding(1);
 			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -2167,7 +2271,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_account->Cursor = System::Windows::Forms::Cursors::Hand;
 			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle6->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			dataGridViewCellStyle6->ForeColor = System::Drawing::SystemColors::ControlText;
 			dataGridViewCellStyle6->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
 			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -2178,7 +2282,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_account->Enabled = false;
 			this->tb_account->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			this->tb_account->Location = System::Drawing::Point(366, 38);
+			this->tb_account->Location = System::Drawing::Point(488, 47);
+			this->tb_account->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tb_account->Name = L"tb_account";
 			this->tb_account->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
 			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
@@ -2194,7 +2299,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			dataGridViewCellStyle8->Padding = System::Windows::Forms::Padding(2);
 			this->tb_account->RowsDefaultCellStyle = dataGridViewCellStyle8;
 			this->tb_account->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->tb_account->Size = System::Drawing::Size(542, 430);
+			this->tb_account->Size = System::Drawing::Size(723, 529);
 			this->tb_account->TabIndex = 73;
 			this->tb_account->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_account_CellClick);
 			// 
@@ -2224,10 +2329,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_sales->Controls->Add(this->panel9);
 			this->tab_sales->Controls->Add(this->panel10);
 			this->tab_sales->Controls->Add(this->tb_sales);
-			this->tab_sales->Location = System::Drawing::Point(4, 25);
+			this->tab_sales->Location = System::Drawing::Point(4, 28);
+			this->tab_sales->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tab_sales->Name = L"tab_sales";
-			this->tab_sales->Padding = System::Windows::Forms::Padding(3);
-			this->tab_sales->Size = System::Drawing::Size(1200, 557);
+			this->tab_sales->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tab_sales->Size = System::Drawing::Size(1603, 689);
 			this->tab_sales->TabIndex = 4;
 			this->tab_sales->Text = L"tabPage1";
 			this->tab_sales->Click += gcnew System::EventHandler(this, &inventory::tab_sales_Click);
@@ -2238,9 +2344,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(79)));
 			this->panel14->Controls->Add(this->lbl_saleSold);
 			this->panel14->Controls->Add(this->label65);
-			this->panel14->Location = System::Drawing::Point(1001, 24);
+			this->panel14->Location = System::Drawing::Point(1335, 30);
+			this->panel14->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel14->Name = L"panel14";
-			this->panel14->Size = System::Drawing::Size(153, 100);
+			this->panel14->Size = System::Drawing::Size(204, 123);
 			this->panel14->TabIndex = 82;
 			// 
 			// lbl_saleSold
@@ -2248,9 +2355,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_saleSold->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_saleSold->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_saleSold->ForeColor = System::Drawing::Color::White;
-			this->lbl_saleSold->Location = System::Drawing::Point(9, 38);
+			this->lbl_saleSold->Location = System::Drawing::Point(12, 47);
+			this->lbl_saleSold->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_saleSold->Name = L"lbl_saleSold";
-			this->lbl_saleSold->Size = System::Drawing::Size(121, 42);
+			this->lbl_saleSold->Size = System::Drawing::Size(161, 52);
 			this->lbl_saleSold->TabIndex = 77;
 			this->lbl_saleSold->Text = L"1200";
 			// 
@@ -2258,11 +2366,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label65->AutoSize = true;
 			this->label65->BackColor = System::Drawing::Color::Transparent;
-			this->label65->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14));
+			this->label65->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label65->ForeColor = System::Drawing::Color::White;
-			this->label65->Location = System::Drawing::Point(12, 11);
+			this->label65->Location = System::Drawing::Point(16, 14);
+			this->label65->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label65->Name = L"label65";
-			this->label65->Size = System::Drawing::Size(118, 23);
+			this->label65->Size = System::Drawing::Size(152, 29);
 			this->label65->TabIndex = 76;
 			this->label65->Text = L"Product Sold";
 			// 
@@ -2272,9 +2381,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(84)));
 			this->panel13->Controls->Add(this->lbl_salesTrans);
 			this->panel13->Controls->Add(this->label63);
-			this->panel13->Location = System::Drawing::Point(853, 24);
+			this->panel13->Location = System::Drawing::Point(1137, 30);
+			this->panel13->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel13->Name = L"panel13";
-			this->panel13->Size = System::Drawing::Size(138, 100);
+			this->panel13->Size = System::Drawing::Size(184, 123);
 			this->panel13->TabIndex = 81;
 			// 
 			// lbl_salesTrans
@@ -2282,9 +2392,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_salesTrans->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_salesTrans->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_salesTrans->ForeColor = System::Drawing::Color::White;
-			this->lbl_salesTrans->Location = System::Drawing::Point(9, 38);
+			this->lbl_salesTrans->Location = System::Drawing::Point(12, 47);
+			this->lbl_salesTrans->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_salesTrans->Name = L"lbl_salesTrans";
-			this->lbl_salesTrans->Size = System::Drawing::Size(120, 42);
+			this->lbl_salesTrans->Size = System::Drawing::Size(160, 52);
 			this->lbl_salesTrans->TabIndex = 77;
 			this->lbl_salesTrans->Text = L"500";
 			// 
@@ -2292,11 +2403,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label63->AutoSize = true;
 			this->label63->BackColor = System::Drawing::Color::Transparent;
-			this->label63->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14));
+			this->label63->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label63->ForeColor = System::Drawing::Color::White;
-			this->label63->Location = System::Drawing::Point(12, 11);
+			this->label63->Location = System::Drawing::Point(16, 14);
+			this->label63->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label63->Name = L"label63";
-			this->label63->Size = System::Drawing::Size(117, 23);
+			this->label63->Size = System::Drawing::Size(151, 29);
 			this->label63->TabIndex = 76;
 			this->label63->Text = L"Transactions";
 			// 
@@ -2306,9 +2418,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(99)));
 			this->panel12->Controls->Add(this->lbl_salesMon);
 			this->panel12->Controls->Add(this->label56);
-			this->panel12->Location = System::Drawing::Point(612, 24);
+			this->panel12->Location = System::Drawing::Point(816, 30);
+			this->panel12->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel12->Name = L"panel12";
-			this->panel12->Size = System::Drawing::Size(232, 100);
+			this->panel12->Size = System::Drawing::Size(309, 123);
 			this->panel12->TabIndex = 80;
 			// 
 			// lbl_salesMon
@@ -2316,9 +2429,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_salesMon->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_salesMon->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_salesMon->ForeColor = System::Drawing::Color::White;
-			this->lbl_salesMon->Location = System::Drawing::Point(9, 38);
+			this->lbl_salesMon->Location = System::Drawing::Point(12, 47);
+			this->lbl_salesMon->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_salesMon->Name = L"lbl_salesMon";
-			this->lbl_salesMon->Size = System::Drawing::Size(207, 42);
+			this->lbl_salesMon->Size = System::Drawing::Size(276, 52);
 			this->lbl_salesMon->TabIndex = 77;
 			this->lbl_salesMon->Text = L"1,000,501.50";
 			// 
@@ -2326,11 +2440,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label56->AutoSize = true;
 			this->label56->BackColor = System::Drawing::Color::Transparent;
-			this->label56->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14));
+			this->label56->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label56->ForeColor = System::Drawing::Color::White;
-			this->label56->Location = System::Drawing::Point(12, 11);
+			this->label56->Location = System::Drawing::Point(16, 14);
+			this->label56->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label56->Name = L"label56";
-			this->label56->Size = System::Drawing::Size(116, 23);
+			this->label56->Size = System::Drawing::Size(151, 29);
 			this->label56->TabIndex = 76;
 			this->label56->Text = L"Monthly Sale";
 			// 
@@ -2340,9 +2455,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 				static_cast<System::Int32>(static_cast<System::Byte>(107)));
 			this->panel11->Controls->Add(this->lbl_overSale);
 			this->panel11->Controls->Add(this->label24);
-			this->panel11->Location = System::Drawing::Point(367, 24);
+			this->panel11->Location = System::Drawing::Point(489, 30);
+			this->panel11->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel11->Name = L"panel11";
-			this->panel11->Size = System::Drawing::Size(235, 100);
+			this->panel11->Size = System::Drawing::Size(313, 123);
 			this->panel11->TabIndex = 79;
 			// 
 			// lbl_overSale
@@ -2350,9 +2466,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_overSale->BackColor = System::Drawing::Color::Transparent;
 			this->lbl_overSale->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_overSale->ForeColor = System::Drawing::Color::White;
-			this->lbl_overSale->Location = System::Drawing::Point(9, 38);
+			this->lbl_overSale->Location = System::Drawing::Point(12, 47);
+			this->lbl_overSale->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_overSale->Name = L"lbl_overSale";
-			this->lbl_overSale->Size = System::Drawing::Size(221, 42);
+			this->lbl_overSale->Size = System::Drawing::Size(295, 52);
 			this->lbl_overSale->TabIndex = 77;
 			this->lbl_overSale->Text = L"1,000,501.50";
 			// 
@@ -2360,11 +2477,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label24->AutoSize = true;
 			this->label24->BackColor = System::Drawing::Color::Transparent;
-			this->label24->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14));
+			this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label24->ForeColor = System::Drawing::Color::White;
-			this->label24->Location = System::Drawing::Point(12, 11);
+			this->label24->Location = System::Drawing::Point(16, 14);
+			this->label24->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(106, 23);
+			this->label24->Size = System::Drawing::Size(145, 29);
 			this->label24->TabIndex = 76;
 			this->label24->Text = L"Overall Sale";
 			// 
@@ -2386,23 +2504,25 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel8->Controls->Add(this->label52);
 			this->panel8->Controls->Add(this->lbl_salesDate);
 			this->panel8->Location = System::Drawing::Point(0, 0);
+			this->panel8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(333, 556);
+			this->panel8->Size = System::Drawing::Size(444, 684);
 			this->panel8->TabIndex = 75;
 			// 
 			// btn_salesView
 			// 
 			this->btn_salesView->BackColor = System::Drawing::Color::White;
 			this->btn_salesView->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_salesView->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_salesView->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->btn_salesView->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->btn_salesView->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_salesView.Image")));
 			this->btn_salesView->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_salesView->Location = System::Drawing::Point(204, 415);
+			this->btn_salesView->Location = System::Drawing::Point(272, 511);
+			this->btn_salesView->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_salesView->Name = L"btn_salesView";
-			this->btn_salesView->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->btn_salesView->Size = System::Drawing::Size(114, 45);
+			this->btn_salesView->Padding = System::Windows::Forms::Padding(13, 0, 13, 0);
+			this->btn_salesView->Size = System::Drawing::Size(152, 55);
 			this->btn_salesView->TabIndex = 75;
 			this->btn_salesView->Text = L"View";
 			this->btn_salesView->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -2412,13 +2532,14 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label25->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
 				static_cast<System::Int32>(static_cast<System::Byte>(195)));
-			this->label25->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label25->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->label25->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label25.Image")));
-			this->label25->Location = System::Drawing::Point(267, 110);
+			this->label25->Location = System::Drawing::Point(356, 135);
+			this->label25->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(41, 36);
+			this->label25->Size = System::Drawing::Size(55, 44);
 			this->label25->TabIndex = 73;
 			// 
 			// lbl_salesCode
@@ -2426,47 +2547,51 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->lbl_salesCode->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
 				static_cast<System::Int32>(static_cast<System::Byte>(195)));
 			this->lbl_salesCode->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->lbl_salesCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 21));
+			this->lbl_salesCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21));
 			this->lbl_salesCode->ForeColor = System::Drawing::Color::White;
 			this->lbl_salesCode->HideSelection = false;
-			this->lbl_salesCode->Location = System::Drawing::Point(32, 110);
+			this->lbl_salesCode->Location = System::Drawing::Point(43, 135);
+			this->lbl_salesCode->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->lbl_salesCode->Multiline = true;
 			this->lbl_salesCode->Name = L"lbl_salesCode";
-			this->lbl_salesCode->Size = System::Drawing::Size(276, 36);
+			this->lbl_salesCode->Size = System::Drawing::Size(368, 44);
 			this->lbl_salesCode->TabIndex = 72;
 			this->lbl_salesCode->WordWrap = false;
 			// 
 			// label27
 			// 
 			this->label27->AutoSize = true;
-			this->label27->Font = (gcnew System::Drawing::Font(L"Roboto", 23, System::Drawing::FontStyle::Bold));
+			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label27->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label27->Location = System::Drawing::Point(25, 24);
+			this->label27->Location = System::Drawing::Point(33, 30);
+			this->label27->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(196, 37);
+			this->label27->Size = System::Drawing::Size(259, 44);
 			this->label27->TabIndex = 71;
 			this->label27->Text = L"Sales Report";
 			// 
 			// lbl_salesQuan
 			// 
 			this->lbl_salesQuan->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_salesQuan->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_salesQuan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_salesQuan->ForeColor = System::Drawing::Color::White;
-			this->lbl_salesQuan->Location = System::Drawing::Point(28, 298);
+			this->lbl_salesQuan->Location = System::Drawing::Point(37, 367);
+			this->lbl_salesQuan->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_salesQuan->Name = L"lbl_salesQuan";
-			this->lbl_salesQuan->Size = System::Drawing::Size(280, 26);
+			this->lbl_salesQuan->Size = System::Drawing::Size(373, 32);
 			this->lbl_salesQuan->TabIndex = 65;
 			// 
 			// label32
 			// 
 			this->label32->AutoSize = true;
 			this->label32->BackColor = System::Drawing::Color::Transparent;
-			this->label32->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label32->ForeColor = System::Drawing::Color::White;
-			this->label32->Location = System::Drawing::Point(28, 271);
+			this->label32->Location = System::Drawing::Point(37, 334);
+			this->label32->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(126, 23);
+			this->label32->Size = System::Drawing::Size(161, 29);
 			this->label32->TabIndex = 64;
 			this->label32->Text = L"Total Quantity";
 			// 
@@ -2474,11 +2599,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label33->AutoSize = true;
 			this->label33->BackColor = System::Drawing::Color::Transparent;
-			this->label33->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label33->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label33->ForeColor = System::Drawing::Color::White;
-			this->label33->Location = System::Drawing::Point(28, 157);
+			this->label33->Location = System::Drawing::Point(37, 193);
+			this->label33->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label33->Name = L"label33";
-			this->label33->Size = System::Drawing::Size(148, 23);
+			this->label33->Size = System::Drawing::Size(188, 29);
 			this->label33->TabIndex = 54;
 			this->label33->Text = L"Customer Name";
 			// 
@@ -2486,74 +2612,81 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label40->AutoSize = true;
 			this->label40->BackColor = System::Drawing::Color::Transparent;
-			this->label40->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label40->ForeColor = System::Drawing::Color::White;
-			this->label40->Location = System::Drawing::Point(28, 80);
+			this->label40->Location = System::Drawing::Point(37, 98);
+			this->label40->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(157, 23);
+			this->label40->Size = System::Drawing::Size(204, 29);
 			this->label40->TabIndex = 62;
 			this->label40->Text = L"Transaction Code";
 			// 
 			// lbl_salesCust
 			// 
 			this->lbl_salesCust->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_salesCust->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_salesCust->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_salesCust->ForeColor = System::Drawing::Color::White;
-			this->lbl_salesCust->Location = System::Drawing::Point(28, 183);
+			this->lbl_salesCust->Location = System::Drawing::Point(37, 225);
+			this->lbl_salesCust->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_salesCust->Name = L"lbl_salesCust";
-			this->lbl_salesCust->Size = System::Drawing::Size(280, 26);
+			this->lbl_salesCust->Size = System::Drawing::Size(373, 32);
 			this->lbl_salesCust->TabIndex = 55;
 			// 
 			// label47
 			// 
 			this->label47->AutoSize = true;
 			this->label47->BackColor = System::Drawing::Color::Transparent;
-			this->label47->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label47->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label47->ForeColor = System::Drawing::Color::White;
-			this->label47->Location = System::Drawing::Point(28, 212);
+			this->label47->Location = System::Drawing::Point(37, 261);
+			this->label47->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label47->Name = L"label47";
-			this->label47->Size = System::Drawing::Size(100, 23);
+			this->label47->Size = System::Drawing::Size(130, 29);
 			this->label47->TabIndex = 56;
 			this->label47->Text = L"Total Price";
 			// 
 			// lbl_salesPrice
 			// 
 			this->lbl_salesPrice->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_salesPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_salesPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_salesPrice->ForeColor = System::Drawing::Color::White;
-			this->lbl_salesPrice->Location = System::Drawing::Point(28, 237);
+			this->lbl_salesPrice->Location = System::Drawing::Point(37, 292);
+			this->lbl_salesPrice->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_salesPrice->Name = L"lbl_salesPrice";
-			this->lbl_salesPrice->Size = System::Drawing::Size(266, 26);
+			this->lbl_salesPrice->Size = System::Drawing::Size(355, 32);
 			this->lbl_salesPrice->TabIndex = 57;
 			// 
 			// label52
 			// 
 			this->label52->AutoSize = true;
 			this->label52->BackColor = System::Drawing::Color::Transparent;
-			this->label52->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label52->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label52->ForeColor = System::Drawing::Color::White;
-			this->label52->Location = System::Drawing::Point(28, 334);
+			this->label52->Location = System::Drawing::Point(37, 411);
+			this->label52->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label52->Name = L"label52";
-			this->label52->Size = System::Drawing::Size(48, 23);
+			this->label52->Size = System::Drawing::Size(63, 29);
 			this->label52->TabIndex = 58;
 			this->label52->Text = L"Date";
 			// 
 			// lbl_salesDate
 			// 
 			this->lbl_salesDate->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_salesDate->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_salesDate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_salesDate->ForeColor = System::Drawing::Color::White;
-			this->lbl_salesDate->Location = System::Drawing::Point(28, 361);
+			this->lbl_salesDate->Location = System::Drawing::Point(37, 444);
+			this->lbl_salesDate->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_salesDate->Name = L"lbl_salesDate";
-			this->lbl_salesDate->Size = System::Drawing::Size(274, 26);
+			this->lbl_salesDate->Size = System::Drawing::Size(365, 32);
 			this->lbl_salesDate->TabIndex = 59;
 			// 
 			// panel9
 			// 
 			this->panel9->BackColor = System::Drawing::Color::White;
-			this->panel9->Location = System::Drawing::Point(324, 61);
+			this->panel9->Location = System::Drawing::Point(432, 75);
+			this->panel9->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel9->Name = L"panel9";
-			this->panel9->Size = System::Drawing::Size(43, 531);
+			this->panel9->Size = System::Drawing::Size(57, 654);
 			this->panel9->TabIndex = 78;
 			// 
 			// panel10
@@ -2565,58 +2698,64 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel10->Controls->Add(this->label60);
 			this->panel10->Controls->Add(this->label61);
 			this->panel10->Controls->Add(this->label62);
-			this->panel10->Location = System::Drawing::Point(367, 142);
+			this->panel10->Location = System::Drawing::Point(489, 175);
+			this->panel10->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel10->Name = L"panel10";
-			this->panel10->Size = System::Drawing::Size(787, 36);
+			this->panel10->Size = System::Drawing::Size(1049, 44);
 			this->panel10->TabIndex = 77;
 			// 
 			// label58
 			// 
-			this->label58->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label58->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label58->ForeColor = System::Drawing::Color::White;
-			this->label58->Location = System::Drawing::Point(513, 10);
+			this->label58->Location = System::Drawing::Point(684, 12);
+			this->label58->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label58->Name = L"label58";
-			this->label58->Size = System::Drawing::Size(123, 26);
+			this->label58->Size = System::Drawing::Size(164, 32);
 			this->label58->TabIndex = 64;
 			this->label58->Text = L"Total Quantity";
 			// 
 			// label59
 			// 
-			this->label59->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label59->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label59->ForeColor = System::Drawing::Color::White;
-			this->label59->Location = System::Drawing::Point(3, 10);
+			this->label59->Location = System::Drawing::Point(4, 12);
+			this->label59->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label59->Name = L"label59";
-			this->label59->Size = System::Drawing::Size(151, 26);
+			this->label59->Size = System::Drawing::Size(201, 32);
 			this->label59->TabIndex = 63;
 			this->label59->Text = L"Transaction Code";
 			// 
 			// label60
 			// 
-			this->label60->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label60->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label60->ForeColor = System::Drawing::Color::White;
-			this->label60->Location = System::Drawing::Point(658, 10);
+			this->label60->Location = System::Drawing::Point(877, 12);
+			this->label60->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label60->Name = L"label60";
-			this->label60->Size = System::Drawing::Size(117, 26);
+			this->label60->Size = System::Drawing::Size(156, 32);
 			this->label60->TabIndex = 62;
 			this->label60->Text = L"Date";
 			// 
 			// label61
 			// 
-			this->label61->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label61->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label61->ForeColor = System::Drawing::Color::White;
-			this->label61->Location = System::Drawing::Point(354, 10);
+			this->label61->Location = System::Drawing::Point(472, 12);
+			this->label61->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label61->Name = L"label61";
-			this->label61->Size = System::Drawing::Size(123, 26);
+			this->label61->Size = System::Drawing::Size(164, 32);
 			this->label61->TabIndex = 61;
 			this->label61->Text = L"Total Price";
 			// 
 			// label62
 			// 
-			this->label62->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label62->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label62->ForeColor = System::Drawing::Color::White;
-			this->label62->Location = System::Drawing::Point(150, 10);
+			this->label62->Location = System::Drawing::Point(200, 12);
+			this->label62->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label62->Name = L"label62";
-			this->label62->Size = System::Drawing::Size(151, 26);
+			this->label62->Size = System::Drawing::Size(201, 32);
 			this->label62->TabIndex = 60;
 			this->label62->Text = L"Customer Name";
 			// 
@@ -2628,7 +2767,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_sales->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
 			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle9->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			dataGridViewCellStyle9->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle9->Padding = System::Windows::Forms::Padding(1);
 			dataGridViewCellStyle9->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -2644,7 +2783,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_sales->Cursor = System::Windows::Forms::Cursors::Hand;
 			dataGridViewCellStyle10->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle10->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle10->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			dataGridViewCellStyle10->ForeColor = System::Drawing::SystemColors::ControlText;
 			dataGridViewCellStyle10->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
 			dataGridViewCellStyle10->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -2654,12 +2793,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_sales->DefaultCellStyle = dataGridViewCellStyle10;
 			this->tb_sales->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			this->tb_sales->Location = System::Drawing::Point(324, 157);
+			this->tb_sales->Location = System::Drawing::Point(432, 193);
+			this->tb_sales->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tb_sales->Name = L"tb_sales";
 			this->tb_sales->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
 			dataGridViewCellStyle11->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle11->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle11->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle11->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle11->SelectionBackColor = System::Drawing::SystemColors::Highlight;
@@ -2667,12 +2807,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			dataGridViewCellStyle11->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->tb_sales->RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
 			this->tb_sales->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Roboto", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle12->Padding = System::Windows::Forms::Padding(2);
 			this->tb_sales->RowsDefaultCellStyle = dataGridViewCellStyle12;
 			this->tb_sales->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->tb_sales->Size = System::Drawing::Size(830, 350);
+			this->tb_sales->Size = System::Drawing::Size(1107, 431);
 			this->tb_sales->TabIndex = 76;
 			this->tb_sales->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_salesCellClick);
 			// 
@@ -2717,10 +2857,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tab_transaction->Controls->Add(this->panel19);
 			this->tab_transaction->Controls->Add(this->panel20);
 			this->tab_transaction->Controls->Add(this->tb_tranProduct);
-			this->tab_transaction->Location = System::Drawing::Point(4, 25);
+			this->tab_transaction->Location = System::Drawing::Point(4, 28);
+			this->tab_transaction->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tab_transaction->Name = L"tab_transaction";
-			this->tab_transaction->Padding = System::Windows::Forms::Padding(3);
-			this->tab_transaction->Size = System::Drawing::Size(1200, 557);
+			this->tab_transaction->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tab_transaction->Size = System::Drawing::Size(1603, 689);
 			this->tab_transaction->TabIndex = 5;
 			this->tab_transaction->Text = L"tabPage1";
 			// 
@@ -2742,18 +2883,20 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel21->Controls->Add(this->label74);
 			this->panel21->Controls->Add(this->lbl_tranDate);
 			this->panel21->Location = System::Drawing::Point(1, 1);
+			this->panel21->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel21->Name = L"panel21";
-			this->panel21->Size = System::Drawing::Size(333, 556);
+			this->panel21->Size = System::Drawing::Size(444, 684);
 			this->panel21->TabIndex = 76;
 			// 
 			// lbl_tranCode
 			// 
 			this->lbl_tranCode->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_tranCode->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_tranCode->ForeColor = System::Drawing::Color::White;
-			this->lbl_tranCode->Location = System::Drawing::Point(35, 108);
+			this->lbl_tranCode->Location = System::Drawing::Point(47, 133);
+			this->lbl_tranCode->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_tranCode->Name = L"lbl_tranCode";
-			this->lbl_tranCode->Size = System::Drawing::Size(280, 26);
+			this->lbl_tranCode->Size = System::Drawing::Size(373, 32);
 			this->lbl_tranCode->TabIndex = 77;
 			// 
 			// btn_tranDel
@@ -2761,14 +2904,15 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_tranDel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)));
 			this->btn_tranDel->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_tranDel->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->btn_tranDel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->btn_tranDel->ForeColor = System::Drawing::Color::White;
 			this->btn_tranDel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_tranDel.Image")));
 			this->btn_tranDel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_tranDel->Location = System::Drawing::Point(177, 445);
+			this->btn_tranDel->Location = System::Drawing::Point(236, 548);
+			this->btn_tranDel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_tranDel->Name = L"btn_tranDel";
-			this->btn_tranDel->Padding = System::Windows::Forms::Padding(10, 0, 10, 0);
-			this->btn_tranDel->Size = System::Drawing::Size(138, 45);
+			this->btn_tranDel->Padding = System::Windows::Forms::Padding(13, 0, 13, 0);
+			this->btn_tranDel->Size = System::Drawing::Size(184, 55);
 			this->btn_tranDel->TabIndex = 76;
 			this->btn_tranDel->Text = L"Delete ";
 			this->btn_tranDel->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -2778,12 +2922,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->btn_tranBack->BackColor = System::Drawing::Color::White;
 			this->btn_tranBack->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_tranBack->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_tranBack->Font = (gcnew System::Drawing::Font(L"Roboto Light", 14.25F));
+			this->btn_tranBack->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->btn_tranBack->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_tranBack->Location = System::Drawing::Point(26, 445);
+			this->btn_tranBack->Location = System::Drawing::Point(35, 548);
+			this->btn_tranBack->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btn_tranBack->Name = L"btn_tranBack";
-			this->btn_tranBack->Size = System::Drawing::Size(128, 45);
+			this->btn_tranBack->Size = System::Drawing::Size(171, 55);
 			this->btn_tranBack->TabIndex = 75;
 			this->btn_tranBack->Text = L"Back";
 			this->btn_tranBack->UseVisualStyleBackColor = false;
@@ -2792,34 +2937,37 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// label55
 			// 
 			this->label55->AutoSize = true;
-			this->label55->Font = (gcnew System::Drawing::Font(L"Roboto", 23, System::Drawing::FontStyle::Bold));
+			this->label55->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label55->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->label55->Location = System::Drawing::Point(23, 24);
+			this->label55->Location = System::Drawing::Point(31, 30);
+			this->label55->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label55->Name = L"label55";
-			this->label55->Size = System::Drawing::Size(198, 37);
+			this->label55->Size = System::Drawing::Size(259, 44);
 			this->label55->TabIndex = 71;
 			this->label55->Text = L"Transactions";
 			// 
 			// lbl_tranQuan
 			// 
 			this->lbl_tranQuan->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_tranQuan->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranQuan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_tranQuan->ForeColor = System::Drawing::Color::White;
-			this->lbl_tranQuan->Location = System::Drawing::Point(28, 298);
+			this->lbl_tranQuan->Location = System::Drawing::Point(37, 367);
+			this->lbl_tranQuan->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_tranQuan->Name = L"lbl_tranQuan";
-			this->lbl_tranQuan->Size = System::Drawing::Size(280, 26);
+			this->lbl_tranQuan->Size = System::Drawing::Size(373, 32);
 			this->lbl_tranQuan->TabIndex = 65;
 			// 
 			// label64
 			// 
 			this->label64->AutoSize = true;
 			this->label64->BackColor = System::Drawing::Color::Transparent;
-			this->label64->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label64->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label64->ForeColor = System::Drawing::Color::White;
-			this->label64->Location = System::Drawing::Point(28, 271);
+			this->label64->Location = System::Drawing::Point(37, 334);
+			this->label64->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label64->Name = L"label64";
-			this->label64->Size = System::Drawing::Size(126, 23);
+			this->label64->Size = System::Drawing::Size(161, 29);
 			this->label64->TabIndex = 64;
 			this->label64->Text = L"Total Quantity";
 			// 
@@ -2827,11 +2975,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label66->AutoSize = true;
 			this->label66->BackColor = System::Drawing::Color::Transparent;
-			this->label66->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label66->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label66->ForeColor = System::Drawing::Color::White;
-			this->label66->Location = System::Drawing::Point(28, 143);
+			this->label66->Location = System::Drawing::Point(37, 176);
+			this->label66->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label66->Name = L"label66";
-			this->label66->Size = System::Drawing::Size(148, 23);
+			this->label66->Size = System::Drawing::Size(188, 29);
 			this->label66->TabIndex = 54;
 			this->label66->Text = L"Customer Name";
 			// 
@@ -2839,66 +2988,72 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label68->AutoSize = true;
 			this->label68->BackColor = System::Drawing::Color::Transparent;
-			this->label68->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label68->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label68->ForeColor = System::Drawing::Color::White;
-			this->label68->Location = System::Drawing::Point(28, 80);
+			this->label68->Location = System::Drawing::Point(37, 98);
+			this->label68->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label68->Name = L"label68";
-			this->label68->Size = System::Drawing::Size(157, 23);
+			this->label68->Size = System::Drawing::Size(204, 29);
 			this->label68->TabIndex = 62;
 			this->label68->Text = L"Transaction Code";
 			// 
 			// lbl_tranName
 			// 
 			this->lbl_tranName->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_tranName->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_tranName->ForeColor = System::Drawing::Color::White;
-			this->lbl_tranName->Location = System::Drawing::Point(28, 169);
+			this->lbl_tranName->Location = System::Drawing::Point(37, 208);
+			this->lbl_tranName->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_tranName->Name = L"lbl_tranName";
-			this->lbl_tranName->Size = System::Drawing::Size(280, 26);
+			this->lbl_tranName->Size = System::Drawing::Size(373, 32);
 			this->lbl_tranName->TabIndex = 55;
 			// 
 			// label70
 			// 
 			this->label70->AutoSize = true;
 			this->label70->BackColor = System::Drawing::Color::Transparent;
-			this->label70->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label70->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label70->ForeColor = System::Drawing::Color::White;
-			this->label70->Location = System::Drawing::Point(28, 212);
+			this->label70->Location = System::Drawing::Point(37, 261);
+			this->label70->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label70->Name = L"label70";
-			this->label70->Size = System::Drawing::Size(100, 23);
+			this->label70->Size = System::Drawing::Size(130, 29);
 			this->label70->TabIndex = 56;
 			this->label70->Text = L"Total Price";
 			// 
 			// lbl_tranPrice
 			// 
 			this->lbl_tranPrice->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_tranPrice->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_tranPrice->ForeColor = System::Drawing::Color::White;
-			this->lbl_tranPrice->Location = System::Drawing::Point(28, 237);
+			this->lbl_tranPrice->Location = System::Drawing::Point(37, 292);
+			this->lbl_tranPrice->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_tranPrice->Name = L"lbl_tranPrice";
-			this->lbl_tranPrice->Size = System::Drawing::Size(266, 26);
+			this->lbl_tranPrice->Size = System::Drawing::Size(355, 32);
 			this->lbl_tranPrice->TabIndex = 57;
 			// 
 			// label74
 			// 
 			this->label74->AutoSize = true;
 			this->label74->BackColor = System::Drawing::Color::Transparent;
-			this->label74->Font = (gcnew System::Drawing::Font(L"Roboto", 14));
+			this->label74->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
 			this->label74->ForeColor = System::Drawing::Color::White;
-			this->label74->Location = System::Drawing::Point(28, 334);
+			this->label74->Location = System::Drawing::Point(37, 411);
+			this->label74->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label74->Name = L"label74";
-			this->label74->Size = System::Drawing::Size(48, 23);
+			this->label74->Size = System::Drawing::Size(63, 29);
 			this->label74->TabIndex = 58;
 			this->label74->Text = L"Date";
 			// 
 			// lbl_tranDate
 			// 
 			this->lbl_tranDate->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_tranDate->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->lbl_tranDate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_tranDate->ForeColor = System::Drawing::Color::White;
-			this->lbl_tranDate->Location = System::Drawing::Point(28, 361);
+			this->lbl_tranDate->Location = System::Drawing::Point(37, 444);
+			this->lbl_tranDate->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_tranDate->Name = L"lbl_tranDate";
-			this->lbl_tranDate->Size = System::Drawing::Size(274, 26);
+			this->lbl_tranDate->Size = System::Drawing::Size(365, 32);
 			this->lbl_tranDate->TabIndex = 59;
 			// 
 			// panel19
@@ -2910,67 +3065,74 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->panel19->Controls->Add(this->label29);
 			this->panel19->Controls->Add(this->label31);
 			this->panel19->Controls->Add(this->label45);
-			this->panel19->Location = System::Drawing::Point(365, 18);
+			this->panel19->Location = System::Drawing::Point(487, 22);
+			this->panel19->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel19->Name = L"panel19";
-			this->panel19->Size = System::Drawing::Size(811, 36);
+			this->panel19->Size = System::Drawing::Size(1081, 44);
 			this->panel19->TabIndex = 70;
 			// 
 			// label15
 			// 
-			this->label15->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label15->ForeColor = System::Drawing::Color::White;
-			this->label15->Location = System::Drawing::Point(523, 7);
+			this->label15->Location = System::Drawing::Point(697, 9);
+			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(110, 26);
+			this->label15->Size = System::Drawing::Size(147, 32);
 			this->label15->TabIndex = 64;
 			this->label15->Text = L"Quantity";
 			// 
 			// label28
 			// 
-			this->label28->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label28->ForeColor = System::Drawing::Color::White;
-			this->label28->Location = System::Drawing::Point(2, 7);
+			this->label28->Location = System::Drawing::Point(3, 9);
+			this->label28->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(148, 26);
+			this->label28->Size = System::Drawing::Size(197, 32);
 			this->label28->TabIndex = 63;
 			this->label28->Text = L"Barcode";
 			// 
 			// label29
 			// 
-			this->label29->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label29->ForeColor = System::Drawing::Color::White;
-			this->label29->Location = System::Drawing::Point(649, 7);
+			this->label29->Location = System::Drawing::Point(865, 9);
+			this->label29->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(117, 26);
+			this->label29->Size = System::Drawing::Size(156, 32);
 			this->label29->TabIndex = 62;
 			this->label29->Text = L"Total Price";
 			// 
 			// label31
 			// 
-			this->label31->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label31->ForeColor = System::Drawing::Color::White;
-			this->label31->Location = System::Drawing::Point(373, 7);
+			this->label31->Location = System::Drawing::Point(497, 9);
+			this->label31->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(123, 26);
+			this->label31->Size = System::Drawing::Size(164, 32);
 			this->label31->TabIndex = 61;
 			this->label31->Text = L"Product Price";
 			// 
 			// label45
 			// 
-			this->label45->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12.25F));
+			this->label45->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label45->ForeColor = System::Drawing::Color::White;
-			this->label45->Location = System::Drawing::Point(172, 7);
+			this->label45->Location = System::Drawing::Point(229, 9);
+			this->label45->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(176, 26);
+			this->label45->Size = System::Drawing::Size(235, 32);
 			this->label45->TabIndex = 60;
 			this->label45->Text = L"Product Name";
 			// 
 			// panel20
 			// 
 			this->panel20->BackColor = System::Drawing::Color::White;
-			this->panel20->Location = System::Drawing::Point(322, 54);
+			this->panel20->Location = System::Drawing::Point(429, 66);
+			this->panel20->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel20->Name = L"panel20";
-			this->panel20->Size = System::Drawing::Size(43, 455);
+			this->panel20->Size = System::Drawing::Size(57, 560);
 			this->panel20->TabIndex = 71;
 			// 
 			// tb_tranProduct
@@ -2981,7 +3143,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_tranProduct->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
 			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Roboto Light", 10));
+			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle13->Padding = System::Windows::Forms::Padding(1);
 			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -2997,7 +3159,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_tranProduct->Cursor = System::Windows::Forms::Cursors::Hand;
 			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle14->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Roboto Light", 12));
+			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::ControlText;
 			dataGridViewCellStyle14->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
 			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -3007,7 +3169,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->tb_tranProduct->DefaultCellStyle = dataGridViewCellStyle14;
 			this->tb_tranProduct->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			this->tb_tranProduct->Location = System::Drawing::Point(325, 31);
+			this->tb_tranProduct->Location = System::Drawing::Point(433, 38);
+			this->tb_tranProduct->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tb_tranProduct->Name = L"tb_tranProduct";
 			this->tb_tranProduct->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
 			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
@@ -3023,7 +3186,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			dataGridViewCellStyle16->Padding = System::Windows::Forms::Padding(2);
 			this->tb_tranProduct->RowsDefaultCellStyle = dataGridViewCellStyle16;
 			this->tb_tranProduct->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->tb_tranProduct->Size = System::Drawing::Size(837, 478);
+			this->tb_tranProduct->Size = System::Drawing::Size(1116, 588);
 			this->tb_tranProduct->TabIndex = 69;
 			this->tb_tranProduct->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &inventory::tb_viewPro_CellContentClick);
 			// 
@@ -3075,28 +3238,31 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			this->pnl_navBar->Controls->Add(this->btn_logout);
 			this->pnl_navBar->Controls->Add(this->label26);
 			this->pnl_navBar->Location = System::Drawing::Point(0, 0);
+			this->pnl_navBar->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pnl_navBar->Name = L"pnl_navBar";
-			this->pnl_navBar->Size = System::Drawing::Size(72, 556);
+			this->pnl_navBar->Size = System::Drawing::Size(96, 684);
 			this->pnl_navBar->TabIndex = 28;
 			// 
 			// lbl_indicator
 			// 
 			this->lbl_indicator->BackColor = System::Drawing::Color::White;
-			this->lbl_indicator->Font = (gcnew System::Drawing::Font(L"Roboto", 1));
+			this->lbl_indicator->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 1));
 			this->lbl_indicator->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_indicator->Location = System::Drawing::Point(0, 130);
+			this->lbl_indicator->Location = System::Drawing::Point(0, 160);
+			this->lbl_indicator->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_indicator->Name = L"lbl_indicator";
-			this->lbl_indicator->Size = System::Drawing::Size(5, 56);
+			this->lbl_indicator->Size = System::Drawing::Size(7, 69);
 			this->lbl_indicator->TabIndex = 65;
 			// 
 			// btn_sales
 			// 
 			this->btn_sales->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_sales->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_sales.Image")));
-			this->btn_sales->Location = System::Drawing::Point(0, 260);
+			this->btn_sales->Location = System::Drawing::Point(0, 320);
+			this->btn_sales->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_sales->Name = L"btn_sales";
-			this->btn_sales->Size = System::Drawing::Size(72, 56);
+			this->btn_sales->Size = System::Drawing::Size(96, 69);
 			this->btn_sales->TabIndex = 67;
 			this->btn_sales->Click += gcnew System::EventHandler(this, &inventory::btn_sales_Click);
 			// 
@@ -3104,26 +3270,29 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->btn_account->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_account->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_account.Image")));
-			this->btn_account->Location = System::Drawing::Point(0, 322);
+			this->btn_account->Location = System::Drawing::Point(0, 396);
+			this->btn_account->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_account->Name = L"btn_account";
-			this->btn_account->Size = System::Drawing::Size(72, 56);
+			this->btn_account->Size = System::Drawing::Size(96, 69);
 			this->btn_account->TabIndex = 66;
 			this->btn_account->Click += gcnew System::EventHandler(this, &inventory::btn_account_Click);
 			// 
 			// panel2
 			// 
-			this->panel2->Location = System::Drawing::Point(71, 137);
+			this->panel2->Location = System::Drawing::Point(95, 169);
+			this->panel2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(200, 100);
+			this->panel2->Size = System::Drawing::Size(267, 123);
 			this->panel2->TabIndex = 58;
 			// 
 			// btn_dashboard
 			// 
 			this->btn_dashboard->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_dashboard->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_dashboard.Image")));
-			this->btn_dashboard->Location = System::Drawing::Point(0, 130);
+			this->btn_dashboard->Location = System::Drawing::Point(0, 160);
+			this->btn_dashboard->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_dashboard->Name = L"btn_dashboard";
-			this->btn_dashboard->Size = System::Drawing::Size(72, 56);
+			this->btn_dashboard->Size = System::Drawing::Size(96, 69);
 			this->btn_dashboard->TabIndex = 30;
 			this->btn_dashboard->Click += gcnew System::EventHandler(this, &inventory::btn_dashboard_Click_1);
 			// 
@@ -3131,9 +3300,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->btn_addproduct->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_addproduct->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_addproduct.Image")));
-			this->btn_addproduct->Location = System::Drawing::Point(0, 198);
+			this->btn_addproduct->Location = System::Drawing::Point(0, 244);
+			this->btn_addproduct->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_addproduct->Name = L"btn_addproduct";
-			this->btn_addproduct->Size = System::Drawing::Size(72, 56);
+			this->btn_addproduct->Size = System::Drawing::Size(96, 69);
 			this->btn_addproduct->TabIndex = 29;
 			this->btn_addproduct->Click += gcnew System::EventHandler(this, &inventory::btn_addproduct_Click_1);
 			// 
@@ -3141,9 +3311,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->btn_logout->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_logout->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_logout.Image")));
-			this->btn_logout->Location = System::Drawing::Point(0, 465);
+			this->btn_logout->Location = System::Drawing::Point(0, 572);
+			this->btn_logout->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_logout->Name = L"btn_logout";
-			this->btn_logout->Size = System::Drawing::Size(69, 58);
+			this->btn_logout->Size = System::Drawing::Size(92, 71);
 			this->btn_logout->TabIndex = 28;
 			this->btn_logout->Click += gcnew System::EventHandler(this, &inventory::btn_logout_Click);
 			// 
@@ -3151,20 +3322,22 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			// 
 			this->label26->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->label26->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label26.Image")));
-			this->label26->Location = System::Drawing::Point(0, 11);
+			this->label26->Location = System::Drawing::Point(0, 14);
+			this->label26->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(72, 50);
+			this->label26->Size = System::Drawing::Size(96, 62);
 			this->label26->TabIndex = 27;
 			// 
 			// inventory
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->ClientSize = System::Drawing::Size(1262, 552);
+			this->ClientSize = System::Drawing::Size(1683, 679);
 			this->Controls->Add(this->pnl_navBar);
 			this->Controls->Add(this->tab_control);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"inventory";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"inventory";
@@ -3984,7 +4157,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 			inp_proDesc->Text = "";
 			inp_proPrice->Text = "";
 			inp_proStock->Value = 1;
-			inp_proMinStock->Text = "1.00";
+			inp_proMinStock->Minimum = 1;
 			inp_prevStock->Text = "";
 			inp_prevPrice->Text = "";
 			inp_prevDesc->Text = "";

@@ -57,6 +57,8 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     convertSelection(String): PrivateScope, Public, HideBySig
     resetfields(): PrivateScope, Public, HideBySig
     toDisableAdd(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    panelDisable(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    newTransaction(): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.cashier+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -65,6 +67,7 @@ Struct InventoryManagementSystem.cashier+Product: AutoLayout, AnsiClass, Class, 
     System.String description : Public
     System.String category : Public
     Int32 stock : Public
+    Int32 minStock : Public
     Double price : Public
 Struct InventoryManagementSystem.cashier+searchProduct: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
@@ -201,6 +204,7 @@ Class InventoryManagementSystem.Login: AutoLayout, AnsiClass, Class, Public, Bef
     Int32 accountCount : Public
   Methods:
     loadAccountFromFile(): PrivateScope, Public, HideBySig
+    logInVerify(): PrivateScope, Public, HideBySig
     verifyAccount(String, String): PrivateScope, Public, HideBySig
     clearFields(): PrivateScope, Public, HideBySig
     accSearch(String, String): PrivateScope, Public, HideBySig
