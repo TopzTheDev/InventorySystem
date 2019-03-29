@@ -60,6 +60,8 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     toDisableAdd(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     panelDisable(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     newTransaction(): PrivateScope, Public, HideBySig
+    paymentTran(): PrivateScope, Public, HideBySig
+    cancelTransaction(): PrivateScope, Public, HideBySig
 Struct InventoryManagementSystem.cashier+Product: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
@@ -87,15 +89,15 @@ Struct InventoryManagementSystem.cashier+cartProduct: AutoLayout, AnsiClass, Cla
     System.String name : Public
     Int32 quantity : Public
     Double price : Public
-    Double subTotal : Public
     Double totalPrice : Public
-    Double vat : Public
 Struct InventoryManagementSystem.cashier+salesReport: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
   :System.ValueType
   Fields:
     Int32 transCode : Public
     System.String customer : Public
     Double totalPrice : Public
+    Double subtotal : Public
+    Double vat : Public
     Int32 totalQuantity : Public
     System.String date : Public
 Struct InventoryManagementSystem.cashier+Account: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
@@ -178,7 +180,9 @@ Struct InventoryManagementSystem.inventory+salesReport: AutoLayout, AnsiClass, C
   Fields:
     Int32 transCode : Public
     System.String customer : Public
-    Single totalPrice : Public
+    Double totalPrice : Public
+    Double subtotal : Public
+    Double vat : Public
     Int32 totalQuantity : Public
     System.String date : Public
 Struct InventoryManagementSystem.inventory+searchReport: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
@@ -187,6 +191,8 @@ Struct InventoryManagementSystem.inventory+searchReport: AutoLayout, AnsiClass, 
     Int32 transCode : Public
     System.String customer : Public
     Double totalPrice : Public
+    Double subtotal : Public
+    Double vat : Public
     Int32 totalQuantity : Public
     System.String date : Public
     Int32 idx : Public

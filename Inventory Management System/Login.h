@@ -222,7 +222,6 @@ namespace InventoryManagementSystem {
 			this->inp_userName->Name = L"inp_userName";
 			this->inp_userName->Size = System::Drawing::Size(416, 34);
 			this->inp_userName->TabIndex = 1;
-			this->inp_userName->Text = L"lugod";
 			this->inp_userName->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::inp_userName_KeyDown);
 			// 
 			// label4
@@ -271,7 +270,6 @@ namespace InventoryManagementSystem {
 			this->inp_loginPass->PasswordChar = '*';
 			this->inp_loginPass->Size = System::Drawing::Size(415, 34);
 			this->inp_loginPass->TabIndex = 6;
-			this->inp_loginPass->Text = L"tite";
 			this->inp_loginPass->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::inp_loginPass_KeyDown);
 			// 
 			// label3
@@ -279,7 +277,7 @@ namespace InventoryManagementSystem {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(51, 126);
+			this->label3->Location = System::Drawing::Point(51, 120);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(493, 21);
