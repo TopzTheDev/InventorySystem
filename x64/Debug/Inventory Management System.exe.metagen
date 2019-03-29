@@ -35,8 +35,10 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     loadProductFromFile(): PrivateScope, Public, HideBySig
     loadTable(String): PrivateScope, Public, HideBySig
     proSearch(String): PrivateScope, Public, HideBySig
+    addToCart(): PrivateScope, Public, HideBySig
     checkStock(Int32): PrivateScope, Public, HideBySig
     loadCartTable(): PrivateScope, Public, HideBySig
+    removedToCart(): PrivateScope, Public, HideBySig
     tableSelection(): PrivateScope, Public, HideBySig
     computeTotal(Int32): PrivateScope, Public, HideBySig
     CheckStock(Int32): PrivateScope, Public, HideBySig
@@ -54,7 +56,6 @@ Class InventoryManagementSystem.cashier: AutoLayout, AnsiClass, Class, Public, B
     paymentPnl(): PrivateScope, Public, HideBySig
     voidItemPnl(): PrivateScope, Public, HideBySig
     newTransPnl(): PrivateScope, Public, HideBySig
-    convertSelection(String): PrivateScope, Public, HideBySig
     resetfields(): PrivateScope, Public, HideBySig
     toDisableAdd(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     panelDisable(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
@@ -86,6 +87,7 @@ Struct InventoryManagementSystem.cashier+cartProduct: AutoLayout, AnsiClass, Cla
     System.String name : Public
     Int32 quantity : Public
     Double price : Public
+    Double subTotal : Public
     Double totalPrice : Public
     Double vat : Public
 Struct InventoryManagementSystem.cashier+salesReport: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit

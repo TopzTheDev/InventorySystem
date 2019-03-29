@@ -1,1 +1,38 @@
-﻿  Inventory Management System.vcxproj -> C:\Users\Christopher\Desktop\My Websites\InventorySystem\x64\Release\Inventory Management System.exe
+﻿  cashier.cpp
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2313): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2388): error C2065: 'btn_prevDelete': undeclared identifier
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2388): error C2227: left of '->Enabled' must point to class/struct/union/generic type
+  c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2388): note: type is 'unknown-type'
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2391): error C2065: 'btn_prevDelete': undeclared identifier
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2391): error C2227: left of '->Enabled' must point to class/struct/union/generic type
+  c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2391): note: type is 'unknown-type'
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2422): warning C4804: '<=': unsafe use of type 'bool' in operation
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2477): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2795): error C2065: 'btn_prevDelete': undeclared identifier
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2795): error C2227: left of '->Enabled' must point to class/struct/union/generic type
+  c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2795): note: type is 'unknown-type'
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2800): error C2065: 'btn_prevEdit': undeclared identifier
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2800): error C2227: left of '->Enabled' must point to class/struct/union/generic type
+  c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2800): note: type is 'unknown-type'
+  inventory.cpp
+  Login.cpp
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2313): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2388): error C2065: 'btn_prevDelete': undeclared identifier
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2388): error C2227: left of '->Enabled' must point to class/struct/union/generic type
+  c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2388): note: type is 'unknown-type'
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2391): error C2065: 'btn_prevDelete': undeclared identifier
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2391): error C2227: left of '->Enabled' must point to class/struct/union/generic type
+  c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2391): note: type is 'unknown-type'
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2422): warning C4804: '<=': unsafe use of type 'bool' in operation
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2477): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2795): error C2065: 'btn_prevDelete': undeclared identifier
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2795): error C2227: left of '->Enabled' must point to class/struct/union/generic type
+  c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2795): note: type is 'unknown-type'
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2800): error C2065: 'btn_prevEdit': undeclared identifier
+c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2800): error C2227: left of '->Enabled' must point to class/struct/union/generic type
+  c:\users\errol\desktop\website\inventorysystem\inventory management system\cashier.h(2800): note: type is 'unknown-type'
+  person.cpp
+  Generating Code...
+c:\users\errol\desktop\website\inventorysystem\inventory management system\inventory.h(3574): warning C4715: 'InventoryManagementSystem::inventory::proSearch': not all control paths return a value
+c:\users\errol\desktop\website\inventorysystem\inventory management system\inventory.h(3862): warning C4715: 'InventoryManagementSystem::inventory::accSearch': not all control paths return a value
+c:\users\errol\desktop\website\inventorysystem\inventory management system\inventory.h(4077): warning C4715: 'InventoryManagementSystem::inventory::repSearch': not all control paths return a value

@@ -222,6 +222,7 @@ namespace InventoryManagementSystem {
 			this->inp_userName->Name = L"inp_userName";
 			this->inp_userName->Size = System::Drawing::Size(416, 34);
 			this->inp_userName->TabIndex = 1;
+			this->inp_userName->Text = L"lugod";
 			this->inp_userName->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::inp_userName_KeyDown);
 			// 
 			// label4
@@ -270,6 +271,7 @@ namespace InventoryManagementSystem {
 			this->inp_loginPass->PasswordChar = '*';
 			this->inp_loginPass->Size = System::Drawing::Size(415, 34);
 			this->inp_loginPass->TabIndex = 6;
+			this->inp_loginPass->Text = L"tite";
 			this->inp_loginPass->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::inp_loginPass_KeyDown);
 			// 
 			// label3
@@ -353,7 +355,7 @@ namespace InventoryManagementSystem {
 			StreamReader^ din = File::OpenText(fileName);
 			accountCount = Int32::Parse(din->ReadLine());
 			if (accountCount > 0) {
-				for (int i = 0; i <accountCount; i++) {
+				for (int i = 0; i < accountCount; i++) {
 					acc[i].username = din->ReadLine();
 					acc[i].password = din->ReadLine(); 
 					acc[i].loginAs = din->ReadLine();  

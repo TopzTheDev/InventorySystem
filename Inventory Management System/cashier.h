@@ -21,12 +21,12 @@ namespace InventoryManagementSystem {
 		
 	public:
 		Form ^obj;
-	private: System::Windows::Forms::Label^  lbl_barcode;
-	public:
-	private: System::Windows::Forms::Label^  Barcode;
-	private: System::Windows::Forms::Label^  lbl_proCategory;
 
-	private: System::Windows::Forms::Label^  label6;
+	public:
+
+
+
+
 
 
 
@@ -65,9 +65,9 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  lbl_transNo;
 
 	private: System::Windows::Forms::Label^  label25;
-	private: System::Windows::Forms::Panel^  panel2;
+
 	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  label3;
+
 	private: System::Windows::Forms::Label^  lbl_vatAmount;
 
 	private: System::Windows::Forms::Label^  label14;
@@ -79,11 +79,11 @@ namespace InventoryManagementSystem {
 	private: System::Windows::Forms::Label^  label32;
 	private: System::Windows::Forms::Label^  label31;
 	private: System::Windows::Forms::Label^  label30;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  pro_code;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  pro_name;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  pro_quan;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  pro_price;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  pro_total;
+
+
+
+
+
 	private: System::Windows::Forms::TabPage^  tab_productView;
 	private: System::Windows::Forms::Label^  label34;
 	private: System::Windows::Forms::Panel^  panel5;
@@ -146,6 +146,87 @@ private: System::Windows::Forms::Label^  lbl_transName;
 
 private: System::Windows::Forms::Label^  label52;
 private: System::Windows::Forms::PictureBox^  pictureBox1;
+
+
+
+
+
+private: System::Windows::Forms::Label^  label4;
+
+private: System::Windows::Forms::Panel^  panel8;
+private: System::Windows::Forms::TextBox^  tt;
+
+
+
+private: System::Windows::Forms::Label^  label8;
+
+
+
+private: System::Windows::Forms::Label^  label28;
+private: System::Windows::Forms::Label^  label29;
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::Label^  label10;
+private: System::Windows::Forms::Label^  label13;
+private: System::Windows::Forms::Label^  label26;
+private: System::Windows::Forms::Label^  lbl_totalQuan;
+
+
+private: System::Windows::Forms::Label^  label1;
+private: System::Windows::Forms::Label^  label3;
+private: System::Windows::Forms::Label^  lbl_subTotal;
+
+
+private: System::Windows::Forms::Label^  label6;
+private: System::Windows::Forms::Label^  lbl_totalAmount;
+private: System::Windows::Forms::Button^  btn_canTrans;
+
+private: System::Windows::Forms::Button^  btn_remCart;
+private: System::Windows::Forms::Button^  btn_addCart;
+
+
+
+
+
+
+private: System::Windows::Forms::Button^  btn_process;
+private: System::Windows::Forms::DataGridView^  tb_cashier;
+
+
+
+
+
+
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn5;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn6;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn7;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn8;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn9;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::NumericUpDown^  inp_quantity;
 	public:
 		cashier(void)
@@ -181,10 +262,10 @@ private: System::Windows::Forms::PictureBox^  pictureBox1;
 		}
 	private: System::Windows::Forms::Label^  label7;
 
-	private: System::Windows::Forms::DataGridView^  tb_cashier;
 
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Label^  lbl_amountDue;
+
+
+
 
 	private: System::Windows::Forms::TextBox^  inp_proCode;
 	private: System::Windows::Forms::Label^  lbl_searchMode;
@@ -194,28 +275,28 @@ private: System::Windows::Forms::PictureBox^  pictureBox1;
 
 
 
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  lbl_proName;
-	private: System::Windows::Forms::Label^  lbl_proDesc;
 
 
-	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::Label^  lbl_proPrice;
 
-	private: System::Windows::Forms::Label^  label10;
+
+
+
+
+
+
 
 
 	private: System::Windows::Forms::Label^  label11;
-	private: System::Windows::Forms::Label^  lbl_proStock;
 
-	private: System::Windows::Forms::Label^  label13;
+
+
 
 	private: System::Windows::Forms::Label^  lbl_totalPrice;
 
-	private: System::Windows::Forms::Button^  btn_prevDelete;
-	private: System::Windows::Forms::Button^  btn_prevEdit;
 
-private: System::Windows::Forms::Button^  btn_process;
+
+
+
 
 
 
@@ -247,59 +328,67 @@ private: System::Windows::Forms::Button^  btn_process;
 
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle25 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle26 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle27 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle28 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(cashier::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle29 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle30 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle31 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle32 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->tb_cashier = (gcnew System::Windows::Forms::DataGridView());
-			this->pro_code = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->pro_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->pro_quan = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->pro_price = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->pro_total = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->lbl_amountDue = (gcnew System::Windows::Forms::Label());
 			this->inp_proCode = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_searchMode = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->lbl_proName = (gcnew System::Windows::Forms::Label());
-			this->lbl_proDesc = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->lbl_proPrice = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->lbl_proStock = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->lbl_totalPrice = (gcnew System::Windows::Forms::Label());
-			this->btn_prevDelete = (gcnew System::Windows::Forms::Button());
-			this->btn_prevEdit = (gcnew System::Windows::Forms::Button());
-			this->btn_process = (gcnew System::Windows::Forms::Button());
-			this->lbl_barcode = (gcnew System::Windows::Forms::Label());
-			this->Barcode = (gcnew System::Windows::Forms::Label());
-			this->lbl_proCategory = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->inp_quantity = (gcnew System::Windows::Forms::NumericUpDown());
 			this->pnl_mainCashier = (gcnew System::Windows::Forms::Panel());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->tb_cashier = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->btn_canTrans = (gcnew System::Windows::Forms::Button());
+			this->btn_remCart = (gcnew System::Windows::Forms::Button());
+			this->btn_addCart = (gcnew System::Windows::Forms::Button());
+			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->lbl_totalAmount = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->btn_process = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->lbl_subTotal = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->lbl_totalQuan = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->tt = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->lbl_vatAmount = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->lbl_vatAmount = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->pnl_messageBox = (gcnew System::Windows::Forms::Panel());
+			this->pnl_newTrans = (gcnew System::Windows::Forms::Panel());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->lbl_newTrans = (gcnew System::Windows::Forms::Label());
+			this->label47 = (gcnew System::Windows::Forms::Label());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->inp_custName = (gcnew System::Windows::Forms::TextBox());
+			this->btn_newTrans = (gcnew System::Windows::Forms::Button());
+			this->label40 = (gcnew System::Windows::Forms::Label());
 			this->pnl_payment = (gcnew System::Windows::Forms::Panel());
 			this->lbl_transName = (gcnew System::Windows::Forms::Label());
 			this->label52 = (gcnew System::Windows::Forms::Label());
@@ -315,14 +404,6 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->btn_payment = (gcnew System::Windows::Forms::Button());
-			this->pnl_newTrans = (gcnew System::Windows::Forms::Panel());
-			this->label45 = (gcnew System::Windows::Forms::Label());
-			this->lbl_newTrans = (gcnew System::Windows::Forms::Label());
-			this->label47 = (gcnew System::Windows::Forms::Label());
-			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->inp_custName = (gcnew System::Windows::Forms::TextBox());
-			this->btn_newTrans = (gcnew System::Windows::Forms::Button());
-			this->label40 = (gcnew System::Windows::Forms::Label());
 			this->pnl_voidItem = (gcnew System::Windows::Forms::Panel());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->inp_loginPass = (gcnew System::Windows::Forms::TextBox());
@@ -374,15 +455,15 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->lbl_indicator = (gcnew System::Windows::Forms::Label());
 			this->pnl_navBar = (gcnew System::Windows::Forms::Panel());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_quantity))->BeginInit();
 			this->pnl_mainCashier->SuspendLayout();
 			this->panel3->SuspendLayout();
-			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->BeginInit();
+			this->panel8->SuspendLayout();
 			this->pnl_messageBox->SuspendLayout();
+			this->pnl_newTrans->SuspendLayout();
 			this->pnl_payment->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_payCash))->BeginInit();
-			this->pnl_newTrans->SuspendLayout();
 			this->pnl_voidItem->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->tbC_cashier->SuspendLayout();
@@ -401,134 +482,12 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label7->Location = System::Drawing::Point(16, 12);
+			this->label7->Location = System::Drawing::Point(17, 29);
 			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(163, 44);
 			this->label7->TabIndex = 25;
 			this->label7->Text = L"Cashier";
-			// 
-			// tb_cashier
-			// 
-			this->tb_cashier->BackgroundColor = System::Drawing::Color::White;
-			this->tb_cashier->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tb_cashier->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
-			this->tb_cashier->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle1->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_cashier->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			this->tb_cashier->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->tb_cashier->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
-				this->pro_code,
-					this->pro_name, this->pro_quan, this->pro_price, this->pro_total
-			});
-			this->tb_cashier->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle2->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->tb_cashier->DefaultCellStyle = dataGridViewCellStyle2;
-			this->tb_cashier->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
-				static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			this->tb_cashier->Location = System::Drawing::Point(691, 153);
-			this->tb_cashier->Margin = System::Windows::Forms::Padding(4);
-			this->tb_cashier->Name = L"tb_cashier";
-			this->tb_cashier->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle3->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle3->Padding = System::Windows::Forms::Padding(2);
-			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_cashier->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this->tb_cashier->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle4->Padding = System::Windows::Forms::Padding(2);
-			this->tb_cashier->RowsDefaultCellStyle = dataGridViewCellStyle4;
-			this->tb_cashier->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->tb_cashier->Size = System::Drawing::Size(792, 373);
-			this->tb_cashier->TabIndex = 27;
-			this->tb_cashier->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &cashier::tb_cashier_CellClick);
-			this->tb_cashier->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &cashier::tb_cashier_CellContentClick);
-			this->tb_cashier->CellLeave += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &cashier::tb_cashier_CellLeave);
-			// 
-			// pro_code
-			// 
-			this->pro_code->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->pro_code->FillWeight = 15;
-			this->pro_code->HeaderText = L"Barcode";
-			this->pro_code->Name = L"pro_code";
-			this->pro_code->Visible = false;
-			this->pro_code->Width = 5;
-			// 
-			// pro_name
-			// 
-			this->pro_name->HeaderText = L"Product Name";
-			this->pro_name->Name = L"pro_name";
-			this->pro_name->ReadOnly = true;
-			this->pro_name->Width = 180;
-			// 
-			// pro_quan
-			// 
-			this->pro_quan->HeaderText = L"Quantity";
-			this->pro_quan->Name = L"pro_quan";
-			this->pro_quan->ReadOnly = true;
-			this->pro_quan->Width = 120;
-			// 
-			// pro_price
-			// 
-			this->pro_price->HeaderText = L"Product Price";
-			this->pro_price->Name = L"pro_price";
-			this->pro_price->ReadOnly = true;
-			this->pro_price->Width = 120;
-			// 
-			// pro_total
-			// 
-			this->pro_total->HeaderText = L"Total";
-			this->pro_total->Name = L"pro_total";
-			this->pro_total->ReadOnly = true;
-			this->pro_total->Width = 132;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(23, 20);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(180, 36);
-			this->label1->TabIndex = 28;
-			this->label1->Text = L"Amount Due";
-			// 
-			// lbl_amountDue
-			// 
-			this->lbl_amountDue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lbl_amountDue->ForeColor = System::Drawing::Color::White;
-			this->lbl_amountDue->Location = System::Drawing::Point(221, 18);
-			this->lbl_amountDue->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_amountDue->Name = L"lbl_amountDue";
-			this->lbl_amountDue->Size = System::Drawing::Size(305, 43);
-			this->lbl_amountDue->TabIndex = 29;
-			this->lbl_amountDue->Text = L"1,200.00";
 			// 
 			// inp_proCode
 			// 
@@ -539,7 +498,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->inp_proCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->inp_proCode->HideSelection = false;
-			this->inp_proCode->Location = System::Drawing::Point(29, 102);
+			this->inp_proCode->Location = System::Drawing::Point(30, 118);
 			this->inp_proCode->Margin = System::Windows::Forms::Padding(4);
 			this->inp_proCode->Name = L"inp_proCode";
 			this->inp_proCode->Size = System::Drawing::Size(460, 46);
@@ -552,127 +511,31 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->lbl_searchMode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->lbl_searchMode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_searchMode->Location = System::Drawing::Point(24, 64);
+			this->lbl_searchMode->Location = System::Drawing::Point(25, 81);
 			this->lbl_searchMode->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_searchMode->Name = L"lbl_searchMode";
 			this->lbl_searchMode->Size = System::Drawing::Size(159, 28);
 			this->lbl_searchMode->TabIndex = 31;
 			this->lbl_searchMode->Text = L"Barcode";
 			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label4->Location = System::Drawing::Point(29, 242);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(167, 29);
-			this->label4->TabIndex = 32;
-			this->label4->Text = L"Product Name";
-			// 
-			// lbl_proName
-			// 
-			this->lbl_proName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->lbl_proName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_proName->Location = System::Drawing::Point(35, 273);
-			this->lbl_proName->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_proName->Name = L"lbl_proName";
-			this->lbl_proName->Size = System::Drawing::Size(373, 32);
-			this->lbl_proName->TabIndex = 33;
-			// 
-			// lbl_proDesc
-			// 
-			this->lbl_proDesc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->lbl_proDesc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_proDesc->Location = System::Drawing::Point(35, 336);
-			this->lbl_proDesc->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_proDesc->Name = L"lbl_proDesc";
-			this->lbl_proDesc->Size = System::Drawing::Size(355, 32);
-			this->lbl_proDesc->TabIndex = 35;
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label8->Location = System::Drawing::Point(29, 306);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(135, 29);
-			this->label8->TabIndex = 34;
-			this->label8->Text = L"Description";
-			// 
-			// lbl_proPrice
-			// 
-			this->lbl_proPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->lbl_proPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_proPrice->Location = System::Drawing::Point(36, 463);
-			this->lbl_proPrice->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_proPrice->Name = L"lbl_proPrice";
-			this->lbl_proPrice->Size = System::Drawing::Size(365, 32);
-			this->lbl_proPrice->TabIndex = 37;
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label10->Location = System::Drawing::Point(35, 432);
-			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(69, 29);
-			this->label10->TabIndex = 36;
-			this->label10->Text = L"Price";
-			// 
 			// label11
 			// 
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label11->Location = System::Drawing::Point(507, 62);
+			this->label11->Location = System::Drawing::Point(508, 79);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(100, 32);
 			this->label11->TabIndex = 39;
 			this->label11->Text = L"Quantity";
 			// 
-			// lbl_proStock
-			// 
-			this->lbl_proStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->lbl_proStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_proStock->Location = System::Drawing::Point(35, 529);
-			this->lbl_proStock->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_proStock->Name = L"lbl_proStock";
-			this->lbl_proStock->Size = System::Drawing::Size(373, 32);
-			this->lbl_proStock->TabIndex = 41;
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label13->Location = System::Drawing::Point(36, 498);
-			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(73, 29);
-			this->label13->TabIndex = 40;
-			this->label13->Text = L"Stock";
-			// 
 			// lbl_totalPrice
 			// 
 			this->lbl_totalPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
 			this->lbl_totalPrice->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_totalPrice->Location = System::Drawing::Point(745, 69);
+			this->lbl_totalPrice->Location = System::Drawing::Point(698, 102);
 			this->lbl_totalPrice->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lbl_totalPrice->Name = L"lbl_totalPrice";
 			this->lbl_totalPrice->Size = System::Drawing::Size(305, 70);
@@ -680,193 +543,80 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->lbl_totalPrice->Text = L"1,200.00";
 			this->lbl_totalPrice->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// btn_prevDelete
-			// 
-			this->btn_prevDelete->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_prevDelete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_prevDelete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->btn_prevDelete->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)));
-			this->btn_prevDelete->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_prevDelete.Image")));
-			this->btn_prevDelete->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->btn_prevDelete->Location = System::Drawing::Point(1349, 33);
-			this->btn_prevDelete->Margin = System::Windows::Forms::Padding(4);
-			this->btn_prevDelete->Name = L"btn_prevDelete";
-			this->btn_prevDelete->Size = System::Drawing::Size(112, 95);
-			this->btn_prevDelete->TabIndex = 45;
-			this->btn_prevDelete->Text = L"Remove to Cart";
-			this->btn_prevDelete->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->btn_prevDelete->UseVisualStyleBackColor = true;
-			this->btn_prevDelete->Click += gcnew System::EventHandler(this, &cashier::btn_prevDelete_Click);
-			// 
-			// btn_prevEdit
-			// 
-			this->btn_prevEdit->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_prevEdit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_prevEdit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->btn_prevEdit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_prevEdit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_prevEdit.Image")));
-			this->btn_prevEdit->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->btn_prevEdit->Location = System::Drawing::Point(1216, 32);
-			this->btn_prevEdit->Margin = System::Windows::Forms::Padding(4);
-			this->btn_prevEdit->Name = L"btn_prevEdit";
-			this->btn_prevEdit->Size = System::Drawing::Size(111, 96);
-			this->btn_prevEdit->TabIndex = 44;
-			this->btn_prevEdit->Text = L"Add to Cart";
-			this->btn_prevEdit->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->btn_prevEdit->UseVisualStyleBackColor = true;
-			this->btn_prevEdit->Click += gcnew System::EventHandler(this, &cashier::btn_prevEdit_Click);
-			// 
-			// btn_process
-			// 
-			this->btn_process->BackColor = System::Drawing::Color::White;
-			this->btn_process->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_process->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_process->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->btn_process->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_process->Location = System::Drawing::Point(1264, 14);
-			this->btn_process->Margin = System::Windows::Forms::Padding(4);
-			this->btn_process->Name = L"btn_process";
-			this->btn_process->Size = System::Drawing::Size(219, 52);
-			this->btn_process->TabIndex = 47;
-			this->btn_process->Text = L"Process";
-			this->btn_process->UseVisualStyleBackColor = false;
-			this->btn_process->Click += gcnew System::EventHandler(this, &cashier::button1_Click);
-			// 
-			// lbl_barcode
-			// 
-			this->lbl_barcode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->lbl_barcode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_barcode->Location = System::Drawing::Point(33, 209);
-			this->lbl_barcode->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_barcode->Name = L"lbl_barcode";
-			this->lbl_barcode->Size = System::Drawing::Size(373, 32);
-			this->lbl_barcode->TabIndex = 51;
-			this->lbl_barcode->Click += gcnew System::EventHandler(this, &cashier::lbl_barcode_Click);
-			// 
-			// Barcode
-			// 
-			this->Barcode->AutoSize = true;
-			this->Barcode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->Barcode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->Barcode->Location = System::Drawing::Point(29, 177);
-			this->Barcode->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->Barcode->Name = L"Barcode";
-			this->Barcode->Size = System::Drawing::Size(104, 29);
-			this->Barcode->TabIndex = 50;
-			this->Barcode->Text = L"Barcode";
-			// 
-			// lbl_proCategory
-			// 
-			this->lbl_proCategory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->lbl_proCategory->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_proCategory->Location = System::Drawing::Point(35, 401);
-			this->lbl_proCategory->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_proCategory->Name = L"lbl_proCategory";
-			this->lbl_proCategory->Size = System::Drawing::Size(373, 32);
-			this->lbl_proCategory->TabIndex = 53;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label6->Location = System::Drawing::Point(31, 372);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(110, 29);
-			this->label6->TabIndex = 52;
-			this->label6->Text = L"Category";
-			// 
 			// inp_quantity
 			// 
 			this->inp_quantity->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->inp_quantity->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->inp_quantity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25));
+			this->inp_quantity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24));
 			this->inp_quantity->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_quantity->Location = System::Drawing::Point(512, 95);
+			this->inp_quantity->Location = System::Drawing::Point(513, 117);
 			this->inp_quantity->Margin = System::Windows::Forms::Padding(4);
 			this->inp_quantity->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->inp_quantity->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_quantity->Name = L"inp_quantity";
-			this->inp_quantity->Size = System::Drawing::Size(136, 51);
+			this->inp_quantity->Size = System::Drawing::Size(136, 49);
 			this->inp_quantity->TabIndex = 55;
 			this->inp_quantity->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->inp_quantity->ValueChanged += gcnew System::EventHandler(this, &cashier::inp_quantity_ValueChanged);
 			// 
 			// pnl_mainCashier
 			// 
-			this->pnl_mainCashier->Controls->Add(this->panel4);
 			this->pnl_mainCashier->Controls->Add(this->panel3);
+			this->pnl_mainCashier->Controls->Add(this->panel4);
+			this->pnl_mainCashier->Controls->Add(this->tb_cashier);
+			this->pnl_mainCashier->Controls->Add(this->btn_canTrans);
+			this->pnl_mainCashier->Controls->Add(this->btn_remCart);
+			this->pnl_mainCashier->Controls->Add(this->btn_addCart);
+			this->pnl_mainCashier->Controls->Add(this->panel8);
 			this->pnl_mainCashier->Controls->Add(this->label16);
 			this->pnl_mainCashier->Controls->Add(this->label15);
 			this->pnl_mainCashier->Controls->Add(this->label14);
-			this->pnl_mainCashier->Controls->Add(this->lbl_vatAmount);
-			this->pnl_mainCashier->Controls->Add(this->label3);
 			this->pnl_mainCashier->Controls->Add(this->label2);
-			this->pnl_mainCashier->Controls->Add(this->panel2);
-			this->pnl_mainCashier->Controls->Add(this->tb_cashier);
-			this->pnl_mainCashier->Controls->Add(this->btn_prevDelete);
 			this->pnl_mainCashier->Controls->Add(this->label7);
 			this->pnl_mainCashier->Controls->Add(this->inp_quantity);
-			this->pnl_mainCashier->Controls->Add(this->lbl_proCategory);
 			this->pnl_mainCashier->Controls->Add(this->lbl_searchMode);
-			this->pnl_mainCashier->Controls->Add(this->label6);
 			this->pnl_mainCashier->Controls->Add(this->inp_proCode);
-			this->pnl_mainCashier->Controls->Add(this->lbl_barcode);
-			this->pnl_mainCashier->Controls->Add(this->label4);
-			this->pnl_mainCashier->Controls->Add(this->Barcode);
-			this->pnl_mainCashier->Controls->Add(this->lbl_proName);
-			this->pnl_mainCashier->Controls->Add(this->label8);
-			this->pnl_mainCashier->Controls->Add(this->lbl_proDesc);
-			this->pnl_mainCashier->Controls->Add(this->label10);
-			this->pnl_mainCashier->Controls->Add(this->lbl_proPrice);
-			this->pnl_mainCashier->Controls->Add(this->btn_prevEdit);
 			this->pnl_mainCashier->Controls->Add(this->label11);
 			this->pnl_mainCashier->Controls->Add(this->lbl_totalPrice);
-			this->pnl_mainCashier->Controls->Add(this->label13);
-			this->pnl_mainCashier->Controls->Add(this->lbl_proStock);
-			this->pnl_mainCashier->Location = System::Drawing::Point(5, -1);
+			this->pnl_mainCashier->Location = System::Drawing::Point(5, -5);
 			this->pnl_mainCashier->Margin = System::Windows::Forms::Padding(4);
 			this->pnl_mainCashier->Name = L"pnl_mainCashier";
-			this->pnl_mainCashier->Size = System::Drawing::Size(1504, 660);
+			this->pnl_mainCashier->Size = System::Drawing::Size(1504, 723);
 			this->pnl_mainCashier->TabIndex = 58;
-			// 
-			// panel4
-			// 
-			this->panel4->BackColor = System::Drawing::Color::White;
-			this->panel4->Location = System::Drawing::Point(689, 138);
-			this->panel4->Margin = System::Windows::Forms::Padding(4);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(57, 389);
-			this->panel4->TabIndex = 66;
+			this->pnl_mainCashier->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &cashier::pnl_mainCashier_Paint);
 			// 
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->panel3->Controls->Add(this->label4);
 			this->panel3->Controls->Add(this->label33);
 			this->panel3->Controls->Add(this->label32);
 			this->panel3->Controls->Add(this->label31);
 			this->panel3->Controls->Add(this->label30);
-			this->panel3->Location = System::Drawing::Point(743, 138);
+			this->panel3->Location = System::Drawing::Point(30, 179);
 			this->panel3->Margin = System::Windows::Forms::Padding(4);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(739, 44);
+			this->panel3->Size = System::Drawing::Size(973, 44);
 			this->panel3->TabIndex = 65;
+			// 
+			// label4
+			// 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
+			this->label4->ForeColor = System::Drawing::Color::White;
+			this->label4->Location = System::Drawing::Point(8, 6);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(170, 32);
+			this->label4->TabIndex = 64;
+			this->label4->Text = L"Barcode";
 			// 
 			// label33
 			// 
 			this->label33->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label33->ForeColor = System::Drawing::Color::White;
-			this->label33->Location = System::Drawing::Point(568, 7);
+			this->label33->Location = System::Drawing::Point(818, 8);
 			this->label33->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label33->Name = L"label33";
 			this->label33->Size = System::Drawing::Size(164, 32);
@@ -877,18 +627,18 @@ private: System::Windows::Forms::Button^  btn_process;
 			// 
 			this->label32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label32->ForeColor = System::Drawing::Color::White;
-			this->label32->Location = System::Drawing::Point(405, 7);
+			this->label32->Location = System::Drawing::Point(646, 7);
 			this->label32->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label32->Name = L"label32";
 			this->label32->Size = System::Drawing::Size(164, 32);
 			this->label32->TabIndex = 62;
-			this->label32->Text = L"Original Price";
+			this->label32->Text = L"Price";
 			// 
 			// label31
 			// 
 			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label31->ForeColor = System::Drawing::Color::White;
-			this->label31->Location = System::Drawing::Point(241, 6);
+			this->label31->Location = System::Drawing::Point(455, 6);
 			this->label31->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label31->Name = L"label31";
 			this->label31->Size = System::Drawing::Size(164, 32);
@@ -899,12 +649,390 @@ private: System::Windows::Forms::Button^  btn_process;
 			// 
 			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label30->ForeColor = System::Drawing::Color::White;
-			this->label30->Location = System::Drawing::Point(7, 6);
+			this->label30->Location = System::Drawing::Point(215, 6);
 			this->label30->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(235, 32);
+			this->label30->Size = System::Drawing::Size(264, 32);
 			this->label30->TabIndex = 60;
-			this->label30->Text = L"Product Name";
+			this->label30->Text = L"Product Description";
+			// 
+			// panel4
+			// 
+			this->panel4->BackColor = System::Drawing::Color::White;
+			this->panel4->Location = System::Drawing::Point(-1, 186);
+			this->panel4->Margin = System::Windows::Forms::Padding(4);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(26, 514);
+			this->panel4->TabIndex = 66;
+			// 
+			// tb_cashier
+			// 
+			this->tb_cashier->BackgroundColor = System::Drawing::Color::White;
+			this->tb_cashier->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tb_cashier->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
+			this->tb_cashier->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
+			dataGridViewCellStyle25->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle25->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			dataGridViewCellStyle25->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle25->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle25->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
+			dataGridViewCellStyle25->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle25->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_cashier->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+			this->tb_cashier->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->tb_cashier->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->dataGridViewTextBoxColumn5,
+					this->dataGridViewTextBoxColumn6, this->dataGridViewTextBoxColumn7, this->dataGridViewTextBoxColumn8, this->dataGridViewTextBoxColumn9
+			});
+			this->tb_cashier->Cursor = System::Windows::Forms::Cursors::Hand;
+			dataGridViewCellStyle26->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle26->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			dataGridViewCellStyle26->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle26->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle26->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
+			dataGridViewCellStyle26->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle26->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->tb_cashier->DefaultCellStyle = dataGridViewCellStyle26;
+			this->tb_cashier->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
+				static_cast<System::Int32>(static_cast<System::Byte>(179)));
+			this->tb_cashier->Location = System::Drawing::Point(-11, 197);
+			this->tb_cashier->Margin = System::Windows::Forms::Padding(4);
+			this->tb_cashier->Name = L"tb_cashier";
+			this->tb_cashier->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
+			dataGridViewCellStyle27->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle27->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle27->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle27->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle27->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle27->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_cashier->RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+			this->tb_cashier->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
+			dataGridViewCellStyle28->Padding = System::Windows::Forms::Padding(2);
+			this->tb_cashier->RowsDefaultCellStyle = dataGridViewCellStyle28;
+			this->tb_cashier->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->tb_cashier->Size = System::Drawing::Size(1017, 425);
+			this->tb_cashier->TabIndex = 86;
+			this->tb_cashier->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &cashier::tb_cashier_CellClick);
+			// 
+			// dataGridViewTextBoxColumn5
+			// 
+			this->dataGridViewTextBoxColumn5->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->dataGridViewTextBoxColumn5->FillWeight = 15;
+			this->dataGridViewTextBoxColumn5->HeaderText = L"Barcode";
+			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
+			this->dataGridViewTextBoxColumn5->Width = 150;
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this->dataGridViewTextBoxColumn6->HeaderText = L"Product Name";
+			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
+			this->dataGridViewTextBoxColumn6->ReadOnly = true;
+			this->dataGridViewTextBoxColumn6->Width = 180;
+			// 
+			// dataGridViewTextBoxColumn7
+			// 
+			this->dataGridViewTextBoxColumn7->HeaderText = L"Quantity";
+			this->dataGridViewTextBoxColumn7->Name = L"dataGridViewTextBoxColumn7";
+			this->dataGridViewTextBoxColumn7->Width = 150;
+			// 
+			// dataGridViewTextBoxColumn8
+			// 
+			this->dataGridViewTextBoxColumn8->HeaderText = L"Price";
+			this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
+			this->dataGridViewTextBoxColumn8->ReadOnly = true;
+			this->dataGridViewTextBoxColumn8->Width = 120;
+			// 
+			// dataGridViewTextBoxColumn9
+			// 
+			this->dataGridViewTextBoxColumn9->HeaderText = L"Total Price";
+			this->dataGridViewTextBoxColumn9->Name = L"dataGridViewTextBoxColumn9";
+			this->dataGridViewTextBoxColumn9->ReadOnly = true;
+			this->dataGridViewTextBoxColumn9->Width = 122;
+			// 
+			// btn_canTrans
+			// 
+			this->btn_canTrans->BackColor = System::Drawing::Color::White;
+			this->btn_canTrans->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_canTrans->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F));
+			this->btn_canTrans->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
+				static_cast<System::Int32>(static_cast<System::Byte>(42)));
+			this->btn_canTrans->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_canTrans.Image")));
+			this->btn_canTrans->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_canTrans->Location = System::Drawing::Point(695, 646);
+			this->btn_canTrans->Name = L"btn_canTrans";
+			this->btn_canTrans->Padding = System::Windows::Forms::Padding(20, 0, 0, 0);
+			this->btn_canTrans->Size = System::Drawing::Size(331, 55);
+			this->btn_canTrans->TabIndex = 85;
+			this->btn_canTrans->Text = L"Cancel Transaction (F3)";
+			this->btn_canTrans->UseVisualStyleBackColor = false;
+			this->btn_canTrans->Click += gcnew System::EventHandler(this, &cashier::btn_canTrans_Click);
+			// 
+			// btn_remCart
+			// 
+			this->btn_remCart->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)));
+			this->btn_remCart->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_remCart->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_remCart->ForeColor = System::Drawing::Color::White;
+			this->btn_remCart->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_remCart.Image")));
+			this->btn_remCart->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_remCart->Location = System::Drawing::Point(361, 645);
+			this->btn_remCart->Name = L"btn_remCart";
+			this->btn_remCart->Padding = System::Windows::Forms::Padding(20, 0, 0, 0);
+			this->btn_remCart->Size = System::Drawing::Size(320, 55);
+			this->btn_remCart->TabIndex = 84;
+			this->btn_remCart->Text = L"Remove to Cart (F2)";
+			this->btn_remCart->UseVisualStyleBackColor = false;
+			this->btn_remCart->Click += gcnew System::EventHandler(this, &cashier::btn_remCart_Click);
+			// 
+			// btn_addCart
+			// 
+			this->btn_addCart->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(113)));
+			this->btn_addCart->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_addCart->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_addCart->ForeColor = System::Drawing::Color::White;
+			this->btn_addCart->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_addCart.Image")));
+			this->btn_addCart->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_addCart->Location = System::Drawing::Point(25, 645);
+			this->btn_addCart->Name = L"btn_addCart";
+			this->btn_addCart->Padding = System::Windows::Forms::Padding(20, 0, 0, 0);
+			this->btn_addCart->Size = System::Drawing::Size(324, 55);
+			this->btn_addCart->TabIndex = 83;
+			this->btn_addCart->Text = L"Add to Cart (F1)";
+			this->btn_addCart->UseVisualStyleBackColor = false;
+			this->btn_addCart->Click += gcnew System::EventHandler(this, &cashier::btn_addCart_Click);
+			// 
+			// panel8
+			// 
+			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(103)),
+				static_cast<System::Int32>(static_cast<System::Byte>(165)));
+			this->panel8->Controls->Add(this->lbl_totalAmount);
+			this->panel8->Controls->Add(this->label6);
+			this->panel8->Controls->Add(this->label1);
+			this->panel8->Controls->Add(this->btn_process);
+			this->panel8->Controls->Add(this->label3);
+			this->panel8->Controls->Add(this->lbl_subTotal);
+			this->panel8->Controls->Add(this->label13);
+			this->panel8->Controls->Add(this->label26);
+			this->panel8->Controls->Add(this->lbl_totalQuan);
+			this->panel8->Controls->Add(this->label10);
+			this->panel8->Controls->Add(this->tt);
+			this->panel8->Controls->Add(this->label8);
+			this->panel8->Controls->Add(this->label28);
+			this->panel8->Controls->Add(this->label29);
+			this->panel8->Controls->Add(this->lbl_vatAmount);
+			this->panel8->Location = System::Drawing::Point(1040, 30);
+			this->panel8->Margin = System::Windows::Forms::Padding(4);
+			this->panel8->Name = L"panel8";
+			this->panel8->Size = System::Drawing::Size(444, 669);
+			this->panel8->TabIndex = 71;
+			// 
+			// lbl_totalAmount
+			// 
+			this->lbl_totalAmount->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
+				static_cast<System::Int32>(static_cast<System::Byte>(195)));
+			this->lbl_totalAmount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl_totalAmount->ForeColor = System::Drawing::Color::White;
+			this->lbl_totalAmount->Location = System::Drawing::Point(76, 468);
+			this->lbl_totalAmount->Name = L"lbl_totalAmount";
+			this->lbl_totalAmount->Size = System::Drawing::Size(335, 37);
+			this->lbl_totalAmount->TabIndex = 73;
+			this->lbl_totalAmount->Text = L"0.00";
+			this->lbl_totalAmount->Click += gcnew System::EventHandler(this, &cashier::label5_Click_1);
+			// 
+			// label6
+			// 
+			this->label6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
+				static_cast<System::Int32>(static_cast<System::Byte>(195)));
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->label6->ForeColor = System::Drawing::Color::White;
+			this->label6->Location = System::Drawing::Point(39, 462);
+			this->label6->Margin = System::Windows::Forms::Padding(0, 0, 4, 0);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(47, 49);
+			this->label6->TabIndex = 81;
+			this->label6->Text = L"₱";
+			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label1
+			// 
+			this->label1->BackColor = System::Drawing::Color::White;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 1));
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(26, 176);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(380, 1);
+			this->label1->TabIndex = 80;
+			// 
+			// btn_process
+			// 
+			this->btn_process->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(52)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
+				static_cast<System::Int32>(static_cast<System::Byte>(219)));
+			this->btn_process->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_process->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_process->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->btn_process->ForeColor = System::Drawing::Color::White;
+			this->btn_process->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_process.Image")));
+			this->btn_process->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_process->Location = System::Drawing::Point(19, 601);
+			this->btn_process->Margin = System::Windows::Forms::Padding(4);
+			this->btn_process->Name = L"btn_process";
+			this->btn_process->Padding = System::Windows::Forms::Padding(30, 0, 50, 0);
+			this->btn_process->Size = System::Drawing::Size(411, 57);
+			this->btn_process->TabIndex = 82;
+			this->btn_process->Text = L"Pay with cash (F6)";
+			this->btn_process->UseVisualStyleBackColor = false;
+			this->btn_process->Click += gcnew System::EventHandler(this, &cashier::btn_process_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
+			this->label3->ForeColor = System::Drawing::Color::White;
+			this->label3->Location = System::Drawing::Point(27, 93);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(101, 29);
+			this->label3->TabIndex = 79;
+			this->label3->Text = L"Subtotal";
+			// 
+			// lbl_subTotal
+			// 
+			this->lbl_subTotal->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->lbl_subTotal->ForeColor = System::Drawing::Color::White;
+			this->lbl_subTotal->Location = System::Drawing::Point(27, 123);
+			this->lbl_subTotal->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lbl_subTotal->Name = L"lbl_subTotal";
+			this->lbl_subTotal->Size = System::Drawing::Size(290, 49);
+			this->lbl_subTotal->TabIndex = 78;
+			this->lbl_subTotal->Text = L"0.00";
+			this->lbl_subTotal->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label13
+			// 
+			this->label13->BackColor = System::Drawing::Color::White;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 1));
+			this->label13->ForeColor = System::Drawing::Color::White;
+			this->label13->Location = System::Drawing::Point(31, 289);
+			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(380, 1);
+			this->label13->TabIndex = 76;
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->BackColor = System::Drawing::Color::Transparent;
+			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
+			this->label26->ForeColor = System::Drawing::Color::White;
+			this->label26->Location = System::Drawing::Point(27, 207);
+			this->label26->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(161, 29);
+			this->label26->TabIndex = 75;
+			this->label26->Text = L"Total Quantity";
+			// 
+			// lbl_totalQuan
+			// 
+			this->lbl_totalQuan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->lbl_totalQuan->ForeColor = System::Drawing::Color::White;
+			this->lbl_totalQuan->Location = System::Drawing::Point(27, 240);
+			this->lbl_totalQuan->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lbl_totalQuan->Name = L"lbl_totalQuan";
+			this->lbl_totalQuan->Size = System::Drawing::Size(290, 49);
+			this->lbl_totalQuan->TabIndex = 74;
+			this->lbl_totalQuan->Text = L"0.00";
+			this->lbl_totalQuan->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label10
+			// 
+			this->label10->BackColor = System::Drawing::Color::White;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 1));
+			this->label10->ForeColor = System::Drawing::Color::White;
+			this->label10->Location = System::Drawing::Point(31, 394);
+			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(380, 1);
+			this->label10->TabIndex = 72;
+			// 
+			// tt
+			// 
+			this->tt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(153)),
+				static_cast<System::Int32>(static_cast<System::Byte>(195)));
+			this->tt->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 28));
+			this->tt->ForeColor = System::Drawing::Color::White;
+			this->tt->HideSelection = false;
+			this->tt->Location = System::Drawing::Point(32, 461);
+			this->tt->Margin = System::Windows::Forms::Padding(4);
+			this->tt->Name = L"tt";
+			this->tt->Size = System::Drawing::Size(388, 53);
+			this->tt->TabIndex = 72;
+			this->tt->WordWrap = false;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 23, System::Drawing::FontStyle::Bold));
+			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->label8->Location = System::Drawing::Point(21, 24);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(237, 44);
+			this->label8->TabIndex = 71;
+			this->label8->Text = L"Cart Details";
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->BackColor = System::Drawing::Color::Transparent;
+			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
+			this->label28->ForeColor = System::Drawing::Color::White;
+			this->label28->Location = System::Drawing::Point(28, 428);
+			this->label28->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(144, 29);
+			this->label28->TabIndex = 54;
+			this->label28->Text = L"Amount Due";
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->BackColor = System::Drawing::Color::Transparent;
+			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
+			this->label29->ForeColor = System::Drawing::Color::White;
+			this->label29->Location = System::Drawing::Point(27, 316);
+			this->label29->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(47, 29);
+			this->label29->TabIndex = 62;
+			this->label29->Text = L"Vat";
+			// 
+			// lbl_vatAmount
+			// 
+			this->lbl_vatAmount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->lbl_vatAmount->ForeColor = System::Drawing::Color::White;
+			this->lbl_vatAmount->Location = System::Drawing::Point(27, 345);
+			this->lbl_vatAmount->Margin = System::Windows::Forms::Padding(0, 0, 4, 0);
+			this->lbl_vatAmount->Name = L"lbl_vatAmount";
+			this->lbl_vatAmount->Size = System::Drawing::Size(282, 49);
+			this->lbl_vatAmount->TabIndex = 61;
+			this->lbl_vatAmount->Text = L"0.00";
+			this->lbl_vatAmount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->lbl_vatAmount->Click += gcnew System::EventHandler(this, &cashier::label5_Click);
 			// 
 			// label16
 			// 
@@ -913,7 +1041,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 1));
 			this->label16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label16->Location = System::Drawing::Point(512, 149);
+			this->label16->Location = System::Drawing::Point(513, 166);
 			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(133, 2);
@@ -926,10 +1054,10 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
 			this->label15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label15.Image")));
-			this->label15->Location = System::Drawing::Point(435, 98);
+			this->label15->Location = System::Drawing::Point(436, 122);
 			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(55, 47);
+			this->label15->Size = System::Drawing::Size(55, 43);
 			this->label15->TabIndex = 63;
 			// 
 			// label14
@@ -939,65 +1067,23 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 1));
 			this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label14->Location = System::Drawing::Point(31, 149);
+			this->label14->Location = System::Drawing::Point(32, 166);
 			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(459, 2);
 			this->label14->TabIndex = 62;
-			// 
-			// lbl_vatAmount
-			// 
-			this->lbl_vatAmount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 17.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lbl_vatAmount->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_vatAmount->Location = System::Drawing::Point(1179, 524);
-			this->lbl_vatAmount->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_vatAmount->Name = L"lbl_vatAmount";
-			this->lbl_vatAmount->Size = System::Drawing::Size(307, 49);
-			this->lbl_vatAmount->TabIndex = 61;
-			this->lbl_vatAmount->Text = L"0.00";
-			this->lbl_vatAmount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->lbl_vatAmount->Click += gcnew System::EventHandler(this, &cashier::label5_Click);
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label3->Location = System::Drawing::Point(1116, 533);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(47, 29);
-			this->label3->TabIndex = 60;
-			this->label3->Text = L"Vat";
-			this->label3->Click += gcnew System::EventHandler(this, &cashier::label3_Click);
 			// 
 			// label2
 			// 
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label2->Location = System::Drawing::Point(751, 37);
+			this->label2->Location = System::Drawing::Point(702, 70);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(100, 32);
 			this->label2->TabIndex = 59;
 			this->label2->Text = L"Total";
-			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
-				static_cast<System::Int32>(static_cast<System::Byte>(136)));
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->lbl_amountDue);
-			this->panel2->Controls->Add(this->btn_process);
-			this->panel2->Location = System::Drawing::Point(0, 583);
-			this->panel2->Margin = System::Windows::Forms::Padding(4);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1501, 78);
-			this->panel2->TabIndex = 58;
 			// 
 			// pnl_messageBox
 			// 
@@ -1009,8 +1095,130 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->pnl_messageBox->Location = System::Drawing::Point(0, 0);
 			this->pnl_messageBox->Margin = System::Windows::Forms::Padding(4);
 			this->pnl_messageBox->Name = L"pnl_messageBox";
-			this->pnl_messageBox->Size = System::Drawing::Size(1509, 658);
+			this->pnl_messageBox->Size = System::Drawing::Size(1509, 722);
 			this->pnl_messageBox->TabIndex = 58;
+			// 
+			// pnl_newTrans
+			// 
+			this->pnl_newTrans->BackColor = System::Drawing::Color::White;
+			this->pnl_newTrans->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pnl_newTrans->Controls->Add(this->label45);
+			this->pnl_newTrans->Controls->Add(this->lbl_newTrans);
+			this->pnl_newTrans->Controls->Add(this->label47);
+			this->pnl_newTrans->Controls->Add(this->label27);
+			this->pnl_newTrans->Controls->Add(this->inp_custName);
+			this->pnl_newTrans->Controls->Add(this->btn_newTrans);
+			this->pnl_newTrans->Controls->Add(this->label40);
+			this->pnl_newTrans->Location = System::Drawing::Point(371, 159);
+			this->pnl_newTrans->Margin = System::Windows::Forms::Padding(4);
+			this->pnl_newTrans->Name = L"pnl_newTrans";
+			this->pnl_newTrans->Size = System::Drawing::Size(569, 338);
+			this->pnl_newTrans->TabIndex = 65;
+			this->pnl_newTrans->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &cashier::panel8_Paint);
+			// 
+			// label45
+			// 
+			this->label45->AutoSize = true;
+			this->label45->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24));
+			this->label45->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label45->Location = System::Drawing::Point(17, 17);
+			this->label45->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(320, 46);
+			this->label45->TabIndex = 48;
+			this->label45->Text = L"New Transaction";
+			// 
+			// lbl_newTrans
+			// 
+			this->lbl_newTrans->AutoSize = true;
+			this->lbl_newTrans->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->lbl_newTrans->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->lbl_newTrans->ForeColor = System::Drawing::Color::White;
+			this->lbl_newTrans->Location = System::Drawing::Point(152, 220);
+			this->lbl_newTrans->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lbl_newTrans->Name = L"lbl_newTrans";
+			this->lbl_newTrans->Padding = System::Windows::Forms::Padding(4);
+			this->lbl_newTrans->Size = System::Drawing::Size(42, 33);
+			this->lbl_newTrans->TabIndex = 67;
+			this->lbl_newTrans->Text = L"#1";
+			// 
+			// label47
+			// 
+			this->label47->AutoSize = true;
+			this->label47->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label47->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label47->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label47->Location = System::Drawing::Point(25, 220);
+			this->label47->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label47->Name = L"label47";
+			this->label47->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->label47->Size = System::Drawing::Size(123, 31);
+			this->label47->TabIndex = 66;
+			this->label47->Text = L"Transaction";
+			// 
+			// label27
+			// 
+			this->label27->BackColor = System::Drawing::Color::Transparent;
+			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
+			this->label27->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label27->Location = System::Drawing::Point(24, 51);
+			this->label27->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(524, 41);
+			this->label27->TabIndex = 64;
+			this->label27->Text = L"Enter the Customer\'s Name";
+			this->label27->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// inp_custName
+			// 
+			this->inp_custName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->inp_custName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->inp_custName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->inp_custName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->inp_custName->HideSelection = false;
+			this->inp_custName->Location = System::Drawing::Point(25, 154);
+			this->inp_custName->Margin = System::Windows::Forms::Padding(4);
+			this->inp_custName->Name = L"inp_custName";
+			this->inp_custName->Size = System::Drawing::Size(521, 41);
+			this->inp_custName->TabIndex = 49;
+			this->inp_custName->WordWrap = false;
+			this->inp_custName->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &cashier::inp_custName_KeyDown);
+			// 
+			// btn_newTrans
+			// 
+			this->btn_newTrans->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btn_newTrans->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_newTrans->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->btn_newTrans->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->btn_newTrans->Location = System::Drawing::Point(313, 276);
+			this->btn_newTrans->Margin = System::Windows::Forms::Padding(4);
+			this->btn_newTrans->Name = L"btn_newTrans";
+			this->btn_newTrans->Size = System::Drawing::Size(235, 43);
+			this->btn_newTrans->TabIndex = 53;
+			this->btn_newTrans->Text = L"Enter";
+			this->btn_newTrans->UseVisualStyleBackColor = true;
+			this->btn_newTrans->Click += gcnew System::EventHandler(this, &cashier::btn_newTrans_Click);
+			// 
+			// label40
+			// 
+			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label40->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(97)));
+			this->label40->Location = System::Drawing::Point(21, 122);
+			this->label40->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label40->Name = L"label40";
+			this->label40->Size = System::Drawing::Size(493, 32);
+			this->label40->TabIndex = 50;
+			this->label40->Text = L"Customer Name";
 			// 
 			// pnl_payment
 			// 
@@ -1137,7 +1345,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->lbl_payChange->Name = L"lbl_payChange";
 			this->lbl_payChange->Size = System::Drawing::Size(279, 46);
 			this->lbl_payChange->TabIndex = 62;
-			this->lbl_payChange->Text = L"55.45";
+			this->lbl_payChange->Text = L"0.00";
 			this->lbl_payChange->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// label18
@@ -1192,7 +1400,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->lbl_totalPayment->Name = L"lbl_totalPayment";
 			this->lbl_totalPayment->Size = System::Drawing::Size(279, 46);
 			this->lbl_totalPayment->TabIndex = 55;
-			this->lbl_totalPayment->Text = L"1924.55";
+			this->lbl_totalPayment->Text = L"0.00";
 			this->lbl_totalPayment->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// label9
@@ -1240,128 +1448,6 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->btn_payment->Text = L"Pay";
 			this->btn_payment->UseVisualStyleBackColor = false;
 			this->btn_payment->Click += gcnew System::EventHandler(this, &cashier::btn_payment_Click);
-			// 
-			// pnl_newTrans
-			// 
-			this->pnl_newTrans->BackColor = System::Drawing::Color::White;
-			this->pnl_newTrans->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->pnl_newTrans->Controls->Add(this->label45);
-			this->pnl_newTrans->Controls->Add(this->lbl_newTrans);
-			this->pnl_newTrans->Controls->Add(this->label47);
-			this->pnl_newTrans->Controls->Add(this->label27);
-			this->pnl_newTrans->Controls->Add(this->inp_custName);
-			this->pnl_newTrans->Controls->Add(this->btn_newTrans);
-			this->pnl_newTrans->Controls->Add(this->label40);
-			this->pnl_newTrans->Location = System::Drawing::Point(371, 159);
-			this->pnl_newTrans->Margin = System::Windows::Forms::Padding(4);
-			this->pnl_newTrans->Name = L"pnl_newTrans";
-			this->pnl_newTrans->Size = System::Drawing::Size(569, 338);
-			this->pnl_newTrans->TabIndex = 65;
-			this->pnl_newTrans->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &cashier::panel8_Paint);
-			// 
-			// label45
-			// 
-			this->label45->AutoSize = true;
-			this->label45->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24));
-			this->label45->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label45->Location = System::Drawing::Point(17, 17);
-			this->label45->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(320, 46);
-			this->label45->TabIndex = 48;
-			this->label45->Text = L"New Transaction";
-			// 
-			// lbl_newTrans
-			// 
-			this->lbl_newTrans->AutoSize = true;
-			this->lbl_newTrans->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->lbl_newTrans->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->lbl_newTrans->ForeColor = System::Drawing::Color::White;
-			this->lbl_newTrans->Location = System::Drawing::Point(152, 220);
-			this->lbl_newTrans->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->lbl_newTrans->Name = L"lbl_newTrans";
-			this->lbl_newTrans->Padding = System::Windows::Forms::Padding(4);
-			this->lbl_newTrans->Size = System::Drawing::Size(42, 33);
-			this->lbl_newTrans->TabIndex = 67;
-			this->lbl_newTrans->Text = L"#1";
-			// 
-			// label47
-			// 
-			this->label47->AutoSize = true;
-			this->label47->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label47->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label47->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label47->Location = System::Drawing::Point(25, 220);
-			this->label47->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label47->Name = L"label47";
-			this->label47->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->label47->Size = System::Drawing::Size(123, 31);
-			this->label47->TabIndex = 66;
-			this->label47->Text = L"Transaction";
-			// 
-			// label27
-			// 
-			this->label27->BackColor = System::Drawing::Color::Transparent;
-			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
-			this->label27->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label27->Location = System::Drawing::Point(24, 51);
-			this->label27->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(524, 41);
-			this->label27->TabIndex = 64;
-			this->label27->Text = L"Enter the Customer\'s Name";
-			this->label27->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// inp_custName
-			// 
-			this->inp_custName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->inp_custName->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->inp_custName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->inp_custName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->inp_custName->HideSelection = false;
-			this->inp_custName->Location = System::Drawing::Point(25, 154);
-			this->inp_custName->Margin = System::Windows::Forms::Padding(4);
-			this->inp_custName->Name = L"inp_custName";
-			this->inp_custName->Size = System::Drawing::Size(521, 41);
-			this->inp_custName->TabIndex = 49;
-			this->inp_custName->WordWrap = false;
-			this->inp_custName->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &cashier::inp_custName_KeyDown);
-			// 
-			// btn_newTrans
-			// 
-			this->btn_newTrans->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_newTrans->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btn_newTrans->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->btn_newTrans->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->btn_newTrans->Location = System::Drawing::Point(313, 276);
-			this->btn_newTrans->Margin = System::Windows::Forms::Padding(4);
-			this->btn_newTrans->Name = L"btn_newTrans";
-			this->btn_newTrans->Size = System::Drawing::Size(235, 43);
-			this->btn_newTrans->TabIndex = 53;
-			this->btn_newTrans->Text = L"Enter";
-			this->btn_newTrans->UseVisualStyleBackColor = true;
-			this->btn_newTrans->Click += gcnew System::EventHandler(this, &cashier::btn_newTrans_Click);
-			// 
-			// label40
-			// 
-			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label40->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->label40->Location = System::Drawing::Point(21, 122);
-			this->label40->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(493, 32);
-			this->label40->TabIndex = 50;
-			this->label40->Text = L"Customer Name";
 			// 
 			// pnl_voidItem
 			// 
@@ -1507,9 +1593,9 @@ private: System::Windows::Forms::Button^  btn_process;
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(6, 0);
+			this->pictureBox1->Location = System::Drawing::Point(1, 13);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(1500, 658);
+			this->pictureBox1->Size = System::Drawing::Size(1505, 700);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 66;
 			this->pictureBox1->TabStop = false;
@@ -1523,7 +1609,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tbC_cashier->Margin = System::Windows::Forms::Padding(4);
 			this->tbC_cashier->Name = L"tbC_cashier";
 			this->tbC_cashier->SelectedIndex = 0;
-			this->tbC_cashier->Size = System::Drawing::Size(1515, 714);
+			this->tbC_cashier->Size = System::Drawing::Size(1515, 747);
 			this->tbC_cashier->TabIndex = 3;
 			// 
 			// tab_mainCashier
@@ -1533,7 +1619,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tab_mainCashier->Margin = System::Windows::Forms::Padding(4);
 			this->tab_mainCashier->Name = L"tab_mainCashier";
 			this->tab_mainCashier->Padding = System::Windows::Forms::Padding(4);
-			this->tab_mainCashier->Size = System::Drawing::Size(1507, 685);
+			this->tab_mainCashier->Size = System::Drawing::Size(1507, 718);
 			this->tab_mainCashier->TabIndex = 1;
 			this->tab_mainCashier->Text = L"tabPage2";
 			this->tab_mainCashier->UseVisualStyleBackColor = true;
@@ -1545,7 +1631,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tab_messageBox->Margin = System::Windows::Forms::Padding(4);
 			this->tab_messageBox->Name = L"tab_messageBox";
 			this->tab_messageBox->Padding = System::Windows::Forms::Padding(4);
-			this->tab_messageBox->Size = System::Drawing::Size(1507, 685);
+			this->tab_messageBox->Size = System::Drawing::Size(1507, 718);
 			this->tab_messageBox->TabIndex = 0;
 			this->tab_messageBox->Text = L"tabPage1";
 			this->tab_messageBox->UseVisualStyleBackColor = true;
@@ -1561,7 +1647,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tab_productView->Margin = System::Windows::Forms::Padding(4);
 			this->tab_productView->Name = L"tab_productView";
 			this->tab_productView->Padding = System::Windows::Forms::Padding(4);
-			this->tab_productView->Size = System::Drawing::Size(1507, 685);
+			this->tab_productView->Size = System::Drawing::Size(1507, 718);
 			this->tab_productView->TabIndex = 2;
 			this->tab_productView->Text = L"tabPage1";
 			this->tab_productView->UseVisualStyleBackColor = true;
@@ -1588,7 +1674,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->panel7->Location = System::Drawing::Point(1065, 0);
 			this->panel7->Margin = System::Windows::Forms::Padding(4);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(444, 658);
+			this->panel7->Size = System::Drawing::Size(444, 722);
 			this->panel7->TabIndex = 70;
 			// 
 			// label42
@@ -1863,52 +1949,52 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->tb_viewPro->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->tb_viewPro->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->tb_viewPro->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle5->Padding = System::Windows::Forms::Padding(1);
-			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle29->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle29->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			dataGridViewCellStyle29->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle29->Padding = System::Windows::Forms::Padding(1);
+			dataGridViewCellStyle29->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_viewPro->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle29->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle29->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_viewPro->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
 			this->tb_viewPro->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tb_viewPro->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->dataGridViewTextBoxColumn1,
 					this->dataGridViewTextBoxColumn2, this->cl_categories, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4
 			});
 			this->tb_viewPro->Cursor = System::Windows::Forms::Cursors::Hand;
-			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle6->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			dataGridViewCellStyle6->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle6->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
-			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle30->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle30->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			dataGridViewCellStyle30->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle30->Padding = System::Windows::Forms::Padding(0, 2, 2, 2);
+			dataGridViewCellStyle30->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(143)), static_cast<System::Int32>(static_cast<System::Byte>(179)));
-			dataGridViewCellStyle6->SelectionForeColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle6->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->tb_viewPro->DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle30->SelectionForeColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle30->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->tb_viewPro->DefaultCellStyle = dataGridViewCellStyle30;
 			this->tb_viewPro->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(143)),
 				static_cast<System::Int32>(static_cast<System::Byte>(179)));
 			this->tb_viewPro->Location = System::Drawing::Point(-21, 85);
 			this->tb_viewPro->Margin = System::Windows::Forms::Padding(4);
 			this->tb_viewPro->Name = L"tb_viewPro";
 			this->tb_viewPro->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
-			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle7->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle31->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle31->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle7->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle7->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle7->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle7->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->tb_viewPro->RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle31->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle31->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle31->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle31->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->tb_viewPro->RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
 			this->tb_viewPro->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle8->Padding = System::Windows::Forms::Padding(2);
-			this->tb_viewPro->RowsDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle32->Padding = System::Windows::Forms::Padding(2);
+			this->tb_viewPro->RowsDefaultCellStyle = dataGridViewCellStyle32;
 			this->tb_viewPro->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->tb_viewPro->Size = System::Drawing::Size(1017, 529);
+			this->tb_viewPro->Size = System::Drawing::Size(1017, 596);
 			this->tb_viewPro->TabIndex = 67;
 			this->tb_viewPro->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &cashier::tb_viewPro_CellClick);
 			// 
@@ -1974,7 +2060,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			// 
 			this->btn_logout->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btn_logout->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_logout.Image")));
-			this->btn_logout->Location = System::Drawing::Point(-3, 464);
+			this->btn_logout->Location = System::Drawing::Point(4, 623);
 			this->btn_logout->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->btn_logout->Name = L"btn_logout";
 			this->btn_logout->Size = System::Drawing::Size(92, 71);
@@ -2037,7 +2123,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->pnl_navBar->Location = System::Drawing::Point(0, 0);
 			this->pnl_navBar->Margin = System::Windows::Forms::Padding(4);
 			this->pnl_navBar->Name = L"pnl_navBar";
-			this->pnl_navBar->Size = System::Drawing::Size(96, 658);
+			this->pnl_navBar->Size = System::Drawing::Size(96, 720);
 			this->pnl_navBar->TabIndex = 4;
 			// 
 			// cashier
@@ -2046,28 +2132,28 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(1595, 658);
+			this->ClientSize = System::Drawing::Size(1595, 716);
 			this->Controls->Add(this->pnl_navBar);
 			this->Controls->Add(this->tbC_cashier);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(4);
-			this->MaximumSize = System::Drawing::Size(1595, 658);
+			this->MaximumSize = System::Drawing::Size(1595, 716);
 			this->Name = L"cashier";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Cashier";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_quantity))->EndInit();
 			this->pnl_mainCashier->ResumeLayout(false);
 			this->pnl_mainCashier->PerformLayout();
 			this->panel3->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tb_cashier))->EndInit();
+			this->panel8->ResumeLayout(false);
+			this->panel8->PerformLayout();
 			this->pnl_messageBox->ResumeLayout(false);
+			this->pnl_newTrans->ResumeLayout(false);
+			this->pnl_newTrans->PerformLayout();
 			this->pnl_payment->ResumeLayout(false);
 			this->pnl_payment->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->inp_payCash))->EndInit();
-			this->pnl_newTrans->ResumeLayout(false);
-			this->pnl_newTrans->PerformLayout();
 			this->pnl_voidItem->ResumeLayout(false);
 			this->pnl_voidItem->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -2092,7 +2178,7 @@ private: System::Windows::Forms::Button^  btn_process;
 		int proStock;
 
 		//For Values
-		double tax= .12, totalPrice=0.0 , amountDue=0.0, vat=0.0;
+		double tax= .12, totalPrice=0.0 , amountDue=0.0, vat=0.0, subtotal=0.0;
 		int proQuan = 1;
 		int showRoll = 0;
 
@@ -2207,6 +2293,7 @@ private: System::Windows::Forms::Button^  btn_process;
 			String^ name;
 			int quantity;
 			double price;
+			double subTotal;
 			double totalPrice;
 			double vat;
 		};
@@ -2229,12 +2316,6 @@ private: System::Windows::Forms::Button^  btn_process;
 					proDesc = product->description;
 					currentPrice = product->price;
 					proStock = product->stock;
-					lbl_barcode->Text = barcode;
-					lbl_proName->Text = proName;
-					lbl_proDesc->Text = proDesc;
-					lbl_proCategory->Text = product->category;
-					lbl_proPrice->Text = "" + proPrice;
-					lbl_proStock->Text = "" + proStock;
 					computeTotal(proQuan);
 					toDisableAdd(true);
 				}
@@ -2247,38 +2328,36 @@ private: System::Windows::Forms::Button^  btn_process;
 			
 		}
 
-		private: System::Void btn_prevEdit_Click(System::Object^  sender, System::EventArgs^  e) {
+		public: void addToCart() {
 			int index = checkBarcodeExist(barcode);
 
 			if (!checkStock(Int32::Parse(inp_quantity->Text))) {
-				if (!(index==-1)) {
+				if (!(index == -1)) {
 					int idxQuan = cart[index].quantity, idxTotal;
 					idxQuan += proQuan;
 					idxTotal = idxQuan * currentPrice;
 					cart[index].quantity = idxQuan;
-					cart[cartCount].vat = (currentPrice * idxQuan) * tax;
-					cart[index].totalPrice = idxTotal + cart[cartCount].vat;
-					
+					cart[index].totalPrice = idxTotal;
+
 				}
 				else {
 					cart[cartCount].barcode = barcode;
 					cart[cartCount].name = proName;
 					cart[cartCount].quantity = proQuan;
 					cart[cartCount].price = currentPrice;
-					cart[cartCount].vat = currentPrice * tax;
-					cart[cartCount].totalPrice = proPrice + cart[cartCount].vat;
+					cart[cartCount].subTotal = subtotal;
+					cart[cartCount].totalPrice = currentPrice * proQuan;
 
 					cartCount++;
 				}
+				this->ActiveControl = inp_proCode;
 				resetfields();
 				loadCartTable();
 			}
 			else {
 				MessageBox::Show("Insufficient Stock");
 			}
-			
 
-			
 		}
 
 		public: bool checkStock(int quan) {
@@ -2296,24 +2375,25 @@ private: System::Windows::Forms::Button^  btn_process;
 				tb_cashier->Rows[index]->Cells[3]->Value = cart[i].price;
 				tb_cashier->Rows[index]->Cells[4]->Value = cart[i].totalPrice;
 				amountDue += cart[i].totalPrice;
-				vat += cart[i].vat;
-				lbl_amountDue->Text = amountDue + "";
-				lbl_vatAmount->Text = vat + "";
+				vat = amountDue * .12;
+				subtotal = amountDue - vat;
+				lbl_subTotal->Text = subtotal.ToString("N2");
+				lbl_vatAmount->Text = vat.ToString("N2");
+				lbl_totalAmount->Text = amountDue.ToString("N2");
+				lbl_totalQuan->Text = cartQuantity().ToString();
 				tb_cashier->ClearSelection();
 			}
 		}
 		
 		String^ selectedCart;
-		private: System::Void btn_prevDelete_Click(System::Object^  sender, System::EventArgs^  e) {
+		public: void removedToCart(){
 			if (!String::IsNullOrEmpty(selectedCart)) {
 				voidItemPnl();
 			}
 			else {
 				MessageBox::Show("Select item on cart first.");
 			}
-			
 		}
-
 		private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 			
 		}
@@ -2330,17 +2410,17 @@ private: System::Windows::Forms::Button^  btn_process;
 
 		public: void tableSelection() {
 			if (!String::IsNullOrEmpty(selectedCart)){ 
-				btn_prevDelete->Enabled = true;
+				btn_remCart->Enabled = true;
 			}
 			else { 
-				btn_prevDelete->Enabled = false;
+				btn_remCart->Enabled = false;
 			}
 ;
 		}
 
 		void computeTotal(int quantity) {
 			proPrice = currentPrice * quantity;
-			lbl_totalPrice->Text = "" + proPrice;
+			lbl_totalPrice->Text = proPrice.ToString("N2");
 		
 		}
 
@@ -2357,22 +2437,12 @@ private: System::Windows::Forms::Button^  btn_process;
 			}
 			else {
 				MessageBox::Show("Insufficient Stocks the product stock is " + proStock + " and your quantity is " + proQuan);
-				inp_quantity->Text = lbl_proStock->Text;
+			
 			}
 			}
 
 		//Processing the transactions
-		private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			pnl_navBar->Enabled = false;
-			if (!amountDue<=0.0)
-			{
-				lbl_totalPayment->Text = amountDue + "";
-				paymentPnl();
-			}
-			else {
-				MessageBox::Show("No items on cart please fill it in.");
-			}
-		}	
+			
 		
 		private: System::Void inp_payCashValueChange(System::Object^  sender, System::EventArgs^  e) {
 			validatePayment();
@@ -2453,6 +2523,8 @@ private: System::Windows::Forms::Button^  btn_process;
 			int transCode;
 			String^ customer;
 			double totalPrice;
+			double subtotal;
+			double vat;
 			int totalQuantity;
 			String^ date;
 		};
@@ -2474,15 +2546,15 @@ private: System::Windows::Forms::Button^  btn_process;
 						sales[i].customer = din->ReadLine();
 						sales[i].totalPrice = double::Parse(din->ReadLine());
 						sales[i].totalQuantity = Int32::Parse(din->ReadLine());
-						sales[i].date = din->ReadLine();					}
+						sales[i].date = din->ReadLine();					
+					}
+					transCode = sales[saleReportCount - 1].transCode + 1;
 				}
 				else {
-					MessageBox::Show("The database is empty");
+					transCode = 1;
+					
 				}
-				
-				transCode = sales[saleReportCount-1].transCode;
-			
-				transCode++;
+
 				lbl_transNo->Text = "#" + transCode;
 				lbl_newTrans->Text = "#" + transCode;
 				din->Close();
@@ -2577,7 +2649,7 @@ private: System::Windows::Forms::Button^  btn_process;
 
 			if (payCash >= amountDue) { 
 				double totalChange = payCash - amountDue;
-				lbl_payChange->Text = totalChange + "";
+				lbl_payChange->Text = totalChange.ToString("N2");
 				return true;
 			}else { 
 				MessageBox::Show("Insuffiecient Cash");
@@ -2694,15 +2766,17 @@ private: System::Windows::Forms::Button^  btn_process;
 			pnl_voidItem->Visible = false;
 			pnl_newTrans->Visible = false;
 			panelDisable(false);
-			
-
+			this->ActiveControl = inp_payCash;
 		}
+				
+
 		public: void voidItemPnl() {
 			tbC_cashier->SelectTab(1);
 			pnl_payment->Visible = false;
 			pnl_voidItem->Visible = true;
 			pnl_newTrans->Visible = false;
 			panelDisable(false);
+			this->ActiveControl = inp_userName;
 		}
 		public: void newTransPnl() {
 			tbC_cashier->SelectTab(1);
@@ -2713,25 +2787,9 @@ private: System::Windows::Forms::Button^  btn_process;
 			this->ActiveControl = inp_custName;
 		}
 
-		String^ convertSelection(String^ type) {
-					String^ choosen;
-					if (String::Compare(type, "Barcode") == 0) {
-						choosen = "barcode";
-					}
-					else {
-						choosen = "pro_name";
-					}
-					return choosen;
-				}
 
 		void resetfields() {
 			toDisableAdd(false);
-			lbl_barcode->Text = "";
-			lbl_proName->Text = "";
-			lbl_proDesc->Text = "";
-			lbl_proCategory->Text = "";
-			lbl_proPrice->Text = "";
-			lbl_proStock->Text = "";
 			inp_proCode->Text = "";
 			lbl_totalPrice->Text = "";
 			lbl_totalPayment->Text = "";
@@ -2740,16 +2798,19 @@ private: System::Windows::Forms::Button^  btn_process;
 			inp_custName->Text = "";
 			proPrice = 0.0;
 			amountDue = 0.0;
-			lbl_amountDue->Text = "0";
 			inp_payCash->Text = "0.00";
+			lbl_totalQuan->Text = "0.00";
+			lbl_vatAmount->Text = "0.00";
+			lbl_totalAmount->Text = "0.00";
+			lbl_subTotal->Text = "0.00";
 			lbl_totalPrice->Text = "" + proPrice;
 			selectedCart = "";
-			btn_prevDelete->Enabled = false;
+			btn_remCart->Enabled = false;
 		}
 
 		public: void toDisableAdd(bool isEnabled) {
 			inp_quantity->Enabled = isEnabled;
-			btn_prevEdit->Enabled = isEnabled;
+			btn_addCart->Enabled = isEnabled;
 		}
 
 
@@ -2796,48 +2857,82 @@ private: System::Windows::Forms::Button^  btn_process;
 		}
 		private: System::Void btn_newTrans_Click(System::Object^  sender, System::EventArgs^  e) {
 			newTransaction();
-			
+			this->ActiveControl = inp_proCode;
 		}
 
 				 //Utilities
-	public: void panelDisable(bool isEnabled) {
-		btn_cashier->Enabled = isEnabled;
-		btn_productView->Enabled = isEnabled;
+		public: void panelDisable(bool isEnabled) {
+			btn_cashier->Enabled = isEnabled;
+			btn_productView->Enabled = isEnabled;
 
-	}
-	public: void newTransaction() {
-		customerName = inp_custName->Text;
+		}
+		public: void newTransaction() {
+			customerName = inp_custName->Text;
 			if (!String::IsNullOrEmpty(customerName)) {
 				tbC_cashier->SelectTab(0);
 				lbl_transName->Text = customerName;
 				resetfields();
 				panelDisable(true);
+			}
+			else {
+				MessageBox::Show("Please enter the customer name.");
+			}
 	}
-	else {
-		MessageBox::Show("Please enter the customer name.");
+	private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-}
-private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void lbl_barcode_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void lbl_indicator_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void tb_cashier_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-}
-private: System::Void inp_custName_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
-	if (e->KeyCode == Keys::Enter) {
-		newTransaction();
-
+	private: System::Void lbl_barcode_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-}
-
-
-private: System::Void inp_payCash_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
-	if (e->KeyCode == Keys::Enter) {
-
+	private: System::Void lbl_indicator_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-}
+	private: System::Void tb_cashier_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+	}
+	private: System::Void inp_custName_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+		if (e->KeyCode == Keys::Enter) {
+			newTransaction();
+
+		}
+	}
+
+	private: System::Void inp_payCash_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+		if (e->KeyCode == Keys::Enter) {
+
+		}
+	}
+	private: System::Void pnl_mainCashier_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	}
+	private: System::Void inp_amountDue_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label5_Click_1(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void button2_Click_1(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void btn_addCart_Click(System::Object^  sender, System::EventArgs^  e) {
+		addToCart();
+	}
+	private: System::Void btn_remCart_Click(System::Object^  sender, System::EventArgs^  e) {
+		removedToCart();
+	}
+	private: System::Void btn_process_Click(System::Object^  sender, System::EventArgs^  e) {
+		pnl_navBar->Enabled = false;
+		if (!amountDue <= 0.0)
+		{
+			lbl_totalPayment->Text = amountDue.ToString("N2");
+			paymentPnl();
+		}
+		else {
+			MessageBox::Show("No items on cart please fill it in.");
+		}
+	}
+	private: System::Void btn_canTrans_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (MessageBox::Show("Are you sure to end this transaction?", "Cashier",
+			MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			customerName = "";
+			newTransPnl();
+		}
+		else {
+			
+		}
+	}
 };
 
 
