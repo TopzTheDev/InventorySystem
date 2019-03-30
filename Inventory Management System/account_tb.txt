@@ -5,6 +5,6 @@ Inventory
 errol
 123456
 Cashier
-Christopher
-2559069
-Inventory
+patrick
+852963
+Cashier
