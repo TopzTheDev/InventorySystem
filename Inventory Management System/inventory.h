@@ -406,6 +406,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBox
 
 		void InitalizeOtherComponent(void){
 			table_prevProduct->AllowUserToAddRows = false;
+			tb_sales->AllowUserToAddRows = true;
 			tb_account->AllowUserToAddRows = false;
 			loadTable("Default");
 			loadAccTable("default");
